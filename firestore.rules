@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isDoctorOrAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'morsybelal15@gmail.com' ||
+        exists(/databases/$(database)/documents/doctors/$(request.auth.uid))
+      );
+    }
+
+    // Users and Role-Based Access Control
+    match /users/{userId} {
+      allow read: if isSignedIn() && (request.auth.uid == userId || isDoctorOrAdmin());
+      allow create: if isSignedIn() && (request.auth.uid == userId || isDoctorOrAdmin());
+      allow update, delete: if isDoctorOrAdmin() || (isSignedIn() && request.auth.uid == userId);
+    }
+
+    // Reviews & rewards submission
+    match /reviews_rewards/{rewardId} {
+      allow create: if request.resource.data.name is string &&
+                       request.resource.data.phone is string &&
+                       request.resource.data.name.size() > 0 &&
+                       request.resource.data.phone.size() > 0;
+      allow read, update, delete: if isDoctorOrAdmin();
+    }
+
+    // Complaints & reconciliation tickets
+    match /complaints/{complaintId} {
+      allow create: if request.resource.data.name is string &&
+                       request.resource.data.phone is string &&
+                       request.resource.data.details is string &&
+                       request.resource.data.name.size() > 0 &&
+                       request.resource.data.phone.size() > 0;
+      allow read, update, delete: if isDoctorOrAdmin();
+    }
+
+    // Patients & Appointments
+    match /patients/{patientId} {
+      allow read, write: if isDoctorOrAdmin();
+    }
+
+    match /appointments/{appointmentId} {
+      allow create: if true;
+      allow read, update, delete: if isDoctorOrAdmin();
+    }
+  }
+}

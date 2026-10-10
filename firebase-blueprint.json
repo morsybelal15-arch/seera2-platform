@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Registered user profile with assigned role and permissions",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { 
+          "type": "string", 
+          "enum": ["guest", "doctor", "staff", "online_subscriber", "clinic_client"] 
+        },
+        "status": { 
+          "type": "string", 
+          "enum": ["active", "suspended"] 
+        },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "ReviewReward": {
+      "title": "ReviewReward",
+      "description": "Client review submission with before and after photo for clinic credit reward",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewText": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "rewardAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "phone", "reviewText"]
+    },
+    "Complaint": {
+      "title": "Complaint",
+      "description": "Patient reconciliation request, plan change, or complaint ticket",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "category": { "type": "string" },
+        "details": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "phone", "category", "details"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Registered users with role-based access control"
+    },
+    "/reviews_rewards/{rewardId}": {
+      "schema": "ReviewReward",
+      "description": "Submitted reviews and rewards"
+    },
+    "/complaints/{complaintId}": {
+      "schema": "Complaint",
+      "description": "Submitted complaints and reconciliation tickets"
+    }
+  }
+}

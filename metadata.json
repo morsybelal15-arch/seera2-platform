@@ -1,0 +1,7 @@
+{
+  "name": "CERRAH Clinic",
+  "description": "عيادة سيرا للعلاج الطبيعي والتغذية وتنسيق القوام والمحاكاة الفيزيائية ثلاثية الأبعاد",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
