@@ -230,13 +230,11 @@ export const MALE_GLB_URL = '/models/male.glb';
 if (typeof window !== 'undefined') {
   try {
     useGLTF.preload(PRIMARY_GLB_URL);
-    useGLTF.preload(MALE_GLB_URL);
   } catch {
     // Ignore preload error in SSR/environments without GL context
   }
 }
 
-// ============================================================================
 // ============================================================================
 // 2. مؤشر تحميل دائري بنسبة مئوية حقيقية ودقيقة أثناء تحميل وبناء المجسم 3D
 // ============================================================================
@@ -246,16 +244,38 @@ function ModelLoadingProgressOverlay() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let ticker: NodeJS.Timeout | null = null;
+
     if (active) {
       setVisible(true);
-      setDisplayPct((prev) => Math.max(prev, Math.round(progress)));
-    } else if (progress >= 100) {
+      // Smooth animated ticker: advances steadily while streaming GLB chunks, never freezing at 50%
+      ticker = setInterval(() => {
+        setDisplayPct((prev) => {
+          const raw = Math.round(progress);
+          if (raw > prev) {
+            return prev + Math.ceil((raw - prev) / 2);
+          }
+          if (prev < 95) {
+            const step = prev < 50 ? 2 : prev < 82 ? 1 : (Math.random() > 0.45 ? 1 : 0);
+            return prev + step;
+          }
+          return prev;
+        });
+      }, 110);
+    } else {
       setDisplayPct(100);
       const timer = setTimeout(() => {
         setVisible(false);
-      }, 500);
-      return () => clearTimeout(timer);
+      }, 450);
+      return () => {
+        clearTimeout(timer);
+        if (ticker) clearInterval(ticker);
+      };
     }
+
+    return () => {
+      if (ticker) clearInterval(ticker);
+    };
   }, [active, progress]);
 
   if (!visible && (!active || progress >= 100)) return null;

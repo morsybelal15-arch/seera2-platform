@@ -27,12 +27,16 @@ interface IhnasiaInitialDiagnosisModalProps {
   isOpen: boolean;
   onClose: () => void;
   onOpenBooking?: (purpose?: string) => void;
+  titleBadge?: string;
+  branchName?: string;
 }
 
 export default function IhnasiaInitialDiagnosisModal({
   isOpen,
   onClose,
-  onOpenBooking
+  onOpenBooking,
+  titleBadge,
+  branchName,
 }: IhnasiaInitialDiagnosisModalProps) {
   // Step navigation: 1: Basic Info, 2: Medical & Lifestyle, 3: Body Shape & Fat Scale, 4: Report & Avatar
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -125,7 +129,8 @@ export default function IhnasiaInitialDiagnosisModal({
 
   // Trigger WhatsApp booking popup
   const handleWhatsAppBooking = () => {
-    const purpose = `حجز جلسة بفرع إهناسيا بعد فحص القوام 3D (الوزن: ${weight} كجم، BMI: ${bmi})`;
+    const branchLabel = branchName || 'مركز سيرا (فرع إهناسيا)';
+    const purpose = `حجز جلسة بـ${branchLabel} بعد فحص القوام 3D (الوزن: ${weight} كجم، BMI: ${bmi})`;
     onClose();
     if (onOpenBooking) {
       onOpenBooking(purpose);
@@ -146,7 +151,7 @@ export default function IhnasiaInitialDiagnosisModal({
             </div>
             <div>
               <span className="text-[11px] font-black text-[#8DC63F] uppercase tracking-wider block">
-                فرع إهناسيا - التقييم الطبي الذكي
+                {titleBadge || (branchName ? `فرع ${branchName} - التقييم الطبي الذكي` : 'مركز سيرا - التقييم الطبي الذكي وفحص القوام')}
               </span>
               <h3 className="text-lg sm:text-xl font-black text-white">
                 {currentStep === 1 && '1. البيانات الأساسية للمراجع'}

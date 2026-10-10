@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useClinic } from '@/context/ClinicContext';
-import VisitorModelCustomizerModal from '@/components/VisitorModelCustomizerModal';
+import IhnasiaInitialDiagnosisModal from '@/components/IhnasiaInitialDiagnosisModal';
 import AccountActivationModal from '@/components/AccountActivationModal';
 
 
@@ -182,20 +182,13 @@ export default function AvatarShowcaseSection({
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
 
               {/* شريط معلومات المحاكاة السفلية داخل البطاقة */}
-              <div className="absolute bottom-3 left-3 right-3 z-20 bg-black/75 backdrop-blur-md border border-white/15 p-3 rounded-xl flex justify-between items-center text-xs">
+              <div className="absolute bottom-3 left-3 right-3 z-20 bg-black/75 backdrop-blur-md border border-white/15 p-3 rounded-xl flex items-center justify-between text-xs">
                 <div>
                   <span className="text-white/60 text-[10px] block font-bold">المحاكاة ثلاثية الأبعاد:</span>
                   <span className="font-black text-[#8DC63F]">
                     نحت القوام وتفتيت الدهون الموضعية 3D
                   </span>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleCustomizeModelClick}
-                  className="bg-[#8DC63F]/20 hover:bg-[#8DC63F] text-[#8DC63F] hover:text-black font-bold px-3 py-1.5 rounded-lg text-[11px] transition-all cursor-pointer flex items-center gap-1.5"
-                >
-                  <Sliders size={13} /> استكشاف المجسم
-                </button>
               </div>
             </div>
 
@@ -216,10 +209,15 @@ export default function AvatarShowcaseSection({
         </div>
       </div>
 
-      {/* مودال تجربة تخصيص المجسم ثلاثي الأبعاد للزوار */}
-      <VisitorModelCustomizerModal
+      {/* مودال التشخيص الأولي وتخصيص المجسم ثلاثي الأبعاد للزوار */}
+      <IhnasiaInitialDiagnosisModal
         isOpen={isVisitorCustomizerOpen}
         onClose={() => setIsVisitorCustomizerOpen(false)}
+        titleBadge="مركز سيرا الطبي • التشخيص الأولي وتخصيص المجسم 3D"
+        onOpenBooking={(purpose) => {
+          setIsVisitorCustomizerOpen(false);
+          setIsVisitorBookingOpen(true);
+        }}
       />
 
       {/* مودال حجز الجلسة لتفعيل المجسم للزائر المسجل */}
