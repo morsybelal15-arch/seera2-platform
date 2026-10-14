@@ -28,8 +28,8 @@ body {
 .glass-card {
   position: relative;
   background: radial-gradient(150% 150% at 50% 0%, rgba(255, 177, 177, 0.09) 0%, rgba(35, 20, 25, 0.7) 45%, rgba(18, 11, 13, 0.9) 100%);
-  backdrop-filter: blur(20px) saturate(120%);
   -webkit-backdrop-filter: blur(20px) saturate(120%);
+  backdrop-filter: blur(20px) saturate(120%);
   border: 1px solid rgba(255, 204, 184, 0.15); 
   border-top: 1px solid rgba(255, 250, 211, 0.3);
   border-left: 1px solid rgba(255, 219, 176, 0.2);
@@ -63,8 +63,8 @@ body {
     linear-gradient(to right, rgba(255, 219, 176, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 219, 176, 0.04) 1px, transparent 1px);
   pointer-events: none;
-  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
   -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
 }
 
 .blob {
@@ -145,7 +145,10 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 177, 177, 0.65); }
 
 .hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar { -ms-overflow-style: none; }
+@supports (scrollbar-width: none) {
+  .hide-scrollbar { scrollbar-width: none; }
+}
 
 select.custom-select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
@@ -172,8 +175,8 @@ select.custom-select option { background-color: #231418; color: white; }
   justify-content: center;
   padding: 1rem;
   background-color: rgba(18, 11, 13, 0.88);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(12px);
   animation: fadeIn 0.2s ease-out forwards;
 }
 
