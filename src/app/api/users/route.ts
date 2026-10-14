@@ -1,12 +1,7 @@
 import { NextResponse } from 'next/server';
+import { UserRole } from '@/lib/permissions';
 
-export type UserRole = 
-  | 'guest'              // زائر عام
-  | 'visitor'            // زائر مسجل (بانتظار التفعيل)
-  | 'doctor'             // دكتور
-  | 'staff'              // طاقم من المركز
-  | 'online_subscriber'  // مشترك أونلاين
-  | 'clinic_client';     // عميل من المركز
+export type { UserRole };
 
 export type SystemUser = {
   id: string;
@@ -115,7 +110,7 @@ export async function POST(req: Request) {
       phone: phone || '',
       role: sanitizedRole,
       roles: roles || [sanitizedRole],
-      status: status || (isMasterDoctor ? 'active' : (sanitizedRole === 'clinic_client' || sanitizedRole === 'online_subscriber' ? 'active' : 'pending')),
+      status: status || (isMasterDoctor ? 'active' : (sanitizedRole === 'online_subscriber' ? 'active' : 'pending')),
       notes: notes || 'مستخدم مسجل جديد عبر الموقع',
       lastLogin: new Date().toISOString(),
       createdAt: new Date().toISOString(),

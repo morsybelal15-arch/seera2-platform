@@ -27,7 +27,7 @@ export default function NewPatientPage() {
   const [height, setHeight] = useState(165);
   const [dietTemplateId, setDietTemplateId] = useState('');
   const [doctorNotes, setDoctorNotes] = useState('');
-  const [accountType, setAccountType] = useState<'clinic_client' | 'online_subscriber'>('clinic_client');
+  const [accountType, setAccountType] = useState<'online_subscriber'>('online_subscriber');
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -155,35 +155,15 @@ export default function NewPatientPage() {
               </p>
             </div>
 
-            {/* Account Type Selector */}
+            {/* Account Type */}
             <div>
-              <label className="block text-xs font-bold text-green-100/70 mb-2">نوع الاشتراك والخدمة</label>
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  type="button"
-                  onClick={() => setAccountType('clinic_client')}
-                  className={`p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-1 cursor-pointer ${
-                    accountType === 'clinic_client'
-                      ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-[#8DC63F]'
-                      : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10'
-                  }`}
-                >
-                  <span className="font-black">عميل المركز (فرع إهناسيا) 🏥</span>
-                  <span className="text-[10px] text-white/50">جلسات أجهزة Onda و Scizer</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setAccountType('online_subscriber')}
-                  className={`p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-1 cursor-pointer ${
-                    accountType === 'online_subscriber'
-                      ? 'bg-cyan-500/20 border-cyan-400 text-cyan-400'
-                      : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10'
-                  }`}
-                >
-                  <span className="font-black">مشترك أونلاين 🌐</span>
-                  <span className="text-[10px] text-white/50">متابعة دايت ومجسم 3D عن بعد</span>
-                </button>
+              <label className="block text-xs font-bold text-seera-peach mb-2">نوع الحساب والخدمة</label>
+              <div className="p-3.5 rounded-xl border border-seera-peach/30 bg-seera-peach/10 flex items-center justify-between">
+                <div className="flex flex-col">
+                  <span className="font-black text-seera-peach text-sm">مشترك متابعة أونلاين 🌐</span>
+                  <span className="text-[11px] text-white/60">متابعة دايت، قوام رقمي ومجسم 3D في عيادة سيرة 2</span>
+                </div>
+                <span className="text-xs px-2.5 py-1 rounded-full bg-seera-rose/20 text-seera-rose font-bold">نشط أونلاين</span>
               </div>
             </div>
 

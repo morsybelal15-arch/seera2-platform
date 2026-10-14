@@ -22,8 +22,7 @@ export default function Navbar() {
   const isDashboardRole = 
     activeRole === 'doctor' || 
     activeRole === 'staff' || 
-    activeRole === 'online_subscriber' || 
-    activeRole === 'clinic_client';
+    activeRole === 'online_subscriber';
 
   const isLoggedIn = (!!currentUser || activeRole !== 'guest') && (isVisitor || isDashboardRole);
 
@@ -31,18 +30,15 @@ export default function Navbar() {
     activeRole === 'doctor' ? '/doctor?tab=patients' :
     activeRole === 'staff' ? '/staff?tab=users' :
     activeRole === 'online_subscriber' ? '/subscriber?tab=overview' :
-    activeRole === 'clinic_client' ? '/client?tab=overview' :
     null;
 
   const dashboardLabel = 
     activeRole === 'doctor' 
       ? 'لوحة التحكم (الطبيب)' 
       : activeRole === 'staff' 
-      ? 'لوحة التحكم (الاستقبال)' 
+      ? 'لوحة التحكم (فريق المتابعة)' 
       : activeRole === 'online_subscriber' 
       ? 'لوحة التحكم (المشترك)' 
-      : activeRole === 'clinic_client'
-      ? 'لوحة التحكم (العميل)'
       : 'لوحة التحكم';
 
   useEffect(() => {
@@ -62,11 +58,12 @@ export default function Navbar() {
     return null;
   }
 
+  // الصفحات الأربعة المعتمدة للموقع
   const navLinks = [
     { name: 'الرئيسية', path: '/' },
     { name: 'عن العيادة', path: '/about' },
-    { name: 'خدماتنا', path: '/services' },
     { name: 'تواصل معنا', path: '/contact' },
+    { name: 'الاشتراك والمتابعة الأونلاين', path: '/online-followup' },
   ];
 
   return (
@@ -76,10 +73,18 @@ export default function Navbar() {
           <nav className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'glass-card rounded-full px-6 py-2 shadow-2xl' : 'px-2'}`}>
             
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1 z-50">
-              <span className="text-2xl md:text-3xl font-black tracking-wider text-white drop-shadow-md">
-                CERRAH <span className="text-[#8DC63F] text-4xl leading-none">.</span>
-              </span>
+            <Link href="/" className="flex items-center gap-2 z-50 group">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FFB1B1] via-[#FFDBB0] to-[#FFFAD3] flex items-center justify-center shadow-[0_0_15px_rgba(255,177,177,0.35)] group-hover:scale-105 transition-transform">
+                <span className="text-[#120B0D] font-black text-lg">س٢</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl md:text-2xl font-black tracking-wide text-white drop-shadow-md flex items-center gap-1.5">
+                  عيادة سيرة <span className="text-[#FFB1B1] text-2xl font-black">2</span>
+                </span>
+                <span className="text-[10px] text-[#FFDBB0] font-bold tracking-wider -mt-1">
+                  نحت وتنسيق القوام أونلاين
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -90,10 +95,10 @@ export default function Navbar() {
                   <Link 
                     key={link.path} 
                     href={link.path}
-                    className={`px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 ${
+                    className={`px-5 py-2 rounded-full font-bold text-sm transition-all duration-300 ${
                       isActive 
-                        ? 'bg-[#8DC63F] text-[#030805] shadow-[0_0_15px_rgba(141,198,63,0.4)]' 
-                        : 'text-green-50 hover:text-white hover:bg-white/10'
+                        ? 'bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] shadow-[0_0_15px_rgba(255,177,177,0.4)]' 
+                        : 'text-[#FFFAD3]/80 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     {link.name}
@@ -105,7 +110,7 @@ export default function Navbar() {
             {/* Action Buttons: 3 States based on auth & role */}
             <div className="flex items-center gap-2.5 z-50">
               
-              {/* 1. Unauthenticated: "تسجيل الدخول / إنشاء حساب للزوار" */}
+              {/* 1. Unauthenticated: "تسجيل الدخول / اشتراك جديد" */}
               {!isLoggedIn && (
                 <button
                   type="button"
@@ -113,31 +118,31 @@ export default function Navbar() {
                   className="hidden sm:flex items-center gap-2 btn-glow btn-glow-gold px-5 py-2.5 rounded-full font-extrabold text-xs border-none shadow-lg cursor-pointer"
                 >
                   <QrCode size={15} />
-                  <span>تسجيل الدخول / إنشاء حساب للزوار</span>
+                  <span>تسجيل الدخول / اشتراك</span>
                 </button>
               )}
 
-              {/* 2. Registered Visitor (Not yet active role): "تفعيل حسابك" */}
+              {/* 2. Registered Visitor (Not yet active role): "تفعيل الاشتراك" */}
               {isVisitor && (
                 <button
                   type="button"
                   onClick={() => setIsActivationModalOpen(true)}
-                  className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-[#8DC63F] hover:opacity-95 text-black px-5 py-2.5 rounded-full font-black text-xs shadow-lg shadow-amber-500/20 cursor-pointer animate-pulse"
+                  className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-[#FFDBB0] to-[#FFB1B1] hover:opacity-95 text-[#120B0D] px-5 py-2.5 rounded-full font-black text-xs shadow-lg shadow-[#FFB1B1]/20 cursor-pointer animate-pulse"
                 >
-                  <Sparkles size={15} className="fill-black" />
-                  <span>تفعيل حسابك</span>
+                  <Sparkles size={15} className="fill-[#120B0D]" />
+                  <span>تفعيل اشتراكك</span>
                   <ArrowLeft size={14} />
                 </button>
               )}
 
-              {/* 3. Active Role (Doctor, Staff, Subscriber, Client): "لوحة التحكم" */}
+              {/* 3. Active Role (Doctor, Staff, Subscriber): "لوحة التحكم" */}
               {isDashboardRole && dashboardPath && (
                 <Link 
                   href={dashboardPath} 
                   className="hidden md:flex items-center gap-2 btn-glow btn-glow-gold px-5 py-2.5 rounded-full font-extrabold text-xs border-none shadow-lg"
                 >
                   <LayoutDashboard size={15} />
-                  <span className="w-2 h-2 rounded-full bg-[#8DC63F] animate-pulse"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#FFB1B1] animate-pulse"></span>
                   <span>{dashboardLabel}</span>
                   <ArrowLeft size={14} />
                 </Link>
@@ -155,13 +160,13 @@ export default function Navbar() {
 
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-40 bg-[#030805]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 animate-[fadeIn_0.2s_ease-out] p-6">
+          <div className="fixed inset-0 z-40 bg-[#120B0D]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 animate-[fadeIn_0.2s_ease-out] p-6">
             {navLinks.map((link) => (
               <Link 
                 key={link.path} 
                 href={link.path} 
                 onClick={() => setMobileMenuOpen(false)}
-                className={`text-2xl font-black transition-colors ${pathname === link.path ? 'text-[#8DC63F]' : 'text-white hover:text-[#8DC63F]'}`}
+                className={`text-2xl font-black transition-colors ${pathname === link.path ? 'text-[#FFB1B1]' : 'text-white hover:text-[#FFDBB0]'}`}
               >
                 {link.name}
               </Link>
@@ -178,7 +183,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 btn-glow btn-glow-gold px-6 py-3.5 rounded-full font-black text-sm shadow-lg cursor-pointer"
               >
                 <QrCode size={18} />
-                <span>تسجيل الدخول / إنشاء حساب للزوار</span>
+                <span>تسجيل الدخول / اشتراك</span>
               </button>
             )}
 
@@ -190,10 +195,10 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   setIsActivationModalOpen(true);
                 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-[#8DC63F] text-black px-7 py-3.5 rounded-full font-black text-sm shadow-lg cursor-pointer"
+                className="flex items-center gap-2 bg-gradient-to-r from-[#FFDBB0] to-[#FFB1B1] text-[#120B0D] px-7 py-3.5 rounded-full font-black text-sm shadow-lg cursor-pointer"
               >
-                <Sparkles size={18} className="fill-black" />
-                <span>تفعيل حسابك</span>
+                <Sparkles size={18} className="fill-[#120B0D]" />
+                <span>تفعيل اشتراكك</span>
                 <ArrowLeft size={16} />
               </button>
             )}

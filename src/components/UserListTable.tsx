@@ -95,7 +95,7 @@ export default function UserListTable() {
           الكل ({systemUsers.length})
         </button>
 
-        {(['doctor', 'staff', 'online_subscriber', 'clinic_client', 'visitor', 'guest'] as UserRole[]).map((r) => {
+        {(['doctor', 'staff', 'online_subscriber', 'visitor', 'guest'] as UserRole[]).map((r) => {
           const cfg = ROLES_CONFIG[r];
           const count = systemUsers.filter((u) => u.role === r || (u.roles && u.roles.includes(r))).length;
           return (
@@ -201,7 +201,7 @@ export default function UserListTable() {
                                   await fetch('/api/users', {
                                     method: 'PUT',
                                     headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ id: user.id, status: 'active', role: user.role === 'visitor' ? 'clinic_client' : user.role }),
+                                    body: JSON.stringify({ id: user.id, status: 'active', role: user.role === 'visitor' ? 'online_subscriber' : user.role }),
                                   });
                                 } catch (err) {
                                   console.warn('Failed to update user:', err);
@@ -244,7 +244,7 @@ export default function UserListTable() {
 
                           {user.phone && (
                             <a
-                              href={`https://wa.me/2${user.phone}?text=${encodeURIComponent(`مرحباً ${user.displayName}، من إدارة مركز سيرا الطبي.`)}`}
+                              href={`https://wa.me/2${user.phone}?text=${encodeURIComponent(`مرحباً ${user.displayName}، من إدارة عيادة سيرة 2 للمتابعة الأونلاين.`)}`}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 border border-[#25D366]/20 p-2 rounded-lg transition-colors"

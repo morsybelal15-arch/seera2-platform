@@ -37,7 +37,7 @@ const ONLINE_CASES: OnlineCase[] = [
     lostCircumference: '-11 سم من الخصر',
     beforeImg: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop&q=80',
     afterImg: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&auto=format&fit=crop&q=80',
-    review: 'المتابعة الأونلاين مع دكتور سيرا كانت أفضل قرار أخدته. الدايت كان مرن جداً وبدون أي حرمان، ومجسم الأفاتار كان بيوضحلي نزول مقاساتي كل أسبوع خطوة بخطوة!'
+    review: 'المتابعة الأونلاين مع دكتور عيادة سيرة 2 كانت أفضل قرار أخدته. الدايت كان مرن جداً وبدون أي حرمان، ومجسم الأفاتار 3D كان بيوضحلي نزول مقاساتي كل أسبوع خطوة بخطوة!'
   },
   {
     id: 'on2',
@@ -61,7 +61,7 @@ const ONLINE_CASES: OnlineCase[] = [
     lostCircumference: '-8 سم من الأرداف والخصر',
     beforeImg: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80',
     afterImg: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop&q=80',
-    review: 'كنت جربت دايت كتير وكان وزني بيرجع على طول. برنامج التثبيت في سيرا علمني إزاي أحافظ على وزني الجديد وأثبت الحرق BMR بدون أي رجوع في الوزن.'
+    review: 'كنت جربت دايت كتير وكان وزني بيرجع على طول. برنامج التثبيت في عيادة سيرة 2 علمني إزاي أحافظ على وزني الجديد وأثبت الحرق BMR بدون أي رجوع في الوزن.'
   },
   {
     id: 'on4',
@@ -118,7 +118,7 @@ const SUBSCRIPTION_PLANS = [
     duration: '24 أسبوعاً (6 أشهر مكثفة)',
     badge: 'برنامج التثبيت الشامل',
     popular: false,
-    priceDesc: 'إشراف طبي متكامل وتثبيت مدى الحياة',
+    priceDesc: 'إشراف طبي متكامل وتثبيت دائم',
     features: [
       'كل مميزات باقة التحول الشامل لمدة نصف سنة',
       'جلسات استشارة ومكالمات فيديو دورية مع الطبيب',
@@ -144,45 +144,45 @@ export default function OnlineFollowupPage() {
     <div className="w-full max-w-[1500px] mx-auto px-4 md:px-8 pt-20 pb-20 text-white">
       
       {/* =========================================================================
-          SECTION 1: HERO & ACTION BUTTONS (Assessment & Subscription)
+          SECTION 1: HERO & ACTION BUTTONS
       ========================================================================= */}
       <section className="relative py-10 sm:py-16 text-center space-y-6">
         
-        {/* Glowing backdrop */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] bg-gradient-to-r from-[#8DC63F]/20 via-cyan-500/10 to-[#8DC63F]/15 blur-[130px] rounded-full pointer-events-none -z-10" />
+        {/* Glowing backdrop with warm palette */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] bg-gradient-to-r from-[#FFB1B1]/20 via-[#FFDBB0]/15 to-[#FFCCB8]/20 blur-[130px] rounded-full pointer-events-none -z-10" />
 
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#8DC63F]/30 backdrop-blur-md shadow-lg mx-auto">
-          <Globe size={16} className="text-[#8DC63F]" />
-          <span className="text-xs sm:text-sm font-black text-white">
-            برنامج المتابعة الطبية الأونلاين • داخل مصر وكافة دول الوطن العربي
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#FFB1B1]/30 backdrop-blur-md shadow-lg mx-auto">
+          <Globe size={16} className="text-[#FFB1B1]" />
+          <span className="text-xs sm:text-sm font-black text-[#FFFAD3]">
+            عيادة سيرة 2 • برنامج المتابعة الطبية الأونلاين ونحت وتنسيق القوام
           </span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight drop-shadow-md max-w-4xl mx-auto">
           رحلتك لنحت القوام والوزن المثالي<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8DC63F] via-green-300 to-cyan-400">
-            أونلاين بإشراف طبي مباشر من منزلك
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB1B1] via-[#FFDBB0] to-[#FFFAD3]">
+            أونلاين بإشراف طبي وتوأم رقمي 3D
           </span>
         </h1>
 
-        <p className="text-sm sm:text-base text-green-100/80 max-w-2xl mx-auto leading-relaxed font-medium">
-          برامج تغذية علاجية مصممة خصيصاً لجيناتك ونمط حياتك اليومي، مع متابعة أسبوعية دقيقة، محاكي الأفاتار 3D، واستشارات دورية عبر الشات المباشر مع دكتور واستشاري المركز.
+        <p className="text-sm sm:text-base text-[#FFFAD3]/80 max-w-2xl mx-auto leading-relaxed font-medium">
+          برامج تغذية علاجية مصممة خصيصاً لجيناتك ونمط حياتك اليومي، مع متابعة أسبوعية دقيقة، محاكي الأفاتار 3D، واستشارات دورية عبر الشات المباشر مع استشاري عيادة سيرة 2.
         </p>
 
         {/* TWO REQUIRED HERO BUTTONS */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           
-          {/* Button 1: Online Assessment (التقييم الطبي الأونلاين) */}
+          {/* Button 1: Online Assessment */}
           <button
             type="button"
             onClick={() => setIsAssessmentOpen(true)}
-            className="w-full sm:w-auto btn-glow btn-glow-gold px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 border-none shadow-[0_0_25px_rgba(141,198,63,0.35)] cursor-pointer hover:scale-105 transition-all"
+            className="w-full sm:w-auto btn-glow btn-glow-gold px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 border-none shadow-[0_0_25px_rgba(255,177,177,0.35)] cursor-pointer hover:scale-105 transition-all"
           >
-            <Sparkles size={20} className="text-[#030805]" />
+            <Sparkles size={20} className="text-[#FFDBB0]" />
             <span>التقييم الطبي الأونلاين المجاني</span>
           </button>
 
-          {/* Button 2: Online Subscription (الاشتراك في المتابعة) */}
+          {/* Button 2: Online Subscription */}
           <button
             type="button"
             onClick={() => {
@@ -190,9 +190,9 @@ export default function OnlineFollowupPage() {
               if (el) el.scrollIntoView({ behavior: 'smooth' });
               else setIsBookingOpen(true);
             }}
-            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-black text-sm sm:text-base border border-white/20 flex items-center justify-center gap-3 transition-all cursor-pointer hover:scale-105 shadow-lg"
+            className="w-full sm:w-auto bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 transition-all cursor-pointer hover:scale-105 shadow-lg shadow-[#FFB1B1]/20"
           >
-            <Zap size={20} className="text-[#8DC63F]" />
+            <Zap size={20} className="text-[#120B0D]" />
             <span>الاشتراك واختيار الباقة الأنسب</span>
           </button>
 
@@ -201,24 +201,24 @@ export default function OnlineFollowupPage() {
         {/* Highlights Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 max-w-4xl mx-auto">
           <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <Globe size={20} className="text-[#8DC63F] mx-auto mb-1" />
-            <span className="text-xs font-bold text-white block">متابعة من أي دولة</span>
-            <span className="text-[10px] text-white/50">بدون الحاجة لزيارة الفرع</span>
+            <Globe size={20} className="text-[#FFB1B1] mx-auto mb-1" />
+            <span className="text-xs font-bold text-white block">متابعة دولية من أي مكان</span>
+            <span className="text-[10px] text-[#FFFAD3]/60">مصر والخليج وباقي دول العالم</span>
           </div>
-          <Link href="/messenger" className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#8DC63F]/50 transition-all cursor-pointer group">
-            <Smartphone size={20} className="text-[#8DC63F] mx-auto mb-1 group-hover:scale-110 transition-transform" />
-            <span className="text-xs font-bold text-white block group-hover:text-[#8DC63F]">الماسنجر الطبي الداخلي</span>
-            <span className="text-[10px] text-white/50">تواصل مشفر مع الطبيب</span>
+          <Link href="/subscriber?tab=messenger" className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#FFB1B1]/50 transition-all cursor-pointer group">
+            <Smartphone size={20} className="text-[#FFDBB0] mx-auto mb-1 group-hover:scale-110 transition-transform" />
+            <span className="text-xs font-bold text-white block group-hover:text-[#FFDBB0]">الماسنجر الطبي الخاص</span>
+            <span className="text-[10px] text-[#FFFAD3]/60">تواصل مباشر مع الطبيب</span>
           </Link>
           <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <Scale size={20} className="text-[#8DC63F] mx-auto mb-1" />
+            <Scale size={20} className="text-[#FFCCB8] mx-auto mb-1" />
             <span className="text-xs font-bold text-white block">محاكي الأفاتار 3D</span>
-            <span className="text-[10px] text-white/50">رؤية نزول المقاسات حياً</span>
+            <span className="text-[10px] text-[#FFFAD3]/60">رؤية نزول المقاسات حياً</span>
           </div>
           <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <ShieldCheck size={20} className="text-[#8DC63F] mx-auto mb-1" />
+            <ShieldCheck size={20} className="text-[#FFB1B1] mx-auto mb-1" />
             <span className="text-xs font-bold text-white block">تثبيت دائم للوزن</span>
-            <span className="text-[10px] text-white/50">حماية من ارتداد الدهون</span>
+            <span className="text-[10px] text-[#FFFAD3]/60">حماية من ارتداد الدهون</span>
           </div>
         </div>
 
@@ -231,13 +231,13 @@ export default function OnlineFollowupPage() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-black text-[#8DC63F] uppercase tracking-wider block">
+          <span className="text-xs font-black text-[#FFDBB0] uppercase tracking-wider block">
             مميزات المنظومة الرقمية
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
-            ما الذي يميز برنامج المتابعة الأونلاين في مركز سيرا؟
+            ما الذي يميز برنامج المتابعة الأونلاين في عيادة سيرة 2؟
           </h2>
-          <p className="text-xs sm:text-sm text-green-100/70">
+          <p className="text-xs sm:text-sm text-[#FFFAD3]/70">
             منظومة طبية متكاملة تجمع بين الدقة الإكلينيكية ومرونة الحياة اليومية
           </p>
         </div>
@@ -245,62 +245,62 @@ export default function OnlineFollowupPage() {
         {/* 6 Key Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] space-y-3 hover:border-[#8DC63F]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#8DC63F]/15 text-[#8DC63F] border border-[#8DC63F]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFB1B1]/15 text-[#FFB1B1] border border-[#FFB1B1]/30 flex items-center justify-center font-black">
               <Utensils size={22} />
             </div>
             <h3 className="text-base font-black text-white">1. دايت علاجي مرن بدون حرمان</h3>
-            <p className="text-xs text-green-100/80 leading-relaxed">
+            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
               أنظمة غذائية مصممة خصيصاً لتناسب وجباتك المفضلة، أكل البيت، وساعات عملك بدون تجويع أو حرمان من العناصر الأساسية.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] space-y-3 hover:border-[#8DC63F]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFDBB0]/15 text-[#FFDBB0] border border-[#FFDBB0]/30 flex items-center justify-center font-black">
               <Scale size={22} />
             </div>
-            <h3 className="text-base font-black text-white">2. مجسم الأفاتار ثلاثي الأبعاد</h3>
-            <p className="text-xs text-green-100/80 leading-relaxed">
+            <h3 className="text-base font-black text-white">2. مجسم الأفاتار ثلاثي الأبعاد 3D</h3>
+            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
               محاكاة بصرية تفاعلية تتجدد أسبوعياً لترى شكل قوامك ونزول قياسات الخصر والأرداف والذراعين على شاشتك.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] space-y-3 hover:border-[#8DC63F]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#8DC63F]/15 text-[#8DC63F] border border-[#8DC63F]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFCCB8]/15 text-[#FFCCB8] border border-[#FFCCB8]/30 flex items-center justify-center font-black">
               <MessageCircle size={22} />
             </div>
             <h3 className="text-base font-black text-white">3. شات واستشارات دورية مستمرة</h3>
-            <p className="text-xs text-green-100/80 leading-relaxed">
-              تواصل مباشر مع الطبيب وفريق التغذية لتعديل الوجبات، الرد على أي تساؤل، وتقديم الدعم النفسي والتشجيع المستمر.
+            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+              تواصل مباشر مع الطبيب لتعديل الوجبات، الرد على أي تساؤل، وتقديم الدعم الطبي والنفسي المستمر.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] space-y-3 hover:border-[#8DC63F]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFDBB0]/15 text-[#FFDBB0] border border-[#FFDBB0]/30 flex items-center justify-center font-black">
               <Activity size={22} />
             </div>
             <h3 className="text-base font-black text-white">4. حلول مقاومة الإنسولين وثبات الوزن</h3>
-            <p className="text-xs text-green-100/80 leading-relaxed">
+            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
               قراءة تحاليل الغدة الدرقية ومؤشرات السكر ومخزون الحديد ووضع بروتوكول علاجي يكسر ثبات الوزن نهائياً.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] space-y-3 hover:border-[#8DC63F]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFB1B1]/15 text-[#FFB1B1] border border-[#FFB1B1]/30 flex items-center justify-center font-black">
               <FileText size={22} />
             </div>
             <h3 className="text-base font-black text-white">5. ملفات PDF ووصفات معتمدة</h3>
-            <p className="text-xs text-green-100/80 leading-relaxed">
+            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
               جداول دايت منسقة وجاهزة للطباعة أو الحفظ على الموبايل، مع قوائم بدائل سهلة للوجبات أينما كنت.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] space-y-3 hover:border-[#8DC63F]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFCCB8]/15 text-[#FFCCB8] border border-[#FFCCB8]/30 flex items-center justify-center font-black">
               <ShieldCheck size={22} />
             </div>
             <h3 className="text-base font-black text-white">6. كورس التثبيت ومنع ارتداد الوزن</h3>
-            <p className="text-xs text-green-100/80 leading-relaxed">
+            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
               مرحلة تثبيت الأيض وتدريب الجسم على حرق السعرات الطبيعية بعد النزول لضمان عدم زيادة أي كيلوغرام مستقبلاً.
             </p>
           </div>
@@ -310,7 +310,7 @@ export default function OnlineFollowupPage() {
         {/* Subscription Plans Cards */}
         <div className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-black text-[#8DC63F] uppercase tracking-wider block">
+            <span className="text-xs font-black text-[#FFDBB0] uppercase tracking-wider block">
               باقات المتابعة الأونلاين
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-white">
@@ -324,12 +324,12 @@ export default function OnlineFollowupPage() {
                 key={plan.id}
                 className={`glass-card rounded-[32px] p-6 sm:p-8 flex flex-col justify-between transition-all relative overflow-hidden ${
                   plan.popular
-                    ? 'bg-[#081a0d] border-2 border-[#8DC63F] shadow-[0_0_40px_rgba(141,198,63,0.25)] scale-[1.02]'
-                    : 'bg-[#051108] border border-white/10 hover:border-white/20'
+                    ? 'border-2 border-[#FFB1B1] shadow-[0_0_40px_rgba(255,177,177,0.25)] scale-[1.02]'
+                    : 'border border-white/10 hover:border-white/20'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 right-0 left-0 py-1.5 bg-[#8DC63F] text-black text-center text-[11px] font-black uppercase tracking-wider">
+                  <div className="absolute top-0 right-0 left-0 py-1.5 bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] text-center text-[11px] font-black uppercase tracking-wider">
                     {plan.badge}
                   </div>
                 )}
@@ -340,19 +340,19 @@ export default function OnlineFollowupPage() {
                       {plan.duration}
                     </span>
                     {!plan.popular && (
-                      <span className="text-xs text-[#8DC63F] font-bold">{plan.badge}</span>
+                      <span className="text-xs text-[#FFDBB0] font-bold">{plan.badge}</span>
                     )}
                   </div>
 
                   <h4 className="text-xl font-black text-white">{plan.name}</h4>
-                  <p className="text-xs text-[#8DC63F] font-bold">{plan.priceDesc}</p>
-                  <p className="text-xs text-white/60 font-medium pb-2 border-b border-white/10">{plan.target}</p>
+                  <p className="text-xs text-[#FFB1B1] font-bold">{plan.priceDesc}</p>
+                  <p className="text-xs text-[#FFFAD3]/70 font-medium pb-2 border-b border-white/10">{plan.target}</p>
 
                   {/* Features list */}
-                  <ul className="space-y-2.5 text-xs text-green-100/90 font-medium">
+                  <ul className="space-y-2.5 text-xs text-[#FFFAD3]/90 font-medium">
                     {plan.features.map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 size={16} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                        <CheckCircle2 size={16} className="text-[#FFB1B1] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -364,14 +364,16 @@ export default function OnlineFollowupPage() {
                     type="button"
                     onClick={() => handleOpenSubscription(plan.name)}
                     className={`w-full py-3.5 rounded-2xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 border-none transition-all cursor-pointer ${
-                      plan.popular ? 'btn-glow btn-glow-gold' : 'bg-white/10 hover:bg-white/20 text-white'
+                      plan.popular 
+                        ? 'bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] shadow-lg hover:scale-105' 
+                        : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                   >
                     <Zap size={16} /> اشترك في {plan.name}
                   </button>
 
                   <a
-                    href={`https://wa.me/201000000000?text=${encodeURIComponent(`مرحباً مركز سيرا، أود الاستفسار والاشتراك في "${plan.name}" لبرنامج المتابعة الأونلاين.`)}`}
+                    href={`https://wa.me/201108080564?text=${encodeURIComponent(`مرحباً عيادة سيرة 2، أود الاستفسار والاشتراك في "${plan.name}" لبرنامج المتابعة الأونلاين.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full text-center text-[11px] text-[#25D366] hover:underline font-bold flex items-center justify-center gap-1.5 pt-1"
@@ -379,7 +381,6 @@ export default function OnlineFollowupPage() {
                     <MessageCircle size={14} /> تواصل عبر واتساب للباقة
                   </a>
                 </div>
-
               </div>
             ))}
           </div>
@@ -388,181 +389,87 @@ export default function OnlineFollowupPage() {
       </section>
 
       {/* =========================================================================
-          SECTION 3: CLIENT PHOTOS AND TESTIMONIALS (Online Follow-up)
+          SECTION 3: REAL TRANSFORMATION CASES (قبل وبعد)
       ========================================================================= */}
       <section className="py-16 border-t border-white/10">
-        
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-black text-[#8DC63F] uppercase tracking-wider block">
-            قصص التحول والنجاح
+          <span className="text-xs font-black text-[#FFDBB0] uppercase tracking-wider block">
+            نتائج حقيقية موثقة
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
-            صور ونتائج مشتركي المتابعة الأونلاين
+            قصص تحول المشتركين في عيادة سيرة 2
           </h2>
-          <p className="text-xs sm:text-sm text-green-100/70">
-            تجارب حقيقية لمشتركين من مختلف المحافظات والدول وصلوا لقوامهم المثالي من منازلهم
+          <p className="text-xs sm:text-sm text-[#FFFAD3]/70">
+            نتائج مشتركينا عبر المتابعة الأونلاين من مختلف المحافظات والدول
           </p>
         </div>
 
-        {/* 4 Rich Transformation Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {ONLINE_CASES.map((cs) => (
-            <div
-              key={cs.id}
-              className="glass-card rounded-3xl border border-white/10 bg-[#051108] p-6 space-y-4 hover:border-[#8DC63F]/40 transition-all shadow-xl"
-            >
-              {/* Top Header of Case */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {ONLINE_CASES.map((item) => (
+            <div key={item.id} className="glass-card rounded-[32px] p-6 space-y-5 border border-white/10">
+              <div className="flex items-center justify-between pb-3 border-b border-white/10">
                 <div>
-                  <div className="flex items-center gap-2">
-                    <h4 className="text-base font-black text-white">{cs.name}</h4>
-                    <span className="text-[11px] text-white/50">({cs.age} سنة)</span>
-                  </div>
-                  <p className="text-xs text-[#8DC63F] font-bold flex items-center gap-1 mt-0.5">
-                    <Globe size={13} /> {cs.location}
-                  </p>
+                  <h4 className="text-lg font-black text-white flex items-center gap-2">
+                    <span>{item.name}</span>
+                    <span className="text-xs text-[#FFDBB0] font-normal">({item.age} سنة)</span>
+                  </h4>
+                  <span className="text-[11px] text-[#FFFAD3]/60">{item.location}</span>
                 </div>
-
-                <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-xs font-black border border-[#8DC63F]/30">
-                    {cs.lostWeight}
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-black border border-cyan-500/30">
-                    {cs.lostCircumference}
-                  </span>
+                <div className="text-left">
+                  <span className="text-xs font-black text-[#FFB1B1] block">{item.lostWeight}</span>
+                  <span className="text-[10px] text-white/50">{item.duration}</span>
                 </div>
               </div>
 
-              {/* Before & After Visual Comparison Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="relative aspect-[3/4] bg-black/60 rounded-2xl overflow-hidden border border-white/10">
-                  <Image
-                    src={cs.beforeImg}
-                    alt={`قبل المتابعة الأونلاين - ${cs.name}`}
-                    fill
-                    className="object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <span className="absolute bottom-2 inset-x-2 text-center py-1 bg-black/80 backdrop-blur-md rounded-lg text-[10px] font-black text-rose-300 border border-rose-500/30">
-                    قبل المتابعة
-                  </span>
+              {/* Before & After Images */}
+              <div className="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
+                <div className="relative h-48 rounded-xl overflow-hidden bg-black/40">
+                  <img src={item.beforeImg} alt="قبل المتابعة" className="w-full h-full object-cover" />
+                  <div className="absolute bottom-2 right-2 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold text-white/80">قبل</div>
                 </div>
-
-                <div className="relative aspect-[3/4] bg-black/60 rounded-2xl overflow-hidden border border-[#8DC63F]/30">
-                  <Image
-                    src={cs.afterImg}
-                    alt={`بعد المتابعة الأونلاين - ${cs.name}`}
-                    fill
-                    className="object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <span className="absolute bottom-2 inset-x-2 text-center py-1 bg-black/80 backdrop-blur-md rounded-lg text-[10px] font-black text-[#8DC63F] border border-[#8DC63F]/40">
-                    بعد {cs.duration} ✓
-                  </span>
+                <div className="relative h-48 rounded-xl overflow-hidden bg-black/40">
+                  <img src={item.afterImg} alt="بعد المتابعة" className="w-full h-full object-cover" />
+                  <div className="absolute bottom-2 right-2 bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] px-2 py-0.5 rounded text-[10px] font-black">بعد</div>
                 </div>
               </div>
 
-              {/* Client Quote Review */}
-              <div className="p-3.5 rounded-2xl bg-black/40 border border-white/5 space-y-2">
-                <div className="flex items-center gap-1 text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={13} fill="currentColor" />
-                  ))}
-                  <span className="text-[10px] text-white/50 mr-2">مدة البرنامج: {cs.duration}</span>
-                </div>
-                <p className="text-xs text-green-50/90 font-medium leading-relaxed">
-                  "{cs.review}"
-                </p>
-              </div>
+              {/* Review */}
+              <p className="text-xs text-[#FFFAD3]/80 leading-relaxed italic">
+                "{item.review}"
+              </p>
 
+              <div className="flex items-center justify-between pt-3 border-t border-white/10 text-[11px]">
+                <span className="text-[#FFDBB0] font-bold">نقص المحيط: {item.lostCircumference}</span>
+                <span className="flex items-center gap-1 text-[#FFDBB0]">
+                  <Star size={12} fill="currentColor" /> 5.0 تقييم المشترك
+                </span>
+              </div>
             </div>
           ))}
         </div>
-
       </section>
 
       {/* =========================================================================
-          SECTION 4: CLINICAL FAQS FOR ONLINE FOLLOW-UP PROTOCOL
+          SECTION 4: FAQ SECTION
       ========================================================================= */}
-      <FaqSection page="online" />
-
-      {/* =========================================================================
-          SECTION 5: CTA (CALL TO ACTION)
-      ========================================================================= */}
-      <section className="py-16 border-t border-white/10">
-        
-        <div className="relative glass-card rounded-[36px] sm:rounded-[48px] p-8 sm:p-14 border-2 border-[#8DC63F]/40 bg-gradient-to-r from-[#06180c] via-black to-[#051a0e] shadow-[0_0_60px_rgba(141,198,63,0.2)] text-center space-y-6 overflow-hidden">
-          
-          <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center text-[#8DC63F] mx-auto shadow-lg">
-            <Sparkles size={32} />
-          </div>
-
-          <div className="space-y-3 max-w-2xl mx-auto">
-            <span className="px-3.5 py-1 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-xs font-black border border-[#8DC63F]/40 inline-block">
-              ✨ انضم لأكثر من 3,500 مشترك حول العالم
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">
-              جاهز لبدء تحولك الصحي من راحة منزلك؟
-            </h2>
-            <p className="text-xs sm:text-sm text-green-100/80 leading-relaxed font-medium">
-              احصل على تقييمك الطبي المجاني الآن واكتشف خطة الدايت الأنسب لجسمك ومقاييسك مع استشاري مركز سيرا.
-            </p>
-          </div>
-
-          {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 max-w-2xl mx-auto">
-            <button
-              type="button"
-              onClick={() => setIsAssessmentOpen(true)}
-              className="w-full sm:w-auto btn-glow btn-glow-gold px-7 py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-2 border-none shadow-xl cursor-pointer hover:scale-105 transition-all"
-            >
-              <Sparkles size={18} /> ابدأ التقييم الطبي الأونلاين
-            </button>
-
-            <Link
-              href="/messenger"
-              className="w-full sm:w-auto bg-[#8DC63F]/20 hover:bg-[#8DC63F]/30 text-[#8DC63F] border border-[#8DC63F]/40 px-7 py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-lg"
-            >
-              <MessageSquare size={18} /> فتح الماسنجر الطبي
-            </Link>
-
-            <a
-              href="https://wa.me/201000000000?text=مرحباً%20مركز%20سيرا،%20أود%20الاشتراك%20في%20برنامج%20المتابعة%20الأونلاين"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] border border-[#25D366]/40 px-7 py-4 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 transition-all hover:scale-105"
-            >
-              <MessageCircle size={18} /> واتساب المتابعة
-            </a>
-          </div>
-
-          <p className="text-[11px] text-white/50 pt-2">
-            🔒 خصوصية وسرية تامة لجميع البيانات والصور والتقارير الطبية.
-          </p>
-
-        </div>
-
+      <section className="py-12">
+        <FaqSection />
       </section>
 
-      {/* ===================== POP-UP MODALS ===================== */}
-      
-      {/* 1. Online Assessment Multi-Step Modal */}
+      {/* Modals */}
       <OnlineAssessmentModal
         isOpen={isAssessmentOpen}
         onClose={() => setIsAssessmentOpen(false)}
-        onSelectPlan={(plan) => {
+        onOpenBooking={(notes) => {
           setIsAssessmentOpen(false);
-          setSelectedPlanName(plan);
           setIsBookingOpen(true);
         }}
       />
 
-      {/* 2. Subscription Checkout / Booking Modal */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
-        preselectedService="التغذية العلاجية وأنظمة التخسيس"
-        notes={`طلب اشتراك في برنامج المتابعة الأونلاين - ${selectedPlanName}`}
+        preselectedService={selectedPlanName}
       />
 
     </div>

@@ -88,7 +88,7 @@ export default function ClinicChatModal({
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-black text-white">{displayName}</h3>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#8DC63F]/15 text-[#8DC63F] border border-[#8DC63F]/30">
-                  {activeRole === 'clinic_client' ? 'فريق أطباء سيرا' : 'ملف العميل'}
+                  {activeRole === 'online_subscriber' ? 'فريق أطباء عيادة سيرة' : 'ملف المشترك'}
                 </span>
               </div>
               <p className="text-[11px] text-green-100/60 font-semibold flex items-center gap-1.5 mt-0.5">
@@ -132,7 +132,7 @@ export default function ClinicChatModal({
               const isMe = 
                 (activeRole === 'doctor' && msg.senderRole === 'doctor') ||
                 (activeRole === 'staff' && msg.senderRole === 'staff') ||
-                (activeRole === 'clinic_client' && msg.senderRole === 'clinic_client');
+                (activeRole === 'online_subscriber' && ((msg.senderRole as string) === 'online_subscriber' || (msg.senderRole as string) === 'clinic_client'));
 
               const isDoctorSender = msg.senderRole === 'doctor';
               const isStaffSender = msg.senderRole === 'staff';
@@ -185,7 +185,7 @@ export default function ClinicChatModal({
 
         {/* Quick Suggestion Chips */}
         <div className="px-4 py-2 bg-black/40 border-t border-white/5 flex gap-2 overflow-x-auto no-scrollbar">
-          {activeRole === 'clinic_client' ? (
+          {activeRole === 'online_subscriber' ? (
             <>
               <button
                 type="button"

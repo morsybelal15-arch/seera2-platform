@@ -36,45 +36,34 @@ function DashboardSidebarContent({
   const handleRoleChange = (newRole: UserRole) => {
     setActiveRole(newRole);
     if (newRole === 'doctor') router.push('/doctor?tab=patients');
-    else if (newRole === 'staff') router.push('/staff?tab=attendance');
+    else if (newRole === 'staff') router.push('/staff?tab=users');
     else if (newRole === 'online_subscriber') router.push('/subscriber?tab=overview');
-    else if (newRole === 'clinic_client') router.push('/client?tab=overview');
     if (onCloseMobile) onCloseMobile();
   };
 
-  // 1. أزرار سايدبار الطبيب
+  // 1. أزرار سايدبار الطبيب (متابعة أونلاين وإشراف إكلينيكي)
   const doctorLinks: NavLinkItem[] = [
-    { name: 'العملاء والملفات الطبية', icon: Users, path: '/doctor?tab=patients' },
+    { name: 'مشتركو المتابعة والملفات', icon: Users, path: '/doctor?tab=patients' },
     { name: 'قوالب الأنظمة والروشتات', icon: ListChecks, path: '/doctor/diets' },
-    { name: 'الماسنجر الطبي الداخلي', icon: MessageCircle, path: '/doctor?tab=messenger' },
-    { name: 'إدارة المستخدمين والأدوار', icon: ShieldCheck, path: '/doctor?tab=users', badge: systemUsers.length },
+    { name: 'الماسنجر الطبي للمتابعة', icon: MessageCircle, path: '/doctor?tab=messenger' },
+    { name: 'إدارة المشتركين والاعتمادات', icon: ShieldCheck, path: '/doctor?tab=users', badge: systemUsers.length },
   ];
 
-  // 2. أزرار سايدبار طاقم واستقبال المركز
+  // 2. أزرار سايدبار فريق المتابعة والدعم
   const staffLinks: NavLinkItem[] = [
-    { name: 'قائمة المستخدمين وتفعيل الأدوار', icon: ShieldCheck, path: '/staff?tab=users', badge: systemUsers.length },
-    { name: 'ملفات وجلسات العملاء', icon: Activity, path: '/staff?tab=clients' },
-    { name: 'الماسنجر الداخلي ومحادثات العملاء', icon: MessageCircle, path: '/staff?tab=messenger' },
+    { name: 'قائمة المستخدمين والاشتراكات', icon: ShieldCheck, path: '/staff?tab=users', badge: systemUsers.length },
+    { name: 'ملفات المتابعة الأونلاين', icon: Activity, path: '/staff?tab=clients' },
+    { name: 'الماسنجر ومحادثات المشتركين', icon: MessageCircle, path: '/staff?tab=messenger' },
   ];
 
   // 3. أزرار سايدبار المشترك الأونلاين
   const onlineSubscriberLinks: NavLinkItem[] = [
-    { name: 'نظرة عامة والقياسات', icon: Activity, path: '/subscriber?tab=overview' },
-    { name: 'الماسنجر ومتابعة الطبيب', icon: MessageCircle, path: '/subscriber?tab=messenger' },
-    { name: 'المتابعة الأسبوعية للطبيب', icon: Scale, path: '/subscriber?tab=checkin' },
-    { name: 'المحاكي الطبي 3D', icon: Sliders, path: '/subscriber?tab=simulator' },
+    { name: 'نظرة عامة وتطور القياسات', icon: Activity, path: '/subscriber?tab=overview' },
+    { name: 'شات المتابعة مع الطبيب', icon: MessageCircle, path: '/subscriber?tab=messenger' },
+    { name: 'المتابعة الأسبوعية للوزن', icon: Scale, path: '/subscriber?tab=checkin' },
+    { name: 'التوأم الرقمي 3D والمحاكي', icon: Sliders, path: '/subscriber?tab=simulator' },
     { name: 'جدول الدايت والبرامج', icon: FileText, path: '/subscriber?tab=diet' },
     { name: 'حاسبات اللياقة والـ BMR', icon: Calculator, path: '/subscriber?tab=calculators' },
-  ];
-
-  // 4. أزرار سايدبار عميل المركز (فرع إهناسيا)
-  const clinicClientLinks: NavLinkItem[] = [
-    { name: 'نظرة عامة والملف الطبي', icon: Activity, path: '/client?tab=overview' },
-    { name: 'الروشتة والدايت (PDF)', icon: FileText, path: '/client?tab=diet' },
-    { name: 'الماسنجر الطبي الخاص', icon: MessageCircle, path: '/client?tab=messenger' },
-    { name: 'سجل حضور الجلسات', icon: CalendarDays, path: '/client?tab=sessions' },
-    { name: 'مجسمي الطبي 3D', icon: Sliders, path: '/client?tab=simulator' },
-    { name: 'حجز جلسة جديدة بالفرع', icon: CalendarDays, path: '/client?tab=booking' },
   ];
 
   const getLinksForRole = () => {
@@ -84,16 +73,11 @@ function DashboardSidebarContent({
       case 'staff':
         return staffLinks;
       case 'online_subscriber':
-        return onlineSubscriberLinks;
-      case 'clinic_client':
-        return clinicClientLinks;
       default:
         return pathname.includes('/doctor') 
           ? doctorLinks 
           : pathname.includes('/staff') 
           ? staffLinks 
-          : pathname.includes('/client') 
-          ? clinicClientLinks 
           : onlineSubscriberLinks;
     }
   };
@@ -111,31 +95,32 @@ function DashboardSidebarContent({
         return linkTab === currentTab;
       }
       if (!currentTab) {
-        if (linkTab === 'overview' && (pathname === '/subscriber' || pathname === '/client')) return true;
+        if (linkTab === 'overview' && pathname === '/subscriber') return true;
         if (linkTab === 'patients' && pathname === '/doctor') return true;
-        if (linkTab === 'attendance' && pathname === '/staff') return true;
+        if (linkTab === 'users' && pathname === '/staff') return true;
       }
     }
     return pathname === pathBase && !currentTab;
   };
 
   return (
-    <div className="flex flex-col h-full justify-between bg-black/80">
+    <div className="flex flex-col h-full justify-between bg-[#120B0D]/95">
       <div className="flex flex-col h-full overflow-hidden">
         
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-black tracking-widest text-white flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#8DC63F] shadow-[0_0_12px_#8DC63F]"></span>CERRAH
+          <Link href="/" className="text-xl font-black tracking-wide text-white flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#FFB1B1] shadow-[0_0_12px_#FFB1B1]"></span>
+            <span>عيادة سيرة <span className="text-[#FFB1B1]">2</span></span>
           </Link>
-          <Link href="/" className="text-xs text-white/50 hover:text-[#8DC63F] transition-colors flex items-center gap-1 font-bold">
+          <Link href="/" className="text-xs text-white/50 hover:text-[#FFDBB0] transition-colors flex items-center gap-1 font-bold">
             الموقع <ArrowRight size={14} className="rotate-180" />
           </Link>
         </div>
 
         {/* Role Switcher */}
         <div className="p-4 border-b border-white/5 bg-white/5">
-          <label className="block text-[10px] font-black text-green-100/60 uppercase tracking-wider mb-2">
+          <label className="block text-[10px] font-black text-[#FFDBB0]/70 uppercase tracking-wider mb-2">
             الدور الحالي والصلاحيات:
           </label>
           {(activeRole === 'doctor' || process.env.NODE_ENV === 'development') ? (
@@ -143,16 +128,15 @@ function DashboardSidebarContent({
               <select
                 value={currentRole}
                 onChange={(e) => handleRoleChange(e.target.value as UserRole)}
-                className="w-full bg-[#08150c] border border-white/15 rounded-xl py-2 px-3 text-xs font-black text-white outline-none focus:border-[#8DC63F] cursor-pointer"
+                className="w-full bg-[#1D1216] border border-white/15 rounded-xl py-2 px-3 text-xs font-black text-white outline-none focus:border-[#FFB1B1] cursor-pointer"
               >
-                <option value="doctor">🩺 دكتور العيادة (الإدارة الطبية)</option>
-                <option value="staff">🏥 طاقم واستقبال المركز (فرع إهناسيا)</option>
-                <option value="clinic_client">🏨 عميل المركز (فرع إهناسيا)</option>
-                <option value="online_subscriber">🌐 مشترك أونلاين (عن بعد)</option>
+                <option value="doctor">🩺 طبيب العيادة (الإشراف والمتابعة)</option>
+                <option value="staff">💻 فريق المتابعة والدعم الأونلاين</option>
+                <option value="online_subscriber">🌐 مشترك متابعة أونلاين</option>
               </select>
             </div>
           ) : (
-            <div className="w-full bg-[#08150c] border border-white/10 rounded-xl py-2 px-3 text-xs font-black text-white/90">
+            <div className="w-full bg-[#1D1216] border border-white/10 rounded-xl py-2 px-3 text-xs font-black text-white/90">
               {roleConfig.labelArabic}
             </div>
           )}

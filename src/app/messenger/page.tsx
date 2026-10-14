@@ -26,8 +26,6 @@ function MessengerPageInner() {
         return '/doctor?tab=messenger';
       case 'staff':
         return '/staff?tab=messenger';
-      case 'clinic_client':
-        return '/client?tab=messenger';
       case 'online_subscriber':
         return '/subscriber?tab=messenger';
       default:

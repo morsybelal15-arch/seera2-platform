@@ -8,12 +8,8 @@ export default function PatientRedirectPage() {
   const { activeRole } = useClinic();
 
   useEffect(() => {
-    if (activeRole === 'clinic_client') {
-      router.replace('/client?tab=overview');
-    } else {
-      router.replace('/subscriber?tab=overview');
-    }
-  }, [activeRole, router]);
+    router.replace('/subscriber?tab=overview');
+  }, [router]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] text-center space-y-4">

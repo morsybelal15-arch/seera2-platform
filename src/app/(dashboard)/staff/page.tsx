@@ -128,7 +128,7 @@ function StaffDashboardInner() {
         firstName,
         lastName,
         phone: clientPhone.trim(),
-        role: 'clinic_client',
+        role: 'online_subscriber',
       });
 
       setIsNewAccountOpen(false);

@@ -146,7 +146,7 @@ type ClinicContextType = {
     height?: number;
     dietTemplateId?: string;
     doctorNotes?: string;
-    role?: 'clinic_client' | 'online_subscriber';
+    role?: 'online_subscriber';
   }) => Promise<{ patient: Patient; qrToken: string }>;
   // Fast Login with Credentials or QR
   loginWithCredentials: (name: string, phone: string) => Promise<{ success: boolean; error?: string; patient?: Patient }>;
@@ -375,7 +375,7 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
           }
         } else {
           // If no Firebase user, check if we have local client credentials in state
-          if (activeRole !== 'clinic_client' && activeRole !== 'online_subscriber' && activeRole !== 'doctor' && activeRole !== 'staff' && activeRole !== 'visitor') {
+          if (activeRole !== 'online_subscriber' && activeRole !== 'doctor' && activeRole !== 'staff' && activeRole !== 'visitor') {
             setUserProfile(null);
             setActiveRole('guest');
           }
@@ -399,13 +399,13 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
     height?: number;
     dietTemplateId?: string;
     doctorNotes?: string;
-    role?: 'clinic_client' | 'online_subscriber';
+    role?: 'online_subscriber';
   }): Promise<{ patient: Patient; qrToken: string }> => {
     const fullName = `${data.firstName.trim()} ${data.lastName.trim()}`;
     const cleanPhone = data.phone.trim();
     const newId = `p_${Date.now()}`;
-    const qrToken = `CRH_FAST_${Math.random().toString(36).substring(2, 8).toUpperCase()}_${newId}`;
-    const qrCodeUrl = `https://cerrah.com/login?token=${qrToken}`;
+    const qrToken = `SEERA_FAST_${Math.random().toString(36).substring(2, 8).toUpperCase()}_${newId}`;
+    const qrCodeUrl = `https://seera2.clinic/login?token=${qrToken}`;
 
     // Look up diet template if selected
     let assignedDiet: Diet | null = null;
@@ -425,7 +425,7 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    const assignedRole: UserRole = data.role || 'clinic_client';
+    const assignedRole: UserRole = data.role || 'online_subscriber';
 
     const newPatient: Patient = {
       id: newId,
@@ -505,11 +505,11 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
     );
 
     if (matchingPatient) {
-      const clientRole: UserRole = 'clinic_client';
+      const subscriberRole: UserRole = 'online_subscriber';
       const fakeUser: any = {
         uid: matchingPatient.id,
         displayName: matchingPatient.name,
-        email: `${matchingPatient.phone}@cerrah-client.com`,
+        email: `${matchingPatient.phone}@seera2-subscriber.com`,
         phoneNumber: matchingPatient.phone,
       };
       setCurrentUser(fakeUser);
@@ -517,11 +517,11 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
         id: matchingPatient.id,
         displayName: matchingPatient.name,
         phone: matchingPatient.phone,
-        email: `${matchingPatient.phone}@cerrah-client.com`,
-        role: clientRole,
+        email: `${matchingPatient.phone}@seera2-subscriber.com`,
+        role: subscriberRole,
         patientId: matchingPatient.id,
       });
-      setActiveRole(clientRole);
+      setActiveRole(subscriberRole);
       return { success: true, patient: matchingPatient };
     }
 
@@ -639,11 +639,11 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
     ) || patients[0]; // fallback to primary client if scanning demo QR
 
     if (matchingPatient) {
-      const clientRole: UserRole = 'clinic_client';
+      const subscriberRole: UserRole = 'online_subscriber';
       const fakeUser: any = {
         uid: matchingPatient.id,
         displayName: matchingPatient.name,
-        email: `${matchingPatient.phone}@cerrah-client.com`,
+        email: `${matchingPatient.phone}@seera2-subscriber.com`,
         phoneNumber: matchingPatient.phone,
       };
       setCurrentUser(fakeUser);
@@ -651,13 +651,13 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
         id: matchingPatient.id,
         displayName: matchingPatient.name,
         phone: matchingPatient.phone,
-        email: `${matchingPatient.phone}@cerrah-client.com`,
-        role: clientRole,
-        roles: [clientRole],
+        email: `${matchingPatient.phone}@seera2-subscriber.com`,
+        role: subscriberRole,
+        roles: [subscriberRole],
         status: 'active',
         patientId: matchingPatient.id,
       });
-      setActiveRole(clientRole);
+      setActiveRole(subscriberRole);
       return { success: true, patient: matchingPatient };
     }
 

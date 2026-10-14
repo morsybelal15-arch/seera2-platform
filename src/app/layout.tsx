@@ -13,8 +13,8 @@ const alexandria = Alexandria({
 });
 
 export const metadata: Metadata = {
-  title: "عيادة سيرا | CERRAH Clinic",
-  description: "العيادة الأولى المدمجة بالذكاء الاصطناعي والمحاكاة ثلاثية الأبعاد",
+  title: "عيادة سيرة 2 | المتابعة الطبية ونحت القوام أونلاين",
+  description: "عيادة سيرة 2 الرائدة في المتابعة الطبية عن بُعد ونحت وتنسيق القوام بالتوأم الرقمي ثلاثي الأبعاد 3D والأنظمة الغذائية الإكلينيكية المحسوبة.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body 
         suppressHydrationWarning 
-        className={`${alexandria.variable} antialiased bg-[#030805] text-white min-h-screen selection:bg-[#8DC63F] selection:text-black`}
+        className={`${alexandria.variable} antialiased bg-[#120B0D] text-white min-h-screen selection:bg-[#FFB1B1] selection:text-[#120B0D]`}
         // إجبار المتصفح على استخدام خط الإسكندرية
         style={{ fontFamily: 'var(--font-alexandria), sans-serif' }}
       >

@@ -91,13 +91,13 @@ export const CLINICAL_FAQS: FaqItem[] = [
 ];
 
 interface FaqSectionProps {
-  page: 'ihnasia' | 'online';
+  page?: 'ihnasia' | 'online';
   title?: string;
   subtitle?: string;
 }
 
 export default function FaqSection({
-  page,
+  page = 'online',
   title,
   subtitle,
 }: FaqSectionProps) {

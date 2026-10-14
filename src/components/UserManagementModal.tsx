@@ -14,10 +14,9 @@ interface UserManagementModalProps {
 }
 
 const AVAILABLE_ROLES: { role: UserRole; title: string; desc: string }[] = [
-  { role: 'clinic_client', title: 'عميل من المركز', desc: 'جلسات تفتيت Onda & Scizer، كود QR، ومطابقة القياسات' },
-  { role: 'online_subscriber', title: 'مشترك أونلاين', desc: 'متابعة الدايت أسبوعياً ومجسم 3D عن بعد' },
-  { role: 'staff', title: 'طاقم من المركز', desc: 'إنشاء حسابات العملاء، تسجيل حضور الجلسات، والشات' },
-  { role: 'doctor', title: 'دكتور (إدارة طبية)', desc: 'إشراف طبي كامل، روشتات، ومحاكي 3D' },
+  { role: 'online_subscriber', title: 'مشترك أونلاين', desc: 'متابعة الدايت أسبوعياً ونحت القوام ومجسم 3D عن بعد' },
+  { role: 'staff', title: 'فريق المتابعة الإدارية', desc: 'إنشاء حسابات المشتركين، مراجعة السجلات، وتنسيق المواعيد' },
+  { role: 'doctor', title: 'دكتور (إشراف طبي)', desc: 'إشراف طبي كامل، خطط التغذية، ومحاكي القوام 3D' },
   { role: 'visitor', title: 'زائر مسجل', desc: 'حساب زائر تمهيداً للتفعيل والاشتراك' },
 ];
 
@@ -32,7 +31,7 @@ export default function UserManagementModal({
     ? userToEdit.roles
     : userToEdit?.role
     ? [userToEdit.role]
-    : ['clinic_client'];
+    : ['online_subscriber'];
 
   const [form, setForm] = useState({
     displayName: userToEdit?.displayName || '',
@@ -68,7 +67,7 @@ export default function UserManagementModal({
     if (!form.email && !form.phone) return;
 
     setIsSubmitting(true);
-    const primaryRole = form.roles[0] || 'clinic_client';
+    const primaryRole = form.roles[0] || 'online_subscriber';
 
     try {
       if (userToEdit) {
@@ -84,7 +83,7 @@ export default function UserManagementModal({
       } else {
         await addSystemUser({
           displayName: form.displayName,
-          email: form.email || `${form.phone}@cerrah-client.com`,
+          email: form.email || `${form.phone}@seera-clinic.com`,
           phone: form.phone,
           role: primaryRole,
           roles: form.roles,

@@ -26,12 +26,14 @@ interface OnlineAssessmentModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectPlan?: (planName: string) => void;
+  onOpenBooking?: (notes?: string) => void;
 }
 
 export default function OnlineAssessmentModal({
   isOpen,
   onClose,
-  onSelectPlan
+  onSelectPlan,
+  onOpenBooking
 }: OnlineAssessmentModalProps) {
   const [step, setStep] = useState<number>(1);
 

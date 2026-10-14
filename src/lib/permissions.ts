@@ -1,10 +1,9 @@
 export type UserRole = 
   | 'guest'              // زائر غير مسجل
   | 'visitor'            // زائر مسجل (بانتظار التفعيل)
-  | 'doctor'             // دكتور
-  | 'staff'              // طاقم من المركز
-  | 'online_subscriber'  // مشترك أونلاين
-  | 'clinic_client';     // عميل من المركز
+  | 'doctor'             // دكتور - إدارة طبية ومتابعة
+  | 'staff'              // طاقم المتابعة والدعم الفني
+  | 'online_subscriber'; // مشترك متابعة أونلاين
 
 export type RoleDefinition = {
   role: UserRole;
@@ -17,114 +16,96 @@ export type RoleDefinition = {
 export const ROLES_CONFIG: Record<UserRole, RoleDefinition> = {
   doctor: {
     role: 'doctor',
-    labelArabic: 'دكتور (إدارة طبية كاملة)',
-    badgeColor: 'bg-[#f1c40f]/20 text-[#f1c40f] border-[#f1c40f]/40',
-    description: 'صلاحيات كاملة لإدارة العيادة، ملفات المرضى، الروشتات، محاكي 3D، واعتماد المستخدمين.',
+    labelArabic: 'طبيب العيادة (إشراف طبي متكامل)',
+    badgeColor: 'bg-[#FFDBB0]/25 text-[#FFFAD3] border-[#FFDBB0]/50',
+    description: 'صلاحيات كاملة لإدارة المشتركين، مراجعة تطور القياسات، تصميم الروشتات والأنظمة الغذائية، وتعديل المجسم ثلاثي الأبعاد 3D.',
     permissions: [
-      'الاطلاع وتعديل كافة ملفات المرضى والجلسات',
-      'تعديل وحفظ معايير المجسم ثلاثي الأبعاد 3D',
-      'كتابة وتعديل الروشتات والأنظمة الغذائية',
-      'إدارة وتعديل صلاحيات وأدوار مستخدمي الموقع (User List)',
-      'اعتماد وإضافة رصيد المكافآت للريفيوز والمرفقات',
-      'فحص وحل شكاوى "تصالح معنا" والتواصل مع المرضى',
-      'تأكيد وحذف وتعديل مواعيد الحجز'
+      'الاطلاع وتعديل كافة ملفات المشتركين وسجلات الأوزان والقياسات',
+      'تعديل وحفظ معايير وتناسق المجسم ثلاثي الأبعاد 3D للمشتركين',
+      'كتابة وتعديل الروشتات والأنظمة الغذائية الأسبوعية والمحسوبة',
+      'إدارة وتفعيل حسابات المشتركين وتحديد خطة المتابعة',
+      'فحص استفسارات المشتركين وتقديم الاستشارات الطبية'
     ]
   },
   staff: {
     role: 'staff',
-    labelArabic: 'طاقم من المركز (إداري واستقبال)',
-    badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40',
-    description: 'إنشاء حسابات العملاء الجدد، عرض وتعديل قائمة المستخدمين، تسجيل حضور جلسات الأجهزة، والتواصل عبر الشات.',
+    labelArabic: 'فريق المتابعة والدعم الأونلاين',
+    badgeColor: 'bg-[#FFCCB8]/25 text-[#FFDBB0] border-[#FFCCB8]/40',
+    description: 'تفعيل اشتراكات المشتركين الجدد، متابعة تجديد الباقات، الدعم الفني، والتنسيق عبر الشات الطبي.',
     permissions: [
-      'إنشاء حسابات عملاء جديدة بالاسم الثنائي ورقم الهاتف وإرسال كود الـ QR للواتساب',
-      'عرض وتعديل قائمة المستخدمين وتعيين وتفعيل الأدوار',
-      'تسجيل حضور وتفاصيل جلسات الأجهزة بملف العميل الفردي',
-      'شات الاستفسارات وتصالح معنا والريفيوز والشكاوى'
+      'تفعيل واعتماد اشتراكات المتابعة الأونلاين الجديدة',
+      'متابعة جداول المواعيد والاستشارات الدورية',
+      'إدارة استفسارات المشتركين والدعم الفني السريع'
     ]
   },
   online_subscriber: {
     role: 'online_subscriber',
-    labelArabic: 'مشترك أونلاين',
-    badgeColor: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40',
-    description: 'الوصول لبوابة المتابعة الأونلاين، جدول الدايت الأسبوعي، ومتابعة الأبعاد بالمجسم 3D عن بعد.',
+    labelArabic: 'مشترك متابعة أونلاين',
+    badgeColor: 'bg-[#FFB1B1]/25 text-[#FFB1B1] border-[#FFB1B1]/40',
+    description: 'الوصول الكامل لبوابة المتابعة الأونلاين، الدايت الأسبوعي، تتبع قياسات ومحيط الجسم عبر التوأم الرقمي 3D.',
     permissions: [
-      'الوصول لبوابة المشترك الأونلاين المخصصة',
-      'عرض وتحديث خطة التغذية الأسبوعية المعتمدة من الطبيب',
+      'الوصول لبوابة المشترك الأونلاين التفاعلية الخاصة',
+      'عرض وتحديث خطة التغذية الأسبوعية المصممة من الطبيب',
       'تسجيل الوزن والمقاسات أسبوعياً وتتبع معدل الحرق BMR',
-      'عرض التوأم الرقمي 3D ومقارنة محيط الجسم والخصر',
-      'حجز استشارات المتابعة الأونلاين (فيديو / واتساب)',
-      'المشاركة في شات زود رصيدك وشات تصالح معنا'
-    ]
-  },
-  clinic_client: {
-    role: 'clinic_client',
-    labelArabic: 'عميل من المركز (فرع إهناسيا)',
-    badgeColor: 'bg-[#8DC63F]/20 text-[#8DC63F] border-[#8DC63F]/40',
-    description: 'الوصول لبوابة العميل، سجل جلسات أجهزة التفتيت، كود QR الخاص بالملف، وتحاليل InBody ومجسم 3D.',
-    permissions: [
-      'الوصول لبوابة عميل المركز المتكاملة',
-      'عرض عدد الجلسات المتبقية وسجل الأجهزة (Onda, Scizer)',
-      'عرض الروشتة والنظام الغذائي الخاص بالجلسات الموضعية',
-      'كود QR الطبي لتسجيل الدخول السريع في استقبال فرع إهناسيا',
-      'استعراض مجسم الأفاتار 3D ومطابقة قياسات الـ InBody الدورية',
-      'رصيد المكافآت المكتسب وسجل الفواتير والحجوزات'
+      'عرض التوأم الرقمي 3D ومقارنة محيط الجسم والخصر قبل وبعد',
+      'حجز استشارات المتابعة الأونلاين مع الفريق الطبي'
     ]
   },
   visitor: {
     role: 'visitor',
-    labelArabic: 'زائر مسجل (بانتظار التفعيل)',
-    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-    description: 'تم تسجيل الحساب بنجاح. يلزم تفعيل الحساب عبر الاشتراك أونلاين أو الحجز بالفرع للوصول للمجسم ولوحة التحكم.',
+    labelArabic: 'زائر مسجل (بانتظار الاشتراك)',
+    badgeColor: 'bg-[#FFDBB0]/20 text-[#FFDBB0] border-[#FFDBB0]/40',
+    description: 'تم تسجيل الحساب بنجاح. يلزم الاشتراك في إحدى باقات المتابعة الأونلاين لتفعيل المجسم 3D والدايت الأسبوعي.',
     permissions: [
-      'تصفح الموقع بحساب شخصي وتأكيد الهوية',
-      'طلب تفعيل الحساب (اشتراك أونلاين أو حجز بالفرع)',
-      'حجز جلسة لتفعيل المجسم ثلاثي الأبعاد 3D',
-      'المشاركة في شات الاستفسارات والريفيوز وتصالح معنا'
+      'تصفح الموقع بحساب شخصي وتأكيد البيانات',
+      'اختيار والاشتراك في باقات المتابعة الأونلاين',
+      'تجربة محاكي القوام 3D المبدئي',
+      'طلب استشارة تمهيدية مع الطبيب'
     ]
   },
   guest: {
     role: 'guest',
-    labelArabic: 'زائر عام (تصفح)',
+    labelArabic: 'زائر عام',
     badgeColor: 'bg-white/10 text-white/70 border-white/15',
-    description: 'تصفح خدمات الموقع، حساب مؤشر كتلة الجسم BMI، واستكشاف أجهزة المركز والأسعار.',
+    description: 'تصفح خدمات عيادة سيرة 2، حساب مؤشر كتلة الجسم BMI، والاطلاع على باقات المتابعة الأونلاين.',
     permissions: [
-      'تصفح الموقع واستكشاف الأجهزة والخدمات والأسعار',
+      'تصفح باقات وخدمات المتابعة الطبية ونحت القوام أونلاين',
       'حساب مؤشر كتلة الجسم (BMI) وحرق السعرات BMR',
-      'طلب كشف أولي أو استشارة متابعة أونلاين',
-      'إنشاء حساب زائر تمهيداً للتفعيل والاشتراك'
+      'تقديم طلب تقييم أولي للاشتراك الأونلاين'
     ]
   }
 };
 
 // Checkers
-export function canManageUsers(role: UserRole): boolean {
+export function canManageUsers(role: UserRole | string): boolean {
   return role === 'doctor' || role === 'staff';
 }
 
-export function canEditClinicalData(role: UserRole): boolean {
+export function canEditClinicalData(role: UserRole | string): boolean {
   return role === 'doctor';
 }
 
-export function canManageAppointments(role: UserRole): boolean {
+export function canManageAppointments(role: UserRole | string): boolean {
   return role === 'doctor' || role === 'staff';
 }
 
-export function canAccessStaffDashboard(role: UserRole): boolean {
+export function canAccessStaffDashboard(role: UserRole | string): boolean {
   return role === 'doctor' || role === 'staff';
 }
 
-export function canViewOnlinePortal(role: UserRole): boolean {
+export function canViewOnlinePortal(role: UserRole | string): boolean {
   return role === 'online_subscriber' || role === 'doctor' || role === 'staff';
 }
 
-export function canViewClinicClientPortal(role: UserRole): boolean {
-  return role === 'clinic_client' || role === 'doctor' || role === 'staff';
+export function canViewClinicClientPortal(role: UserRole | string): boolean {
+  // Graceful fallback for any legacy client links: map to online subscriber
+  return role === 'online_subscriber' || role === 'doctor' || role === 'staff';
 }
 
-export function canAccessDashboard(role: UserRole): boolean {
-  return role === 'doctor' || role === 'staff' || role === 'online_subscriber' || role === 'clinic_client';
+export function canAccessDashboard(role: UserRole | string): boolean {
+  return role === 'doctor' || role === 'staff' || role === 'online_subscriber';
 }
 
-export function canAccessModel(role: UserRole): boolean {
-  return role === 'doctor' || role === 'staff' || role === 'online_subscriber' || role === 'clinic_client';
+export function canAccessModel(role: UserRole | string): boolean {
+  return role === 'doctor' || role === 'staff' || role === 'online_subscriber';
 }
