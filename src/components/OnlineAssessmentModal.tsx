@@ -13,10 +13,10 @@ import BookingModal from '@/components/BookingModal';
 const BodySimulator = dynamic(() => import('@/components/BodySimulator'), {
   ssr: false,
   loading: () => (
-    <div className="glass-card rounded-2xl flex items-center justify-center p-8 border border-[#8DC63F]/20 min-h-[320px]">
+    <div className="glass-card rounded-2xl flex items-center justify-center p-8 border border-[#B4E4D6]/20 min-h-[320px]">
       <div className="text-center space-y-3">
-        <div className="w-10 h-10 border-3 border-[#8DC63F] border-t-transparent rounded-full animate-spin mx-auto"></div>
-        <p className="text-xs text-[#8DC63F] font-bold">جاري تحميل مجسم المتابعة الأونلاين 3D...</p>
+        <div className="w-10 h-10 border-3 border-[#B4E4D6] border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <p className="text-xs text-[#B4E4D6] font-bold">جاري تحميل مجسم المتابعة الأونلاين 3D...</p>
       </div>
     </div>
   ),
@@ -81,16 +81,16 @@ export default function OnlineAssessmentModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-[fadeIn_0.2s_ease-out]">
-      <div className="relative w-full max-w-4xl bg-[#061209] border border-[#8DC63F]/30 rounded-[28px] sm:rounded-[36px] shadow-[0_0_50px_rgba(141,198,63,0.15)] text-white overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-4xl bg-[#061209] border border-[#B4E4D6]/30 rounded-[28px] sm:rounded-[36px] shadow-[0_0_50px_rgba(180, 228, 214,0.15)] text-white overflow-hidden my-auto max-h-[92vh] flex flex-col">
         
         {/* Header */}
         <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-emerald-950/60 to-black/80">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/40 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/40 flex items-center justify-center text-[#B4E4D6]">
               <Globe size={20} />
             </div>
             <div>
-              <span className="text-[11px] font-black text-[#8DC63F] uppercase tracking-wider block">
+              <span className="text-[11px] font-black text-[#B4E4D6] uppercase tracking-wider block">
                 برنامج المتابعة الأونلاين • التقييم الطبي الفوري
               </span>
               <h3 className="text-lg sm:text-xl font-black text-white">
@@ -121,11 +121,11 @@ export default function OnlineAssessmentModal({
               <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden mb-1">
                 <div 
                   className={`h-full transition-all duration-500 ${
-                    step >= item.s ? 'bg-[#8DC63F]' : 'bg-transparent'
+                    step >= item.s ? 'bg-[#B4E4D6]' : 'bg-transparent'
                   }`}
                 />
               </div>
-              <span className={`text-[10px] font-bold ${step >= item.s ? 'text-[#8DC63F]' : 'text-white/40'}`}>
+              <span className={`text-[10px] font-bold ${step >= item.s ? 'text-[#B4E4D6]' : 'text-white/40'}`}>
                 {item.label}
               </span>
             </div>
@@ -140,7 +140,7 @@ export default function OnlineAssessmentModal({
             <div className="space-y-5 animate-[fadeIn_0.3s_ease-out]">
               <div className="text-center max-w-lg mx-auto mb-4">
                 <h4 className="text-xl font-black text-white">ابدأ رحلتك من أي مكان مع CERRAH</h4>
-                <p className="text-xs text-green-100/70 mt-1 font-medium">
+                <p className="text-xs text-[#FFF6A9]/75 mt-1 font-medium">
                   أدخل بياناتك ليتم تخصيص خطة التغذية والمتابعة الأنسب لجسمك وموقعك الجغرافي.
                 </p>
               </div>
@@ -148,28 +148,28 @@ export default function OnlineAssessmentModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <User size={14} className="text-[#8DC63F]" /> الاسم بالكامل *
+                    <User size={14} className="text-[#B4E4D6]" /> الاسم بالكامل *
                   </label>
                   <input
                     type="text"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="مثال: ياسمين طارق"
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
+                    className="w-full bg-black/60 border border-white/10 focus:border-[#B4E4D6] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <Phone size={14} className="text-[#8DC63F]" /> رقم الهاتف / واتساب *
+                    <Phone size={14} className="text-[#B4E4D6]" /> رقم الهاتف / واتساب *
                   </label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="01XXXXXXXXX / +966..."
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
+                    className="w-full bg-black/60 border border-white/10 focus:border-[#B4E4D6] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
                   />
                 </div>
 
@@ -182,13 +182,13 @@ export default function OnlineAssessmentModal({
                     value={cityOrCountry}
                     onChange={(e) => setCityOrCountry(e.target.value)}
                     placeholder="مثال: القاهرة، الإسكندرية، الرياض..."
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
+                    className="w-full bg-black/60 border border-white/10 focus:border-[#B4E4D6] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <User size={14} className="text-[#8DC63F]" /> الجنس *
+                    <User size={14} className="text-[#B4E4D6]" /> الجنس *
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
@@ -196,7 +196,7 @@ export default function OnlineAssessmentModal({
                       onClick={() => setGender('female')}
                       className={`py-3 rounded-2xl text-xs font-black border transition-all ${
                         gender === 'female'
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-[#8DC63F]'
+                          ? 'bg-[#B4E4D6]/20 border-[#B4E4D6] text-[#B4E4D6]'
                           : 'bg-black/40 border-white/10 text-white/60'
                       }`}
                     >
@@ -207,7 +207,7 @@ export default function OnlineAssessmentModal({
                       onClick={() => setGender('male')}
                       className={`py-3 rounded-2xl text-xs font-black border transition-all ${
                         gender === 'male'
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-[#8DC63F]'
+                          ? 'bg-[#B4E4D6]/20 border-[#B4E4D6] text-[#B4E4D6]'
                           : 'bg-black/40 border-white/10 text-white/60'
                       }`}
                     >
@@ -218,8 +218,8 @@ export default function OnlineAssessmentModal({
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center justify-between">
-                    <span className="flex items-center gap-1.5"><Scale size={14} className="text-[#8DC63F]" /> الوزن الحالي (كجم):</span>
-                    <span className="text-[#8DC63F] font-black text-sm">{weight} كجم</span>
+                    <span className="flex items-center gap-1.5"><Scale size={14} className="text-[#B4E4D6]" /> الوزن الحالي (كجم):</span>
+                    <span className="text-[#B4E4D6] font-black text-sm">{weight} كجم</span>
                   </label>
                   <input
                     type="range"
@@ -227,14 +227,14 @@ export default function OnlineAssessmentModal({
                     max={180}
                     value={weight}
                     onChange={(e) => setWeight(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#B4E4D6] cursor-pointer"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center justify-between">
-                    <span className="flex items-center gap-1.5"><Ruler size={14} className="text-[#8DC63F]" /> الطول (سم):</span>
-                    <span className="text-[#8DC63F] font-black text-sm">{height} سم</span>
+                    <span className="flex items-center gap-1.5"><Ruler size={14} className="text-[#B4E4D6]" /> الطول (سم):</span>
+                    <span className="text-[#B4E4D6] font-black text-sm">{height} سم</span>
                   </label>
                   <input
                     type="range"
@@ -242,7 +242,7 @@ export default function OnlineAssessmentModal({
                     max={210}
                     value={height}
                     onChange={(e) => setHeight(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#B4E4D6] cursor-pointer"
                   />
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function OnlineAssessmentModal({
             <div className="space-y-5 animate-[fadeIn_0.3s_ease-out]">
               <div className="text-center max-w-lg mx-auto mb-4">
                 <h4 className="text-xl font-black text-white">العادات اليومية والتحديات السابقة</h4>
-                <p className="text-xs text-green-100/70 mt-1 font-medium">
+                <p className="text-xs text-[#FFF6A9]/75 mt-1 font-medium">
                   نحن لا نصمم مجرد دايت عشوائي، بل نظاماً علاجياً يحل جذور المشكلة.
                 </p>
               </div>
@@ -262,7 +262,7 @@ export default function OnlineAssessmentModal({
               {/* Diet Experience */}
               <div className="space-y-2">
                 <label className="text-xs font-bold text-white/90 flex items-center gap-2">
-                  <Utensils size={15} className="text-[#8DC63F]" /> تجاربك السابقة مع التخسيس:
+                  <Utensils size={15} className="text-[#B4E4D6]" /> تجاربك السابقة مع التخسيس:
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {[
@@ -277,7 +277,7 @@ export default function OnlineAssessmentModal({
                       onClick={() => setDietExperience(opt)}
                       className={`p-3 rounded-2xl text-xs font-bold text-right border transition-all ${
                         dietExperience === opt
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white shadow-md'
+                          ? 'bg-[#B4E4D6]/20 border-[#B4E4D6] text-white shadow-md'
                           : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
@@ -323,7 +323,7 @@ export default function OnlineAssessmentModal({
                 <select
                   value={healthStatus}
                   onChange={(e) => setHealthStatus(e.target.value)}
-                  className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-xs text-white focus:outline-none"
+                  className="w-full bg-black/60 border border-white/10 focus:border-[#B4E4D6] rounded-2xl px-4 py-3 text-xs text-white focus:outline-none"
                 >
                   <option value="مقاومة إنسولين / تاريخ تكيسات أو خمول غدة">مقاومة إنسولين / تاريخ تكيسات أو خمول غدة</option>
                   <option value="ارتفاع دهون الدم أو دهون على الكبد">ارتفاع دهون الدم أو دهون على الكبد</option>
@@ -339,16 +339,16 @@ export default function OnlineAssessmentModal({
             <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
               
               {/* Summary Banner */}
-              <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-emerald-900/40 via-black to-emerald-950/40 border border-[#8DC63F]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-emerald-900/40 via-black to-emerald-950/40 border border-[#B4E4D6]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                  <span className="px-3 py-1 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-[11px] font-black border border-[#8DC63F]/30">
+                  <span className="px-3 py-1 rounded-full bg-[#B4E4D6]/20 text-[#B4E4D6] text-[11px] font-black border border-[#B4E4D6]/30">
                     تقرير وخطة التحول الأونلاين المعتمدة
                   </span>
                   <h4 className="text-lg sm:text-xl font-black text-white mt-1.5">
                     الخطة المخصصة لـ: {fullName || 'المشترك الكريم'}
                   </h4>
-                  <p className="text-xs text-green-100/70">
-                    معدل النزول المتوقع: <strong className="text-white">-{excessKg} كجم</strong> خلال حوالي <strong className="text-[#8DC63F]">{estimatedWeeks} أسبوعاً</strong>
+                  <p className="text-xs text-[#FFF6A9]/75">
+                    معدل النزول المتوقع: <strong className="text-white">-{excessKg} كجم</strong> خلال حوالي <strong className="text-[#B4E4D6]">{estimatedWeeks} أسبوعاً</strong>
                   </p>
                 </div>
 
@@ -359,7 +359,7 @@ export default function OnlineAssessmentModal({
                   </div>
                   <div className="text-center bg-black/60 px-4 py-2 rounded-2xl border border-white/10">
                     <span className="text-[10px] text-white/50 block font-bold">الوزن المثالي</span>
-                    <span className="text-lg font-black text-[#8DC63F]">{idealWeight} كجم</span>
+                    <span className="text-lg font-black text-[#B4E4D6]">{idealWeight} كجم</span>
                   </div>
                 </div>
               </div>
@@ -370,7 +370,7 @@ export default function OnlineAssessmentModal({
                 {/* 3D Visualizer */}
                 <div className="lg:col-span-5 glass-card p-4 rounded-3xl border border-white/10 bg-black/60 flex flex-col items-center">
                   <div className="w-full flex items-center justify-between px-2 mb-2">
-                    <span className="text-xs font-black text-[#8DC63F] flex items-center gap-1.5">
+                    <span className="text-xs font-black text-[#B4E4D6] flex items-center gap-1.5">
                       <Eye size={14} /> محاكاة 3D لقوامك الحالي:
                     </span>
                     <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded-full font-bold text-white/70">
@@ -400,24 +400,24 @@ export default function OnlineAssessmentModal({
                 <div className="lg:col-span-7 space-y-4">
                   <div className="glass-card p-5 rounded-3xl border border-white/10 bg-black/40 space-y-3.5">
                     <h5 className="font-black text-sm text-white flex items-center gap-2 border-b border-white/10 pb-2.5">
-                      <Award size={16} className="text-[#8DC63F]" /> ما ستحصل عليه فور الاشتراك:
+                      <Award size={16} className="text-[#B4E4D6]" /> ما ستحصل عليه فور الاشتراك:
                     </h5>
 
-                    <ul className="space-y-2 text-xs text-green-100/90 font-medium">
+                    <ul className="space-y-2 text-xs text-[#FFF6A9]/90 font-medium">
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={15} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                        <CheckCircle2 size={15} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                         <span><strong>نظام غذائي إكلينيكي مفصل:</strong> وجبات مرنة ومحسوبة السعرات والماكروز تتجدد كل أسبوع.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={15} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                        <CheckCircle2 size={15} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                         <span><strong>متابعة عبر الشات اليومي:</strong> إمكانية مراسلة الطبيب وفريق التغذية لأي استفسار أو تبديل وجبات.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={15} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                        <CheckCircle2 size={15} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                         <span><strong>بوابة العميل الرقمية:</strong> متابعة قائمة الالتزام اليومي وجداول الوجبات بصيغة PDF قابلة للطباعة.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={15} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                        <CheckCircle2 size={15} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                         <span><strong>استراتيجية تثبيت الوزن:</strong> مرحلة متخصصة بعد الوصول للوزن المثالي لمنع أي زيادة مستقبلية.</span>
                       </li>
                     </ul>
@@ -438,7 +438,7 @@ export default function OnlineAssessmentModal({
                     </button>
                     
                     <a
-                      href={`https://wa.me/201000000000?text=${encodeURIComponent(`مرحباً مركز سيرا، أود الاشتراك في برنامج المتابعة الأونلاين. اسمي: ${fullName || 'مشترك جديد'}، الوزن: ${weight} كجم، الهدف: خسارة ${excessKg} كجم.`)}`}
+                      href={`https://wa.me/201000000000?text=${encodeURIComponent(`مرحباً عيادة سيرة 2، أود الاشتراك في برنامج المتابعة الأونلاين. اسمي: ${fullName || 'مشترك جديد'}، الوزن: ${weight} كجم، الهدف: خسارة ${excessKg} كجم.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] border border-[#25D366]/40 py-3 rounded-2xl font-bold text-xs flex items-center justify-center gap-2 transition-all"

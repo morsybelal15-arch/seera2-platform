@@ -53,8 +53,8 @@ export default function AccountActivationModal({
   const handleOnlineSubscription = () => {
     const clientName = name.trim() || userProfile?.displayName || 'زائر مسجل';
     const clientPhone = phone.trim() || userProfile?.phone || 'غير محدد';
-    const msg = `🌟 *طلب تفعيل الحساب - اشتراك أونلاين (مركز سيرا)*\n\n` +
-      `مرحباً د. بلال / إدارة مركز سيرا،\n` +
+    const msg = `🌟 *طلب تفعيل الحساب - اشتراك أونلاين (عيادة سيرة 2)*\n\n` +
+      `مرحباً د. بلال / إدارة عيادة سيرة 2،\n` +
       `قمت بالتسجيل في الموقع وأرغب في الاشتراك ببرنامج المتابعة الأونلاين لتفعيل حسابي والبدء في الخطة الغذائية ومجسم الـ 3D.\n\n` +
       `👤 *الاسم:* ${clientName}\n` +
       `📱 *رقم الهاتف:* ${clientPhone}\n` +
@@ -72,13 +72,13 @@ export default function AccountActivationModal({
     const clientPhone = phone.trim() || 'غير محدد';
     const chosenPurpose = purpose === 'أخرى' && customPurpose ? customPurpose : purpose;
 
-    const msg = `🏥 *طلب تفعيل الحساب - حجز موعد بالفرع (مركز سيرا - إهناسيا)*\n\n` +
-      `مرحباً إدارة فرع إهناسيا،\n` +
-      `أود حجز موعد كشف وجلسة في المركز لتفعيل ملفي الطبي وحسابي على الموقع.\n\n` +
+    const msg = `🏥 *طلب تفعيل الحساب - حجز موعد بالعيادة (عيادة سيرة 2)*\n\n` +
+      `مرحباً إدارة عيادة سيرة 2،\n` +
+      `أود حجز موعد كشف واستشارة في العيادة لتفعيل ملفي الطبي وحسابي على الموقع.\n\n` +
       `👤 *الاسم الثنائي:* ${clientName}\n` +
       `📱 *رقم الهاتف:* ${clientPhone}\n` +
       `🎯 *الغرض من الزيارة:* ${chosenPurpose}\n` +
-      `📍 *الفرع:* إهناسيا - بني سويف\n\n` +
+      `📍 *الجهة:* عيادة سيرة 2\n\n` +
       `يرجى تأكيد أقرب موعد متاح للكشف. شكراً جزيلاً!`;
 
     const encoded = encodeURIComponent(msg);
@@ -89,7 +89,7 @@ export default function AccountActivationModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
       <div 
-        className="glass-card w-full max-w-lg rounded-[32px] p-6 sm:p-8 border border-[#8DC63F]/40 shadow-[0_0_50px_rgba(141,198,63,0.2)] bg-[#07130b] max-h-[92vh] overflow-y-auto relative"
+        className="glass-card w-full max-w-lg rounded-[32px] p-6 sm:p-8 border border-[#B4E4D6]/40 shadow-[0_0_50px_rgba(180, 228, 214,0.2)] bg-[#07130b] max-h-[92vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* زر الإغلاق */}
@@ -102,14 +102,14 @@ export default function AccountActivationModal({
 
         {/* رأس النافذة */}
         <div className="text-center mb-6">
-          <div className="w-14 h-14 bg-gradient-to-tr from-[#8DC63F] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 text-black shadow-lg shadow-[#8DC63F]/30">
+          <div className="w-14 h-14 bg-gradient-to-tr from-[#B4E4D6] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 text-black shadow-lg shadow-[#B4E4D6]/30">
             <Sparkles size={28} />
           </div>
-          <span className="bg-[#8DC63F]/15 text-[#8DC63F] text-[10px] font-black px-3 py-1 rounded-full border border-[#8DC63F]/30 uppercase tracking-wider">
+          <span className="bg-[#B4E4D6]/15 text-[#B4E4D6] text-[10px] font-black px-3 py-1 rounded-full border border-[#B4E4D6]/30 uppercase tracking-wider">
             خطوة تفعيل الحساب
           </span>
-          <h2 className="text-2xl font-black text-white mt-2">تفعيل حسابك في مركز سيرا</h2>
-          <p className="text-xs text-green-100/70 font-semibold mt-1 max-w-sm mx-auto">
+          <h2 className="text-2xl font-black text-white mt-2">تفعيل حسابك في عيادة سيرة 2</h2>
+          <p className="text-xs text-[#FFF6A9]/75 font-semibold mt-1 max-w-sm mx-auto">
             اختر الطريقة المناسبة لك لتفعيل حسابك وفتح لوحة التحكم والمجسم ثلاثي الأبعاد 3D
           </p>
         </div>
@@ -121,7 +121,7 @@ export default function AccountActivationModal({
             onClick={() => setSelectedTab('online')}
             className={`flex-1 py-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-2 cursor-pointer ${
               selectedTab === 'online'
-                ? 'bg-[#8DC63F] text-black shadow-lg shadow-[#8DC63F]/20'
+                ? 'bg-[#B4E4D6] text-black shadow-lg shadow-[#B4E4D6]/20'
                 : 'text-white/70 hover:text-white'
             }`}
           >
@@ -132,7 +132,7 @@ export default function AccountActivationModal({
             onClick={() => setSelectedTab('branch')}
             className={`flex-1 py-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-2 cursor-pointer ${
               selectedTab === 'branch'
-                ? 'bg-[#8DC63F] text-black shadow-lg shadow-[#8DC63F]/20'
+                ? 'bg-[#B4E4D6] text-black shadow-lg shadow-[#B4E4D6]/20'
                 : 'text-white/70 hover:text-white'
             }`}
           >
@@ -148,7 +148,7 @@ export default function AccountActivationModal({
                 <CheckCircle2 size={16} />
                 <span>مزايا الاشتراك الأونلاين:</span>
               </div>
-              <ul className="text-[11px] text-green-100/80 space-y-1.5 pr-2 font-medium">
+              <ul className="text-[11px] text-[#FFF6A9]/85 space-y-1.5 pr-2 font-medium">
                 <li>• متابعة أسبوعية مباشرة مع الطبيب المختص عن بعد.</li>
                 <li>• نظام غذائي مخصص متجدد أسبوعياً حسب هدفك ونمط حياتك.</li>
                 <li>• تفعيل مجسم الأفاتار 3D وتتبع تغير أبعاد الجسم ونسبة الدهون.</li>
@@ -174,7 +174,7 @@ export default function AccountActivationModal({
           /* محتوى الخيار 2: حجز بالفرع */
           <form onSubmit={handleBranchBooking} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-green-100/80 mb-1.5">
+              <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1.5">
                 الاسم الثنائي *
               </label>
               <div className="relative">
@@ -184,14 +184,14 @@ export default function AccountActivationModal({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="مثال: أحمد محمود"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#B4E4D6]"
                 />
-                <User size={16} className="absolute top-3.5 right-3.5 text-[#8DC63F]" />
+                <User size={16} className="absolute top-3.5 right-3.5 text-[#B4E4D6]" />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-green-100/80 mb-1.5">
+              <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1.5">
                 رقم الهاتف (الواتساب للتأكيد) *
               </label>
               <div className="relative">
@@ -202,20 +202,20 @@ export default function AccountActivationModal({
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="01XXXXXXXXX"
                   dir="ltr"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#8DC63F] text-right"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#B4E4D6] text-right"
                 />
-                <Phone size={16} className="absolute top-3.5 right-3.5 text-[#8DC63F]" />
+                <Phone size={16} className="absolute top-3.5 right-3.5 text-[#B4E4D6]" />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-green-100/80 mb-1.5">
+              <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1.5">
                 الغرض من الزيارة *
               </label>
               <select
                 value={purpose}
                 onChange={(e) => setPurpose(e.target.value)}
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
               >
                 <option value="كشف استشاري وسمنة موضعية">كشف استشاري وسمنة موضعية</option>
                 <option value="جلسات أجهزة تفتيت ونحت القوام (Onda & Scizer)">جلسات أجهزة تفتيت ونحت القوام (Onda & Scizer)</option>
@@ -228,7 +228,7 @@ export default function AccountActivationModal({
 
             {purpose === 'أخرى' && (
               <div>
-                <label className="block text-xs font-bold text-green-100/80 mb-1">
+                <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1">
                   اكتب الغرض من الزيارة:
                 </label>
                 <input
@@ -237,14 +237,14 @@ export default function AccountActivationModal({
                   value={customPurpose}
                   onChange={(e) => setCustomPurpose(e.target.value)}
                   placeholder="اكتب سبب الحجز..."
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                 />
               </div>
             )}
 
             <button
               type="submit"
-              className="w-full py-4 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-sm rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer"
+              className="w-full py-4 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-sm rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#B4E4D6]/20 cursor-pointer"
             >
               <MessageCircle size={18} />
               <span>تأكيد الحجز ومتابعة عبر واتساب</span>
@@ -255,8 +255,8 @@ export default function AccountActivationModal({
 
         {/* شارة الأمان */}
         <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-center gap-2 text-[10px] text-white/40">
-          <ShieldCheck size={14} className="text-[#8DC63F]" />
-          <span>مركز سيرا التخصصي • فرع إهناسيا (بني سويف)</span>
+          <ShieldCheck size={14} className="text-[#B4E4D6]" />
+          <span>عيادة سيرة 2 • نحت وتنسيق القوام والمتابعة الطبية</span>
         </div>
 
       </div>

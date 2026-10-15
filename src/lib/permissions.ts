@@ -17,7 +17,7 @@ export const ROLES_CONFIG: Record<UserRole, RoleDefinition> = {
   doctor: {
     role: 'doctor',
     labelArabic: 'طبيب العيادة (إشراف طبي متكامل)',
-    badgeColor: 'bg-[#FFDBB0]/25 text-[#FFFAD3] border-[#FFDBB0]/50',
+    badgeColor: 'bg-[#FFCA88]/25 text-[#FFF6A9] border-[#FFCA88]/50',
     description: 'صلاحيات كاملة لإدارة المشتركين، مراجعة تطور القياسات، تصميم الروشتات والأنظمة الغذائية، وتعديل المجسم ثلاثي الأبعاد 3D.',
     permissions: [
       'الاطلاع وتعديل كافة ملفات المشتركين وسجلات الأوزان والقياسات',
@@ -30,7 +30,7 @@ export const ROLES_CONFIG: Record<UserRole, RoleDefinition> = {
   staff: {
     role: 'staff',
     labelArabic: 'فريق المتابعة والدعم الأونلاين',
-    badgeColor: 'bg-[#FFCCB8]/25 text-[#FFDBB0] border-[#FFCCB8]/40',
+    badgeColor: 'bg-[#B4E4D6]/20 text-[#B4E4D6] border-[#B4E4D6]/40',
     description: 'تفعيل اشتراكات المشتركين الجدد، متابعة تجديد الباقات، الدعم الفني، والتنسيق عبر الشات الطبي.',
     permissions: [
       'تفعيل واعتماد اشتراكات المتابعة الأونلاين الجديدة',
@@ -41,20 +41,20 @@ export const ROLES_CONFIG: Record<UserRole, RoleDefinition> = {
   online_subscriber: {
     role: 'online_subscriber',
     labelArabic: 'مشترك متابعة أونلاين',
-    badgeColor: 'bg-[#FFB1B1]/25 text-[#FFB1B1] border-[#FFB1B1]/40',
-    description: 'الوصول الكامل لبوابة المتابعة الأونلاين، الدايت الأسبوعي، تتبع قياسات ومحيط الجسم عبر التوأم الرقمي 3D.',
+    badgeColor: 'bg-[#DE7272]/25 text-[#DE7272] border-[#DE7272]/40',
+    description: 'الوصول الكامل لبوابة المتابعة الأونلاين، الدايت الأسبوعي، تتبع قياسات ومحيط الجسم عبر الأفاتار 3D.',
     permissions: [
       'الوصول لبوابة المشترك الأونلاين التفاعلية الخاصة',
       'عرض وتحديث خطة التغذية الأسبوعية المصممة من الطبيب',
       'تسجيل الوزن والمقاسات أسبوعياً وتتبع معدل الحرق BMR',
-      'عرض التوأم الرقمي 3D ومقارنة محيط الجسم والخصر قبل وبعد',
+      'عرض الأفاتار 3D ومقارنة محيط الجسم والخصر قبل وبعد',
       'حجز استشارات المتابعة الأونلاين مع الفريق الطبي'
     ]
   },
   visitor: {
     role: 'visitor',
     labelArabic: 'زائر مسجل (بانتظار الاشتراك)',
-    badgeColor: 'bg-[#FFDBB0]/20 text-[#FFDBB0] border-[#FFDBB0]/40',
+    badgeColor: 'bg-[#FFCA88]/20 text-[#FFCA88] border-[#FFCA88]/40',
     description: 'تم تسجيل الحساب بنجاح. يلزم الاشتراك في إحدى باقات المتابعة الأونلاين لتفعيل المجسم 3D والدايت الأسبوعي.',
     permissions: [
       'تصفح الموقع بحساب شخصي وتأكيد البيانات',

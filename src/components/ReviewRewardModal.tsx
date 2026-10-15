@@ -41,7 +41,7 @@ export default function ReviewRewardModal({
     {
       id: 'm1',
       sender: 'bot',
-      text: 'أهلاً بك يا بطل في مركز سيرا! 🎉 يسعدنا جداً أن تكون جزءاً من عائلتنا. شاركنا رأيك أو صورة بيفور & أفتر لنحت القوام أو العلاج الطبيعي، وستحصل فوراً على رصيد مكافأة بقيمة تصل إلى 200 ج.م تضاف لحسابك بالمركز!',
+      text: 'أهلاً بك معنا في عيادة سيرة 2! 🎉 يسعدنا تكون جزءاً من عائلتنا. شاركنا رأيك أو صورة بيفور & أفتر لنحت القوام أو المتابعة، وهتاخد فوراً رصيد مكافأة يصل إلى 200 ج.م في حسابك معنا!',
       time: 'الآن',
     },
   ]);
@@ -127,23 +127,23 @@ export default function ReviewRewardModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
       <div 
-        className="glass-card w-full max-w-2xl rounded-[32px] border border-[#8DC63F]/40 shadow-[0_0_60px_rgba(141,198,63,0.2)] flex flex-col h-[85vh] max-h-[720px] overflow-hidden bg-[#07130b]"
+        className="glass-card w-full max-w-2xl rounded-[32px] border border-[#B4E4D6]/40 shadow-[0_0_60px_rgba(180, 228, 214,0.2)] flex flex-col h-[85vh] max-h-[720px] overflow-hidden bg-[#07130b]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* شريط رأس الشات */}
         <div className="bg-[#0b1e12] border-b border-white/10 p-4 sm:p-5 flex justify-between items-center flex-shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#8DC63F] to-[#4CAF50] flex items-center justify-center text-black shadow-lg">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#B4E4D6] to-[#4CAF50] flex items-center justify-center text-black shadow-lg">
               <Gift size={22} className="animate-pulse" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-white font-black text-base sm:text-lg">شات زود رصيدك مع سيرا</h3>
-                <span className="bg-[#8DC63F]/20 text-[#8DC63F] text-[10px] font-black px-2 py-0.5 rounded-full border border-[#8DC63F]/30">
+                <span className="bg-[#B4E4D6]/20 text-[#B4E4D6] text-[10px] font-black px-2 py-0.5 rounded-full border border-[#B4E4D6]/30">
                   مكافأة فورية 🎁
                 </span>
               </div>
-              <p className="text-green-100/60 text-xs font-semibold">مربوط مباشرة بداشبورد إدارة المركز والأطباء</p>
+              <p className="text-[#FFF6A9]/65 text-xs font-semibold">مربوط مباشرة بداشبورد إدارة المركز والأطباء</p>
             </div>
           </div>
 
@@ -165,8 +165,8 @@ export default function ReviewRewardModal({
               <div
                 className={`max-w-[85%] sm:max-w-[75%] p-4 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-md ${
                   msg.sender === 'user'
-                    ? 'bg-[#8DC63F] text-black font-bold rounded-tl-none'
-                    : 'bg-[#13271b] text-white border border-[#8DC63F]/20 rounded-tr-none'
+                    ? 'bg-[#B4E4D6] text-black font-bold rounded-tl-none'
+                    : 'bg-[#13271b] text-white border border-[#B4E4D6]/20 rounded-tr-none'
                 }`}
               >
                 <p className="whitespace-pre-line">{msg.text}</p>
@@ -183,8 +183,8 @@ export default function ReviewRewardModal({
           ))}
 
           {isCompleted && (
-            <div className="p-4 rounded-2xl bg-[#8DC63F]/10 border border-[#8DC63F]/30 text-center space-y-3 mt-4 animate-[fadeIn_0.3s_ease-out]">
-              <div className="w-12 h-12 bg-[#8DC63F] rounded-full text-black flex items-center justify-center mx-auto">
+            <div className="p-4 rounded-2xl bg-[#B4E4D6]/10 border border-[#B4E4D6]/30 text-center space-y-3 mt-4 animate-[fadeIn_0.3s_ease-out]">
+              <div className="w-12 h-12 bg-[#B4E4D6] rounded-full text-black flex items-center justify-center mx-auto">
                 <CheckCircle2 size={24} />
               </div>
               <p className="text-white font-black text-sm">
@@ -192,7 +192,7 @@ export default function ReviewRewardModal({
               </p>
               <div className="flex justify-center gap-2">
                 <a
-                  href={`https://wa.me/201108080564?text=${encodeURIComponent(`مرحباً مركز سيرا، قمت للتو بمشاركة ريفيو وصورة قبل وبعد باسم ${name} للحصول على مكافأة الرصيد.`)}`}
+                  href={`https://wa.me/201108080564?text=${encodeURIComponent(`مرحباً عيادة سيرة 2، قمت بمشاركة تجربة وصورة قبل وبعد باسم ${name} للحصول على مكافأة الرصيد.`)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#25D366] hover:bg-[#1eb855] text-black px-4 py-2 rounded-xl text-xs font-black flex items-center gap-1.5"
@@ -223,7 +223,7 @@ export default function ReviewRewardModal({
                     placeholder="اسمك بالكامل *"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-bold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-bold outline-none focus:border-[#B4E4D6]"
                   />
                 </div>
 
@@ -234,7 +234,7 @@ export default function ReviewRewardModal({
                     placeholder="رقم الواتساب للمكافأة *"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-bold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-bold outline-none focus:border-[#B4E4D6]"
                     dir="ltr"
                   />
                 </div>
@@ -257,7 +257,7 @@ export default function ReviewRewardModal({
 
               {/* معاينة الصورة المرفقة إذا تم اختيارها */}
               {photoPreview && (
-                <div className="relative inline-block border border-[#8DC63F]/40 rounded-xl overflow-hidden bg-black">
+                <div className="relative inline-block border border-[#B4E4D6]/40 rounded-xl overflow-hidden bg-black">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={photoPreview} alt="معاينة الصورة" className="h-16 w-auto object-cover" />
                   <button
@@ -274,7 +274,7 @@ export default function ReviewRewardModal({
               {/* حقل كتابة الريفيو وزر إرفاق الصورة والإرسال */}
               <div className="flex items-center gap-2">
                 <label 
-                  className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#8DC63F]/20 text-white/70 hover:text-[#8DC63F] border border-white/10 flex items-center justify-center cursor-pointer transition-colors flex-shrink-0"
+                  className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#B4E4D6]/20 text-white/70 hover:text-[#B4E4D6] border border-white/10 flex items-center justify-center cursor-pointer transition-colors flex-shrink-0"
                   title="إرفاق صورة بيفور/أفتر أو سكرين شوت"
                 >
                   <Paperclip size={18} />
@@ -292,7 +292,7 @@ export default function ReviewRewardModal({
                   value={reviewText}
                   onChange={(e) => setReviewText(e.target.value)}
                   placeholder="اكتب تجربتك مع المركز أو نتائج جلساتك هنا..."
-                  className="flex-1 bg-black/60 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-white/40 outline-none focus:border-[#8DC63F] font-bold"
+                  className="flex-1 bg-black/60 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-white/40 outline-none focus:border-[#B4E4D6] font-bold"
                 />
 
                 <button
@@ -305,7 +305,7 @@ export default function ReviewRewardModal({
                 </button>
               </div>
               
-              <p className="text-[10px] text-green-100/60 text-center font-medium">
+              <p className="text-[10px] text-[#FFF6A9]/65 text-center font-medium">
                 💡 إرفاق صورة قبل وبعد يمنحك رصيداً إضافياً مضاعفاً ويظهر في شات لوحة تحكم الطبيب فوراً.
               </p>
             </form>
@@ -313,12 +313,12 @@ export default function ReviewRewardModal({
             <div className="p-6 bg-[#0a180f] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
               <div>
                 <h4 className="text-white font-black text-xs sm:text-sm mb-1">تسجيل الدخول مطلوب للمشاركة</h4>
-                <p className="text-green-100/70 text-[11px]">يرجى تسجيل الدخول أو إنشاء حساب زائر لإرسال الريفيو وتفعيل رصيد المكافأة.</p>
+                <p className="text-[#FFF6A9]/75 text-[11px]">يرجى تسجيل الدخول أو إنشاء حساب زائر لإرسال الريفيو وتفعيل رصيد المكافأة.</p>
               </div>
               <button
                 type="button"
                 onClick={() => setIsLoginOpen(true)}
-                className="bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs px-5 py-2.5 rounded-xl transition-all shadow-md flex-shrink-0"
+                className="bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs px-5 py-2.5 rounded-xl transition-all shadow-md flex-shrink-0"
               >
                 تسجيل الدخول / إنشاء حساب
               </button>

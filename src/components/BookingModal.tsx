@@ -120,17 +120,17 @@ export default function BookingModal({
       className="modal-backdrop"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="modal-dialog w-full max-w-lg bg-[#080d09] border border-[#8DC63F]/30 rounded-[28px] overflow-hidden shadow-2xl relative">
+      <div className="modal-dialog w-full max-w-lg bg-[#080d09] border border-[#B4E4D6]/30 rounded-[28px] overflow-hidden shadow-2xl relative">
         
         {/* Header */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between bg-black/40">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#8DC63F]/10 border border-[#8DC63F]/20 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-xl bg-[#B4E4D6]/10 border border-[#B4E4D6]/20 flex items-center justify-center text-[#B4E4D6]">
               <Stethoscope size={20} />
             </div>
             <div>
               <h3 className="text-white font-black text-lg">حجز موعد واستشارة طبية</h3>
-              <p className="text-[#8DC63F] text-[11px] font-bold">CERRAH CLINICAL BOOKING</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold">CERRAH CLINICAL BOOKING</p>
             </div>
           </div>
           <button
@@ -145,14 +145,14 @@ export default function BookingModal({
         <div className="p-6 max-h-[80vh] overflow-y-auto custom-scrollbar">
           {confirmedData ? (
             <div className="text-center py-6 space-y-5 animate-[fadeIn_0.3s_ease-out]">
-              <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center mx-auto text-[#8DC63F]">
+              <div className="w-16 h-16 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6] flex items-center justify-center mx-auto text-[#B4E4D6]">
                 <CheckCircle2 size={36} />
               </div>
 
               <div>
                 <h4 className="text-2xl font-black text-white mb-2">تم تسجيل طلب الحجز بنجاح!</h4>
-                <p className="text-xs text-green-100/70 font-semibold leading-relaxed">
-                  تم حفظ طلبك في قاعدة بيانات العيادة برقم مرجعي: <span className="text-[#8DC63F] font-mono">{confirmedData.id}</span>. سيتواصل معك فريق الاستقبال لتأكيد الموعد النهائي.
+                <p className="text-xs text-[#FFF6A9]/75 font-semibold leading-relaxed">
+                  تم حفظ طلبك في قاعدة بيانات العيادة برقم مرجعي: <span className="text-[#B4E4D6] font-mono">{confirmedData.id}</span>. سيتواصل معك فريق الاستقبال لتأكيد الموعد النهائي.
                 </p>
               </div>
 
@@ -163,7 +163,7 @@ export default function BookingModal({
                 </div>
                 <div className="flex justify-between text-white/70">
                   <span className="font-bold">الخدمة:</span>
-                  <span className="text-[#8DC63F] font-black">{confirmedData.service}</span>
+                  <span className="text-[#B4E4D6] font-black">{confirmedData.service}</span>
                 </div>
                 <div className="flex justify-between text-white/70">
                   <span className="font-bold">الموعد المطلوب:</span>
@@ -187,7 +187,7 @@ export default function BookingModal({
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15"
                 >
-                  <CalendarPlus size={16} className="text-[#8DC63F]" /> إضافة لتقويم Google
+                  <CalendarPlus size={16} className="text-[#B4E4D6]" /> إضافة لتقويم Google
                 </a>
                 <button
                   type="button"
@@ -199,7 +199,7 @@ export default function BookingModal({
                   })}
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15 cursor-pointer"
                 >
-                  <Download size={16} className="text-[#8DC63F]" /> تحميل ملف التقويم (.ics)
+                  <Download size={16} className="text-[#B4E4D6]" /> تحميل ملف التقويم (.ics)
                 </button>
               </div>
 
@@ -229,7 +229,7 @@ export default function BookingModal({
 
               <div>
                 <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                  <User size={14} className="text-[#8DC63F]" /> الاسم الكامل *
+                  <User size={14} className="text-[#B4E4D6]" /> الاسم الكامل *
                 </label>
                 <input
                   type="text"
@@ -237,14 +237,14 @@ export default function BookingModal({
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="مثال: ياسمين محمد"
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#8DC63F] outline-none"
+                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#B4E4D6] outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                    <Phone size={14} className="text-[#8DC63F]" /> رقم الهاتف (واتساب) *
+                    <Phone size={14} className="text-[#B4E4D6]" /> رقم الهاتف (واتساب) *
                   </label>
                   <input
                     type="tel"
@@ -253,12 +253,12 @@ export default function BookingModal({
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="01X XXXX XXXX"
                     dir="ltr"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#8DC63F] outline-none text-right"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#B4E4D6] outline-none text-right"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                    <Mail size={14} className="text-[#8DC63F]" /> البريد الإلكتروني (اختياري)
+                    <Mail size={14} className="text-[#B4E4D6]" /> البريد الإلكتروني (اختياري)
                   </label>
                   <input
                     type="email"
@@ -266,19 +266,19 @@ export default function BookingModal({
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@example.com"
                     dir="ltr"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#8DC63F] outline-none text-right"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#B4E4D6] outline-none text-right"
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                  <Sparkles size={14} className="text-[#8DC63F]" /> الخدمة المطلوبة *
+                  <Sparkles size={14} className="text-[#B4E4D6]" /> الخدمة المطلوبة *
                 </label>
                 <select
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#8DC63F] outline-none"
+                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#B4E4D6] outline-none"
                 >
                   {SERVICES.map((s) => (
                     <option key={s} value={s} className="bg-[#080d09] text-white">
@@ -291,24 +291,24 @@ export default function BookingModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                    <Calendar size={14} className="text-[#8DC63F]" /> التاريخ المفضل *
+                    <Calendar size={14} className="text-[#B4E4D6]" /> التاريخ المفضل *
                   </label>
                   <input
                     type="date"
                     required
                     value={preferredDate}
                     onChange={(e) => setPreferredDate(e.target.value)}
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#8DC63F] outline-none"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#B4E4D6] outline-none"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                    <Clock size={14} className="text-[#8DC63F]" /> الوقت المفضل *
+                    <Clock size={14} className="text-[#B4E4D6]" /> الوقت المفضل *
                   </label>
                   <select
                     value={preferredTime}
                     onChange={(e) => setPreferredTime(e.target.value)}
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#8DC63F] outline-none"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-bold focus:border-[#B4E4D6] outline-none"
                   >
                     <option value="12:00" className="bg-[#080d09]">12:00 ظهراً</option>
                     <option value="14:00" className="bg-[#080d09]">02:00 عصراً</option>
@@ -329,7 +329,7 @@ export default function BookingModal({
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="مثال: أريد فحص دهون البطن، أو أعاني من انزلاق غضروفي..."
-                  className="w-full bg-black/40 border border-white/10 rounded-xl p-3 text-white text-xs font-bold focus:border-[#8DC63F] outline-none resize-none"
+                  className="w-full bg-black/40 border border-white/10 rounded-xl p-3 text-white text-xs font-bold focus:border-[#B4E4D6] outline-none resize-none"
                 />
               </div>
 
@@ -337,7 +337,7 @@ export default function BookingModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#8DC63F] hover:bg-[#7ab036] text-black py-4 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
+                  className="w-full bg-[#B4E4D6] hover:bg-[#7ab036] text-black py-4 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
                 >
                   {loading ? (
                     <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />

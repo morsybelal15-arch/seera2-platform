@@ -36,17 +36,17 @@ export default function DeviceDetailsModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="w-full max-w-xl bg-[#080d09] border border-[#8DC63F]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+      <div className="w-full max-w-xl bg-[#080d09] border border-[#B4E4D6]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
         
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Zap size={20} />
             </div>
             <div>
               <h3 className="text-white font-black text-base sm:text-lg">{device.name}</h3>
-              <p className="text-[#8DC63F] text-[11px] font-bold tracking-wide">{device.englishName}</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold tracking-wide">{device.englishName}</p>
             </div>
           </div>
           <button
@@ -60,8 +60,8 @@ export default function DeviceDetailsModal({
         {/* Content */}
         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-1 space-y-4 text-right" dir="rtl">
           
-          <div className="bg-[#8DC63F]/10 border border-[#8DC63F]/20 p-3.5 rounded-2xl">
-            <span className="text-[#8DC63F] font-black text-xs block mb-1">التقنية الطبية المتطورة:</span>
+          <div className="bg-[#B4E4D6]/10 border border-[#B4E4D6]/20 p-3.5 rounded-2xl">
+            <span className="text-[#B4E4D6] font-black text-xs block mb-1">التقنية الطبية المتطورة:</span>
             <p className="text-white text-xs font-semibold leading-relaxed">{device.tagline}</p>
           </div>
 
@@ -73,16 +73,16 @@ export default function DeviceDetailsModal({
             </div>
             <div className="bg-black/40 border border-white/5 p-3 rounded-xl">
               <span className="text-white/40 text-[10px] font-bold block mb-1">التردد والموجات</span>
-              <span className="text-[#8DC63F] font-black text-xs">{device.frequency}</span>
+              <span className="text-[#B4E4D6] font-black text-xs">{device.frequency}</span>
             </div>
           </div>
 
           {/* Clinical mechanism */}
           <div>
             <h5 className="text-white font-black text-xs mb-1.5 flex items-center gap-1.5">
-              <Activity size={14} className="text-[#8DC63F]" /> كيف تعمل التقنية في الجسم؟
+              <Activity size={14} className="text-[#B4E4D6]" /> كيف تعمل التقنية في الجسم؟
             </h5>
-            <p className="text-green-100/70 text-xs font-semibold leading-relaxed bg-black/30 p-3 rounded-xl border border-white/5">
+            <p className="text-[#FFF6A9]/75 text-xs font-semibold leading-relaxed bg-black/30 p-3 rounded-xl border border-white/5">
               {device.mechanism || device.tagline}
             </p>
           </div>
@@ -90,12 +90,12 @@ export default function DeviceDetailsModal({
           {/* Benefits */}
           <div>
             <h5 className="text-white font-black text-xs mb-2 flex items-center gap-1.5">
-              <Sparkles size={14} className="text-[#8DC63F]" /> أبرز النتائج والمميزات السريرية:
+              <Sparkles size={14} className="text-[#B4E4D6]" /> أبرز النتائج والمميزات السريرية:
             </h5>
             <div className="space-y-1.5">
               {device.benefits.map((b, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-xs text-white/90 font-bold bg-black/40 p-2.5 rounded-xl border border-white/5">
-                  <CheckCircle2 size={14} className="text-[#8DC63F] shrink-0" />
+                  <CheckCircle2 size={14} className="text-[#B4E4D6] shrink-0" />
                   <span>{b}</span>
                 </div>
               ))}
@@ -116,7 +116,7 @@ export default function DeviceDetailsModal({
 
           {/* Safety & Protocol */}
           <div className="flex items-center gap-3 bg-black/50 border border-white/5 p-3 rounded-xl text-[11px] text-white/70">
-            <ShieldCheck size={18} className="text-[#8DC63F] shrink-0" />
+            <ShieldCheck size={18} className="text-[#B4E4D6] shrink-0" />
             <span>{device.safetyNote} • البروتوكول الموصى به: {device.sessionsCount}</span>
           </div>
 
@@ -127,7 +127,7 @@ export default function DeviceDetailsModal({
                 onClose();
                 onBookDevice(device.name);
               }}
-              className="flex-1 bg-[#8DC63F] hover:bg-[#7ab036] text-black py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
+              className="flex-1 bg-[#B4E4D6] hover:bg-[#7ab036] text-black py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
             >
               <CalendarDays size={17} /> احجز جلسة بهذا الجهاز الآن
             </button>

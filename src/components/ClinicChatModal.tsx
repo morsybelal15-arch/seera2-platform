@@ -76,22 +76,22 @@ export default function ClinicChatModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="relative w-full max-w-2xl bg-[#08150c] border border-[#8DC63F]/30 rounded-[32px] overflow-hidden shadow-2xl flex flex-col h-[650px] max-h-[92vh]">
+      <div className="relative w-full max-w-2xl bg-[#1D1216] border border-[#B4E4D6]/30 rounded-[32px] overflow-hidden shadow-2xl flex flex-col h-[650px] max-h-[92vh]">
         
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-white/10 bg-black/50 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-2xl bg-[#8DC63F]/20 text-[#8DC63F] flex items-center justify-center border border-[#8DC63F]/30">
+            <div className="w-11 h-11 rounded-2xl bg-[#B4E4D6]/20 text-[#B4E4D6] flex items-center justify-center border border-[#B4E4D6]/30">
               <MessageCircle size={22} />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-black text-white">{displayName}</h3>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#8DC63F]/15 text-[#8DC63F] border border-[#8DC63F]/30">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#B4E4D6]/15 text-[#B4E4D6] border border-[#B4E4D6]/30">
                   {activeRole === 'online_subscriber' ? 'فريق أطباء عيادة سيرة' : 'ملف المشترك'}
                 </span>
               </div>
-              <p className="text-[11px] text-green-100/60 font-semibold flex items-center gap-1.5 mt-0.5">
+              <p className="text-[11px] text-[#FFF6A9]/65 font-semibold flex items-center gap-1.5 mt-0.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 قناة تواصل مشفرة ومباشرة مع الفريق الطبي والاستقبال
               </p>
@@ -166,9 +166,9 @@ export default function ClinicChatModal({
                   <div
                     className={`max-w-[85%] sm:max-w-[75%] p-3.5 rounded-2xl text-xs font-semibold leading-relaxed shadow-lg relative ${
                       isMe
-                        ? 'bg-[#8DC63F] text-black rounded-tr-none'
+                        ? 'bg-[#B4E4D6] text-black rounded-tr-none'
                         : isDoctorSender
-                        ? 'bg-[#182a1c] text-white border border-[#8DC63F]/30 rounded-tl-none'
+                        ? 'bg-[#182a1c] text-white border border-[#B4E4D6]/30 rounded-tl-none'
                         : isStaffSender
                         ? 'bg-[#0f241a] text-white border border-emerald-500/30 rounded-tl-none'
                         : 'bg-white/10 text-white border border-white/10 rounded-tl-none'
@@ -243,13 +243,13 @@ export default function ClinicChatModal({
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             placeholder="اكتب رسالتك هنا..."
-            className="flex-1 bg-black/50 border border-white/10 rounded-2xl py-3 px-4 text-xs font-bold text-white outline-none focus:border-[#8DC63F]"
+            className="flex-1 bg-black/50 border border-white/10 rounded-2xl py-3 px-4 text-xs font-bold text-white outline-none focus:border-[#B4E4D6]"
           />
 
           <button
             type="submit"
             disabled={!inputMessage.trim() || isSending}
-            className="p-3 bg-[#8DC63F] hover:bg-[#7ab036] text-black rounded-2xl flex items-center justify-center transition-all cursor-pointer disabled:opacity-40"
+            className="p-3 bg-[#B4E4D6] hover:bg-[#7ab036] text-black rounded-2xl flex items-center justify-center transition-all cursor-pointer disabled:opacity-40"
           >
             <Send size={18} className={isSending ? 'animate-pulse' : ''} />
           </button>

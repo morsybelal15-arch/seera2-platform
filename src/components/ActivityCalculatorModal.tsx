@@ -97,17 +97,17 @@ export default function ActivityCalculatorModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="w-full max-w-xl bg-[#070d08] border border-[#8DC63F]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
+      <div className="w-full max-w-xl bg-[#070d08] border border-[#B4E4D6]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
         
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Activity size={20} />
             </div>
             <div>
               <h3 className="text-white font-black text-lg">معدل الحرق والنشاط الأيضي</h3>
-              <p className="text-[#8DC63F] text-[11px] font-bold">METABOLIC RATE & TDEE CALORIE ENGINE</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold">METABOLIC RATE & TDEE CALORIE ENGINE</p>
             </div>
           </div>
           <button
@@ -122,13 +122,13 @@ export default function ActivityCalculatorModal({
         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-1 text-right" dir="rtl">
           {bookedResult ? (
             <div className="text-center py-4 space-y-5 animate-[fadeIn_0.3s_ease-out]">
-              <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center mx-auto text-[#8DC63F]">
+              <div className="w-16 h-16 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6] flex items-center justify-center mx-auto text-[#B4E4D6]">
                 <CheckCircle2 size={36} />
               </div>
 
               <div>
                 <h4 className="text-2xl font-black text-white mb-2">تم تسجيل موعد استشارتك بنجاح!</h4>
-                <p className="text-xs text-green-100/70 font-semibold leading-relaxed">
+                <p className="text-xs text-[#FFF6A9]/75 font-semibold leading-relaxed">
                   تم حفظ تحليل معدل الحرق في قاعدة بيانات العيادة برقم حسابك وحجز موعد استشارة التغذية.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function ActivityCalculatorModal({
               <div className="bg-black/50 border border-white/10 rounded-2xl p-4 text-right space-y-2.5 text-xs font-bold">
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">إجمالي الحرق اليومي (TDEE):</span>
-                  <span className="text-[#8DC63F] font-black">{bookedResult.tdee} سعر حراري</span>
+                  <span className="text-[#B4E4D6] font-black">{bookedResult.tdee} سعر حراري</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">السعرات اليومية لإنقاص الوزن:</span>
@@ -166,7 +166,7 @@ export default function ActivityCalculatorModal({
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15"
                 >
-                  <CalendarPlus size={16} className="text-[#8DC63F]" /> إضافة لتقويم Google
+                  <CalendarPlus size={16} className="text-[#B4E4D6]" /> إضافة لتقويم Google
                 </a>
                 <button
                   type="button"
@@ -178,7 +178,7 @@ export default function ActivityCalculatorModal({
                   })}
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15 cursor-pointer"
                 >
-                  <Download size={16} className="text-[#8DC63F]" /> تحميل ملف التقويم (.ics)
+                  <Download size={16} className="text-[#B4E4D6]" /> تحميل ملف التقويم (.ics)
                 </button>
               </div>
 
@@ -208,7 +208,7 @@ export default function ActivityCalculatorModal({
                   <button
                     type="button"
                     onClick={() => setGender(gender === 'male' ? 'female' : 'male')}
-                    className="w-full bg-[#8DC63F]/20 text-[#8DC63F] py-1 rounded-lg text-xs font-bold"
+                    className="w-full bg-[#B4E4D6]/20 text-[#B4E4D6] py-1 rounded-lg text-xs font-bold"
                   >
                     {gender === 'male' ? 'ذكر' : 'أنثى'}
                   </button>
@@ -258,7 +258,7 @@ export default function ActivityCalculatorModal({
                       onClick={() => setActivityFactor(act.factor)}
                       className={`p-2.5 rounded-xl border text-xs font-bold transition-all text-right cursor-pointer ${
                         activityFactor === act.factor
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white shadow-sm'
+                          ? 'bg-[#B4E4D6]/20 border-[#B4E4D6] text-white shadow-sm'
                           : 'bg-black/30 border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
@@ -271,7 +271,7 @@ export default function ActivityCalculatorModal({
               {/* Dynamic Live Calculations */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
                 <div className="glass-card rounded-2xl p-3 text-center border border-white/5">
-                  <Flame size={18} className="text-[#8DC63F] mx-auto mb-1" />
+                  <Flame size={18} className="text-[#B4E4D6] mx-auto mb-1" />
                   <span className="text-lg font-black text-white block">{tdee}</span>
                   <span className="text-[10px] text-white/60 font-bold">الحرق اليومي (TDEE)</span>
                 </div>
@@ -298,7 +298,7 @@ export default function ActivityCalculatorModal({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
                     <label className="block text-[11px] font-bold text-white/60 mb-1 flex items-center gap-1.5">
-                      <User size={13} className="text-[#8DC63F]" /> الاسم الكامل
+                      <User size={13} className="text-[#B4E4D6]" /> الاسم الكامل
                     </label>
                     <input
                       type="text"
@@ -306,12 +306,12 @@ export default function ActivityCalculatorModal({
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="أدخل اسمك"
-                      className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#8DC63F]"
+                      className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#B4E4D6]"
                     />
                   </div>
                   <div>
                     <label className="block text-[11px] font-bold text-white/60 mb-1 flex items-center gap-1.5">
-                      <Phone size={13} className="text-[#8DC63F]" /> رقم الهاتف (واتساب)
+                      <Phone size={13} className="text-[#B4E4D6]" /> رقم الهاتف (واتساب)
                     </label>
                     <input
                       type="tel"
@@ -320,7 +320,7 @@ export default function ActivityCalculatorModal({
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="01X XXXX XXXX"
                       dir="ltr"
-                      className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#8DC63F] text-right"
+                      className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#B4E4D6] text-right"
                     />
                   </div>
                 </div>
@@ -328,7 +328,7 @@ export default function ActivityCalculatorModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer mt-2"
+                  className="w-full bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer mt-2"
                 >
                   {loading ? (
                     <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />

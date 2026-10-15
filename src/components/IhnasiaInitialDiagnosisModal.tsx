@@ -16,8 +16,8 @@ const CerrahAvatar = dynamic(() => import('@/components/CerrahAvatar'), {
   loading: () => (
     <div className="w-full h-full flex items-center justify-center min-h-[350px]">
       <div className="text-center space-y-2">
-        <div className="w-9 h-9 border-3 border-[#8DC63F] border-t-transparent rounded-full animate-spin mx-auto"></div>
-        <p className="text-xs text-[#8DC63F] font-bold">جاري تحميل المجسم ثلاثي الأبعاد 3D...</p>
+        <div className="w-9 h-9 border-3 border-[#DE7272] border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <p className="text-xs text-[#FFCA88] font-bold">جاري تحميل المجسم ثلاثي الأبعاد 3D...</p>
       </div>
     </div>
   ),
@@ -111,9 +111,9 @@ export default function IhnasiaInitialDiagnosisModal({
   const getBmiStatus = (val: number) => {
     if (val < 18.5) return { label: 'وزن منخفض (نحافة)', color: 'text-sky-400' };
     if (val <= 24.9) return { label: 'وزن مثالي متناسق', color: 'text-emerald-400' };
-    if (val <= 29.9) return { label: 'زيادة وزن موضعية', color: 'text-yellow-400' };
+    if (val <= 29.9) return { label: 'زيادة وزن موضعية', color: 'text-[#FFCA88]' };
     if (val <= 34.9) return { label: 'سمنة من الدرجة الأولى', color: 'text-amber-500' };
-    return { label: 'سمنة موضعية متقدمة', color: 'text-rose-400' };
+    return { label: 'سمنة موضعية متقدمة', color: 'text-[#DE7272]' };
   };
 
   const bmiStatus = getBmiStatus(bmi);
@@ -129,8 +129,8 @@ export default function IhnasiaInitialDiagnosisModal({
 
   // Trigger WhatsApp booking popup
   const handleWhatsAppBooking = () => {
-    const branchLabel = branchName || 'مركز سيرا (فرع إهناسيا)';
-    const purpose = `حجز جلسة بـ${branchLabel} بعد فحص القوام 3D (الوزن: ${weight} كجم، BMI: ${bmi})`;
+    const branchLabel = branchName || 'عيادة سيرة 2';
+    const purpose = `حجز كشف بـ${branchLabel} بعد فحص القوام 3D (الوزن: ${weight} كجم، BMI: ${bmi})`;
     onClose();
     if (onOpenBooking) {
       onOpenBooking(purpose);
@@ -141,17 +141,17 @@ export default function IhnasiaInitialDiagnosisModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-[fadeIn_0.2s_ease-out]">
-      <div className="relative w-full max-w-4xl bg-[#061109] border border-[#8DC63F]/30 rounded-[28px] sm:rounded-[36px] shadow-[0_0_50px_rgba(141,198,63,0.15)] text-white overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-4xl bg-[#120B0D] border border-[#DE7272]/30 rounded-[28px] sm:rounded-[36px] shadow-[0_0_50px_rgba(222,114,114,0.2)] text-white overflow-hidden my-auto max-h-[92vh] flex flex-col">
         
         {/* Modal Top Header */}
-        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-emerald-950/60 to-black/80">
+        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-[#2A1319] via-[#1E0F14] to-[#120B0D]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/40 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#DE7272]/20 to-[#FFCA88]/20 border border-[#DE7272]/40 flex items-center justify-center text-[#FFCA88]">
               <Sparkles size={20} />
             </div>
             <div>
-              <span className="text-[11px] font-black text-[#8DC63F] uppercase tracking-wider block">
-                {titleBadge || (branchName ? `فرع ${branchName} - التقييم الطبي الذكي` : 'مركز سيرا - التقييم الطبي الذكي وفحص القوام')}
+              <span className="text-[11px] font-black text-[#FFCA88] uppercase tracking-wider block">
+                {titleBadge || (branchName ? `${branchName} - التقييم الطبي وفحص القوام` : 'عيادة سيرة 2 - التقييم الطبي الذكي وفحص القوام')}
               </span>
               <h3 className="text-lg sm:text-xl font-black text-white">
                 {currentStep === 1 && '1. البيانات الأساسية للمراجع'}
@@ -172,7 +172,7 @@ export default function IhnasiaInitialDiagnosisModal({
         </div>
 
         {/* Stepper Progress Bar */}
-        <div className="px-6 pt-3 pb-1 bg-black/40 border-b border-white/5 flex items-center justify-between gap-2">
+        <div className="px-6 pt-3 pb-1 bg-[#1A0D11]/60 border-b border-white/5 flex items-center justify-between gap-2">
           {[
             { step: 1, label: 'البيانات' },
             { step: 2, label: 'النمط الطبي' },
@@ -183,11 +183,11 @@ export default function IhnasiaInitialDiagnosisModal({
               <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden mb-1">
                 <div 
                   className={`h-full transition-all duration-500 ${
-                    currentStep >= item.step ? 'bg-[#8DC63F]' : 'bg-transparent'
+                    currentStep >= item.step ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88]' : 'bg-transparent'
                   }`}
                 />
               </div>
-              <span className={`text-[10px] font-bold ${currentStep >= item.step ? 'text-[#8DC63F]' : 'text-white/40'}`}>
+              <span className={`text-[10px] font-bold ${currentStep >= item.step ? 'text-[#FFCA88]' : 'text-white/40'}`}>
                 {item.label}
               </span>
             </div>
@@ -201,8 +201,8 @@ export default function IhnasiaInitialDiagnosisModal({
           {currentStep === 1 && (
             <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
               <div className="text-center max-w-lg mx-auto mb-6">
-                <h4 className="text-xl font-black text-white">أهلاً بك في فحص التشخيص الأولي لفرع إهناسيا</h4>
-                <p className="text-xs text-green-100/70 mt-1 font-medium">
+                <h4 className="text-xl font-black text-white">أهلاً بك في فحص التشخيص الأولي بعيادة سيرة 2</h4>
+                <p className="text-xs text-[#FFF6A9]/80 mt-1 font-medium">
                   يرجى إدخال بياناتك بدقة ليقوم النظام الذكي بتحليل مؤشرات الكتلة وتوليد مجسم قوامك الطبي.
                 </p>
               </div>
@@ -210,21 +210,21 @@ export default function IhnasiaInitialDiagnosisModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <User size={14} className="text-[#8DC63F]" /> الاسم بالكامل (الأول والعائلة) *
+                    <User size={14} className="text-[#FFCA88]" /> الاسم بالكامل (الأول والعائلة) *
                   </label>
                   <input
                     type="text"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="مثال: سارة أحمد محمود"
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
+                    className="w-full bg-[#1A0D11] border border-white/10 focus:border-[#DE7272] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <Calendar size={14} className="text-[#8DC63F]" /> العمر (بالسنوات) *
+                    <Calendar size={14} className="text-[#FFCA88]" /> العمر (بالسنوات) *
                   </label>
                   <input
                     type="number"
@@ -232,14 +232,14 @@ export default function IhnasiaInitialDiagnosisModal({
                     onChange={(e) => setAge(Number(e.target.value))}
                     min={15}
                     max={85}
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
+                    className="w-full bg-[#1A0D11] border border-white/10 focus:border-[#DE7272] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <User size={14} className="text-[#8DC63F]" /> الجنس *
+                    <User size={14} className="text-[#FFCA88]" /> الجنس *
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
@@ -247,8 +247,8 @@ export default function IhnasiaInitialDiagnosisModal({
                       onClick={() => setGender('female')}
                       className={`py-3 rounded-2xl text-xs font-black border transition-all ${
                         gender === 'female'
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-[#8DC63F]'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] border-transparent shadow-lg shadow-[#DE7272]/20'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       أنثى (Female)
@@ -258,8 +258,8 @@ export default function IhnasiaInitialDiagnosisModal({
                       onClick={() => setGender('male')}
                       className={`py-3 rounded-2xl text-xs font-black border transition-all ${
                         gender === 'male'
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-[#8DC63F]'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] border-transparent shadow-lg shadow-[#DE7272]/20'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       ذكر (Male)
@@ -269,21 +269,21 @@ export default function IhnasiaInitialDiagnosisModal({
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center gap-1.5">
-                    <Phone size={14} className="text-[#8DC63F]" /> رقم الهاتف للتواصل
+                    <Phone size={14} className="text-[#FFCA88]" /> رقم الهاتف للتواصل
                   </label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="01XXXXXXXXX"
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
+                    className="w-full bg-[#1A0D11] border border-white/10 focus:border-[#DE7272] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center justify-between">
-                    <span className="flex items-center gap-1.5"><Scale size={14} className="text-[#8DC63F]" /> الوزن الحالي (كجم):</span>
-                    <span className="text-[#8DC63F] font-black text-sm">{weight} كجم</span>
+                    <span className="flex items-center gap-1.5"><Scale size={14} className="text-[#FFCA88]" /> الوزن الحالي (كجم):</span>
+                    <span className="text-[#FFCA88] font-black text-sm">{weight} كجم</span>
                   </label>
                   <input
                     type="range"
@@ -291,7 +291,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     max={180}
                     value={weight}
                     onChange={(e) => setWeight(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#DE7272] cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-white/40 mt-1">
                     <span>45 كجم</span>
@@ -302,8 +302,8 @@ export default function IhnasiaInitialDiagnosisModal({
 
                 <div>
                   <label className="block text-xs font-bold text-white/80 mb-1.5 flex items-center justify-between">
-                    <span className="flex items-center gap-1.5"><Ruler size={14} className="text-[#8DC63F]" /> الطول (سم):</span>
-                    <span className="text-[#8DC63F] font-black text-sm">{height} سم</span>
+                    <span className="flex items-center gap-1.5"><Ruler size={14} className="text-[#FFCA88]" /> الطول (سم):</span>
+                    <span className="text-[#FFCA88] font-black text-sm">{height} سم</span>
                   </label>
                   <input
                     type="range"
@@ -311,7 +311,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     max={210}
                     value={height}
                     onChange={(e) => setHeight(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#DE7272] cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-white/40 mt-1">
                     <span>135 سم</span>
@@ -328,7 +328,7 @@ export default function IhnasiaInitialDiagnosisModal({
             <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
               <div className="text-center max-w-lg mx-auto mb-4">
                 <h4 className="text-xl font-black text-white">المراجعة الطبية الشاملة ونمط الحياة اليومي</h4>
-                <p className="text-xs text-green-100/70 mt-1 font-medium">
+                <p className="text-xs text-[#FFF6A9]/80 mt-1 font-medium">
                   أسئلة تفصيلية لتحديد أسباب تخزين الدهون الموضعية ومعدل الأيض الحركي.
                 </p>
               </div>
@@ -336,7 +336,7 @@ export default function IhnasiaInitialDiagnosisModal({
               {/* Meals habit */}
               <div className="space-y-2">
                 <label className="text-xs font-bold text-white/90 flex items-center gap-2">
-                  <Utensils size={15} className="text-[#8DC63F]" /> مواعيد ونمط تناول الوجبات اليومية:
+                  <Utensils size={15} className="text-[#FFCA88]" /> مواعيد ونمط تناول الوجبات اليومية:
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {[
@@ -351,8 +351,8 @@ export default function IhnasiaInitialDiagnosisModal({
                       onClick={() => setMealsHabit(opt)}
                       className={`p-3 rounded-2xl text-xs font-bold text-right border transition-all ${
                         mealsHabit === opt
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white shadow-md'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFF6A9] shadow-md'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       {opt}
@@ -379,7 +379,7 @@ export default function IhnasiaInitialDiagnosisModal({
                       className={`p-3 rounded-2xl text-xs font-bold text-center border transition-all ${
                         waterIntake === opt
                           ? 'bg-cyan-500/20 border-cyan-400 text-white shadow-md'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       {opt}
@@ -391,7 +391,7 @@ export default function IhnasiaInitialDiagnosisModal({
               {/* Sleep schedule */}
               <div className="space-y-2">
                 <label className="text-xs font-bold text-white/90 flex items-center gap-2">
-                  <Moon size={15} className="text-indigo-400" /> مواعيد وجودة ساعات النوم:
+                  <Moon size={15} className="text-[#FFCA88]" /> مواعيد وجودة ساعات النوم:
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   {[
@@ -405,8 +405,8 @@ export default function IhnasiaInitialDiagnosisModal({
                       onClick={() => setSleepDuration(opt)}
                       className={`p-3 rounded-2xl text-xs font-bold text-center border transition-all ${
                         sleepDuration === opt
-                          ? 'bg-indigo-500/20 border-indigo-400 text-white shadow-md'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          ? 'bg-[#FFCA88]/20 border-[#FFCA88] text-[#FFF6A9] shadow-md'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       {opt}
@@ -418,7 +418,7 @@ export default function IhnasiaInitialDiagnosisModal({
               {/* Physical activity */}
               <div className="space-y-2">
                 <label className="text-xs font-bold text-white/90 flex items-center gap-2">
-                  <Dumbbell size={15} className="text-[#8DC63F]" /> مستوى النشاط البدني والحركة:
+                  <Dumbbell size={15} className="text-[#DE7272]" /> مستوى النشاط البدني والحركة:
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   {[
@@ -432,8 +432,8 @@ export default function IhnasiaInitialDiagnosisModal({
                       onClick={() => setPhysicalActivity(opt)}
                       className={`p-3 rounded-2xl text-xs font-bold text-center border transition-all ${
                         physicalActivity === opt
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white shadow-md'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFF6A9] shadow-md'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       {opt}
@@ -446,12 +446,12 @@ export default function IhnasiaInitialDiagnosisModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-white/90 flex items-center gap-2">
-                    <Flame size={15} className="text-amber-400" /> الشهية والرغبة في السكريات:
+                    <Flame size={15} className="text-[#FFCA88]" /> الشهية والرغبة في السكريات:
                   </label>
                   <select
                     value={sugarCravings}
                     onChange={(e) => setSugarCravings(e.target.value)}
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-xs text-white focus:outline-none"
+                    className="w-full bg-[#1A0D11] border border-white/10 focus:border-[#DE7272] rounded-2xl px-4 py-3 text-xs text-white focus:outline-none"
                   >
                     <option value="رغبة عالية في السكريات بعد الوجبات">رغبة عالية في السكريات بعد الوجبات</option>
                     <option value="شهية مفتوحة دائماً للأطعمة الدسمة والمخبوزات">شهية مفتوحة دائماً للأطعمة الدسمة والمخبوزات</option>
@@ -462,12 +462,12 @@ export default function IhnasiaInitialDiagnosisModal({
 
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-white/90 flex items-center gap-2">
-                    <Activity size={15} className="text-emerald-400" /> الحالة الأيضية وثبات الوزن:
+                    <Activity size={15} className="text-[#DE7272]" /> الحالة الأيضية وثبات الوزن:
                   </label>
                   <select
                     value={metabolicHealth}
                     onChange={(e) => setMetabolicHealth(e.target.value)}
-                    className="w-full bg-black/60 border border-white/10 focus:border-[#8DC63F] rounded-2xl px-4 py-3 text-xs text-white focus:outline-none"
+                    className="w-full bg-[#1A0D11] border border-white/10 focus:border-[#DE7272] rounded-2xl px-4 py-3 text-xs text-white focus:outline-none"
                   >
                     <option value="ثبات وزن وصعوبة حرق سابقة">ثبات وزن وصعوبة حرق سابقة</option>
                     <option value="مقاومة إنسولين / تاريخ تكيسات أو خمول بسيط">مقاومة إنسولين / تاريخ تكيسات أو خمول بسيط</option>
@@ -484,7 +484,7 @@ export default function IhnasiaInitialDiagnosisModal({
             <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
               <div className="text-center max-w-lg mx-auto mb-4">
                 <h4 className="text-xl font-black text-white">تحديد شكل الجسم ومقياس تركيز الدهون (1 إلى 10)</h4>
-                <p className="text-xs text-green-100/70 mt-1 font-medium">
+                <p className="text-xs text-[#FFF6A9]/80 mt-1 font-medium">
                   حدد مقياس تراكم الدهون في كل منطقة لتصميم خطة النحت الدقيقة بأجهزة المركز.
                 </p>
               </div>
@@ -507,20 +507,20 @@ export default function IhnasiaInitialDiagnosisModal({
                       onClick={() => setBodyShapeType(shape.id as any)}
                       className={`p-3 rounded-2xl border text-center transition-all ${
                         bodyShapeType === shape.id
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white shadow-md'
-                          : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                          ? 'bg-gradient-to-br from-[#DE7272]/25 to-[#FFCA88]/25 border-[#DE7272] text-white shadow-md'
+                          : 'bg-[#1A0D11] border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       <span className="block font-black text-xs text-white">{shape.label}</span>
-                      <span className="text-[10px] text-white/50 mt-0.5 block">{shape.desc}</span>
+                      <span className="text-[10px] text-[#FFF6A9]/60 mt-0.5 block">{shape.desc}</span>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* 1-10 Sliders */}
-              <div className="space-y-5 bg-black/40 p-5 rounded-3xl border border-white/10">
-                <h5 className="text-xs font-black text-[#8DC63F] flex items-center gap-2">
+              <div className="space-y-5 bg-[#1A0D11]/80 p-5 rounded-3xl border border-white/10">
+                <h5 className="text-xs font-black text-[#FFCA88] flex items-center gap-2">
                   <Sliders size={16} /> مقياس تراكم الدهون الموضعية (من 1 = قليل جداً إلى 10 = كثيف وعنيد):
                 </h5>
 
@@ -528,7 +528,7 @@ export default function IhnasiaInitialDiagnosisModal({
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold mb-1.5">
                     <span className="text-white">1. منطقة البطن والكرش السفلي:</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] font-black">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#DE7272]/20 text-[#FFCA88] font-black border border-[#DE7272]/30">
                       {bellyFatScale} / 10
                     </span>
                   </div>
@@ -538,7 +538,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     max={10}
                     value={bellyFatScale}
                     onChange={(e) => setBellyFatScale(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#DE7272] cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-white/40">
                     <span>1 (مستوٍ)</span>
@@ -551,7 +551,7 @@ export default function IhnasiaInitialDiagnosisModal({
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold mb-1.5">
                     <span className="text-white">2. منطقة الخواصر والجوانب (Love Handles):</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] font-black">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#DE7272]/20 text-[#FFCA88] font-black border border-[#DE7272]/30">
                       {flanksFatScale} / 10
                     </span>
                   </div>
@@ -561,7 +561,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     max={10}
                     value={flanksFatScale}
                     onChange={(e) => setFlanksFatScale(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#DE7272] cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-white/40">
                     <span>1 (منحوت)</span>
@@ -574,7 +574,7 @@ export default function IhnasiaInitialDiagnosisModal({
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold mb-1.5">
                     <span className="text-white">3. منطقة الذراعين وزنود اليد:</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] font-black">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#DE7272]/20 text-[#FFCA88] font-black border border-[#DE7272]/30">
                       {armsFatScale} / 10
                     </span>
                   </div>
@@ -584,7 +584,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     max={10}
                     value={armsFatScale}
                     onChange={(e) => setArmsFatScale(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#DE7272] cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-white/40">
                     <span>1 (مشدود)</span>
@@ -597,7 +597,7 @@ export default function IhnasiaInitialDiagnosisModal({
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold mb-1.5">
                     <span className="text-white">4. منطقة الفخذين والأرداف:</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] font-black">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#DE7272]/20 text-[#FFCA88] font-black border border-[#DE7272]/30">
                       {thighsFatScale} / 10
                     </span>
                   </div>
@@ -607,7 +607,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     max={10}
                     value={thighsFatScale}
                     onChange={(e) => setThighsFatScale(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#DE7272] cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-white/40">
                     <span>1 (رشيق)</span>
@@ -624,10 +624,10 @@ export default function IhnasiaInitialDiagnosisModal({
             <div className="space-y-4 sm:space-y-5 animate-[fadeIn_0.3s_ease-out]">
               
               {/* Header: Concise Patient Overview */}
-              <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-emerald-950/70 via-black to-emerald-950/70 border border-[#8DC63F]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-[#2A1319] via-[#1E0F14] to-[#2A1319] border border-[#DE7272]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-[10px] font-black border border-[#8DC63F]/30">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#DE7272]/20 text-[#FFCA88] text-[10px] font-black border border-[#DE7272]/30">
                       تقرير التحليل الطبي الفوري المعتمد
                     </span>
                     <span className="text-[10px] bg-white/10 px-2.5 py-0.5 rounded-full font-bold text-white/70">
@@ -646,39 +646,39 @@ export default function IhnasiaInitialDiagnosisModal({
                   </div>
                   <div className="text-center bg-black/70 px-3 py-1.5 rounded-xl border border-white/10">
                     <span className="text-[9px] text-white/50 block font-bold">الوزن المستهدف</span>
-                    <span className="text-base font-black text-[#8DC63F]">{idealWeight} كجم</span>
+                    <span className="text-base font-black text-[#FFCA88]">{idealWeight} كجم</span>
                   </div>
                 </div>
               </div>
 
               {/* Two Concise Lines for Diagnosis & Rating */}
-              <div className="p-3 sm:p-3.5 rounded-2xl bg-black/60 border border-white/10 space-y-2">
+              <div className="p-3 sm:p-3.5 rounded-2xl bg-[#1A0D11]/90 border border-white/10 space-y-2">
                 <div className="flex items-center gap-2 text-xs text-white">
-                  <span className="px-2 py-0.5 rounded-md bg-[#8DC63F]/20 text-[#8DC63F] font-black shrink-0 text-[11px]">
+                  <span className="px-2 py-0.5 rounded-md bg-[#DE7272]/20 text-[#FFCA88] font-black shrink-0 text-[11px] border border-[#DE7272]/30">
                     🩺 التشخيص
                   </span>
-                  <span className="font-semibold text-green-100/90 truncate sm:whitespace-normal">
+                  <span className="font-semibold text-[#FFF6A9]/90 truncate sm:whitespace-normal">
                     حالة <strong className={bmiStatus.color}>"{bmiStatus.label}"</strong> مع تمركز دهني بنسبة <strong className="text-white">{Math.round((customBelly + customFlanks) / 2)}%</strong> في محيط البطن والخواصر.
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2 text-xs text-white border-t border-white/5 pt-2">
-                  <span className="px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 font-black shrink-0 text-[11px]">
+                  <span className="px-2 py-0.5 rounded-md bg-[#FFCA88]/20 text-[#FFCA88] font-black shrink-0 text-[11px] border border-[#FFCA88]/30">
                     ⚡ التقييم
                   </span>
-                  <span className="font-semibold text-green-100/90 truncate sm:whitespace-normal">
-                    استجابة فورية عالية (+88%) لتقنيات <strong className="text-[#8DC63F]">Onda</strong> و<strong className="text-cyan-400">Scizer</strong>، يوصى بحجز جلسة فحص InBody 770 بالفرع.
+                  <span className="font-semibold text-[#FFF6A9]/90 truncate sm:whitespace-normal">
+                    استجابة فورية عالية (+88%) لتقنيات <strong className="text-[#DE7272]">Onda</strong> و<strong className="text-[#FFCA88]">Scizer</strong>، يوصى بحجز جلسة فحص InBody 770 بالفرع.
                   </span>
                 </div>
               </div>
 
               {/* Centered 3D Model Display - Direct Pure Avatar Canvas */}
               <div className="w-full max-w-2xl mx-auto">
-                <div className="w-full h-[360px] sm:h-[420px] rounded-3xl overflow-hidden bg-gradient-to-b from-black/90 via-[#030d06] to-black/90 border border-[#8DC63F]/30 relative shadow-[0_0_35px_rgba(0,0,0,0.8)]">
+                <div className="w-full h-[360px] sm:h-[420px] rounded-3xl overflow-hidden bg-gradient-to-b from-[#120B0D] via-[#1E0F14] to-[#120B0D] border border-[#DE7272]/30 relative shadow-[0_0_35px_rgba(222,114,114,0.15)]">
                   
                   {/* Floating Badges */}
-                  <div className="absolute top-3 right-3 z-30 bg-black/80 backdrop-blur-md border border-[#8DC63F]/30 px-3 py-1 rounded-full flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#8DC63F] animate-pulse"></span>
+                  <div className="absolute top-3 right-3 z-30 bg-black/80 backdrop-blur-md border border-[#DE7272]/30 px-3 py-1 rounded-full flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#DE7272] animate-pulse"></span>
                     <span className="text-white font-bold text-[10px]">
                       {gender === 'female' ? 'أنثى' : 'ذكر'} • {height} سم • {weight} كجم
                     </span>
@@ -708,9 +708,9 @@ export default function IhnasiaInitialDiagnosisModal({
 
                   {/* Confirmation Badge Overlay */}
                   {isConfirmed && (
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 bg-emerald-950/90 border border-emerald-500/60 px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg animate-[fadeIn_0.2s_ease-out]">
-                      <CheckCircle2 size={14} className="text-emerald-400" />
-                      <span className="text-xs font-black text-emerald-200">تم تأكيد شكل القوام المستهدف</span>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 bg-[#2A1319]/90 border border-[#DE7272]/60 px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg animate-[fadeIn_0.2s_ease-out]">
+                      <CheckCircle2 size={14} className="text-[#FFCA88]" />
+                      <span className="text-xs font-black text-[#FFCA88]">تم تأكيد شكل القوام المستهدف</span>
                     </div>
                   )}
                 </div>
@@ -718,9 +718,9 @@ export default function IhnasiaInitialDiagnosisModal({
 
               {/* Ready-to-Use Adjustment Sliders */}
               {showSliders && (
-                <div className="w-full max-w-2xl mx-auto p-4 rounded-2xl bg-[#07140b] border border-[#8DC63F]/30 space-y-3 animate-[fadeIn_0.25s_ease-out]">
+                <div className="w-full max-w-2xl mx-auto p-4 rounded-2xl bg-[#1A0D11] border border-[#DE7272]/30 space-y-3 animate-[fadeIn_0.25s_ease-out]">
                   <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                    <span className="text-xs font-black text-[#8DC63F] flex items-center gap-1.5">
+                    <span className="text-xs font-black text-[#FFCA88] flex items-center gap-1.5">
                       <Sliders size={14} /> أشرطة تعديل مقاسات القوام المباشرة:
                     </span>
                     <span className="text-[10px] text-white/50">تحديث فوري على المجسم 3D</span>
@@ -731,7 +731,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     <div className="space-y-1 bg-black/40 p-2.5 rounded-xl border border-white/5">
                       <div className="flex justify-between text-[11px] font-bold text-white/90">
                         <span>محيط البطن والكرش:</span>
-                        <span className="text-[#8DC63F] font-black">{customBelly}%</span>
+                        <span className="text-[#FFCA88] font-black">{customBelly}%</span>
                       </div>
                       <input
                         type="range"
@@ -739,7 +739,7 @@ export default function IhnasiaInitialDiagnosisModal({
                         max={100}
                         value={customBelly}
                         onChange={(e) => handleSliderAdjustment(setCustomBelly, Number(e.target.value))}
-                        className="w-full accent-[#8DC63F] cursor-pointer"
+                        className="w-full accent-[#DE7272] cursor-pointer"
                       />
                     </div>
 
@@ -747,7 +747,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     <div className="space-y-1 bg-black/40 p-2.5 rounded-xl border border-white/5">
                       <div className="flex justify-between text-[11px] font-bold text-white/90">
                         <span>محيط الجوانب والخصر:</span>
-                        <span className="text-[#8DC63F] font-black">{customFlanks}%</span>
+                        <span className="text-[#FFCA88] font-black">{customFlanks}%</span>
                       </div>
                       <input
                         type="range"
@@ -755,7 +755,7 @@ export default function IhnasiaInitialDiagnosisModal({
                         max={100}
                         value={customFlanks}
                         onChange={(e) => handleSliderAdjustment(setCustomFlanks, Number(e.target.value))}
-                        className="w-full accent-[#8DC63F] cursor-pointer"
+                        className="w-full accent-[#DE7272] cursor-pointer"
                       />
                     </div>
 
@@ -763,7 +763,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     <div className="space-y-1 bg-black/40 p-2.5 rounded-xl border border-white/5">
                       <div className="flex justify-between text-[11px] font-bold text-white/90">
                         <span>حجم الذراعين والكتفين:</span>
-                        <span className="text-[#8DC63F] font-black">{customArms}%</span>
+                        <span className="text-[#FFCA88] font-black">{customArms}%</span>
                       </div>
                       <input
                         type="range"
@@ -771,7 +771,7 @@ export default function IhnasiaInitialDiagnosisModal({
                         max={100}
                         value={customArms}
                         onChange={(e) => handleSliderAdjustment(setCustomArms, Number(e.target.value))}
-                        className="w-full accent-[#8DC63F] cursor-pointer"
+                        className="w-full accent-[#DE7272] cursor-pointer"
                       />
                     </div>
 
@@ -779,7 +779,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     <div className="space-y-1 bg-black/40 p-2.5 rounded-xl border border-white/5">
                       <div className="flex justify-between text-[11px] font-bold text-white/90">
                         <span>حجم الفخذين والأرداف:</span>
-                        <span className="text-[#8DC63F] font-black">{customThighs}%</span>
+                        <span className="text-[#FFCA88] font-black">{customThighs}%</span>
                       </div>
                       <input
                         type="range"
@@ -787,7 +787,7 @@ export default function IhnasiaInitialDiagnosisModal({
                         max={100}
                         value={customThighs}
                         onChange={(e) => handleSliderAdjustment(setCustomThighs, Number(e.target.value))}
-                        className="w-full accent-[#8DC63F] cursor-pointer"
+                        className="w-full accent-[#DE7272] cursor-pointer"
                       />
                     </div>
                   </div>
@@ -796,13 +796,13 @@ export default function IhnasiaInitialDiagnosisModal({
 
               {/* Post-Adjustment Booking Prompt Banner */}
               {showBookingPrompt && (
-                <div className="w-full max-w-2xl mx-auto p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-[#0a1e10] to-emerald-950 border-2 border-[#8DC63F] shadow-[0_0_30px_rgba(141,198,63,0.25)] flex flex-col sm:flex-row items-center justify-between gap-3 animate-[scaleUp_0.3s_ease-out]">
+                <div className="w-full max-w-2xl mx-auto p-4 rounded-2xl bg-gradient-to-r from-[#2A1319] via-[#1E0F14] to-[#2A1319] border-2 border-[#DE7272] shadow-[0_0_30px_rgba(222,114,114,0.3)] flex flex-col sm:flex-row items-center justify-between gap-3 animate-[scaleUp_0.3s_ease-out]">
                   <div className="text-right space-y-0.5">
-                    <span className="text-xs font-black text-[#8DC63F] flex items-center gap-1">
+                    <span className="text-xs font-black text-[#FFCA88] flex items-center gap-1">
                       <Sparkles size={14} /> تم الانتهاء من ضبط قياسات القوام المستهدفة!
                     </span>
-                    <p className="text-xs font-bold text-green-100/90">
-                      احجز جلستك بفرع إهناسيا لتثبيت الخطة وتفعيل كشف InBody 770.
+                    <p className="text-xs font-bold text-[#FFF6A9]/90">
+                      احجز استشارتك بالعيادة لتثبيت الخطة وتفعيل فحص InBody.
                     </p>
                   </div>
                   <button
@@ -810,7 +810,7 @@ export default function IhnasiaInitialDiagnosisModal({
                     onClick={handleWhatsAppBooking}
                     className="w-full sm:w-auto btn-glow btn-glow-gold px-5 py-2.5 rounded-xl font-black text-xs flex items-center justify-center gap-2 border-none cursor-pointer shrink-0"
                   >
-                    <Calendar size={15} /> حجز جلسة بالفرع عبر واتساب
+                    <Calendar size={15} /> حجز كشف واستشارة عبر واتساب
                   </button>
                 </div>
               )}
@@ -821,7 +821,7 @@ export default function IhnasiaInitialDiagnosisModal({
         </div>
 
         {/* Modal Bottom Footer Navigation - Exactly 3 buttons in Step 4 */}
-        <div className="p-4 sm:p-5 border-t border-white/10 bg-black/80 flex items-center justify-between gap-3">
+        <div className="p-4 sm:p-5 border-t border-white/10 bg-[#120B0D]/95 flex items-center justify-between gap-3">
           {currentStep === 4 ? (
             <div className="w-full flex items-center justify-center gap-2.5 sm:gap-4">
               {/* 1. تأكيد */}
@@ -830,11 +830,11 @@ export default function IhnasiaInitialDiagnosisModal({
                 onClick={() => setIsConfirmed(true)}
                 className={`flex-1 py-3 px-4 rounded-2xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                   isConfirmed 
-                    ? 'bg-emerald-500/25 border-emerald-400 text-emerald-300' 
+                    ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] border-transparent font-black shadow-lg shadow-[#DE7272]/20' 
                     : 'bg-white/10 hover:bg-white/20 border-white/20 text-white'
                 }`}
               >
-                <CheckCircle2 size={17} className={isConfirmed ? 'text-emerald-400' : 'text-[#8DC63F]'} />
+                <CheckCircle2 size={17} className={isConfirmed ? 'text-[#120B0D]' : 'text-[#FFCA88]'} />
                 {isConfirmed ? 'تم التأكيد ✓' : 'تأكيد'}
               </button>
 
@@ -854,11 +854,11 @@ export default function IhnasiaInitialDiagnosisModal({
                 onClick={() => setShowSliders((prev) => !prev)}
                 className={`flex-1 py-3 px-4 rounded-2xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                   showSliders 
-                    ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-[#8DC63F]' 
+                    ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]' 
                     : 'bg-white/10 hover:bg-white/20 border-white/20 text-white'
                 }`}
               >
-                <Sliders size={17} className="text-[#8DC63F]" />
+                <Sliders size={17} className="text-[#FFCA88]" />
                 تعديل المجسم
               </button>
             </div>
@@ -900,7 +900,7 @@ export default function IhnasiaInitialDiagnosisModal({
         isOpen={isWhatsAppBookingOpen}
         onClose={() => setIsWhatsAppBookingOpen(false)}
         initialTab="branch"
-        defaultPurpose={`حجز جلسة واستشارة فحص القوام بفرع إهناسيا (الوزن: ${weight} كجم، الطول: ${height} سم)`}
+        defaultPurpose={`حجز كشف واستشارة فحص القوام بالعيادة (الوزن: ${weight} كجم، الطول: ${height} سم)`}
         defaultName={fullName}
         defaultPhone={phone}
       />

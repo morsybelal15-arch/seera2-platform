@@ -74,14 +74,14 @@ export default function Navbar() {
             
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 z-50 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FFB1B1] via-[#FFDBB0] to-[#FFFAD3] flex items-center justify-center shadow-[0_0_15px_rgba(255,177,177,0.35)] group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#DE7272] via-[#FFCA88] to-[#FFF6A9] flex items-center justify-center shadow-[0_0_15px_rgba(222,114,114,0.35)] group-hover:scale-105 transition-transform">
                 <span className="text-[#120B0D] font-black text-lg">س٢</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl md:text-2xl font-black tracking-wide text-white drop-shadow-md flex items-center gap-1.5">
-                  عيادة سيرة <span className="text-[#FFB1B1] text-2xl font-black">2</span>
+                  عيادة سيرة <span className="text-[#DE7272] text-2xl font-black">2</span>
                 </span>
-                <span className="text-[10px] text-[#FFDBB0] font-bold tracking-wider -mt-1">
+                <span className="text-[10px] text-[#FFCA88] font-bold tracking-wider -mt-1">
                   نحت وتنسيق القوام أونلاين
                 </span>
               </div>
@@ -97,8 +97,8 @@ export default function Navbar() {
                     href={link.path}
                     className={`px-5 py-2 rounded-full font-bold text-sm transition-all duration-300 ${
                       isActive 
-                        ? 'bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] shadow-[0_0_15px_rgba(255,177,177,0.4)]' 
-                        : 'text-[#FFFAD3]/80 hover:text-white hover:bg-white/10'
+                        ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] shadow-[0_0_15px_rgba(222,114,114,0.4)]' 
+                        : 'text-[#FFF6A9]/80 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     {link.name}
@@ -127,7 +127,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setIsActivationModalOpen(true)}
-                  className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-[#FFDBB0] to-[#FFB1B1] hover:opacity-95 text-[#120B0D] px-5 py-2.5 rounded-full font-black text-xs shadow-lg shadow-[#FFB1B1]/20 cursor-pointer animate-pulse"
+                  className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-[#FFCA88] to-[#DE7272] hover:opacity-95 text-[#120B0D] px-5 py-2.5 rounded-full font-black text-xs shadow-lg shadow-[#DE7272]/20 cursor-pointer animate-pulse"
                 >
                   <Sparkles size={15} className="fill-[#120B0D]" />
                   <span>تفعيل اشتراكك</span>
@@ -142,7 +142,7 @@ export default function Navbar() {
                   className="hidden md:flex items-center gap-2 btn-glow btn-glow-gold px-5 py-2.5 rounded-full font-extrabold text-xs border-none shadow-lg"
                 >
                   <LayoutDashboard size={15} />
-                  <span className="w-2 h-2 rounded-full bg-[#FFB1B1] animate-pulse"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#B4E4D6] animate-pulse"></span>
                   <span>{dashboardLabel}</span>
                   <ArrowLeft size={14} />
                 </Link>
@@ -166,7 +166,7 @@ export default function Navbar() {
                 key={link.path} 
                 href={link.path} 
                 onClick={() => setMobileMenuOpen(false)}
-                className={`text-2xl font-black transition-colors ${pathname === link.path ? 'text-[#FFB1B1]' : 'text-white hover:text-[#FFDBB0]'}`}
+                className={`text-2xl font-black transition-colors ${pathname === link.path ? 'text-[#DE7272]' : 'text-white hover:text-[#FFCA88]'}`}
               >
                 {link.name}
               </Link>
@@ -195,7 +195,7 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   setIsActivationModalOpen(true);
                 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-[#FFDBB0] to-[#FFB1B1] text-[#120B0D] px-7 py-3.5 rounded-full font-black text-sm shadow-lg cursor-pointer"
+                className="flex items-center gap-2 bg-gradient-to-r from-[#FFCA88] to-[#DE7272] text-[#120B0D] px-7 py-3.5 rounded-full font-black text-sm shadow-lg cursor-pointer"
               >
                 <Sparkles size={18} className="fill-[#120B0D]" />
                 <span>تفعيل اشتراكك</span>

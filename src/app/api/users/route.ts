@@ -21,8 +21,7 @@ declare global {
   var _cerrahUsersStore: SystemUser[] | undefined;
 }
 
-if (!global._cerrahUsersStore) {
-  global._cerrahUsersStore = [
+const SEED_USERS: SystemUser[] = [
     {
       id: 'usr_doc_1',
       uid: 'uid_belal_doctor',
@@ -30,12 +29,81 @@ if (!global._cerrahUsersStore) {
       displayName: 'د. بلال مرسي',
       phone: '01108080564',
       role: 'doctor',
+      roles: ['doctor'],
       status: 'active',
       notes: 'المدير الطبي واستشاري التغذية العلاجية وعلاج السمنة',
       lastLogin: new Date().toISOString(),
       createdAt: '2026-08-01T10:00:00Z',
     },
+    {
+      id: 'usr_staff_1',
+      uid: 'uid_staff_admin',
+      email: 'staff@seera2.clinic',
+      displayName: 'مساعد العيادة وفريق المتابعة',
+      phone: '01099887766',
+      role: 'staff',
+      roles: ['staff'],
+      status: 'active',
+      notes: 'منسق المتابعات والملفات الطبية والمشتركين',
+      lastLogin: new Date().toISOString(),
+      createdAt: '2026-09-01T10:00:00Z',
+    },
+    {
+      id: 'sub_sara_1',
+      uid: 'sub_sara_1',
+      email: 'sara.ahmed@gmail.com',
+      displayName: 'سارة أحمد',
+      phone: '01012345678',
+      role: 'online_subscriber',
+      roles: ['online_subscriber'],
+      status: 'active',
+      notes: 'مشتركة باقة نحت القوام 3D والمتابعة الأسبوعية - نزول 1.8 كجم',
+      lastLogin: new Date().toISOString(),
+      createdAt: '2026-09-15T12:00:00Z',
+    },
+    {
+      id: 'sub_mahmoud_2',
+      uid: 'sub_mahmoud_2',
+      email: 'eng.mahmoud@gmail.com',
+      displayName: 'م. محمود علي',
+      phone: '01123456789',
+      role: 'online_subscriber',
+      roles: ['online_subscriber'],
+      status: 'active',
+      notes: 'مشترك نظام الكيتو العلاجي ورفع معدل الحرق BMR',
+      lastLogin: new Date().toISOString(),
+      createdAt: '2026-09-20T14:30:00Z',
+    },
+    {
+      id: 'sub_maryam_3',
+      uid: 'sub_maryam_3',
+      email: 'maryam.khalid@gmail.com',
+      displayName: 'مريم خالد',
+      phone: '01234567890',
+      role: 'online_subscriber',
+      roles: ['online_subscriber'],
+      status: 'pending',
+      notes: 'بانتظار تجديد الاشتراك الأسبوعي وتأكيد تحويل الرسوم',
+      lastLogin: new Date().toISOString(),
+      createdAt: '2026-10-01T09:00:00Z',
+    },
+    {
+      id: 'sub_ahmed_1',
+      uid: 'sub_ahmed_1',
+      email: 'ahmed.fouad@gmail.com',
+      displayName: 'أحمد فؤاد',
+      phone: '01512345678',
+      role: 'visitor',
+      roles: ['visitor'],
+      status: 'suspended',
+      notes: 'حساب زائر مجمد لعدم استكمال الفحوصات والتحاليل المطلوبة',
+      lastLogin: new Date().toISOString(),
+      createdAt: '2026-10-05T11:00:00Z',
+    },
   ];
+
+if (!global._cerrahUsersStore || global._cerrahUsersStore.length < 2) {
+  global._cerrahUsersStore = [...SEED_USERS];
 }
 
 export async function GET() {
@@ -161,6 +229,9 @@ export async function PATCH(req: Request) {
     return NextResponse.json({ error: 'Failed to update user' }, { status: 500 });
   }
 }
+
+export const PUT = PATCH;
+
 
 export async function DELETE(req: Request) {
   try {

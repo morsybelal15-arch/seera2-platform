@@ -63,8 +63,8 @@ export default function BmiCalculatorModal({
   const excessKg = Math.max(0, weight - idealWeightMax);
 
   let categoryText = 'وزن طبيعي ومثالي';
-  let categoryColor = 'text-[#8DC63F]';
-  let categoryBg = 'bg-[#8DC63F]/10 border-[#8DC63F]/30';
+  let categoryColor = 'text-[#B4E4D6]';
+  let categoryBg = 'bg-[#B4E4D6]/10 border-[#B4E4D6]/30';
   let gaugePercent = 50;
   let clinicalAdvice = 'قوامك في النطاق الصحي الطبيعي. حافظ على نشاطك البدني وتوازن العناصر الغذائية.';
 
@@ -76,8 +76,8 @@ export default function BmiCalculatorModal({
     clinicalAdvice = 'نوصي ببروتوكول تغذية علاجية لزيادة الكتلة العضلية وتحسين امتصاص المغذيات.';
   } else if (bmi <= 24.9) {
     categoryText = 'وزن مثالي وصحي';
-    categoryColor = 'text-[#8DC63F]';
-    categoryBg = 'bg-[#8DC63F]/10 border-[#8DC63F]/30';
+    categoryColor = 'text-[#B4E4D6]';
+    categoryBg = 'bg-[#B4E4D6]/10 border-[#B4E4D6]/30';
     gaugePercent = 40;
     clinicalAdvice = 'نسبة الدهون والكتلة الحيوية متوازنة. يمكنك الاستفادة من برامج الشد ونحت العضلات الموضعي.';
   } else if (bmi <= 29.9) {
@@ -251,17 +251,17 @@ export default function BmiCalculatorModal({
       className="modal-backdrop"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="modal-dialog w-full max-w-xl bg-[#070d08] border border-[#8DC63F]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
+      <div className="modal-dialog w-full max-w-xl bg-[#070d08] border border-[#B4E4D6]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
         
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Calculator size={20} />
             </div>
             <div>
               <h3 className="text-white font-black text-lg">حاسبة مؤشر كتلة الجسم (BMI)</h3>
-              <p className="text-[#8DC63F] text-[11px] font-bold">BODY MASS INDEX & MORPHOLOGY ENGINE</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold">BODY MASS INDEX & MORPHOLOGY ENGINE</p>
             </div>
           </div>
           <button
@@ -277,7 +277,7 @@ export default function BmiCalculatorModal({
         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-1 text-right" dir="rtl">
           {confirmedResult ? (
             <div className="text-center py-4 space-y-5 animate-[fadeIn_0.3s_ease-out]">
-              <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center mx-auto text-[#8DC63F] shadow-[0_0_20px_rgba(141,198,63,0.3)]">
+              <div className="w-16 h-16 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6] flex items-center justify-center mx-auto text-[#B4E4D6] shadow-[0_0_20px_rgba(180, 228, 214,0.3)]">
                 <CheckCircle2 size={36} />
               </div>
 
@@ -287,7 +287,7 @@ export default function BmiCalculatorModal({
                     ? 'تم تسجيل قياسك وحجز موعدك بنجاح!' 
                     : 'تم توثيق وحفظ مؤشر كتلة جسمك بنجاح!'}
                 </h4>
-                <p className="text-xs text-green-100/70 font-semibold leading-relaxed">
+                <p className="text-xs text-[#FFF6A9]/75 font-semibold leading-relaxed">
                   تم حفظ نتائج فحص BMI وربطها بملفك الطبي في قاعدة بيانات العيادة السحابية.
                 </p>
               </div>
@@ -296,7 +296,7 @@ export default function BmiCalculatorModal({
               <div className="bg-black/50 border border-white/10 rounded-2xl p-4 text-right space-y-2.5 text-xs font-bold shadow-inner">
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">مؤشر كتلة الجسم BMI:</span>
-                  <span className="text-[#8DC63F] text-base font-black">{confirmedResult.bmi} ({confirmedResult.categoryText})</span>
+                  <span className="text-[#B4E4D6] text-base font-black">{confirmedResult.bmi} ({confirmedResult.categoryText})</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">نطاق الوزن المثالي الموصى به:</span>
@@ -310,7 +310,7 @@ export default function BmiCalculatorModal({
                 )}
                 <div className="pt-1">
                   <span className="text-white/50 text-[11px] block mb-1">التوجيه السريري:</span>
-                  <p className="text-[#8DC63F] text-xs font-semibold bg-[#8DC63F]/10 p-2.5 rounded-xl border border-[#8DC63F]/20">
+                  <p className="text-[#B4E4D6] text-xs font-semibold bg-[#B4E4D6]/10 p-2.5 rounded-xl border border-[#B4E4D6]/20">
                     {confirmedResult.clinicalAdvice}
                   </p>
                 </div>
@@ -336,7 +336,7 @@ export default function BmiCalculatorModal({
                     rel="noopener noreferrer"
                     className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15"
                   >
-                    <CalendarPlus size={16} className="text-[#8DC63F]" /> إضافة لتقويم Google
+                    <CalendarPlus size={16} className="text-[#B4E4D6]" /> إضافة لتقويم Google
                   </a>
                   <button
                     type="button"
@@ -348,7 +348,7 @@ export default function BmiCalculatorModal({
                     })}
                     className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15 cursor-pointer"
                   >
-                    <Download size={16} className="text-[#8DC63F]" /> تحميل ملف التقويم (.ics)
+                    <Download size={16} className="text-[#B4E4D6]" /> تحميل ملف التقويم (.ics)
                   </button>
                 </div>
               )}
@@ -362,7 +362,7 @@ export default function BmiCalculatorModal({
                       onClose();
                       onOpen3DSimulator();
                     }}
-                    className="w-full bg-[#8DC63F]/20 hover:bg-[#8DC63F]/30 text-[#8DC63F] border border-[#8DC63F]/40 font-black py-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                    className="w-full bg-[#B4E4D6]/20 hover:bg-[#B4E4D6]/30 text-[#B4E4D6] border border-[#B4E4D6]/40 font-black py-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
                   >
                     <Sliders size={16} /> فتح وتخصيص المجسم ثلاثي الأبعاد 3D بالقياسات المسجلة
                   </button>
@@ -382,7 +382,7 @@ export default function BmiCalculatorModal({
                     onClick={() => setConfirmedResult(null)}
                     className="bg-white/10 hover:bg-white/20 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   >
-                    <RefreshCw size={14} className="text-[#8DC63F]" /> تسجيل قراءة أخرى
+                    <RefreshCw size={14} className="text-[#B4E4D6]" /> تسجيل قراءة أخرى
                   </button>
                   <button
                     type="button"
@@ -413,7 +413,7 @@ export default function BmiCalculatorModal({
                 {/* Progress bar gauge */}
                 <div className="w-full bg-white/10 h-2.5 rounded-full mt-3 overflow-hidden relative">
                   <div 
-                    className="h-full bg-gradient-to-r from-blue-400 via-[#8DC63F] via-amber-400 to-red-500 transition-all duration-300"
+                    className="h-full bg-gradient-to-r from-blue-400 via-[#B4E4D6] via-amber-400 to-red-500 transition-all duration-300"
                     style={{ width: `${Math.min(100, Math.max(5, gaugePercent))}%` }}
                   />
                 </div>
@@ -434,7 +434,7 @@ export default function BmiCalculatorModal({
                       type="button"
                       onClick={() => setGender('male')}
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
-                        gender === 'male' ? 'bg-[#8DC63F] text-black shadow-sm' : 'bg-white/10 text-white/70'
+                        gender === 'male' ? 'bg-[#B4E4D6] text-black shadow-sm' : 'bg-white/10 text-white/70'
                       }`}
                     >
                       ذكر
@@ -443,7 +443,7 @@ export default function BmiCalculatorModal({
                       type="button"
                       onClick={() => setGender('female')}
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
-                        gender === 'female' ? 'bg-[#8DC63F] text-black shadow-sm' : 'bg-white/10 text-white/70'
+                        gender === 'female' ? 'bg-[#B4E4D6] text-black shadow-sm' : 'bg-white/10 text-white/70'
                       }`}
                     >
                       أنثى
@@ -472,7 +472,7 @@ export default function BmiCalculatorModal({
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
                     <label className="text-xs font-black text-white/80 flex items-center gap-1.5">
-                      <Scale size={14} className="text-[#8DC63F]" /> الوزن الحالي:
+                      <Scale size={14} className="text-[#B4E4D6]" /> الوزن الحالي:
                     </label>
                     <div className="flex items-center gap-1">
                       <input 
@@ -481,7 +481,7 @@ export default function BmiCalculatorModal({
                         max={220} 
                         value={weight} 
                         onChange={(e) => setWeight(Number(e.target.value) || 70)}
-                        className="w-16 bg-black/60 border border-white/10 rounded-lg px-2 py-0.5 text-center font-black text-xs text-[#8DC63F] outline-none"
+                        className="w-16 bg-black/60 border border-white/10 rounded-lg px-2 py-0.5 text-center font-black text-xs text-[#B4E4D6] outline-none"
                       />
                       <span className="text-xs text-white/50">كجم</span>
                     </div>
@@ -492,14 +492,14 @@ export default function BmiCalculatorModal({
                     max={180}
                     value={weight}
                     onChange={(e) => setWeight(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#B4E4D6] cursor-pointer"
                   />
                 </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
                     <label className="text-xs font-black text-white/80 flex items-center gap-1.5">
-                      <Activity size={14} className="text-[#8DC63F]" /> الطول:
+                      <Activity size={14} className="text-[#B4E4D6]" /> الطول:
                     </label>
                     <div className="flex items-center gap-1">
                       <input 
@@ -508,7 +508,7 @@ export default function BmiCalculatorModal({
                         max={220} 
                         value={height} 
                         onChange={(e) => setHeight(Number(e.target.value) || 165)}
-                        className="w-16 bg-black/60 border border-white/10 rounded-lg px-2 py-0.5 text-center font-black text-xs text-[#8DC63F] outline-none"
+                        className="w-16 bg-black/60 border border-white/10 rounded-lg px-2 py-0.5 text-center font-black text-xs text-[#B4E4D6] outline-none"
                       />
                       <span className="text-xs text-white/50">سم</span>
                     </div>
@@ -519,7 +519,7 @@ export default function BmiCalculatorModal({
                     max={210}
                     value={height}
                     onChange={(e) => setHeight(Number(e.target.value))}
-                    className="w-full accent-[#8DC63F] cursor-pointer"
+                    className="w-full accent-[#B4E4D6] cursor-pointer"
                   />
                 </div>
               </div>
@@ -540,7 +540,7 @@ export default function BmiCalculatorModal({
 
               {/* Clinical Advice Box */}
               <div className="bg-black/40 border border-white/10 rounded-xl p-3 flex items-start gap-2.5">
-                <Info size={16} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                <Info size={16} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                 <p className="text-[11px] text-white/80 leading-relaxed font-semibold">
                   {clinicalAdvice}
                 </p>
@@ -575,14 +575,14 @@ export default function BmiCalculatorModal({
                         }}
                         className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 border border-white/15 cursor-pointer transition-colors"
                       >
-                        <Sliders size={15} className="text-[#8DC63F]" /> معاينة في المحاكي 3D
+                        <Sliders size={15} className="text-[#B4E4D6]" /> معاينة في المحاكي 3D
                       </button>
                     )}
 
                     <button
                       type="button"
                       onClick={() => setShowBookingForm(true)}
-                      className="bg-[#8DC63F]/15 hover:bg-[#8DC63F] text-[#8DC63F] hover:text-black font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 border border-[#8DC63F]/30 cursor-pointer transition-all"
+                      className="bg-[#B4E4D6]/15 hover:bg-[#B4E4D6] text-[#B4E4D6] hover:text-black font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 border border-[#B4E4D6]/30 cursor-pointer transition-all"
                     >
                       <Sparkles size={15} /> حجز كشف لتصحيح المؤشر
                     </button>
@@ -605,7 +605,7 @@ export default function BmiCalculatorModal({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
                       <label className="block text-[11px] font-bold text-white/60 mb-1 flex items-center gap-1.5">
-                        <User size={13} className="text-[#8DC63F]" /> اسم المريض *
+                        <User size={13} className="text-[#B4E4D6]" /> اسم المريض *
                       </label>
                       <input
                         type="text"
@@ -613,12 +613,12 @@ export default function BmiCalculatorModal({
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="أدخل اسمك"
-                        className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#8DC63F]"
+                        className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#B4E4D6]"
                       />
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold text-white/60 mb-1 flex items-center gap-1.5">
-                        <Phone size={13} className="text-[#8DC63F]" /> رقم الهاتف (واتساب) *
+                        <Phone size={13} className="text-[#B4E4D6]" /> رقم الهاتف (واتساب) *
                       </label>
                       <input
                         type="tel"
@@ -627,7 +627,7 @@ export default function BmiCalculatorModal({
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="01X XXXX XXXX"
                         dir="ltr"
-                        className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#8DC63F] text-right"
+                        className="w-full bg-black/40 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-[#B4E4D6] text-right"
                       />
                     </div>
                   </div>
@@ -643,7 +643,7 @@ export default function BmiCalculatorModal({
                     <button
                       type="submit"
                       disabled={loading}
-                      className="flex-1 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
+                      className="flex-1 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
                     >
                       {loading ? (
                         <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />

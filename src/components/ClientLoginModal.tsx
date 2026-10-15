@@ -147,7 +147,7 @@ export default function ClientLoginModal({
         setTimeout(() => {
           onClose();
           if (onSuccess) onSuccess();
-          router.push('/client');
+          router.push('/subscriber?tab=overview');
         }, 1000);
       } else {
         setErrorMsg(res.error || 'رمز الـ QR غير صالح أو غير مسجل.');
@@ -217,7 +217,7 @@ export default function ClientLoginModal({
           onClose();
           if (onSuccess) onSuccess();
           if (res.patient) {
-            router.push('/client');
+            router.push('/subscriber?tab=overview');
           } else {
             router.refresh();
           }
@@ -288,7 +288,7 @@ export default function ClientLoginModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
       <div 
-        className="glass-card w-full max-w-md rounded-[32px] p-6 sm:p-8 border border-[#8DC63F]/40 shadow-[0_0_50px_rgba(141,198,63,0.2)] bg-[#07130b] max-h-[92vh] overflow-y-auto relative"
+        className="glass-card w-full max-w-md rounded-[32px] p-6 sm:p-8 border border-[#B4E4D6]/40 shadow-[0_0_50px_rgba(180, 228, 214,0.2)] bg-[#07130b] max-h-[92vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* زر الإغلاق */}
@@ -301,13 +301,13 @@ export default function ClientLoginModal({
 
         {/* رأس النافذة */}
         <div className="text-center mb-5">
-          <div className="w-14 h-14 bg-gradient-to-tr from-[#8DC63F] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 text-black shadow-lg shadow-[#8DC63F]/30">
+          <div className="w-14 h-14 bg-gradient-to-tr from-[#B4E4D6] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 text-black shadow-lg shadow-[#B4E4D6]/30">
             {mode === 'login' ? <LogIn size={26} /> : <UserPlus size={26} />}
           </div>
           <h2 className="text-2xl font-black text-white">
             {mode === 'login' ? 'بوابة الدخول الذكية' : 'إنشاء حساب جديد للزوار'}
           </h2>
-          <p className="text-xs text-green-100/70 font-semibold mt-1">
+          <p className="text-xs text-[#FFF6A9]/75 font-semibold mt-1">
             {mode === 'login' 
               ? 'امسح رمز QR، ارفع الصورة، أو سجل بالاسم ورقم الهاتف' 
               : 'سجل حسابك بخطوة واحدة لتخصيص مجسمك والاشتراك بالمركز'}
@@ -321,7 +321,7 @@ export default function ClientLoginModal({
             onClick={() => { setMode('login'); setErrorMsg(''); setSuccessMsg(''); }}
             className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
               mode === 'login'
-                ? 'bg-[#8DC63F] text-black shadow-md'
+                ? 'bg-[#B4E4D6] text-black shadow-md'
                 : 'text-white/70 hover:text-white'
             }`}
           >
@@ -332,7 +332,7 @@ export default function ClientLoginModal({
             onClick={() => { setMode('register'); setErrorMsg(''); setSuccessMsg(''); stopCamera(); }}
             className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
               mode === 'register'
-                ? 'bg-[#8DC63F] text-black shadow-md'
+                ? 'bg-[#B4E4D6] text-black shadow-md'
                 : 'text-white/70 hover:text-white'
             }`}
           >
@@ -364,7 +364,7 @@ export default function ClientLoginModal({
                 type="button"
                 onClick={() => { setActiveTab('scan'); setErrorMsg(''); }}
                 className={`py-2 rounded-lg flex items-center justify-center gap-1 transition-all cursor-pointer ${
-                  activeTab === 'scan' ? 'bg-white/20 text-[#8DC63F] font-black' : 'text-white/60 hover:text-white'
+                  activeTab === 'scan' ? 'bg-white/20 text-[#B4E4D6] font-black' : 'text-white/60 hover:text-white'
                 }`}
               >
                 <Camera size={13} /> مسح الكاميرا
@@ -373,7 +373,7 @@ export default function ClientLoginModal({
                 type="button"
                 onClick={() => { setActiveTab('upload'); setErrorMsg(''); stopCamera(); }}
                 className={`py-2 rounded-lg flex items-center justify-center gap-1 transition-all cursor-pointer ${
-                  activeTab === 'upload' ? 'bg-white/20 text-[#8DC63F] font-black' : 'text-white/60 hover:text-white'
+                  activeTab === 'upload' ? 'bg-white/20 text-[#B4E4D6] font-black' : 'text-white/60 hover:text-white'
                 }`}
               >
                 <Upload size={13} /> رفع صورة
@@ -382,7 +382,7 @@ export default function ClientLoginModal({
                 type="button"
                 onClick={() => { setActiveTab('credentials'); setErrorMsg(''); stopCamera(); }}
                 className={`py-2 rounded-lg flex items-center justify-center gap-1 transition-all cursor-pointer ${
-                  activeTab === 'credentials' ? 'bg-white/20 text-[#8DC63F] font-black' : 'text-white/60 hover:text-white'
+                  activeTab === 'credentials' ? 'bg-white/20 text-[#B4E4D6] font-black' : 'text-white/60 hover:text-white'
                 }`}
               >
                 <Key size={13} /> الاسم والهاتف
@@ -392,7 +392,7 @@ export default function ClientLoginModal({
             {/* الخيار 1: مسح الكاميرا */}
             {activeTab === 'scan' && (
               <div className="space-y-3 text-center">
-                <div className="relative w-full h-52 bg-black/70 border-2 border-dashed border-[#8DC63F]/40 rounded-2xl overflow-hidden flex flex-col items-center justify-center">
+                <div className="relative w-full h-52 bg-black/70 border-2 border-dashed border-[#B4E4D6]/40 rounded-2xl overflow-hidden flex flex-col items-center justify-center">
                   {isCameraActive ? (
                     <>
                       <video 
@@ -401,19 +401,19 @@ export default function ClientLoginModal({
                         muted 
                         className="w-full h-full object-cover" 
                       />
-                      <div className="absolute inset-0 border-2 border-[#8DC63F] m-8 rounded-xl pointer-events-none animate-pulse"></div>
+                      <div className="absolute inset-0 border-2 border-[#B4E4D6] m-8 rounded-xl pointer-events-none animate-pulse"></div>
                       <span className="absolute bottom-2 bg-black/70 px-3 py-1 rounded-full text-[10px] text-white/80 font-bold">
                         وجه الكاميرا نحو كود الـ QR
                       </span>
                     </>
                   ) : (
                     <div className="p-4 space-y-2">
-                      <QrCode size={56} className="text-[#8DC63F] mx-auto animate-pulse" />
+                      <QrCode size={56} className="text-[#B4E4D6] mx-auto animate-pulse" />
                       <p className="text-xs text-white/80 font-bold">المسح المباشر لكارت الـ QR الذكي</p>
                       <button
                         type="button"
                         onClick={startCamera}
-                        className="px-4 py-2 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center gap-1.5 mx-auto transition-all cursor-pointer shadow-md"
+                        className="px-4 py-2 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center gap-1.5 mx-auto transition-all cursor-pointer shadow-md"
                       >
                         <Camera size={14} /> تشغيل الكاميرا للمسح
                       </button>
@@ -438,14 +438,14 @@ export default function ClientLoginModal({
                 />
                 <div 
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-full h-48 border-2 border-dashed border-[#8DC63F]/40 hover:border-[#8DC63F] rounded-2xl p-6 flex flex-col items-center justify-center gap-2.5 bg-black/40 hover:bg-black/60 transition-all cursor-pointer group"
+                  className="w-full h-48 border-2 border-dashed border-[#B4E4D6]/40 hover:border-[#B4E4D6] rounded-2xl p-6 flex flex-col items-center justify-center gap-2.5 bg-black/40 hover:bg-black/60 transition-all cursor-pointer group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#8DC63F]/15 flex items-center justify-center text-[#8DC63F] group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-[#B4E4D6]/15 flex items-center justify-center text-[#B4E4D6] group-hover:scale-110 transition-transform">
                     <Upload size={24} />
                   </div>
                   <div>
                     <h4 className="text-white font-black text-xs">انقر لاختيار أو إفلات صورة كود الـ QR</h4>
-                    <p className="text-[10px] text-green-100/60 font-semibold mt-0.5">
+                    <p className="text-[10px] text-[#FFF6A9]/65 font-semibold mt-0.5">
                       يدعم صور الهاتف والاسكرين شوت (PNG, JPG)
                     </p>
                   </div>
@@ -457,7 +457,7 @@ export default function ClientLoginModal({
             {activeTab === 'credentials' && (
               <form onSubmit={handleCredentialsSubmit} className="space-y-3.5">
                 <div>
-                  <label className="block text-xs font-bold text-green-100/80 mb-1">
+                  <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1">
                     الاسم الثنائي *
                   </label>
                   <div className="relative">
@@ -467,14 +467,14 @@ export default function ClientLoginModal({
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="مثال: سارة جمال أو أحمد محمود"
-                      className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#8DC63F]"
+                      className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#B4E4D6]"
                     />
-                    <User size={16} className="absolute top-3.5 right-3.5 text-[#8DC63F]" />
+                    <User size={16} className="absolute top-3.5 right-3.5 text-[#B4E4D6]" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-green-100/80 mb-1">
+                  <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1">
                     رقم الهاتف (كلمة المرور المسجلة) *
                   </label>
                   <div className="relative">
@@ -485,16 +485,16 @@ export default function ClientLoginModal({
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="01XXXXXXXXX"
                       dir="ltr"
-                      className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#8DC63F] text-right"
+                      className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white placeholder:text-white/30 text-xs font-bold outline-none focus:border-[#B4E4D6] text-right"
                     />
-                    <Phone size={16} className="absolute top-3.5 right-3.5 text-[#8DC63F]" />
+                    <Phone size={16} className="absolute top-3.5 right-3.5 text-[#B4E4D6]" />
                   </div>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isProcessing}
-                  className="w-full py-3.5 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer disabled:opacity-50"
+                  className="w-full py-3.5 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#B4E4D6]/20 cursor-pointer disabled:opacity-50"
                 >
                   <LogIn size={16} />
                   {isProcessing ? 'جاري التحقق...' : 'تسجيل الدخول'}
@@ -527,7 +527,7 @@ export default function ClientLoginModal({
           <form onSubmit={handleRegisterVisitorSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-bold text-green-100/80 mb-1">
+                <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1">
                   الاسم الأول *
                 </label>
                 <input
@@ -536,11 +536,11 @@ export default function ClientLoginModal({
                   value={regFirstName}
                   onChange={(e) => setRegFirstName(e.target.value)}
                   placeholder="مثال: عمر"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-green-100/80 mb-1">
+                <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1">
                   الاسم الثاني (العائلة) *
                 </label>
                 <input
@@ -549,13 +549,13 @@ export default function ClientLoginModal({
                   value={regLastName}
                   onChange={(e) => setRegLastName(e.target.value)}
                   placeholder="مثال: طارق"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-green-100/80 mb-1">
+              <label className="block text-xs font-bold text-[#FFF6A9]/85 mb-1">
                 رقم الهاتف (الواتساب للتواصل) *
               </label>
               <div className="relative">
@@ -566,16 +566,16 @@ export default function ClientLoginModal({
                   onChange={(e) => setRegPhone(e.target.value)}
                   placeholder="01XXXXXXXXX"
                   dir="ltr"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white text-xs font-mono font-bold outline-none focus:border-[#8DC63F] text-right"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white text-xs font-mono font-bold outline-none focus:border-[#B4E4D6] text-right"
                 />
-                <Phone size={16} className="absolute top-3.5 right-3.5 text-[#8DC63F]" />
+                <Phone size={16} className="absolute top-3.5 right-3.5 text-[#B4E4D6]" />
               </div>
             </div>
 
             <button
               type="submit"
               disabled={isProcessing}
-              className="w-full py-4 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer disabled:opacity-50"
+              className="w-full py-4 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#B4E4D6]/20 cursor-pointer disabled:opacity-50"
             >
               <UserPlus size={16} />
               {isProcessing ? 'جاري إنشاء الحساب...' : 'إنشاء حساب زائر ومتابعة'}
@@ -597,7 +597,7 @@ export default function ClientLoginModal({
 
         {/* حماية وخصوصية */}
         <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-center gap-2 text-[10px] text-white/40 font-semibold">
-          <ShieldCheck size={14} className="text-[#8DC63F]" />
+          <ShieldCheck size={14} className="text-[#B4E4D6]" />
           <span>بياناتك الطبية مشفرة ومحمية وفق أعلى معايير الخصوصية</span>
         </div>
 

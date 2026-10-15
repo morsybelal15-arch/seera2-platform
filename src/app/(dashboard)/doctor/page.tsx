@@ -252,21 +252,21 @@ function DoctorPatientsInner() {
       <div className="animate-[fadeIn_0.3s_ease-out] space-y-6 pb-16">
         
         {/* Detail Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-[#08150c] p-6 rounded-[28px] border border-white/10 shadow-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-[#1D1216] p-6 rounded-[28px] border border-white/10 shadow-2xl">
           <div>
             <button 
               onClick={() => setSelectedPatientId(null)} 
-              className="text-green-100/60 hover:text-white flex items-center gap-1.5 text-xs font-bold mb-2 transition-colors cursor-pointer"
+              className="text-[#FFF6A9]/65 hover:text-white flex items-center gap-1.5 text-xs font-bold mb-2 transition-colors cursor-pointer"
             >
               <ChevronLeft size={16} className="rotate-180" /> العودة لكافة ملفات المرضى
             </button>
             <div className="flex items-center gap-3">
               <h1 className="text-2xl sm:text-3xl font-black text-white">{selectedPatient.name}</h1>
-              <span className="text-[10px] font-mono text-[#8DC63F] bg-[#8DC63F]/10 px-2.5 py-0.5 rounded-full border border-[#8DC63F]/30">
+              <span className="text-[10px] font-mono text-[#B4E4D6] bg-[#B4E4D6]/10 px-2.5 py-0.5 rounded-full border border-[#B4E4D6]/30">
                 {selectedPatient.phone}
               </span>
             </div>
-            <p className="text-xs text-green-100/70 font-semibold mt-1">
+            <p className="text-xs text-[#FFF6A9]/75 font-semibold mt-1">
               الملف الطبي والروشتة ومتابعة الالتزام بالدايت وجلسات الأجهزة
             </p>
           </div>
@@ -274,7 +274,7 @@ function DoctorPatientsInner() {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => handleOpenChat(selectedPatient)}
-              className="py-2.5 px-4 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
+              className="py-2.5 px-4 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
             >
               <MessageCircle size={16} /> فتح شات المريض
             </button>
@@ -283,7 +283,7 @@ function DoctorPatientsInner() {
               onClick={() => setIsPdfModalOpen(true)}
               className="py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 transition-all border border-white/15 cursor-pointer"
             >
-              <Printer size={16} className="text-[#8DC63F]" /> طباعة الروشتة (PDF)
+              <Printer size={16} className="text-[#B4E4D6]" /> طباعة الروشتة (PDF)
             </button>
 
             <button
@@ -300,24 +300,24 @@ function DoctorPatientsInner() {
           
           {/* Column 1: Diet Plan & Prescription Management */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl space-y-4">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl space-y-4">
               <div className="flex justify-between items-center pb-3 border-b border-white/5">
                 <h3 className="text-base font-black text-white flex items-center gap-2">
-                  <FileText size={18} className="text-[#8DC63F]" /> الخطة الغذائية والروشتة
+                  <FileText size={18} className="text-[#B4E4D6]" /> الخطة الغذائية والروشتة
                 </h3>
                 <button
                   onClick={() => setIsAssignTemplateModalOpen(true)}
-                  className="text-xs bg-[#8DC63F]/15 hover:bg-[#8DC63F]/25 text-[#8DC63F] border border-[#8DC63F]/30 px-3 py-1.5 rounded-xl font-black flex items-center gap-1 transition-all cursor-pointer"
+                  className="text-xs bg-[#B4E4D6]/15 hover:bg-[#B4E4D6]/25 text-[#B4E4D6] border border-[#B4E4D6]/30 px-3 py-1.5 rounded-xl font-black flex items-center gap-1 transition-all cursor-pointer"
                 >
                   <Plus size={14} /> ربط قالب دايت
                 </button>
               </div>
 
               {selectedPatient.diet ? (
-                <div className="bg-black/50 border border-[#8DC63F]/30 p-5 rounded-2xl space-y-3 relative overflow-hidden">
+                <div className="bg-black/50 border border-[#B4E4D6]/30 p-5 rounded-2xl space-y-3 relative overflow-hidden">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-[10px] text-green-100/50 block font-bold">النظام الغذائي المعتمد:</span>
+                      <span className="text-[10px] text-[#FFF6A9]/50 block font-bold">النظام الغذائي المعتمد:</span>
                       <h4 className="text-white font-black text-base mt-0.5">{selectedPatient.diet.name}</h4>
                     </div>
                     <span className="text-[10px] font-bold text-blue-400 flex items-center gap-1 bg-blue-500/10 px-2 py-0.5 rounded-md border border-blue-500/20">
@@ -325,14 +325,14 @@ function DoctorPatientsInner() {
                     </span>
                   </div>
 
-                  <p className="text-xs text-green-100/70 font-semibold whitespace-pre-line leading-relaxed max-h-40 overflow-y-auto">
+                  <p className="text-xs text-[#FFF6A9]/75 font-semibold whitespace-pre-line leading-relaxed max-h-40 overflow-y-auto">
                     {selectedPatient.diet.instructions}
                   </p>
 
                   <div className="pt-2 border-t border-white/5 flex justify-between items-center">
                     <button
                       onClick={() => setIsPdfModalOpen(true)}
-                      className="text-xs text-[#8DC63F] font-black hover:underline flex items-center gap-1"
+                      className="text-xs text-[#B4E4D6] font-black hover:underline flex items-center gap-1"
                     >
                       معاينة الروشتة الرسمية ←
                     </button>
@@ -346,7 +346,7 @@ function DoctorPatientsInner() {
                   <p className="text-xs text-white/50 font-bold">لم يتم ربط خطة دايت حتى الآن</p>
                   <button
                     onClick={() => setIsAssignTemplateModalOpen(true)}
-                    className="text-xs bg-[#8DC63F] text-black font-black px-4 py-2 rounded-xl"
+                    className="text-xs bg-[#B4E4D6] text-black font-black px-4 py-2 rounded-xl"
                   >
                     اختر من القوالب الجاهزة
                   </button>
@@ -355,15 +355,15 @@ function DoctorPatientsInner() {
             </div>
 
             {/* Progress Tracking: Diet Adherence Rate */}
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl space-y-4">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl space-y-4">
               <h3 className="text-base font-black text-white flex items-center gap-2">
-                <Activity size={18} className="text-[#8DC63F]" /> مراقبة الالتزام بالدايت (Adherence)
+                <Activity size={18} className="text-[#B4E4D6]" /> مراقبة الالتزام بالدايت (Adherence)
               </h3>
 
               <div className="bg-black/40 p-4 rounded-2xl border border-white/5 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-white/50 font-bold block">معدل التزام العميل:</span>
-                  <span className="text-2xl font-black text-[#8DC63F]">{adherenceRate}%</span>
+                  <span className="text-2xl font-black text-[#B4E4D6]">{adherenceRate}%</span>
                 </div>
                 <div className="text-left text-xs font-bold text-white/70">
                   <p>الأيام المسجلة: <strong className="text-white">{selectedPatient.adherenceLogs?.length || 5}</strong></p>
@@ -381,7 +381,7 @@ function DoctorPatientsInner() {
                   ]).map((w, idx) => (
                     <div key={idx} className="bg-white/5 p-2 rounded-xl text-xs flex justify-between items-center text-white/80 font-bold">
                       <span className="font-mono text-white/50 text-[11px]">{w.date}</span>
-                      <span className="text-[#8DC63F]">{w.weight} كجم</span>
+                      <span className="text-[#B4E4D6]">{w.weight} كجم</span>
                       <span className="text-white/60">BMI: {w.bmi}</span>
                     </div>
                   ))}
@@ -392,19 +392,19 @@ function DoctorPatientsInner() {
 
           {/* Column 2: Clinical Sessions Management (Staff & Doctor Full View) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl space-y-4">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl space-y-4">
               <div className="flex justify-between items-center pb-3 border-b border-white/5">
                 <div>
                   <h3 className="text-base font-black text-white flex items-center gap-2">
-                    <CalendarDays size={18} className="text-[#8DC63F]" /> سجل جلسات الأجهزة (Onda & Scizer)
+                    <CalendarDays size={18} className="text-[#B4E4D6]" /> سجل جلسات الأجهزة (Onda & Scizer)
                   </h3>
-                  <p className="text-[11px] text-green-100/50 font-semibold">
+                  <p className="text-[11px] text-[#FFF6A9]/50 font-semibold">
                     * يسجل الطبيب والطاقم كافة المعايير الفنية، بينما يرى العميل تواريخ الجلسات فقط.
                   </p>
                 </div>
                 <button 
                   onClick={handleOpenAddSession}
-                  className="bg-[#8DC63F] text-black hover:bg-[#7ab036] px-3 py-1.5 rounded-xl text-xs font-black flex items-center gap-1 transition-all cursor-pointer shadow-md"
+                  className="bg-[#B4E4D6] text-black hover:bg-[#7ab036] px-3 py-1.5 rounded-xl text-xs font-black flex items-center gap-1 transition-all cursor-pointer shadow-md"
                 >
                   <Plus size={14} /> تسجيل جلسة
                 </button>
@@ -415,12 +415,12 @@ function DoctorPatientsInner() {
                   selectedPatient.sessions.map((session) => (
                     <div 
                       key={session.id} 
-                      className="bg-black/50 border border-white/10 hover:border-[#8DC63F]/30 p-4 rounded-2xl space-y-2.5 transition-all"
+                      className="bg-black/50 border border-white/10 hover:border-[#B4E4D6]/30 p-4 rounded-2xl space-y-2.5 transition-all"
                     >
                       <div className="flex justify-between items-start">
                         <div>
                           <h4 className="text-white font-black text-sm">{session.device}</h4>
-                          <span className="text-[11px] text-[#8DC63F] font-mono">
+                          <span className="text-[11px] text-[#B4E4D6] font-mono">
                             {new Date(session.date).toLocaleString('ar-EG', { dateStyle: 'medium', timeStyle: 'short' })}
                           </span>
                         </div>
@@ -460,7 +460,7 @@ function DoctorPatientsInner() {
                         </div>
                         <div>
                           <span className="text-white/40 block text-[9px]">الطاقة (Joules):</span>
-                          <strong className="text-[#8DC63F]">{session.powerJoules || 120} J</strong>
+                          <strong className="text-[#B4E4D6]">{session.powerJoules || 120} J</strong>
                         </div>
                         <div>
                           <span className="text-white/40 block text-[9px]">النبضات / المدة:</span>
@@ -469,7 +469,7 @@ function DoctorPatientsInner() {
                       </div>
 
                       {session.clinicalNotes && (
-                        <p className="text-[11px] text-green-100/70 font-semibold italic bg-black/30 p-2 rounded-lg">
+                        <p className="text-[11px] text-[#FFF6A9]/75 font-semibold italic bg-black/30 p-2 rounded-lg">
                           💬 ملاحظة طبية: {session.clinicalNotes}
                         </p>
                       )}
@@ -486,14 +486,14 @@ function DoctorPatientsInner() {
 
           {/* Column 3: 3D Avatar Profile & Measurements */}
           <div className="lg:col-span-3 space-y-6">
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl flex flex-col min-h-[480px]">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl flex flex-col min-h-[480px]">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-base font-black text-white flex items-center gap-2">
-                  <User size={18} className="text-[#8DC63F]" /> الأفاتار 3D
+                  <User size={18} className="text-[#B4E4D6]" /> الأفاتار 3D
                 </h3>
                 <button 
                   onClick={() => { setTempAvatarProps({ ...selectedPatient.avatarProps }); setIsAvatarModalOpen(true); }}
-                  className="bg-[#8DC63F]/15 hover:bg-[#8DC63F]/25 text-[#8DC63F] border border-[#8DC63F]/30 px-3 py-1 rounded-xl text-xs font-black transition-colors"
+                  className="bg-[#B4E4D6]/15 hover:bg-[#B4E4D6]/25 text-[#B4E4D6] border border-[#B4E4D6]/30 px-3 py-1 rounded-xl text-xs font-black transition-colors"
                 >
                   تعديل المجسم
                 </button>
@@ -506,7 +506,7 @@ function DoctorPatientsInner() {
               <div className="mt-4 bg-white/5 p-3 rounded-xl border border-white/5 space-y-1 text-xs font-bold text-white/80">
                 <div className="flex justify-between">
                   <span>الوزن:</span>
-                  <strong className="text-[#8DC63F]">{selectedPatient.avatarProps?.weight || 80} كجم</strong>
+                  <strong className="text-[#B4E4D6]">{selectedPatient.avatarProps?.weight || 80} كجم</strong>
                 </div>
                 <div className="flex justify-between">
                   <span>الطول:</span>
@@ -521,11 +521,11 @@ function DoctorPatientsInner() {
         {/* Modal: Add/Edit Session Technical Form */}
         {isSessionModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-            <div className="relative w-full max-w-lg bg-[#08150c] border border-[#8DC63F]/30 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto">
+            <div className="relative w-full max-w-lg bg-[#1D1216] border border-[#B4E4D6]/30 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto">
               
               <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-5">
                 <h3 className="text-lg font-black text-white flex items-center gap-2">
-                  <CalendarDays size={20} className="text-[#8DC63F]" />
+                  <CalendarDays size={20} className="text-[#B4E4D6]" />
                   {editingSessionId ? 'تعديل المعايير الفنية للجلسة' : 'تسجيل جلسة علاجية جديدة'}
                 </h3>
                 <button onClick={() => setIsSessionModalOpen(false)} className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors cursor-pointer">
@@ -535,11 +535,11 @@ function DoctorPatientsInner() {
 
               <form onSubmit={handleSaveSession} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-green-100/70 mb-2">نوع الجهاز والتقنية *</label>
+                  <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">نوع الجهاز والتقنية *</label>
                   <select
                     value={sessionForm.device}
                     onChange={(e) => setSessionForm({ ...sessionForm, device: e.target.value })}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                   >
                     <option value="Microwave (Onda Coolwaves)">جهاز Microwave (Onda Coolwaves)</option>
                     <option value="Scizer HIFU Slimming">جهاز Scizer HIFU (تفتيت موضعي عميق)</option>
@@ -551,29 +551,29 @@ function DoctorPatientsInner() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold text-green-100/70 mb-2">تاريخ ووقت الجلسة</label>
+                    <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">تاريخ ووقت الجلسة</label>
                     <input
                       type="datetime-local"
                       value={sessionForm.date}
                       onChange={(e) => setSessionForm({ ...sessionForm, date: e.target.value })}
-                      className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                      className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-green-100/70 mb-2">مدة الجلسة (دقيقة)</label>
+                    <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">مدة الجلسة (دقيقة)</label>
                     <input
                       type="number"
                       value={sessionForm.duration}
                       onChange={(e) => setSessionForm({ ...sessionForm, duration: Number(e.target.value) })}
-                      className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold text-center outline-none focus:border-[#8DC63F]"
+                      className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold text-center outline-none focus:border-[#B4E4D6]"
                     />
                   </div>
                 </div>
 
                 {/* Technical Parameters for Doctor/Staff */}
                 <div className="p-4 bg-white/5 rounded-2xl border border-white/5 space-y-3">
-                  <span className="text-xs font-black text-[#8DC63F] block">المعايير الفنية والجرعة:</span>
+                  <span className="text-xs font-black text-[#B4E4D6] block">المعايير الفنية والجرعة:</span>
                   
                   <div className="grid grid-cols-2 gap-3">
                     <div>
@@ -583,7 +583,7 @@ function DoctorPatientsInner() {
                         value={sessionForm.targetArea}
                         onChange={(e) => setSessionForm({ ...sessionForm, targetArea: e.target.value })}
                         placeholder="مثال: البطن والخصر"
-                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                       />
                     </div>
 
@@ -593,7 +593,7 @@ function DoctorPatientsInner() {
                         type="number"
                         value={sessionForm.powerJoules}
                         onChange={(e) => setSessionForm({ ...sessionForm, powerJoules: Number(e.target.value) })}
-                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold text-center outline-none focus:border-[#8DC63F]"
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold text-center outline-none focus:border-[#B4E4D6]"
                       />
                     </div>
                   </div>
@@ -605,7 +605,7 @@ function DoctorPatientsInner() {
                         type="number"
                         value={sessionForm.pulseCount}
                         onChange={(e) => setSessionForm({ ...sessionForm, pulseCount: Number(e.target.value) })}
-                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold text-center outline-none focus:border-[#8DC63F]"
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold text-center outline-none focus:border-[#B4E4D6]"
                       />
                     </div>
 
@@ -615,25 +615,25 @@ function DoctorPatientsInner() {
                         type="text"
                         value={sessionForm.operatorName}
                         onChange={(e) => setSessionForm({ ...sessionForm, operatorName: e.target.value })}
-                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                        className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-green-100/70 mb-2">ملاحظات الطبيب والاستجابة</label>
+                  <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">ملاحظات الطبيب والاستجابة</label>
                   <textarea
                     rows={2}
                     value={sessionForm.clinicalNotes}
                     onChange={(e) => setSessionForm({ ...sessionForm, clinicalNotes: e.target.value })}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-semibold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-semibold outline-none focus:border-[#B4E4D6]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer"
+                  className="w-full py-3.5 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#B4E4D6]/20 cursor-pointer"
                 >
                   <Save size={16} /> حفظ الجلسة في السجل الطبي
                 </button>
@@ -646,11 +646,11 @@ function DoctorPatientsInner() {
         {/* Modal: Quick Assign Diet Template */}
         {isAssignTemplateModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-            <div className="relative w-full max-w-md bg-[#08150c] border border-[#8DC63F]/30 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8">
+            <div className="relative w-full max-w-md bg-[#1D1216] border border-[#B4E4D6]/30 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8">
               
               <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-5">
                 <h3 className="text-base font-black text-white flex items-center gap-2">
-                  <FileText size={18} className="text-[#8DC63F]" /> اختيار وإسناد قالب دايت
+                  <FileText size={18} className="text-[#B4E4D6]" /> اختيار وإسناد قالب دايت
                 </h3>
                 <button onClick={() => setIsAssignTemplateModalOpen(false)} className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors cursor-pointer">
                   <X size={16} />
@@ -659,12 +659,12 @@ function DoctorPatientsInner() {
 
               <form onSubmit={handleExecuteAssignTemplate} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-green-100/70 mb-2">اختر القالب الجاهز *</label>
+                  <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">اختر القالب الجاهز *</label>
                   <select
                     required
                     value={assignTemplateId}
                     onChange={(e) => setAssignTemplateId(e.target.value)}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                   >
                     <option value="">-- اختر قالباً غذائياً --</option>
                     {dietTemplates.map(t => (
@@ -676,19 +676,19 @@ function DoctorPatientsInner() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-green-100/70 mb-2">ملاحظات الطبيب وتوجيهات خاصة بالعميل</label>
+                  <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">ملاحظات الطبيب وتوجيهات خاصة بالعميل</label>
                   <textarea
                     rows={3}
                     value={assignDoctorNotes}
                     onChange={(e) => setAssignDoctorNotes(e.target.value)}
                     placeholder="ملاحظات تضاف لروشتة العميل..."
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-semibold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-semibold outline-none focus:border-[#B4E4D6]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer"
+                  className="w-full py-3.5 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#B4E4D6]/20 cursor-pointer"
                 >
                   <Save size={16} /> اعتماد القالب وإرساله لشات العميل
                 </button>
@@ -701,11 +701,11 @@ function DoctorPatientsInner() {
         {/* Modal: Edit 3D Avatar */}
         {isAvatarModalOpen && tempAvatarProps && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-            <div className="relative w-full max-w-2xl bg-[#08150c] border border-[#8DC63F]/30 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto">
+            <div className="relative w-full max-w-2xl bg-[#1D1216] border border-[#B4E4D6]/30 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto">
               
               <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-5">
                 <h3 className="text-lg font-black text-white flex items-center gap-2">
-                  <Sliders size={20} className="text-[#8DC63F]" /> تعديل مجسم الأفاتار 3D ومقاييس الجسم
+                  <Sliders size={20} className="text-[#B4E4D6]" /> تعديل مجسم الأفاتار 3D ومقاييس الجسم
                 </h3>
                 <button onClick={() => setIsAvatarModalOpen(false)} className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors cursor-pointer">
                   <X size={18} />
@@ -721,7 +721,7 @@ function DoctorPatientsInner() {
                     max="160"
                     value={tempAvatarProps.weight}
                     onChange={(e) => setTempAvatarProps({ ...tempAvatarProps, weight: Number(e.target.value) })}
-                    className="w-full accent-[#8DC63F]"
+                    className="w-full accent-[#B4E4D6]"
                   />
                 </div>
 
@@ -734,7 +734,7 @@ function DoctorPatientsInner() {
                     step="0.05"
                     value={tempAvatarProps.bellyRound}
                     onChange={(e) => setTempAvatarProps({ ...tempAvatarProps, bellyRound: Number(e.target.value) })}
-                    className="w-full accent-[#8DC63F]"
+                    className="w-full accent-[#B4E4D6]"
                   />
                 </div>
 
@@ -747,7 +747,7 @@ function DoctorPatientsInner() {
                     step="0.05"
                     value={tempAvatarProps.loveHandles}
                     onChange={(e) => setTempAvatarProps({ ...tempAvatarProps, loveHandles: Number(e.target.value) })}
-                    className="w-full accent-[#8DC63F]"
+                    className="w-full accent-[#B4E4D6]"
                   />
                 </div>
 
@@ -760,7 +760,7 @@ function DoctorPatientsInner() {
                     step="0.05"
                     value={tempAvatarProps.thighsFat}
                     onChange={(e) => setTempAvatarProps({ ...tempAvatarProps, thighsFat: Number(e.target.value) })}
-                    className="w-full accent-[#8DC63F]"
+                    className="w-full accent-[#B4E4D6]"
                   />
                 </div>
 
@@ -775,14 +775,14 @@ function DoctorPatientsInner() {
                     step="0.05"
                     value={tempAvatarProps.hipsVolume ?? tempAvatarProps.glutesFat ?? 0.35}
                     onChange={(e) => setTempAvatarProps({ ...tempAvatarProps, hipsVolume: Number(e.target.value) })}
-                    className="w-full accent-[#8DC63F]"
+                    className="w-full accent-[#B4E4D6]"
                   />
                 </div>
               </div>
 
               <button
                 onClick={handleSaveAvatarProps}
-                className="w-full py-3.5 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer"
+                className="w-full py-3.5 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#B4E4D6]/20 cursor-pointer"
               >
                 <Save size={16} /> حفظ ومطابقة مقاييس الأفاتار
               </button>
@@ -840,7 +840,7 @@ function DoctorPatientsInner() {
                 placeholder="بحث بالاسم أو رقم الهاتف..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-black/40 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-black/40 border border-white/10 rounded-xl py-3 px-4 pr-10 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
               />
               <Search size={16} className="absolute top-3.5 right-3.5 text-white/40" />
             </div>
@@ -848,8 +848,8 @@ function DoctorPatientsInner() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPatients.length === 0 ? (
-              <div className="col-span-full glass-card p-12 rounded-[28px] border border-white/10 bg-[#08150c] text-center space-y-3 shadow-2xl">
-                <div className="w-16 h-16 rounded-2xl bg-[#8DC63F]/10 border border-[#8DC63F]/30 flex items-center justify-center mx-auto text-[#8DC63F]">
+              <div className="col-span-full glass-card p-12 rounded-[28px] border border-white/10 bg-[#1D1216] text-center space-y-3 shadow-2xl">
+                <div className="w-16 h-16 rounded-2xl bg-[#B4E4D6]/10 border border-[#B4E4D6]/30 flex items-center justify-center mx-auto text-[#B4E4D6]">
                   <Users size={32} />
                 </div>
                 <h3 className="text-lg font-black text-white">لا يوجد مرضى أو ملفات مسجلة حالياً</h3>
@@ -866,18 +866,18 @@ function DoctorPatientsInner() {
                 return (
                   <div
                     key={patient.id}
-                    className="glass-card p-6 rounded-[28px] border border-white/10 hover:border-[#8DC63F]/40 transition-all bg-[#08150c] shadow-2xl flex flex-col justify-between space-y-4 group relative"
+                    className="glass-card p-6 rounded-[28px] border border-white/10 hover:border-[#B4E4D6]/40 transition-all bg-[#1D1216] shadow-2xl flex flex-col justify-between space-y-4 group relative"
                   >
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <h3 className="text-lg font-black text-white group-hover:text-[#8DC63F] transition-colors">
+                          <h3 className="text-lg font-black text-white group-hover:text-[#B4E4D6] transition-colors">
                             {patient.name}
                           </h3>
                           <span className="text-xs text-white/50 font-mono" dir="ltr">{patient.phone}</span>
                         </div>
 
-                        <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-[#8DC63F]/15 text-[#8DC63F] border border-[#8DC63F]/30">
+                        <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-[#B4E4D6]/15 text-[#B4E4D6] border border-[#B4E4D6]/30">
                           {patient.sessions.length} جلسات
                         </span>
                       </div>
@@ -898,12 +898,12 @@ function DoctorPatientsInner() {
                         onClick={() => setSelectedPatientId(patient.id)}
                         className="py-2.5 px-3 bg-white/10 hover:bg-white/20 text-white font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
-                        <Eye size={14} className="text-[#8DC63F]" /> فتح الملف
+                        <Eye size={14} className="text-[#B4E4D6]" /> فتح الملف
                       </button>
 
                       <button
                         onClick={() => handleOpenChat(patient)}
-                        className="py-2.5 px-3 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-md"
+                        className="py-2.5 px-3 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-md"
                       >
                         <MessageCircle size={14} /> شات المريض
                       </button>
@@ -919,9 +919,9 @@ function DoctorPatientsInner() {
       {/* Tab 2: Complaints & Reconciliation Requests */}
       {activeTab === 'complaints' && (
         <div className="space-y-4">
-          <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl">
+          <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl">
             <h3 className="text-lg font-black text-white mb-4 flex items-center gap-2">
-              <HeartHandshake size={22} className="text-[#8DC63F]" /> طلبات تعديل الخطط الغذائية وتصالح العملاء
+              <HeartHandshake size={22} className="text-[#B4E4D6]" /> طلبات تعديل الخطط الغذائية وتصالح العملاء
             </h3>
 
             <div className="space-y-3">
@@ -932,12 +932,12 @@ function DoctorPatientsInner() {
                       <div>
                         <div className="flex items-center gap-2">
                           <strong className="text-white text-sm font-black">{item.name}</strong>
-                          <span className="text-[10px] font-mono text-[#8DC63F]">{item.phone}</span>
+                          <span className="text-[10px] font-mono text-[#B4E4D6]">{item.phone}</span>
                           <span className="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/30">
                             {item.category}
                           </span>
                         </div>
-                        <p className="text-xs text-green-100/80 mt-1 font-semibold">{item.details}</p>
+                        <p className="text-xs text-[#FFF6A9]/85 mt-1 font-semibold">{item.details}</p>
                       </div>
 
                       <span className={`text-[10px] font-black px-2.5 py-1 rounded-full ${
@@ -953,7 +953,7 @@ function DoctorPatientsInner() {
                       <div className="flex items-center gap-2">
                         <a
                           href="/doctor/diets"
-                          className="px-3 py-1.5 bg-[#8DC63F] text-black font-black text-[11px] rounded-xl flex items-center gap-1 cursor-pointer"
+                          className="px-3 py-1.5 bg-[#B4E4D6] text-black font-black text-[11px] rounded-xl flex items-center gap-1 cursor-pointer"
                         >
                           <FileText size={13} /> اختيار وإسناد قالب دايت جديد
                         </a>
@@ -980,9 +980,9 @@ function DoctorPatientsInner() {
 
       {/* Tab 3: Appointments */}
       {activeTab === 'appointments' && (
-        <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl space-y-4">
+        <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl space-y-4">
           <h3 className="text-lg font-black text-white flex items-center gap-2">
-            <CalendarDays size={20} className="text-[#8DC63F]" /> قائمة الحجوزات والمواعيد
+            <CalendarDays size={20} className="text-[#B4E4D6]" /> قائمة الحجوزات والمواعيد
           </h3>
 
           <div className="space-y-3">
@@ -990,7 +990,7 @@ function DoctorPatientsInner() {
               <div key={a.id} className="p-4 bg-black/40 border border-white/10 rounded-2xl flex justify-between items-center text-xs">
                 <div>
                   <strong className="text-white text-sm block">{a.patientName}</strong>
-                  <span className="text-green-100/60 font-semibold">{a.service} • {a.preferredDate} ({a.preferredTime})</span>
+                  <span className="text-[#FFF6A9]/65 font-semibold">{a.service} • {a.preferredDate} ({a.preferredTime})</span>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -1002,7 +1002,7 @@ function DoctorPatientsInner() {
                   {a.status !== 'confirmed' && (
                     <button
                       onClick={() => updateAppointmentStatus(a.id, 'confirmed')}
-                      className="px-3 py-1 bg-[#8DC63F] text-black font-black rounded-lg cursor-pointer"
+                      className="px-3 py-1 bg-[#B4E4D6] text-black font-black rounded-lg cursor-pointer"
                     >
                       تأكيد
                     </button>

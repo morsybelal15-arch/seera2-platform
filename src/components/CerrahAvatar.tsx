@@ -302,7 +302,7 @@ function ModelLoadingProgressOverlay() {
             cx="50"
             cy="50"
             r="36"
-            className="text-[#8DC63F] transition-all duration-200 ease-out"
+            className="text-[#B4E4D6] transition-all duration-200 ease-out"
             strokeWidth="6"
             stroke="currentColor"
             strokeDasharray={circumference}
@@ -313,13 +313,13 @@ function ModelLoadingProgressOverlay() {
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-xl font-black text-white font-mono tracking-wider">{pct}%</span>
-          <span className="text-[10px] text-[#8DC63F] font-bold">جاري البناء</span>
+          <span className="text-[10px] text-[#B4E4D6] font-bold">جاري البناء</span>
         </div>
       </div>
       <p className="mt-3 text-xs font-black text-white" dir="rtl">
         جاري تحميل وبناء المجسم الطبي ثلاثي الأبعاد...
       </p>
-      <span className="mt-1 text-[11px] text-[#8DC63F]/80 font-bold" dir="rtl">
+      <span className="mt-1 text-[11px] text-[#B4E4D6]/80 font-bold" dir="rtl">
         مزامنة التضاريس والخصائص الفيزيائية ({pct}%)
       </span>
     </div>
@@ -648,16 +648,16 @@ class AvatarErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBound
       return (
         <div className="relative w-full h-full min-h-[250px] overflow-hidden rounded-[24px] flex items-center justify-center p-6 bg-black/60 border border-white/10">
           <div dir="rtl" className="text-center max-w-md space-y-3">
-            <div className="w-12 h-12 rounded-full bg-[#8DC63F]/10 border border-[#8DC63F]/30 flex items-center justify-center mx-auto text-[#8DC63F]">
+            <div className="w-12 h-12 rounded-full bg-[#B4E4D6]/10 border border-[#B4E4D6]/30 flex items-center justify-center mx-auto text-[#B4E4D6]">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
             <h4 className="text-white font-black text-sm">المحاكي الطبي ثلاثي الأبعاد</h4>
-            <p className="text-xs text-green-100/70 leading-relaxed font-semibold">
+            <p className="text-xs text-[#FFF6A9]/75 leading-relaxed font-semibold">
               جاري مزامنة المجسم الطبي ثلاثي الأبعاد. مؤشرات التشكيل وتعديلات القوام نشطة بالكامل.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8DC63F]/10 border border-[#8DC63F]/20 text-[11px] font-bold text-[#8DC63F]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B4E4D6]/10 border border-[#B4E4D6]/20 text-[11px] font-bold text-[#B4E4D6]">
               <span>مؤشرات التشكيل وتعديلات القوام نشطة بالكامل</span>
             </div>
           </div>

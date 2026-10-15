@@ -107,16 +107,16 @@ export default function UserManagementModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
       <div 
-        className="glass-card w-full max-w-xl rounded-[32px] p-6 sm:p-8 border border-[#8DC63F]/30 shadow-[0_0_50px_rgba(141,198,63,0.15)] bg-[#07130b] max-h-[90vh] overflow-y-auto"
+        className="glass-card w-full max-w-xl rounded-[32px] p-6 sm:p-8 border border-[#DE7272]/30 shadow-[0_0_50px_rgba(222,114,114,0.15)] bg-[#1D1216] max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#DE7272] to-[#FFCA88] text-[#120B0D] flex items-center justify-center font-black shadow-md">
               <ShieldCheck size={22} />
             </div>
             <div>
-              <span className="text-[10px] text-[#8DC63F] font-black uppercase tracking-wider bg-[#8DC63F]/10 px-2.5 py-0.5 rounded-full border border-[#8DC63F]/20">
+              <span className="text-[10px] text-[#FFCA88] font-black uppercase tracking-wider bg-[#DE7272]/15 px-2.5 py-0.5 rounded-full border border-[#DE7272]/30">
                 إدارة الصلاحيات وتفعيل الحسابات
               </span>
               <h2 className="text-xl font-black text-white mt-1">
@@ -134,7 +134,7 @@ export default function UserManagementModal({
 
         {successMsg ? (
           <div className="text-center py-8 space-y-3">
-            <div className="w-14 h-14 bg-[#8DC63F] rounded-full text-black flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 bg-gradient-to-tr from-[#DE7272] to-[#FFCA88] rounded-full text-[#120B0D] flex items-center justify-center mx-auto">
               <CheckCircle2 size={28} />
             </div>
             <h3 className="text-xl font-black text-white">{successMsg}</h3>
@@ -152,7 +152,7 @@ export default function UserManagementModal({
                     onClick={() => setForm({ ...form, status: 'active' })}
                     className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
                       form.status === 'active' 
-                        ? 'bg-[#8DC63F] text-black shadow-md' 
+                        ? 'bg-[#B4E4D6] text-black shadow-md' 
                         : 'bg-white/5 text-white/60 hover:text-white'
                     }`}
                   >
@@ -163,7 +163,7 @@ export default function UserManagementModal({
                     onClick={() => setForm({ ...form, status: 'pending' })}
                     className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
                       form.status === 'pending' 
-                        ? 'bg-amber-500 text-black shadow-md' 
+                        ? 'bg-[#FFF6A9] text-[#120B0D] shadow-md' 
                         : 'bg-white/5 text-white/60 hover:text-white'
                     }`}
                   >
@@ -174,7 +174,7 @@ export default function UserManagementModal({
                     onClick={() => setForm({ ...form, status: 'suspended' })}
                     className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
                       form.status === 'suspended' 
-                        ? 'bg-red-500 text-white shadow-md' 
+                        ? 'bg-[#DE7272] text-white shadow-md' 
                         : 'bg-white/5 text-white/60 hover:text-white'
                     }`}
                   >
@@ -190,7 +190,7 @@ export default function UserManagementModal({
                 <label className="text-xs font-bold text-white/80">
                   الأدوار والصلاحيات الممنوحة (يمكن اختيار أكثر من دور معاً) *
                 </label>
-                <span className="text-[10px] text-[#8DC63F] font-bold">
+                <span className="text-[10px] text-[#FFCA88] font-bold">
                   {form.roles.length} أدوار محددة
                 </span>
               </div>
@@ -204,18 +204,18 @@ export default function UserManagementModal({
                       onClick={() => toggleRole(role)}
                       className={`p-3 rounded-2xl border transition-all cursor-pointer flex items-start gap-2.5 ${
                         isChecked 
-                          ? 'bg-[#8DC63F]/15 border-[#8DC63F]/50 text-white shadow-sm' 
+                          ? 'bg-[#DE7272]/15 border-[#DE7272]/50 text-white shadow-sm' 
                           : 'bg-black/30 border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
                       <div className={`w-5 h-5 rounded-md flex items-center justify-center mt-0.5 shrink-0 ${
-                        isChecked ? 'bg-[#8DC63F] text-black font-black' : 'border border-white/20'
+                        isChecked ? 'bg-gradient-to-tr from-[#DE7272] to-[#FFCA88] text-[#120B0D] font-black' : 'border border-white/20'
                       }`}>
                         {isChecked && <Check size={13} strokeWidth={3} />}
                       </div>
                       <div>
                         <strong className="text-xs block font-black text-white">{title}</strong>
-                        <p className="text-[10px] text-green-100/70 leading-relaxed font-semibold mt-0.5">{desc}</p>
+                        <p className="text-[10px] text-[#FFF6A9]/75 leading-relaxed font-semibold mt-0.5">{desc}</p>
                       </div>
                     </div>
                   );
@@ -233,7 +233,7 @@ export default function UserManagementModal({
                   value={form.displayName}
                   onChange={(e) => setForm({ ...form, displayName: e.target.value })}
                   placeholder="اسم المستخدم"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#DE7272]"
                 />
               </div>
 
@@ -246,7 +246,7 @@ export default function UserManagementModal({
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   placeholder="01XXXXXXXXX"
                   dir="ltr"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-mono font-bold outline-none focus:border-[#8DC63F] text-right"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-mono font-bold outline-none focus:border-[#DE7272] text-right"
                 />
               </div>
             </div>
@@ -259,7 +259,7 @@ export default function UserManagementModal({
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="example@mail.com"
                 dir="ltr"
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F] text-right"
+                className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#DE7272] text-right"
               />
             </div>
 
@@ -270,7 +270,7 @@ export default function UserManagementModal({
                 value={form.notes}
                 onChange={(e) => setForm({ ...form, notes: e.target.value })}
                 placeholder="ملاحظات حول اشتراك العميل وجلساته..."
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-semibold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-black/50 border border-white/10 rounded-xl p-2.5 text-white text-xs font-semibold outline-none focus:border-[#DE7272]"
               />
             </div>
 
@@ -278,7 +278,7 @@ export default function UserManagementModal({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 py-3.5 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer disabled:opacity-50"
+                className="flex-1 py-3.5 bg-gradient-to-r from-[#DE7272] to-[#FFCA88] hover:opacity-90 text-[#120B0D] font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#DE7272]/20 cursor-pointer disabled:opacity-50"
               >
                 <UserCheck size={16} />
                 {isSubmitting ? 'جاري الحفظ...' : userToEdit ? 'حفظ وتفعيل التعديلات' : 'إضافة المستخدم'}

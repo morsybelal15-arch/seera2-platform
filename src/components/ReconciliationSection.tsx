@@ -34,7 +34,7 @@ export default function ReconciliationSection() {
         <h2 className="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-xl">
           سيكشن <span className="text-[#f1c40f]">تصالح معنا</span>
         </h2>
-        <p className="text-green-100/80 font-bold text-sm md:text-base max-w-2xl leading-relaxed">
+        <p className="text-[#FFF6A9]/85 font-bold text-sm md:text-base max-w-2xl leading-relaxed">
           لأن كل عميل في سيرا هو شريك نجاح، إذا واجهتك أي مشكلة أو كنت غير راضٍ عن أي تفصيلة، فريقنا هنا لنتصالح ونحلها فوراً وبأعلى معايير الرعاية.
         </p>
       </div>
@@ -46,7 +46,7 @@ export default function ReconciliationSection() {
             <Clock size={24} />
           </div>
           <h4 className="text-white font-black text-base mb-2">استجابة ومتابعة سريعة</h4>
-          <p className="text-green-100/70 text-xs font-semibold leading-relaxed">
+          <p className="text-[#FFF6A9]/75 text-xs font-semibold leading-relaxed">
             يتم فحص كل شكوى وإحالتها فوراً للطبيب المشرف مع الرد على الواتساب خلال ساعات قليلة.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function ReconciliationSection() {
             <RefreshCw size={24} />
           </div>
           <h4 className="text-white font-black text-base mb-2">مرونة كاملة في تعديل الخطة</h4>
-          <p className="text-green-100/70 text-xs font-semibold leading-relaxed">
+          <p className="text-[#FFF6A9]/75 text-xs font-semibold leading-relaxed">
             إذا لم يناسبك النظام الغذائي أو شعرت بعدم راحة من أي جلسة، نقوم بتبديلها وتعديلها فوراً بما يريحك.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function ReconciliationSection() {
             <ShieldCheck size={24} />
           </div>
           <h4 className="text-white font-black text-base mb-2">إعادة تقييم مجانية</h4>
-          <p className="text-green-100/70 text-xs font-semibold leading-relaxed">
+          <p className="text-[#FFF6A9]/75 text-xs font-semibold leading-relaxed">
             حقك في فحص جديد وإعادة قياس أبعاد الأفاتار والـ InBody مع الاستشاري للتأكد من مسارك الصحيح.
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function ReconciliationSection() {
                     خدمة رعاية العميل
                   </span>
                 </div>
-                <p className="text-green-100/80 font-bold text-xs sm:text-sm">
+                <p className="text-[#FFF6A9]/85 font-bold text-xs sm:text-sm">
                   متاح شات؟ • تعديل خطة • إعادة تقييم • ارفع مشكلتك وتواصل مع الإدارة مباشرة.
                 </p>
               </div>

@@ -26,50 +26,50 @@ export default function Footer() {
             {/* Column 1: Brand */}
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#FFB1B1] via-[#FFDBB0] to-[#FFFAD3] flex items-center justify-center shadow-[0_0_12px_rgba(255,177,177,0.3)]">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#DE7272] via-[#FFCA88] to-[#FFF6A9] flex items-center justify-center shadow-[0_0_12px_rgba(222,114,114,0.35)]">
                   <span className="text-[#120B0D] font-black text-sm">س٢</span>
                 </div>
                 <span className="text-2xl font-black tracking-wider text-white">
-                  عيادة سيرة <span className="text-[#FFB1B1] text-3xl font-black">2</span>
+                  عيادة سيرة <span className="text-[#DE7272] text-3xl font-black">2</span>
                 </span>
               </div>
-              <p className="text-[#FFFAD3]/80 text-sm leading-relaxed font-bold mt-2">
-                عيادة سيرة 2 لنحت وتنسيق القوام والمتابعة الطبية أونلاين. تجربة رائدة تعتمد على التوأم الرقمي ثلاثي الأبعاد 3D والأنظمة الغذائية الإكلينيكية المحسوبة لمتابعة دقيقة من أي مكان بالعالم.
+              <p className="text-[#FFF6A9]/80 text-sm leading-relaxed font-bold mt-2">
+                عيادة سيرة 2 لنحت وتنسيق القوام والمتابعة الطبية أونلاين. متابعة أسبوعية دقيقة بالأفاتار 3D وأنظمة غذائية مخصصة تناسب أسلوب حياتك من أي مكان بالعالم.
               </p>
             </div>
             
             {/* Column 2: Links */}
             <div>
               <h4 className="text-lg font-extrabold text-white mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#FFB1B1]"></span> صفحات الموقع
+                <span className="w-2 h-2 rounded-full bg-[#DE7272]"></span> صفحات الموقع
               </h4>
-              <ul className="flex flex-col gap-3.5 text-[#FFFAD3]/80 text-sm font-bold">
-                <li><Link href="/" className="hover:text-[#FFB1B1] transition-colors">الرئيسية</Link></li>
-                <li><Link href="/about" className="hover:text-[#FFB1B1] transition-colors">عن العيادة</Link></li>
-                <li><Link href="/contact" className="hover:text-[#FFB1B1] transition-colors">تواصل معنا</Link></li>
-                <li><Link href="/online-followup" className="hover:text-[#FFB1B1] transition-colors">الاشتراك والمتابعة الأونلاين</Link></li>
+              <ul className="flex flex-col gap-3.5 text-[#FFF6A9]/80 text-sm font-bold">
+                <li><Link href="/" className="hover:text-[#DE7272] transition-colors">الرئيسية</Link></li>
+                <li><Link href="/about" className="hover:text-[#DE7272] transition-colors">عن العيادة</Link></li>
+                <li><Link href="/contact" className="hover:text-[#DE7272] transition-colors">تواصل معنا</Link></li>
+                <li><Link href="/online-followup" className="hover:text-[#DE7272] transition-colors">الاشتراك والمتابعة الأونلاين</Link></li>
               </ul>
             </div>
 
             {/* Column 3: Payment */}
             <div>
               <h4 className="text-lg font-extrabold text-white mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#FFDBB0]"></span> وسائل الاشتراك والدفع
+                <span className="w-2 h-2 rounded-full bg-[#FFCA88]"></span> وسائل الاشتراك والدفع
               </h4>
-              <div className="flex flex-col gap-4 text-[#FFFAD3]/80 text-sm font-bold">
-                <div className="flex items-center gap-3"><CreditCard size={18} className="text-[#FFB1B1]"/> InstaPay (انستاباي)</div>
-                <div className="flex items-center gap-3"><Smartphone size={18} className="text-[#FFDBB0]"/> Vodafone Cash (محافظ إلكترونية)</div>
-                <div className="flex items-center gap-3"><Wallet size={18} className="text-[#FFCCB8]"/> Visa & MasterCard (دولي ومحلي)</div>
+              <div className="flex flex-col gap-4 text-[#FFF6A9]/80 text-sm font-bold">
+                <div className="flex items-center gap-3"><CreditCard size={18} className="text-[#DE7272]"/> InstaPay (انستاباي)</div>
+                <div className="flex items-center gap-3"><Smartphone size={18} className="text-[#FFCA88]"/> Vodafone Cash (محافظ إلكترونية)</div>
+                <div className="flex items-center gap-3"><Wallet size={18} className="text-[#B4E4D6]"/> Visa & MasterCard (دولي ومحلي)</div>
               </div>
             </div>
 
             {/* Column 4: Online Followup */}
             <div>
               <h4 className="text-lg font-extrabold text-white mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#FFCCB8]"></span> المتابعة الطبية عن بُعد
+                <span className="w-2 h-2 rounded-full bg-[#B4E4D6]"></span> المتابعة الطبية عن بُعد
               </h4>
-              <div className="flex items-start gap-3 text-[#FFFAD3]/80 text-sm leading-relaxed font-bold">
-                <MapPin size={20} className="text-[#FFB1B1] shrink-0 mt-0.5"/>
+              <div className="flex items-start gap-3 text-[#FFF6A9]/80 text-sm leading-relaxed font-bold">
+                <MapPin size={20} className="text-[#DE7272] shrink-0 mt-0.5"/>
                 <p>متابعة أونلاين دولية لكافة المحافظات والدول العربية والمهجر، مع استشارات دورية مباشرة عبر المنصة والواتساب الطبي.</p>
               </div>
             </div>

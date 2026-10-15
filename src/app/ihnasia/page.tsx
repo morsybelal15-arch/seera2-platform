@@ -67,7 +67,7 @@ const IHNASIA_DEVICES: DeviceInfo[] = [
       },
       {
         id: 'c2',
-        clientName: 'أحمد ف. (إهناسيا)',
+        clientName: 'أحمد ف.',
         age: 38,
         targetArea: 'تفتيت دهون الخواصر والجوانب (Love Handles)',
         sessionCount: 3,
@@ -78,7 +78,7 @@ const IHNASIA_DEVICES: DeviceInfo[] = [
       },
       {
         id: 'c3',
-        clientName: 'نهى م. (إهناسيا المدينة)',
+        clientName: 'نهى م.',
         age: 27,
         targetArea: 'شد ونحت زنود الذراعين والتخلص من الترهل',
         sessionCount: 4,
@@ -113,11 +113,11 @@ const IHNASIA_DEVICES: DeviceInfo[] = [
         lostMeasurement: '-8 سم من محيط البطن السفلي',
         beforeImg: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80',
         afterImg: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=80',
-        notes: 'نزول مقاسين في الملابس (من XL إلى M) مع استقرار كامل في المقاسات بفرع إهناسيا.'
+        notes: 'نزول مقاسين في الملابس (من XL إلى M) مع استقرار كامل في المقاسات بالعيادة.'
       },
       {
         id: 'sc2',
-        clientName: 'كريم م. (إهناسيا)',
+        clientName: 'كريم م.',
         age: 41,
         targetArea: 'نحت منطقة الصدر والبطن للرجال',
         sessionCount: 4,
@@ -156,7 +156,7 @@ const IHNASIA_DEVICES: DeviceInfo[] = [
     cases: [
       {
         id: 'ib1',
-        clientName: 'سارة ج. (إهناسيا)',
+        clientName: 'سارة ج.',
         age: 30,
         targetArea: 'متابعة نزول الدهون الصافية ونمو العضلات',
         sessionCount: 6,
@@ -167,7 +167,7 @@ const IHNASIA_DEVICES: DeviceInfo[] = [
       },
       {
         id: 'ib2',
-        clientName: 'محمود ع. (إهناسيا)',
+        clientName: 'محمود ع.',
         age: 45,
         targetArea: 'تخفيض الدهون الحشوية حول الكبد والبطن',
         sessionCount: 5,
@@ -198,7 +198,7 @@ export default function IhnasiaBranchPage() {
   // Modals
   const [isDiagnosisOpen, setIsDiagnosisOpen] = useState(false);
   const [isWhatsAppBookingOpen, setIsWhatsAppBookingOpen] = useState(false);
-  const [bookingPurpose, setBookingPurpose] = useState('كشف واستشارة في فرع إهناسيا (Onda / Scizer)');
+  const [bookingPurpose, setBookingPurpose] = useState('كشف واستشارة أجهزة نحت القوام بالعيادة');
   const [isOnlineOpen, setIsOnlineOpen] = useState(false);
 
   // Section 4: Selected Device for Interactive Cases
@@ -222,26 +222,26 @@ export default function IhnasiaBranchPage() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-10 sm:py-16 max-w-7xl mx-auto">
         
         {/* Glow backdrop effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-[#8DC63F]/15 blur-[120px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-[#B4E4D6]/15 blur-[120px] rounded-full pointer-events-none -z-10" />
 
         <div className="text-center max-w-3xl mx-auto space-y-6">
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#8DC63F]/30 backdrop-blur-md shadow-lg">
-            <MapPin size={16} className="text-[#8DC63F]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#B4E4D6]/30 backdrop-blur-md shadow-lg">
+            <MapPin size={16} className="text-[#B4E4D6]" />
             <span className="text-xs sm:text-sm font-black text-white">
-              مركز سيرا التخصصي • فرع إهناسيا المدينة
+              عيادة سيرة 2 التخصصية • نحت القوام والتغذية العلاجية
             </span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight drop-shadow-md">
             المركز الرائد لنحت القوام<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8DC63F] via-green-300 to-emerald-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B4E4D6] via-green-300 to-emerald-400">
               وتفتيت الدهون بدون جراحة
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base text-green-100/80 max-w-2xl mx-auto leading-relaxed font-medium">
-            نقدم لأهالي إهناسيا ومحافظة بني سويف أحدث التقنيات الإيطالية المعتمدة طبياً (Onda Coolwaves & Scizer) مع فحوصات InBody الدقيقة وخطط التغذية العلاجية المخصصة لكل حالة.
+          <p className="text-sm sm:text-base text-[#FFF6A9]/85 max-w-2xl mx-auto leading-relaxed font-medium">
+            نقدم أحدث التقنيات الإيطالية المعتمدة طبياً (Onda Coolwaves & Scizer) مع فحوصات InBody الدقيقة وخطط التغذية العلاجية المخصصة لكل حالة.
           </p>
 
           {/* TWO MAIN REQUIRED BUTTONS */}
@@ -252,9 +252,9 @@ export default function IhnasiaBranchPage() {
               <button
                 type="button"
                 onClick={() => setIsDiagnosisOpen(true)}
-                className="w-full sm:w-auto btn-glow btn-glow-gold px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 border-none shadow-[0_0_25px_rgba(141,198,63,0.35)] cursor-pointer hover:scale-105 transition-all"
+                className="w-full sm:w-auto btn-glow btn-glow-gold px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 border-none shadow-[0_0_25px_rgba(180, 228, 214,0.35)] cursor-pointer hover:scale-105 transition-all"
               >
-                <Sparkles size={20} className="text-[#030805]" />
+                <Sparkles size={20} className="text-[#120B0D]" />
                 <span>التشخيص الأولي وفحص القوام</span>
               </button>
             )}
@@ -263,12 +263,12 @@ export default function IhnasiaBranchPage() {
             <button
               type="button"
               onClick={() => {
-                setBookingPurpose('كشف واستشارة في فرع إهناسيا (Onda / Scizer)');
+                setBookingPurpose('كشف واستشارة أجهزة نحت القوام بالعيادة');
                 setIsWhatsAppBookingOpen(true);
               }}
               className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-black text-sm sm:text-base border border-white/20 flex items-center justify-center gap-3 transition-all cursor-pointer hover:scale-105 shadow-lg"
             >
-              <Calendar size={20} className="text-[#8DC63F]" />
+              <Calendar size={20} className="text-[#B4E4D6]" />
               <span>حجز موعد كشف وجلسة بالفرع</span>
             </button>
 
@@ -277,24 +277,24 @@ export default function IhnasiaBranchPage() {
           {/* Highlights badges */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 max-w-4xl mx-auto">
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-              <ShieldCheck size={20} className="text-[#8DC63F] mx-auto mb-1" />
+              <ShieldCheck size={20} className="text-[#B4E4D6] mx-auto mb-1" />
               <span className="text-xs font-bold text-white block">تقنيات إيطالية 100%</span>
               <span className="text-[10px] text-white/50">بدون جراحة أو ألم</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-              <Clock size={20} className="text-[#8DC63F] mx-auto mb-1" />
+              <Clock size={20} className="text-[#B4E4D6] mx-auto mb-1" />
               <span className="text-xs font-bold text-white block">جلسات سريعة 15 دقيقة</span>
               <span className="text-[10px] text-white/50">بدون فترة نقاهة</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-              <Award size={20} className="text-[#8DC63F] mx-auto mb-1" />
+              <Award size={20} className="text-[#B4E4D6] mx-auto mb-1" />
               <span className="text-xs font-bold text-white block">إشراف طبي متكامل</span>
               <span className="text-[10px] text-white/50">فحص دوري بجهاز InBody</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-              <MapPin size={20} className="text-[#8DC63F] mx-auto mb-1" />
-              <span className="text-xs font-bold text-white block">موقع متميز بإهناسيا</span>
-              <span className="text-[10px] text-white/50">بجوار المستشفى المركزي</span>
+              <MapPin size={20} className="text-[#B4E4D6] mx-auto mb-1" />
+              <span className="text-xs font-bold text-white block">موقع متميز ومريح</span>
+              <span className="text-[10px] text-white/50">بجوار المستشفى العام</span>
             </div>
           </div>
 
@@ -309,13 +309,13 @@ export default function IhnasiaBranchPage() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-black text-[#8DC63F] uppercase tracking-wider block">
+          <span className="text-xs font-black text-[#B4E4D6] uppercase tracking-wider block">
             قصص النجاح الحقيقية
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
-            نتائج وتجارب عملاء فرع إهناسيا
+            نتائج وتجارب مشتركي عيادة سيرة 2
           </h2>
-          <p className="text-xs sm:text-sm text-green-100/70">
+          <p className="text-xs sm:text-sm text-[#FFF6A9]/75">
             أرقام موثقة وقياسات حقيقية تحققت لعملاء الفرع خلال الأسابيع الماضية
           </p>
         </div>
@@ -324,7 +324,7 @@ export default function IhnasiaBranchPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
           
           {/* Review 1 */}
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] flex flex-col justify-between space-y-4 hover:border-[#8DC63F]/40 transition-all">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] flex flex-col justify-between space-y-4 hover:border-[#B4E4D6]/40 transition-all">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1 text-amber-400">
@@ -332,7 +332,7 @@ export default function IhnasiaBranchPage() {
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-[10px] font-black">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#B4E4D6]/20 text-[#B4E4D6] text-[10px] font-black">
                   -8.5 سم خصر
                 </span>
               </div>
@@ -346,13 +346,13 @@ export default function IhnasiaBranchPage() {
               </div>
               <div>
                 <h4 className="text-xs font-black text-white">مدام سارة المنشاوي</h4>
-                <p className="text-[10px] text-white/50">إهناسيا المدينة • جلسات Onda Coolwaves</p>
+                <p className="text-[10px] text-white/50">مشتركة سيرة 2 • جلسات Onda Coolwaves</p>
               </div>
             </div>
           </div>
 
           {/* Review 2 */}
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] flex flex-col justify-between space-y-4 hover:border-[#8DC63F]/40 transition-all">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] flex flex-col justify-between space-y-4 hover:border-[#B4E4D6]/40 transition-all">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1 text-amber-400">
@@ -360,7 +360,7 @@ export default function IhnasiaBranchPage() {
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-[10px] font-black">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#B4E4D6]/20 text-[#B4E4D6] text-[10px] font-black">
                   -12 كجم دهون
                 </span>
               </div>
@@ -380,7 +380,7 @@ export default function IhnasiaBranchPage() {
           </div>
 
           {/* Review 3 */}
-          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] flex flex-col justify-between space-y-4 hover:border-[#8DC63F]/40 transition-all">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 bg-[#061208] flex flex-col justify-between space-y-4 hover:border-[#B4E4D6]/40 transition-all">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1 text-amber-400">
@@ -388,12 +388,12 @@ export default function IhnasiaBranchPage() {
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] text-[10px] font-black">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#B4E4D6]/20 text-[#B4E4D6] text-[10px] font-black">
                   -5 سم زنود
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-green-50/90 font-medium leading-relaxed">
-                "كنت بعاني من ترهل الذراعين بعد خسارة الوزن، جهاز Onda في فرع إهناسيا عمل نتيجة مبهرة وشد الجلد بدون أي كدمات أو تداخل جراحي."
+                "كنت بعاني من ترهل الذراعين بعد خسارة الوزن، جهاز Onda في عيادة سيرة 2 عمل نتيجة مبهرة وشد الجلد بدون أي كدمات أو جراحة."
               </p>
             </div>
             <div className="flex items-center gap-3 pt-3 border-t border-white/10">
@@ -402,7 +402,7 @@ export default function IhnasiaBranchPage() {
               </div>
               <div>
                 <h4 className="text-xs font-black text-white">نورهان علي</h4>
-                <p className="text-[10px] text-white/50">إهناسيا • شد ترهلات الذراعين</p>
+                <p className="text-[10px] text-white/50">شد ترهلات الذراعين</p>
               </div>
             </div>
           </div>
@@ -410,18 +410,18 @@ export default function IhnasiaBranchPage() {
         </div>
 
         {/* Video of the Doctor Speaking */}
-        <div className="glass-card p-6 sm:p-10 rounded-[32px] sm:rounded-[40px] border border-[#8DC63F]/30 bg-gradient-to-b from-[#07170c] via-black to-[#051108] shadow-2xl space-y-6">
+        <div className="glass-card p-6 sm:p-10 rounded-[32px] sm:rounded-[40px] border border-[#B4E4D6]/30 bg-gradient-to-b from-[#07170c] via-black to-[#051108] shadow-2xl space-y-6">
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-white/10">
             <div>
-              <span className="text-[#8DC63F] text-xs font-black flex items-center gap-1.5">
+              <span className="text-[#B4E4D6] text-xs font-black flex items-center gap-1.5">
                 <Stethoscope size={16} /> الإشراف الطبي المباشر
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-white mt-1">
-                دكتور المركز يشرح آلية نحت القوام بفرع إهناسيا
+                دكتور العيادة يشرح آلية نحت القوام
               </h3>
             </div>
-            <span className="text-xs text-green-100/70 font-semibold bg-white/5 px-4 py-2 rounded-2xl border border-white/10 self-start md:self-auto">
+            <span className="text-xs text-[#FFF6A9]/75 font-semibold bg-white/5 px-4 py-2 rounded-2xl border border-white/10 self-start md:self-auto">
               مدة الشرح: 2:45 دقيقة • أحدث بروتوكولات 2026
             </span>
           </div>
@@ -432,7 +432,7 @@ export default function IhnasiaBranchPage() {
             {/* Video Background Image / Realistic Medical Studio */}
             <Image
               src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&auto=format&fit=crop&q=80"
-              alt="دكتور مركز سيرا يشرح تقنيات Onda و Scizer"
+              alt="دكتور عيادة سيرة 2 يشرح تقنيات Onda و Scizer"
               fill
               className={`object-cover transition-transform duration-700 ${isDoctorPlaying ? 'scale-105 opacity-90' : 'opacity-70 group-hover:scale-102'}`}
               referrerPolicy="no-referrer"
@@ -442,11 +442,11 @@ export default function IhnasiaBranchPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
             {/* Doctor Info Badge Overlay */}
-            <div className="absolute top-4 right-4 z-10 bg-black/70 backdrop-blur-md px-4 py-2 rounded-2xl border border-[#8DC63F]/40 flex items-center gap-2.5">
-              <div className="w-3 h-3 rounded-full bg-[#8DC63F] animate-ping" />
+            <div className="absolute top-4 right-4 z-10 bg-black/70 backdrop-blur-md px-4 py-2 rounded-2xl border border-[#B4E4D6]/40 flex items-center gap-2.5">
+              <div className="w-3 h-3 rounded-full bg-[#B4E4D6] animate-ping" />
               <div className="text-right">
                 <span className="block text-xs font-black text-white">د. استشاري السمنة ونحت القوام</span>
-                <span className="text-[10px] text-[#8DC63F] font-bold">عضو الجمعية الأوروبية لدراسة السمنة (EASO)</span>
+                <span className="text-[10px] text-[#B4E4D6] font-bold">عضو الجمعية الأوروبية لدراسة السمنة (EASO)</span>
               </div>
             </div>
 
@@ -455,13 +455,13 @@ export default function IhnasiaBranchPage() {
               <button
                 type="button"
                 onClick={() => setIsDoctorPlaying(!isDoctorPlaying)}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#8DC63F] hover:bg-[#a1dc4e] text-[#030805] flex items-center justify-center shadow-[0_0_40px_rgba(141,198,63,0.6)] transform hover:scale-110 transition-all cursor-pointer"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#B4E4D6] hover:bg-[#a1dc4e] text-[#120B0D] flex items-center justify-center shadow-[0_0_40px_rgba(180, 228, 214,0.6)] transform hover:scale-110 transition-all cursor-pointer"
               >
                 {isDoctorPlaying ? <Pause size={30} fill="currentColor" /> : <Play size={30} className="mr-1" fill="currentColor" />}
               </button>
               
               <span className="text-xs sm:text-sm font-black text-white mt-3 bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/10">
-                {isDoctorPlaying ? '▶ الفيديو قيد التشغيل (جاري الشرح الإكلينيكي)' : 'اضغط للاستماع لشرح الدكتور حول فرع إهناسيا'}
+                {isDoctorPlaying ? '▶ الفيديو قيد التشغيل (جاري الشرح الإكلينيكي)' : 'اضغط للاستماع لشرح الدكتور حول تقنيات العيادة'}
               </span>
             </div>
 
@@ -486,7 +486,7 @@ export default function IhnasiaBranchPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-[11px] text-[#8DC63F] font-bold hidden sm:inline">
+                <span className="text-[11px] text-[#B4E4D6] font-bold hidden sm:inline">
                   موضوع الحلقة: كيف تختار بين جهاز Onda وجهاز Scizer؟
                 </span>
                 <span className="px-2 py-0.5 rounded bg-red-600 text-[10px] font-black uppercase">HD</span>
@@ -505,13 +505,13 @@ export default function IhnasiaBranchPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-16 max-w-7xl mx-auto border-t border-white/10">
         
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-          <span className="text-xs font-black text-[#8DC63F] uppercase tracking-wider block">
+          <span className="text-xs font-black text-[#B4E4D6] uppercase tracking-wider block">
             جولة تعريفية بالفرع
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
-            شاهد بيئة العمل والتجهيزات بفرع إهناسيا
+            شاهد بيئة العمل والتجهيزات بالعيادة
           </h2>
-          <p className="text-xs sm:text-sm text-green-100/70">
+          <p className="text-xs sm:text-sm text-[#FFF6A9]/75">
             أعلى معايير التعقيم والخصوصية التامة في أجنحة الجلسات والفحص السريري
           </p>
         </div>
@@ -524,7 +524,7 @@ export default function IhnasiaBranchPage() {
             {/* Tour Video Thumbnail / Luxury Clinic Ambience */}
             <Image
               src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop&q=80"
-              alt="جولة داخل غرف جلسات فرع إهناسيا لمركز سيرا"
+              alt="جولة داخل غرف جلسات عيادة سيرة 2"
               fill
               className={`object-cover transition-transform duration-700 ${isTourPlaying ? 'scale-105 opacity-90' : 'opacity-75 group-hover:scale-102'}`}
               referrerPolicy="no-referrer"
@@ -535,7 +535,7 @@ export default function IhnasiaBranchPage() {
             {/* Tour Highlights Overlay */}
             <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
               <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-bold text-white flex items-center gap-1.5">
-                <ShieldCheck size={12} className="text-[#8DC63F]" /> أجنحة خاصة للسيدات والرجال
+                <ShieldCheck size={12} className="text-[#B4E4D6]" /> أجنحة خاصة للسيدات والرجال
               </span>
               <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-bold text-white flex items-center gap-1.5">
                 <Sparkles size={12} className="text-cyan-400" /> تعقيم طبي مستمر
@@ -547,13 +547,13 @@ export default function IhnasiaBranchPage() {
               <button
                 type="button"
                 onClick={() => setIsTourPlaying(!isTourPlaying)}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#8DC63F] hover:bg-[#a1dc4e] text-[#030805] flex items-center justify-center shadow-[0_0_40px_rgba(141,198,63,0.6)] transform hover:scale-110 transition-all cursor-pointer"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#B4E4D6] hover:bg-[#a1dc4e] text-[#120B0D] flex items-center justify-center shadow-[0_0_40px_rgba(180, 228, 214,0.6)] transform hover:scale-110 transition-all cursor-pointer"
               >
                 {isTourPlaying ? <Pause size={30} fill="currentColor" /> : <Play size={30} className="mr-1" fill="currentColor" />}
               </button>
               
               <span className="text-xs sm:text-sm font-black text-white mt-3 bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/10">
-                {isTourPlaying ? '▶ جولة الاستقبال وغرف الجلسات قيد التشغيل' : 'اضغط لبدء الجولة المرئية داخل فرع إهناسيا'}
+                {isTourPlaying ? '▶ جولة الاستقبال وغرف الجلسات قيد التشغيل' : 'اضغط لبدء الجولة المرئية داخل عيادة سيرة 2'}
               </span>
             </div>
 
@@ -578,8 +578,8 @@ export default function IhnasiaBranchPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-[11px] text-green-100/80 font-bold hidden sm:inline">
-                  موقع الفرع: إهناسيا المدينة - بجوار المستشفى المركزي
+                <span className="text-[11px] text-[#FFF6A9]/85 font-bold hidden sm:inline">
+                  مقر العيادة: موقع متميز وسهل الوصول مع خصوصية تامة
                 </span>
                 <span className="px-2 py-0.5 rounded bg-emerald-600 text-[10px] font-black uppercase">4K Tour</span>
               </div>
@@ -590,7 +590,7 @@ export default function IhnasiaBranchPage() {
           {/* Quick branch tour metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 max-w-4xl mx-auto">
             <div className="p-4 rounded-2xl bg-black/40 border border-white/5 text-center">
-              <h4 className="text-base font-black text-[#8DC63F]">أحدث أجهزة 2026</h4>
+              <h4 className="text-base font-black text-[#B4E4D6]">أحدث أجهزة 2026</h4>
               <p className="text-xs text-white/60 mt-0.5">غرف مجهزة بأحدث تقنيات الموجات الإيطالية</p>
             </div>
             <div className="p-4 rounded-2xl bg-black/40 border border-white/5 text-center">
@@ -613,13 +613,13 @@ export default function IhnasiaBranchPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-16 max-w-7xl mx-auto border-t border-white/10">
         
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-black text-[#8DC63F] uppercase tracking-wider block">
+          <span className="text-xs font-black text-[#B4E4D6] uppercase tracking-wider block">
             التكنولوجيا الطبية المعتمدة
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
-            الأجهزة المستخدمة بفرع إهناسيا ونتائجها السريرية
+            الأجهزة المستخدمة بالعيادة ونتائجها السريرية
           </h2>
-          <p className="text-xs sm:text-sm text-green-100/70">
+          <p className="text-xs sm:text-sm text-[#FFF6A9]/75">
             اضغط على أي جهاز لمعاينة مواصفاته الإكلينيكية و 3 حالات قبل وبعد من واقع جلسات المركز
           </p>
         </div>
@@ -635,24 +635,24 @@ export default function IhnasiaBranchPage() {
                 onClick={() => setSelectedDeviceId(dev.id)}
                 className={`p-6 rounded-3xl border text-right transition-all cursor-pointer relative overflow-hidden ${
                   isSelected
-                    ? 'bg-[#08180c] border-[#8DC63F] shadow-[0_0_30px_rgba(141,198,63,0.2)] scale-[1.02]'
+                    ? 'bg-[#08180c] border-[#B4E4D6] shadow-[0_0_30px_rgba(180, 228, 214,0.2)] scale-[1.02]'
                     : 'bg-[#050f07] border-white/10 hover:border-white/20'
                 }`}
               >
                 {isSelected && (
-                  <div className="absolute top-0 right-0 left-0 h-1 bg-[#8DC63F]" />
+                  <div className="absolute top-0 right-0 left-0 h-1 bg-[#B4E4D6]" />
                 )}
 
                 <div className="flex items-center justify-between mb-3">
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black border ${
-                    isSelected ? 'bg-[#8DC63F]/20 text-[#8DC63F] border-[#8DC63F]/40' : 'bg-white/5 text-white/60 border-white/10'
+                    isSelected ? 'bg-[#B4E4D6]/20 text-[#B4E4D6] border-[#B4E4D6]/40' : 'bg-white/5 text-white/60 border-white/10'
                   }`}>
                     {dev.badge}
                   </span>
                   <span className="text-xs font-bold text-white/50">{dev.origin}</span>
                 </div>
 
-                <h3 className={`text-base sm:text-lg font-black ${isSelected ? 'text-[#8DC63F]' : 'text-white'}`}>
+                <h3 className={`text-base sm:text-lg font-black ${isSelected ? 'text-[#B4E4D6]' : 'text-white'}`}>
                   {dev.name}
                 </h3>
                 <p className="text-xs text-white/60 font-semibold mt-1 line-clamp-2">
@@ -663,7 +663,7 @@ export default function IhnasiaBranchPage() {
                   <span className={isSelected ? 'text-white' : 'text-white/40'}>
                     {isSelected ? '✓ معروض حالياً مع الحالات' : 'اضغط لعرض حالات الجهاز'}
                   </span>
-                  <ArrowRight size={14} className={isSelected ? 'text-[#8DC63F]' : 'text-white/30'} />
+                  <ArrowRight size={14} className={isSelected ? 'text-[#B4E4D6]' : 'text-white/30'} />
                 </div>
               </button>
             );
@@ -671,23 +671,23 @@ export default function IhnasiaBranchPage() {
         </div>
 
         {/* Selected Device Details Card */}
-        <div className="glass-card p-6 sm:p-10 rounded-[32px] sm:rounded-[40px] border border-[#8DC63F]/30 bg-[#061409] mb-12 space-y-6 animate-[fadeIn_0.3s_ease-out]">
+        <div className="glass-card p-6 sm:p-10 rounded-[32px] sm:rounded-[40px] border border-[#B4E4D6]/30 bg-[#061409] mb-12 space-y-6 animate-[fadeIn_0.3s_ease-out]">
           
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/10">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8DC63F]/15 border border-[#8DC63F]/30 text-[#8DC63F] text-xs font-black mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 text-[#B4E4D6] text-xs font-black mb-2">
                 <Sparkles size={14} /> الجهاز المختار: {selectedDevice.name}
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-white">
                 {selectedDevice.subtitle}
               </h3>
-              <p className="text-xs sm:text-sm text-green-100/80 mt-2 max-w-3xl leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#FFF6A9]/85 mt-2 max-w-3xl leading-relaxed">
                 {selectedDevice.description}
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-black/60 border border-[#8DC63F]/30 shrink-0 lg:max-w-xs">
-              <span className="text-[11px] font-black text-[#8DC63F] block mb-1">🎯 ملخص النتائج المتوقعة:</span>
+            <div className="p-4 rounded-2xl bg-black/60 border border-[#B4E4D6]/30 shrink-0 lg:max-w-xs">
+              <span className="text-[11px] font-black text-[#B4E4D6] block mb-1">🎯 ملخص النتائج المتوقعة:</span>
               <p className="text-xs text-white/90 font-bold leading-relaxed">
                 {selectedDevice.resultsSummary}
               </p>
@@ -698,7 +698,7 @@ export default function IhnasiaBranchPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {selectedDevice.features.map((feat, idx) => (
               <div key={idx} className="p-3.5 rounded-2xl bg-black/40 border border-white/5 flex items-start gap-2.5">
-                <CheckCircle2 size={16} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                <CheckCircle2 size={16} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                 <span className="text-xs text-green-50/90 font-semibold">{feat}</span>
               </div>
             ))}
@@ -711,10 +711,10 @@ export default function IhnasiaBranchPage() {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                <Eye size={20} className="text-[#8DC63F]" /> حالات ونتائج قبل وبعد مع جهاز ({selectedDevice.name.split('®')[0]}):
+                <Eye size={20} className="text-[#B4E4D6]" /> حالات ونتائج قبل وبعد مع جهاز ({selectedDevice.name.split('®')[0]}):
               </h3>
               <p className="text-xs text-white/60 mt-0.5">
-                3 حالات واقعية من مراجعي فرع إهناسيا مع القياسات وتفاصيل الجلسات
+                3 حالات واقعية من مراجعي عيادة سيرة 2 مع القياسات وتفاصيل الجلسات
               </p>
             </div>
             <span className="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl text-white/80 font-bold hidden sm:inline">
@@ -727,14 +727,14 @@ export default function IhnasiaBranchPage() {
             {selectedDevice.cases.map((cs, index) => (
               <div
                 key={cs.id}
-                className="glass-card rounded-3xl border border-white/10 bg-[#051108] overflow-hidden flex flex-col justify-between hover:border-[#8DC63F]/40 transition-all shadow-xl"
+                className="glass-card rounded-3xl border border-white/10 bg-[#051108] overflow-hidden flex flex-col justify-between hover:border-[#B4E4D6]/40 transition-all shadow-xl"
               >
                 {/* Images Container (Before & After) */}
                 <div className="p-4 space-y-3">
                   
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black text-white">حالة رقم ({index + 1})</span>
-                    <span className="px-3 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] font-black text-xs border border-[#8DC63F]/30">
+                    <span className="px-3 py-0.5 rounded-full bg-[#B4E4D6]/20 text-[#B4E4D6] font-black text-xs border border-[#B4E4D6]/30">
                       {cs.lostMeasurement}
                     </span>
                   </div>
@@ -757,7 +757,7 @@ export default function IhnasiaBranchPage() {
                     </div>
 
                     {/* After */}
-                    <div className="relative aspect-[3/4] bg-black/60 rounded-xl overflow-hidden border border-[#8DC63F]/30">
+                    <div className="relative aspect-[3/4] bg-black/60 rounded-xl overflow-hidden border border-[#B4E4D6]/30">
                       <Image
                         src={cs.afterImg}
                         alt={`بعد الجلسات - ${cs.clientName}`}
@@ -765,7 +765,7 @@ export default function IhnasiaBranchPage() {
                         className="object-cover"
                         referrerPolicy="no-referrer"
                       />
-                      <span className="absolute bottom-2 inset-x-2 text-center py-1 bg-black/80 backdrop-blur-md rounded-lg text-[10px] font-black text-[#8DC63F] border border-[#8DC63F]/40">
+                      <span className="absolute bottom-2 inset-x-2 text-center py-1 bg-black/80 backdrop-blur-md rounded-lg text-[10px] font-black text-[#B4E4D6] border border-[#B4E4D6]/40">
                         بعد الجلسات ✓
                       </span>
                     </div>
@@ -778,12 +778,12 @@ export default function IhnasiaBranchPage() {
                 <div className="p-4 pt-2 border-t border-white/10 bg-black/40 space-y-2">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-bold text-white">{cs.clientName} ({cs.age} سنة)</span>
-                    <span className="text-[#8DC63F] font-black">{cs.sessionCount} جلسات</span>
+                    <span className="text-[#B4E4D6] font-black">{cs.sessionCount} جلسات</span>
                   </div>
                   <p className="text-[11px] text-white/70 font-medium">
                     المنطقة: <strong className="text-white">{cs.targetArea}</strong>
                   </p>
-                  <p className="text-[11px] text-green-100/80 leading-relaxed bg-white/5 p-2.5 rounded-xl border border-white/5">
+                  <p className="text-[11px] text-[#FFF6A9]/85 leading-relaxed bg-white/5 p-2.5 rounded-xl border border-white/5">
                     "{cs.notes}"
                   </p>
                 </div>
@@ -792,12 +792,12 @@ export default function IhnasiaBranchPage() {
           </div>
 
           {/* CTA Bottom Banner */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-emerald-950/80 via-black to-[#061a0d] border border-[#8DC63F]/40 text-center space-y-4 shadow-2xl mt-8">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-emerald-950/80 via-black to-[#061a0d] border border-[#B4E4D6]/40 text-center space-y-4 shadow-2xl mt-8">
             <h3 className="text-xl sm:text-2xl font-black text-white">
               هل ترغب في الحصول على نفس نتائج هذه الأجهزة لجسمك؟
             </h3>
-            <p className="text-xs sm:text-sm text-green-100/80 max-w-xl mx-auto">
-              ابدأ الآن بفحص التشخيص الأولي المجاني أو احجز موعد كشفك بفرع إهناسيا لتحديد الخطة المناسبة.
+            <p className="text-xs sm:text-sm text-[#FFF6A9]/85 max-w-xl mx-auto">
+              ابدأ الآن بفحص التشخيص الأولي المجاني أو احجز موعد كشفك بالعيادة لتحديد الخطة المناسبة.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               {isVisitorOrRegistered && (
@@ -812,12 +812,12 @@ export default function IhnasiaBranchPage() {
               <button
                 type="button"
                 onClick={() => {
-                  setBookingPurpose('حجز موعد كشف وجلسة بفرع إهناسيا');
+                  setBookingPurpose('حجز موعد كشف وجلسة بالعيادة');
                   setIsWhatsAppBookingOpen(true);
                 }}
                 className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-7 py-3 rounded-xl text-xs sm:text-sm font-bold border border-white/20 flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
-                <Calendar size={16} className="text-[#8DC63F]" /> حجز موعد مباشر بالفرع
+                <Calendar size={16} className="text-[#B4E4D6]" /> حجز موعد مباشر بالفرع
               </button>
             </div>
           </div>
@@ -837,7 +837,7 @@ export default function IhnasiaBranchPage() {
         onClose={() => setIsDiagnosisOpen(false)}
         onOpenBooking={(purpose) => {
           setIsDiagnosisOpen(false);
-          setBookingPurpose(purpose || 'حجز جلسة بفرع إهناسيا بعد فحص القوام 3D');
+          setBookingPurpose(purpose || 'حجز جلسة بالعيادة بعد فحص القوام 3D');
           setIsWhatsAppBookingOpen(true);
         }}
       />

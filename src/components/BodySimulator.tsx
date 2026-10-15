@@ -386,7 +386,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
       {/* البطاقة المصغرة لفتح المعمل */}
       <div 
         onClick={() => { setModalOpen(true); setStepIndex(0); }}
-        className="glass-card rounded-[24px] flex-1 flex flex-col p-4 relative overflow-hidden group border border-[#8DC63F]/20 cursor-pointer"
+        className="glass-card rounded-[24px] flex-1 flex flex-col p-4 relative overflow-hidden group border border-[#DE7272]/25 cursor-pointer"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none"></div>
         <div className="flex-1 bg-black/40 rounded-xl relative overflow-hidden flex items-center justify-center min-h-[250px] pointer-events-none">
@@ -398,7 +398,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); setModalOpen(true); setStepIndex(0); }}
-            className="w-full bg-[#0a1a0a] hover:bg-[#8DC63F] text-[#8DC63F] hover:text-black border border-[#8DC63F]/30 py-3.5 rounded-xl font-black text-sm flex items-center justify-between px-5 transition-all duration-300 shadow-lg cursor-pointer"
+            className="w-full bg-[#1A0D11] hover:bg-gradient-to-r hover:from-[#DE7272] hover:to-[#FFCA88] text-[#FFCA88] hover:text-[#120B0D] border border-[#DE7272]/30 py-3.5 rounded-xl font-black text-sm flex items-center justify-between px-5 transition-all duration-300 shadow-lg cursor-pointer"
           >
             <span>إنشاء وتخصيص المجسم الخاص بك</span>
             <ChevronLeft size={18} />
@@ -409,18 +409,18 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
       {/* نافذة المعمل التفاعلي - Setup Wizard */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 sm:bg-black/90 sm:p-4 backdrop-blur-md">
-          <div className="w-full h-[100dvh] sm:h-[90vh] max-w-6xl bg-[#050505] sm:rounded-[32px] sm:border border-white/10 flex flex-col overflow-hidden shadow-2xl relative">
+          <div className="w-full h-[100dvh] sm:h-[90vh] max-w-6xl bg-[#120B0D] sm:rounded-[32px] sm:border border-[#DE7272]/30 flex flex-col overflow-hidden shadow-2xl relative">
             
             {/* الهيدر وشريط التقدم */}
-            <div className="shrink-0 bg-[#0a0a0a] z-10">
+            <div className="shrink-0 bg-[#1A0D11] z-10">
               <div className="h-[65px] px-4 border-b border-white/5 flex justify-between items-center">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#8DC63F]/10 flex items-center justify-center border border-[#8DC63F]/20">
-                    <Activity size={18} className="text-[#8DC63F]" />
+                  <div className="w-9 h-9 rounded-full bg-[#DE7272]/15 flex items-center justify-center border border-[#DE7272]/30">
+                    <Activity size={18} className="text-[#FFCA88]" />
                   </div>
                   <div>
                     <h2 className="text-white font-black text-sm sm:text-base">معمل بناء الأجسام المتقدم</h2>
-                    <p className="text-[#8DC63F] text-[9px] font-black tracking-widest uppercase">CERRAH CLINICAL MORPHOLOGY</p>
+                    <p className="text-[#FFCA88] text-[9px] font-black tracking-widest uppercase">CERRAH CLINICAL MORPHOLOGY</p>
                   </div>
                 </div>
                 <button
@@ -432,7 +432,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
               </div>
               <div className="h-1.5 w-full bg-white/5 relative">
                 <div
-                  className="absolute top-0 right-0 h-full bg-[#8DC63F] transition-all duration-500"
+                  className="absolute top-0 right-0 h-full bg-gradient-to-r from-[#DE7272] to-[#FFCA88] transition-all duration-500"
                   style={{ width: `${((stepIndex + 1) / wizardSteps.length) * 100}%` }}
                 />
               </div>
@@ -443,19 +443,19 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
               
               {/* المعاينة الحية 3D */}
               <div className="w-full h-[42%] lg:h-full lg:flex-1 shrink-0 relative bg-gradient-to-b from-black/80 to-black/20 border-b lg:border-b-0 lg:border-r border-white/5 overflow-hidden">
-                <div className="absolute top-3 right-3 z-30 bg-black/80 border border-[#8DC63F]/30 px-3 py-1.5 rounded-full flex items-center gap-2">
+                <div className="absolute top-3 right-3 z-30 bg-black/80 border border-[#DE7272]/30 px-3 py-1.5 rounded-full flex items-center gap-2">
                   <span className="text-white font-bold text-[10px]">
                     BMI: {calculatedBmi} ({avatarProps.height} سم • {avatarProps.weight} كجم)
                   </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8DC63F] animate-pulse"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DE7272] animate-pulse"></span>
                 </div>
                 <CerrahAvatar key="modal-avatar-editor" {...harmonizedMorphs} />
               </div>
 
               {/* لوحة الأسئلة المتتابعة */}
-              <div className="w-full h-[58%] lg:h-full lg:w-[450px] shrink-0 flex flex-col bg-[#0a0a0a]">
+              <div className="w-full h-[58%] lg:h-full lg:w-[450px] shrink-0 flex flex-col bg-[#1A0D11]">
                 <div className="shrink-0 p-4 border-b border-white/5 text-center">
-                  <span className="text-[#8DC63F] text-[10px] font-black uppercase block">
+                  <span className="text-[#FFCA88] text-[10px] font-black uppercase block">
                     الخطوة {stepIndex + 1} من {wizardSteps.length}
                   </span>
                   <h3 className="text-lg font-black text-white mt-0.5">{currentStepObj.title}</h3>
@@ -468,10 +468,10 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                   {currentStepObj.id === 'bmi_data' && (
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-3">
-                        <button onClick={() => handleGenderToggle('female')} className={`p-3.5 rounded-xl border font-bold text-sm flex items-center justify-center gap-2 transition-all ${avatarProps.gender === 'female' ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]' : 'bg-black/40 border-white/10 text-white/50'}`}>
+                        <button onClick={() => handleGenderToggle('female')} className={`p-3.5 rounded-xl border font-bold text-sm flex items-center justify-center gap-2 transition-all ${avatarProps.gender === 'female' ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] border-transparent font-black shadow-md' : 'bg-black/40 border-white/10 text-white/50'}`}>
                           <User size={18} /> أنثى
                         </button>
-                        <button onClick={() => handleGenderToggle('male')} className={`p-3.5 rounded-xl border font-bold text-sm flex items-center justify-center gap-2 transition-all ${avatarProps.gender === 'male' ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]' : 'bg-black/40 border-white/10 text-white/50'}`}>
+                        <button onClick={() => handleGenderToggle('male')} className={`p-3.5 rounded-xl border font-bold text-sm flex items-center justify-center gap-2 transition-all ${avatarProps.gender === 'male' ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] border-transparent font-black shadow-md' : 'bg-black/40 border-white/10 text-white/50'}`}>
                           <User size={18} /> ذكر
                         </button>
                       </div>
@@ -495,7 +495,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                       <div className="bg-black/30 p-3.5 rounded-xl border border-white/5 space-y-2.5">
                         <div className="flex items-center justify-end gap-2 text-xs font-bold text-white/75">
                           <span>درجة لون الجلد الطبيعي</span>
-                          <Palette size={15} className="text-[#8DC63F]" />
+                          <Palette size={15} className="text-[#FFCA88]" />
                         </div>
                         <div className="grid grid-cols-3 gap-2">
                           {SKIN_TONES.map((tone) => (
@@ -504,7 +504,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                               onClick={() => setAvatarProps({ ...avatarProps, skinTone: tone.hex })}
                               className={`p-2 rounded-xl border flex items-center justify-end gap-2 text-[11px] font-bold transition-all ${
                                 avatarProps.skinTone === tone.hex
-                                  ? 'border-[#8DC63F] bg-[#8DC63F]/15 text-white'
+                                  ? 'border-[#DE7272] bg-[#DE7272]/20 text-white'
                                   : 'border-white/10 bg-black/40 text-white/60'
                               }`}
                             >
@@ -528,21 +528,21 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                             key={cat.id}
                             onClick={() => handleSelectCategoryCard(cat.id)}
                             className={`w-full p-3.5 rounded-xl border text-right transition-all flex items-center justify-between ${
-                              isSelected ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-white' : 'bg-black/40 border-white/10 text-white/60 hover:border-white/25'
+                              isSelected ? 'bg-[#DE7272]/20 border-[#DE7272] text-white' : 'bg-black/40 border-white/10 text-white/60 hover:border-white/25'
                             }`}
                           >
                             <div>
                               <div className="font-black text-sm flex items-center gap-2 flex-wrap">
                                 {cat.title}
                                 {isRec && (
-                                  <span className="bg-[#8DC63F] text-black text-[10px] px-2 py-0.5 rounded-full font-black flex items-center gap-1">
+                                  <span className="bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] text-[10px] px-2 py-0.5 rounded-full font-black flex items-center gap-1">
                                     <Sparkles size={10} /> مقترح لك (Recommended)
                                   </span>
                                 )}
                               </div>
                               <span className="text-[11px] text-white/40 font-bold">{cat.range}</span>
                             </div>
-                            {isSelected && <CheckCircle2 className="text-[#8DC63F] shrink-0" size={20} />}
+                            {isSelected && <CheckCircle2 className="text-[#FFCA88] shrink-0" size={20} />}
                           </button>
                         );
                       })}
@@ -576,13 +576,13 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                             className={`p-3 rounded-xl border text-xs font-bold text-right transition-all ${
                               seg.isFull ? 'col-span-2' : ''
                             } ${
-                              avatarProps.bellySegType === seg.id ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]' : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
+                              avatarProps.bellySegType === seg.id ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]' : 'bg-black/40 border-white/10 text-white/60 hover:border-white/20'
                             }`}
                           >
                             <div className="flex items-center justify-between gap-2">
                               <span>{seg.label}</span>
                               {seg.badge && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#8DC63F]/20 text-[#8DC63F] font-mono shrink-0">
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#DE7272]/20 text-[#FFCA88] font-mono shrink-0">
                                   {seg.badge}
                                 </span>
                               )}
@@ -594,7 +594,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                       <div className="bg-black/30 p-3.5 rounded-xl border border-white/5">
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>حجم البطن (يتناغم تلقائياً مع الخصر)</span>
-                          <span className="text-[#8DC63F]">{Math.round(avatarProps.bellyVolume * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round(avatarProps.bellyVolume * 100)}%</span>
                         </div>
                         <input
                           type="range"
@@ -610,7 +610,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                               flanksVolume: Math.max(prev.flanksVolume, +(val * 0.75).toFixed(2)),
                             }));
                           }}
-                          className="w-full accent-[#8DC63F]"
+                          className="w-full accent-[#DE7272]"
                         />
                       </div>
 
@@ -631,7 +631,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                               onClick={() => setAvatarProps({ ...avatarProps, bellyWrinkleType: w.id })}
                               className={`p-2.5 rounded-xl border text-[11px] font-bold text-right ${
                                 avatarProps.bellyWrinkleType === w.id
-                                  ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]'
+                                  ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]'
                                   : 'bg-black/40 border-white/10 text-white/60'
                               }`}
                             >
@@ -642,9 +642,9 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
 
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>شدة ترهلات وطيات جلد البطن (Skin Laxity)</span>
-                          <span className="text-[#8DC63F]">{Math.round(avatarProps.bellySkinLaxity * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round(avatarProps.bellySkinLaxity * 100)}%</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.bellySkinLaxity} onChange={(e) => setAvatarProps({ ...avatarProps, bellySkinLaxity: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.bellySkinLaxity} onChange={(e) => setAvatarProps({ ...avatarProps, bellySkinLaxity: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                       </div>
                     </div>
                   )}
@@ -663,7 +663,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                             key={seg.id}
                             onClick={() => setAvatarProps({ ...avatarProps, flanksSegType: seg.id })}
                             className={`p-3 rounded-xl border text-xs font-bold text-right ${
-                              avatarProps.flanksSegType === seg.id ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]' : 'bg-black/40 border-white/10 text-white/60'
+                              avatarProps.flanksSegType === seg.id ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]' : 'bg-black/40 border-white/10 text-white/60'
                             }`}
                           >
                             {seg.label}
@@ -673,9 +673,9 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                       <div className="bg-black/30 p-3.5 rounded-xl border border-white/5">
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>حجم الجوانب (متكامل مع البطن)</span>
-                          <span className="text-[#8DC63F]">{Math.round(avatarProps.flanksVolume * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round(avatarProps.flanksVolume * 100)}%</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.flanksVolume} onChange={(e) => setAvatarProps({ ...avatarProps, flanksVolume: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.flanksVolume} onChange={(e) => setAvatarProps({ ...avatarProps, flanksVolume: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                       </div>
                     </div>
                   )}
@@ -696,7 +696,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                             key={b.id}
                             onClick={() => setAvatarProps({ ...avatarProps, backSegType: b.id })}
                             className={`p-2.5 rounded-xl border text-[11px] font-bold text-right ${
-                              avatarProps.backSegType === b.id ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]' : 'bg-black/40 border-white/10 text-white/60'
+                              avatarProps.backSegType === b.id ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]' : 'bg-black/40 border-white/10 text-white/60'
                             }`}
                           >
                             {b.label}
@@ -706,9 +706,9 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                       <div className="bg-black/30 p-3.5 rounded-xl border border-white/5">
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>حجم وبروز دهون الظهر</span>
-                          <span className="text-[#8DC63F]">{Math.round(avatarProps.backVolume * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round(avatarProps.backVolume * 100)}%</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.backVolume} onChange={(e) => setAvatarProps({ ...avatarProps, backVolume: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.backVolume} onChange={(e) => setAvatarProps({ ...avatarProps, backVolume: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                       </div>
                     </div>
                   )}
@@ -727,7 +727,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                             key={g.id}
                             onClick={() => setAvatarProps({ ...avatarProps, glutesSegType: g.id })}
                             className={`p-3 rounded-xl border text-xs font-bold text-right ${
-                              avatarProps.glutesSegType === g.id ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]' : 'bg-black/40 border-white/10 text-white/60'
+                              avatarProps.glutesSegType === g.id ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]' : 'bg-black/40 border-white/10 text-white/60'
                             }`}
                           >
                             {g.label}
@@ -738,16 +738,16 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                       <div className="bg-black/30 p-3.5 rounded-xl border border-white/5">
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>{avatarProps.gender === 'male' ? 'بروز الأرداف وعضلات الجلوتس' : 'حجم وبروز المؤخرة (Glutes)'}</span>
-                          <span className="text-[#8DC63F]">{Math.round(avatarProps.glutesVolume * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round(avatarProps.glutesVolume * 100)}%</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.glutesVolume} onChange={(e) => setAvatarProps({ ...avatarProps, glutesVolume: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.glutesVolume} onChange={(e) => setAvatarProps({ ...avatarProps, glutesVolume: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                       </div>
 
                       {/* سليدر الأرداف الجانبية (Hips Lateral Volume) */}
                       <div className="bg-black/30 p-3.5 rounded-xl border border-white/5">
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>حجم وبروز الأرداف الجانبية (Hips Lateral)</span>
-                          <span className="text-[#8DC63F]">{Math.round((avatarProps.hipsVolume ?? avatarProps.glutesVolume) * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round((avatarProps.hipsVolume ?? avatarProps.glutesVolume) * 100)}%</span>
                         </div>
                         <input
                           type="range"
@@ -756,7 +756,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                           step="0.05"
                           value={avatarProps.hipsVolume ?? avatarProps.glutesVolume}
                           onChange={(e) => setAvatarProps({ ...avatarProps, hipsVolume: Number(e.target.value) })}
-                          className="w-full accent-[#8DC63F]"
+                          className="w-full accent-[#DE7272]"
                         />
                       </div>
 
@@ -777,7 +777,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                               onClick={() => setAvatarProps({ ...avatarProps, glutesWrinkleType: gw.id })}
                               className={`p-2.5 rounded-xl border text-[11px] font-bold text-right ${
                                 avatarProps.glutesWrinkleType === gw.id
-                                  ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-[#8DC63F]'
+                                  ? 'bg-[#DE7272]/20 border-[#DE7272] text-[#FFCA88]'
                                   : 'bg-black/40 border-white/10 text-white/60'
                               }`}
                             >
@@ -788,13 +788,13 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
 
                         <div className="flex justify-between text-xs font-bold text-white mb-2">
                           <span>شدة ثنيات وتجاعيد المؤخرة</span>
-                          <span className="text-[#8DC63F]">{Math.round(avatarProps.glutesSkinLaxity * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round(avatarProps.glutesSkinLaxity * 100)}%</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.glutesSkinLaxity} onChange={(e) => setAvatarProps({ ...avatarProps, glutesSkinLaxity: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                        <input type="range" min="0" max="1" step="0.05" value={avatarProps.glutesSkinLaxity} onChange={(e) => setAvatarProps({ ...avatarProps, glutesSkinLaxity: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
 
                         <div className="flex justify-between text-xs font-bold text-white mb-2 pt-2 border-t border-white/5">
                           <span>علامات التمدد والاسترتش ماركس (Skin Stretch Marks)</span>
-                          <span className="text-[#8DC63F]">{Math.round((avatarProps.stretchMarks ?? avatarProps.glutesSkinLaxity) * 100)}%</span>
+                          <span className="text-[#FFCA88]">{Math.round((avatarProps.stretchMarks ?? avatarProps.glutesSkinLaxity) * 100)}%</span>
                         </div>
                         <input
                           type="range"
@@ -803,7 +803,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                           step="0.05"
                           value={avatarProps.stretchMarks ?? avatarProps.glutesSkinLaxity}
                           onChange={(e) => setAvatarProps({ ...avatarProps, stretchMarks: Number(e.target.value) })}
-                          className="w-full accent-[#8DC63F]"
+                          className="w-full accent-[#DE7272]"
                         />
                       </div>
                     </div>
@@ -816,36 +816,36 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                         <div>
                           <div className="flex justify-between text-xs font-bold text-white mb-3">
                             <span>حجم دهون الأفخاذ</span>
-                            <span className="text-[#8DC63F]">{Math.round(avatarProps.thighsFat * 100)}%</span>
+                            <span className="text-[#FFCA88]">{Math.round(avatarProps.thighsFat * 100)}%</span>
                           </div>
-                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.thighsFat} onChange={(e) => setAvatarProps({ ...avatarProps, thighsFat: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.thighsFat} onChange={(e) => setAvatarProps({ ...avatarProps, thighsFat: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                         </div>
                       )}
                       {currentStepObj.id === 'calves' && (
                         <div>
                           <div className="flex justify-between text-xs font-bold text-white mb-3">
                             <span>حجم السمانة</span>
-                            <span className="text-[#8DC63F]">{Math.round(avatarProps.calvesFat * 100)}%</span>
+                            <span className="text-[#FFCA88]">{Math.round(avatarProps.calvesFat * 100)}%</span>
                           </div>
-                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.calvesFat} onChange={(e) => setAvatarProps({ ...avatarProps, calvesFat: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.calvesFat} onChange={(e) => setAvatarProps({ ...avatarProps, calvesFat: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                         </div>
                       )}
                       {currentStepObj.id === 'arms' && (
                         <div>
                           <div className="flex justify-between text-xs font-bold text-white mb-3">
                             <span>حجم الذراعين</span>
-                            <span className="text-[#8DC63F]">{Math.round(avatarProps.armsFat * 100)}%</span>
+                            <span className="text-[#FFCA88]">{Math.round(avatarProps.armsFat * 100)}%</span>
                           </div>
-                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.armsFat} onChange={(e) => setAvatarProps({ ...avatarProps, armsFat: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.armsFat} onChange={(e) => setAvatarProps({ ...avatarProps, armsFat: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                         </div>
                       )}
                       {currentStepObj.id === 'side_chest' && (
                         <div>
                           <div className="flex justify-between text-xs font-bold text-white mb-3">
                             <span>{avatarProps.gender === 'male' ? 'حجم دهون الصدر والجانبين (Gynecomastia)' : 'حجم دهون جانب الصدر'}</span>
-                            <span className="text-[#8DC63F]">{Math.round(avatarProps.sideChestFat * 100)}%</span>
+                            <span className="text-[#FFCA88]">{Math.round(avatarProps.sideChestFat * 100)}%</span>
                           </div>
-                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.sideChestFat} onChange={(e) => setAvatarProps({ ...avatarProps, sideChestFat: Number(e.target.value) })} className="w-full accent-[#8DC63F]" />
+                          <input type="range" min="0" max="1" step="0.05" value={avatarProps.sideChestFat} onChange={(e) => setAvatarProps({ ...avatarProps, sideChestFat: Number(e.target.value) })} className="w-full accent-[#DE7272]" />
                         </div>
                       )}
                     </div>
@@ -854,7 +854,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                 </div>
 
                 {/* الفوتر الثابت للتنقل */}
-                <div className="shrink-0 p-4 border-t border-white/10 bg-[#0a0a0a] flex gap-3">
+                <div className="shrink-0 p-4 border-t border-white/10 bg-[#1A0D11] flex gap-3">
                   {stepIndex > 0 && (
                     <button
                       onClick={() => setStepIndex((prev) => prev - 1)}
@@ -911,7 +911,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                         }
                       }
                     }}
-                    className="flex-1 bg-[#8DC63F] hover:bg-[#7ab036] text-black py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-50"
+                    className="flex-1 btn-glow btn-glow-gold py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 border-none cursor-pointer disabled:opacity-50"
                   >
                     {isSavingSimulation ? (
                       <div className="flex items-center gap-2">
@@ -935,7 +935,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
       {/* نافذة مؤشر تقدم حفظ المجسم الدائري بدقة مئوية */}
       {isSavingSimulation && (
         <div className="fixed inset-0 z-[125] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-          <div className="w-full max-w-sm bg-[#070c08] border border-[#8DC63F]/40 rounded-[28px] p-6 text-center shadow-2xl space-y-4">
+          <div className="w-full max-w-sm bg-[#120B0D] border border-[#DE7272]/40 rounded-[28px] p-6 text-center shadow-2xl space-y-4">
             <div className="relative flex items-center justify-center w-28 h-28 mx-auto">
               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                 <circle
@@ -951,7 +951,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                   cx="50"
                   cy="50"
                   r="38"
-                  className="text-[#8DC63F] transition-all duration-200 ease-out"
+                  className="text-[#DE7272] transition-all duration-200 ease-out"
                   strokeWidth="6"
                   stroke="currentColor"
                   strokeDasharray="238.76"
@@ -962,12 +962,12 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-xl font-black text-white font-mono">{Math.min(100, savingProgress)}%</span>
-                <span className="text-[10px] text-[#8DC63F] font-bold">جاري الحفظ</span>
+                <span className="text-[10px] text-[#FFCA88] font-bold">جاري الحفظ</span>
               </div>
             </div>
             <div>
               <h4 className="text-white font-black text-base">توثيق وحفظ قياسات المجسم</h4>
-              <p className="text-xs text-green-100/70 mt-1 font-semibold" dir="rtl">
+              <p className="text-xs text-[#FFF6A9]/80 mt-1 font-semibold" dir="rtl">
                 {savingProgress < 40
                   ? 'جاري تجهيز بيانات القوام والقياسات ثلاثية الأبعاد...'
                   : savingProgress < 85
@@ -982,7 +982,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
       {/* نافذة ملخص نتائج المحاكي وخطة العلاج المقترحة */}
       {isSavedModalOpen && (
         <div className="fixed inset-0 z-[115] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-          <div className="w-full max-w-lg bg-[#070c08] border border-[#8DC63F]/40 rounded-[30px] p-6 sm:p-8 text-center relative shadow-2xl space-y-5">
+          <div className="w-full max-w-lg bg-[#120B0D] border border-[#DE7272]/40 rounded-[30px] p-6 sm:p-8 text-center relative shadow-2xl space-y-5">
             <button
               onClick={() => setIsSavedModalOpen(false)}
               className="absolute top-5 left-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white flex items-center justify-center transition-colors"
@@ -990,25 +990,25 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
               <X size={16} />
             </button>
 
-            <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center mx-auto text-[#8DC63F]">
+            <div className="w-16 h-16 rounded-full bg-[#DE7272]/20 border border-[#DE7272] flex items-center justify-center mx-auto text-[#FFCA88]">
               <Award size={36} />
             </div>
 
             <div>
-              <span className="text-[#8DC63F] text-[10px] font-black uppercase tracking-wider bg-[#8DC63F]/10 px-3 py-1 rounded-full border border-[#8DC63F]/20">
+              <span className="text-[#FFCA88] text-[10px] font-black uppercase tracking-wider bg-[#DE7272]/15 px-3 py-1 rounded-full border border-[#DE7272]/30">
                 CERRAH CLINICAL ASSESSMENT
               </span>
               <h3 className="text-2xl font-black text-white mt-2">تم حفظ وتوثيق مجسمك بنجاح!</h3>
-              <p className="text-green-100/70 text-xs font-semibold mt-1">
+              <p className="text-[#FFF6A9]/80 text-xs font-semibold mt-1">
                 تم تسجيل قياساتك الفيزيائية في قاعدة بيانات العيادة السحابية.
               </p>
             </div>
 
             {/* بطاقة النتائج */}
-            <div className="bg-black/50 border border-white/10 rounded-2xl p-4 text-right space-y-2.5 text-xs font-bold">
+            <div className="bg-[#1A0D11] border border-white/10 rounded-2xl p-4 text-right space-y-2.5 text-xs font-bold">
               <div className="flex justify-between items-center pb-2 border-b border-white/5">
                 <span className="text-white/60">مؤشر كتلة الجسم (BMI):</span>
-                <span className="text-[#8DC63F] text-base font-black">{calculatedBmi}</span>
+                <span className="text-[#FFCA88] text-base font-black">{calculatedBmi}</span>
               </div>
               <div className="flex justify-between items-center pb-2 border-b border-white/5">
                 <span className="text-white/60">الفئة الهيكلية المقترحة:</span>
@@ -1016,7 +1016,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
               </div>
               <div className="flex justify-between items-center pb-2 border-b border-white/5">
                 <span className="text-white/60">التقنيات الطبية الموصى بها:</span>
-                <span className="text-[#8DC63F] font-black">جلسات Onda Microwave + Scizer</span>
+                <span className="text-[#FFCA88] font-black">جلسات Onda Microwave + Scizer</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-white/60">البروتوكول الغذائي:</span>
@@ -1030,7 +1030,7 @@ export default function BodySimulator({ bmiResult, showAvatarModal, setShowAvata
                   setIsSavedModalOpen(false);
                   setIsBookingModalOpen(true);
                 }}
-                className="w-full bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black py-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
+                className="w-full btn-glow btn-glow-gold py-4 rounded-xl font-black text-sm flex items-center justify-center gap-2 border-none cursor-pointer shadow-lg"
               >
                 <CalendarDays size={18} /> احجز موعد كشف لمناقشة هذا المجسم مع الطبيب
               </button>

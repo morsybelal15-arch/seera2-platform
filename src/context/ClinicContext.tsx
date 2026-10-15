@@ -293,7 +293,25 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
         if (resUsers.ok) {
           const uData = await resUsers.json();
           if (Array.isArray(uData) && uData.length > 0) {
-            setSystemUsers(uData);
+            let merged = uData;
+            try {
+              if (typeof window !== 'undefined') {
+                const saved = localStorage.getItem('seera_system_users');
+                if (saved) {
+                  const parsed = JSON.parse(saved);
+                  if (Array.isArray(parsed) && parsed.length > 0) {
+                    const localMap = new Map(parsed.map((u: any) => [u.id, u]));
+                    merged = uData.map(u => localMap.get(u.id) || u);
+                    parsed.forEach((lu: any) => {
+                      if (!merged.some(u => u.id === lu.id)) merged.push(lu);
+                    });
+                  }
+                }
+              }
+            } catch (e) {
+              console.warn('Local users load notice:', e);
+            }
+            setSystemUsers(merged);
           }
         }
 
@@ -462,7 +480,7 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
           bmi: Number(((data.weight || 80) / Math.pow((data.height || 165) / 100, 2)).toFixed(1)) 
         }
       ],
-      registeredBy: activeRole === 'doctor' ? 'الطبيب المعالج' : 'استقبال فرع إهناسيا',
+      registeredBy: activeRole === 'doctor' ? 'الطبيب المعالج' : 'استقبال العيادة',
       createdAt: new Date().toISOString(),
     };
 
@@ -485,9 +503,9 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
     // Send welcome chat message
     await sendChatMessage(
       newId,
-      `مرحباً بك يا ${fullName} في مركز سيرا! تم إنشاء ملفك الطبي بنجاح. اسم المستخدم للدخول: "${fullName}" وكلمة المرور: "${cleanPhone}". يمكنك دائماً تسجيل الدخول الفوري عبر كود الـ QR الخاص بك.`,
+      `مرحباً بك يا ${fullName} في عيادة سيرة 2! تم إنشاء ملفك الطبي بنجاح. اسم المستخدم للدخول: "${fullName}" وكلمة المرور: "${cleanPhone}". يمكنك دائماً تسجيل الدخول الفوري عبر كود الـ QR الخاص بك.`,
       activeRole,
-      activeRole === 'doctor' ? 'د. مصطفى محمود' : 'استقبال فرع إهناسيا'
+      activeRole === 'doctor' ? 'د. بلال مرسي' : 'استقبال العيادة'
     );
 
     return { patient: newPatient, qrToken };
@@ -788,9 +806,9 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
     const formattedDate = new Date(newSession.date).toLocaleDateString('ar-EG', { dateStyle: 'long' });
     await sendChatMessage(
       patientId,
-      `🗓️ تم تسجيل حضور جلستك في المركز بتاريخ (${formattedDate}) بنجاح. شكراً لالتزامك برحلة العلاج!`,
+      `🗓️ تم تسجيل حضور جلستك في العيادة بتاريخ (${formattedDate}) بنجاح. شكراً لالتزامك برحلة العلاج!`,
       activeRole,
-      'استقبال فرع إهناسيا'
+      'استقبال العيادة'
     );
   };
 
@@ -859,7 +877,13 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
   };
 
   const updateSystemUser = async (id: string, updates: Partial<SystemUser>) => {
-    setSystemUsers(prev => prev.map(u => u.id === id ? { ...u, ...updates } : u));
+    setSystemUsers(prev => {
+      const next = prev.map(u => u.id === id ? { ...u, ...updates } : u);
+      if (typeof window !== 'undefined') {
+        try { localStorage.setItem('seera_system_users', JSON.stringify(next)); } catch (e) {}
+      }
+      return next;
+    });
     try {
       await fetch('/api/users', {
         method: 'PATCH',
@@ -885,7 +909,13 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
       if (res.ok) {
         const data = await res.json();
         if (data.user) {
-          setSystemUsers(prev => [data.user, ...prev.filter(u => u.id !== data.user.id)]);
+          setSystemUsers(prev => {
+            const next = [data.user, ...prev.filter(u => u.id !== data.user.id)];
+            if (typeof window !== 'undefined') {
+              try { localStorage.setItem('seera_system_users', JSON.stringify(next)); } catch (e) {}
+            }
+            return next;
+          });
         }
       }
     } catch (err) {
@@ -894,7 +924,13 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
   };
 
   const deleteSystemUser = async (id: string) => {
-    setSystemUsers(prev => prev.filter(u => u.id !== id));
+    setSystemUsers(prev => {
+      const next = prev.filter(u => u.id !== id);
+      if (typeof window !== 'undefined') {
+        try { localStorage.setItem('seera_system_users', JSON.stringify(next)); } catch (e) {}
+      }
+      return next;
+    });
     try {
       await fetch(`/api/users?id=${id}`, { method: 'DELETE' });
     } catch (err) {
@@ -923,8 +959,8 @@ export function ClinicProvider({ children }: { children: ReactNode }) {
   ) => {
     const defaultSenderRole = senderRole || activeRole;
     const defaultSenderName = senderName || (
-      defaultSenderRole === 'doctor' ? 'د. مصطفى محمود' :
-      defaultSenderRole === 'staff' ? 'استقبال فرع إهناسيا' :
+      defaultSenderRole === 'doctor' ? 'د. بلال مرسي' :
+      defaultSenderRole === 'staff' ? 'استقبال العيادة' :
       currentUser?.displayName || 'العميل'
     );
 

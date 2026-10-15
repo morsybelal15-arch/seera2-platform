@@ -35,17 +35,17 @@ export default function DoctorReelModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="w-full max-w-xl bg-[#080d09] border border-[#8DC63F]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+      <div className="w-full max-w-xl bg-[#080d09] border border-[#B4E4D6]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
         
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-black/50 shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-9 h-9 rounded-xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Stethoscope size={18} />
             </div>
             <div>
               <span className="text-white font-black text-sm sm:text-base">{doctor.name}</span>
-              <p className="text-[#8DC63F] text-[11px] font-bold">{doctor.role}</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold">{doctor.role}</p>
             </div>
           </div>
           <button
@@ -68,7 +68,7 @@ export default function DoctorReelModal({
           <div className="absolute inset-0 bg-gradient-to-t from-[#080d09] via-black/40 to-transparent"></div>
           
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-[#8DC63F] text-black flex items-center justify-center shadow-[0_0_30px_rgba(141,198,63,0.5)] transition-transform group-hover:scale-110">
+            <div className="w-16 h-16 rounded-full bg-[#B4E4D6] text-black flex items-center justify-center shadow-[0_0_30px_rgba(180, 228, 214,0.5)] transition-transform group-hover:scale-110">
               <Play size={24} fill="currentColor" className="ml-1" />
             </div>
             <span className="text-white font-bold text-xs mt-3 bg-black/60 px-3 py-1 rounded-full border border-white/10 backdrop-blur-sm">
@@ -77,7 +77,7 @@ export default function DoctorReelModal({
           </div>
 
           <div className="absolute bottom-3 right-4 left-4 text-right">
-            <span className="text-[#8DC63F] text-[10px] font-black uppercase tracking-wider bg-[#8DC63F]/20 px-2 py-0.5 rounded-md border border-[#8DC63F]/30">
+            <span className="text-[#B4E4D6] text-[10px] font-black uppercase tracking-wider bg-[#B4E4D6]/20 px-2 py-0.5 rounded-md border border-[#B4E4D6]/30">
               CERRAH MEDICAL REEL
             </span>
             <h4 className="text-white font-black text-base sm:text-lg mt-1">{doctor.reelTitle}</h4>
@@ -95,12 +95,12 @@ export default function DoctorReelModal({
 
           <div>
             <h5 className="text-white font-black text-xs mb-2.5 flex items-center gap-2">
-              <Sparkles size={14} className="text-[#8DC63F]" /> أبرز النصائح والتوجيهات الطبية:
+              <Sparkles size={14} className="text-[#B4E4D6]" /> أبرز النصائح والتوجيهات الطبية:
             </h5>
             <ul className="space-y-2">
               {doctor.advicePoints.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 text-xs text-green-100/80 font-semibold bg-black/30 p-2.5 rounded-xl border border-white/5">
-                  <CheckCircle size={15} className="text-[#8DC63F] shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-2.5 text-xs text-[#FFF6A9]/85 font-semibold bg-black/30 p-2.5 rounded-xl border border-white/5">
+                  <CheckCircle size={15} className="text-[#B4E4D6] shrink-0 mt-0.5" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -114,7 +114,7 @@ export default function DoctorReelModal({
                 onClose();
                 onBookWithDoctor(doctor.name, doctor.suggestedService);
               }}
-              className="flex-1 bg-[#8DC63F] hover:bg-[#7ab036] text-black py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
+              className="flex-1 bg-[#B4E4D6] hover:bg-[#7ab036] text-black py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
             >
               <CalendarDays size={17} /> احجز موعد كشف مع {doctor.name}
             </button>

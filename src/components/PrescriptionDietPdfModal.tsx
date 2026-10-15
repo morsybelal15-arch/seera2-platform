@@ -31,7 +31,7 @@ export default function PrescriptionDietPdfModal({
   const activeDiet = patient?.diet;
   const activeTemplate = template || (activeDiet?.templateId ? dietTemplates.find(t => t.id === activeDiet.templateId) : null) || dietTemplates[0];
 
-  const patientName = patient?.name || 'عميل مركز سيرا';
+  const patientName = patient?.name || 'مشترك عيادة سيرة 2';
   const patientPhone = patient?.phone || '010XXXXXXXX';
   const patientFileId = patient?.id || 'CRH-001';
   const assignedDate = activeDiet?.assignedAt || new Date().toISOString().split('T')[0];
@@ -51,7 +51,7 @@ export default function PrescriptionDietPdfModal({
   };
 
   const handleShareWhatsApp = () => {
-    const text = `📋 *روشتة ونظام غذائي معتمد من مركز سيرا - فرع إهناسيا*\n\n` +
+    const text = `📋 *روشتة ونظام غذائي معتمد من عيادة سيرة 2*\n\n` +
       `👤 *المريض:* ${patientName}\n` +
       `📌 *الخطة:* ${activeDiet?.name || activeTemplate?.name}\n` +
       `💧 *الماء المستهدف:* ${waterTarget} لتر يومياً\n\n` +
@@ -60,7 +60,7 @@ export default function PrescriptionDietPdfModal({
       `🥣 *العشاء:* ${dailyMeals.dinner}\n` +
       `🥜 *السناك:* ${dailyMeals.snacks}\n\n` +
       `⚠️ *تعليمات الطبيب:* ${instructions}\n\n` +
-      `🏥 *مركز سيرا:* بني سويف - إهناسيا | هاتف: 01108080564`;
+      `🏥 *عيادة سيرة 2:* نحت وتنسيق القوام | هاتف: 01108080564`;
     
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/?text=${encoded}`, '_blank');
@@ -68,24 +68,24 @@ export default function PrescriptionDietPdfModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto animate-[fadeIn_0.2s_ease-out]">
-      <div className="relative w-full max-w-4xl bg-[#0a150e] border border-[#8DC63F]/30 rounded-[32px] overflow-hidden shadow-2xl my-8 flex flex-col max-h-[92vh]">
+      <div className="relative w-full max-w-4xl bg-[#0a150e] border border-[#B4E4D6]/30 rounded-[32px] overflow-hidden shadow-2xl my-8 flex flex-col max-h-[92vh]">
         
         {/* Modal Action Header (Excluded from Print) */}
         <div className="print:hidden flex items-center justify-between p-5 border-b border-white/10 bg-black/40">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#8DC63F]/20 text-[#8DC63F]">
+            <div className="p-2.5 rounded-xl bg-[#B4E4D6]/20 text-[#B4E4D6]">
               <FileText size={22} />
             </div>
             <div>
               <h3 className="text-lg font-black text-white">الروشتة الطبية والنظام الغذائي (PDF)</h3>
-              <p className="text-xs text-green-100/60 font-semibold">جاهزة للطباعة، المشاركة، والتحميل المباشر</p>
+              <p className="text-xs text-[#FFF6A9]/65 font-semibold">جاهزة للطباعة، المشاركة، والتحميل المباشر</p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-4 py-2 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center gap-1.5 transition-all cursor-pointer shadow-lg"
+              className="px-4 py-2 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center gap-1.5 transition-all cursor-pointer shadow-lg"
             >
               <Printer size={16} /> طباعة الروشتة (PDF)
             </button>
@@ -113,11 +113,11 @@ export default function PrescriptionDietPdfModal({
               <div>
                 <div className="flex items-center gap-2">
                   <span className="w-4 h-4 rounded-full bg-emerald-600"></span>
-                  <h1 className="text-2xl font-black text-emerald-800 tracking-tight">CERRAH CLINIC | عيادة سـيرا</h1>
+                  <h1 className="text-2xl font-black text-emerald-800 tracking-tight">SEERA CLINIC 2 | عيادة سيرة 2</h1>
                 </div>
-                <p className="text-xs font-bold text-gray-600 mt-1">المركز التخصصي للعلاج الطبيعي ونحت القوام والتغذية العلاجية</p>
+                <p className="text-xs font-bold text-gray-600 mt-1">العيادة التخصصية لنحت القوام والمتابعة الطبية والتغذية العلاجية</p>
                 <p className="text-[11px] text-gray-500 flex items-center gap-1.5 mt-1 font-semibold">
-                  <MapPin size={12} className="text-emerald-600" /> فرع إهناسيا - بني سويف | تقنيات Onda & Scizer
+                  <MapPin size={12} className="text-emerald-600" /> عيادة سيرة 2 | تقنيات Onda & Scizer والمتابعة الأونلاين
                 </p>
               </div>
 
@@ -205,15 +205,15 @@ export default function PrescriptionDietPdfModal({
             <div className="flex justify-between items-end pt-8 border-t border-gray-200 text-xs">
               <div className="text-gray-600 font-semibold space-y-1">
                 <p className="flex items-center gap-1.5 text-emerald-700 font-bold">
-                  <ShieldCheck size={14} /> روشتة معتمدة رقمياً من إدارة مركز سيرا الطبية
+                  <ShieldCheck size={14} /> روشتة معتمدة رقمياً من الإدارة الطبية لعيادة سيرة 2
                 </p>
-                <p className="text-[10px] text-gray-500">للاستفسارات والمتابعة: 01108080564 | فرع إهناسيا</p>
+                <p className="text-[10px] text-gray-500">للاستفسارات والمتابعة: 01108080564 | عيادة سيرة 2</p>
               </div>
 
               <div className="text-center font-bold text-gray-800">
                 <p className="mb-6 text-xs text-gray-500">توقيع وختم الطبيب المعالج</p>
                 <div className="inline-block border-b-2 border-dashed border-gray-400 pb-1 px-8">
-                  <span className="font-serif italic text-emerald-800 font-black text-sm">د. مصطفى محمود / استشاري السمنة</span>
+                  <span className="font-serif italic text-emerald-800 font-black text-sm">د. بلال مرسي / استشاري العلاج الطبيعي والتغذية</span>
                 </div>
               </div>
             </div>

@@ -32,14 +32,14 @@ export default function ClientWelcomePassModal({
   };
 
   const handleShareWhatsApp = () => {
-    const text = `🎉 *مرحباً بك في مركز سيرا (CERRAH CLINIC)*\n\n` +
+    const text = `🎉 *مرحباً بك في عيادة سيرة 2 (SEERA CLINIC 2)*\n\n` +
       `تم إنشاء حسابك وملفك الطبي بنجاح!\n\n` +
       `👤 *اسم المستخدم (الدخول):* ${clientName}\n` +
       `🔑 *كلمة المرور:* ${clientPhone}\n` +
       `⚡ *كود الدخول السريع (QR):* ${token}\n\n` +
       `📱 يمكنك الدخول لمتابعة الخطة الغذائية وجلسات الأجهزة والأفاتار 3D عبر موقعنا:\n` +
       `https://cerrah.com/login\n\n` +
-      `🏥 *فرع إهناسيا - بني سويف*`;
+      `🏥 *عيادة سيرة 2 - نحت وتنسيق القوام*`;
 
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/${clientPhone.replace(/\D/g, '')}?text=${encoded}`, '_blank');
@@ -52,7 +52,7 @@ export default function ClientWelcomePassModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="relative w-full max-w-lg bg-[#08150c] border border-[#8DC63F]/40 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col">
+      <div className="relative w-full max-w-lg bg-[#1D1216] border border-[#B4E4D6]/40 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col">
         
         {/* Close Button */}
         <button
@@ -64,27 +64,27 @@ export default function ClientWelcomePassModal({
 
         {/* Success Badge & Header */}
         <div className="text-center mb-6">
-          <div className="w-14 h-14 bg-gradient-to-tr from-[#8DC63F] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 text-black shadow-lg shadow-[#8DC63F]/30 animate-bounce">
+          <div className="w-14 h-14 bg-gradient-to-tr from-[#B4E4D6] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 text-black shadow-lg shadow-[#B4E4D6]/30 animate-bounce">
             <CheckCircle2 size={30} />
           </div>
           <h2 className="text-2xl font-black text-white">تم إنشاء حساب العميل بنجاح!</h2>
-          <p className="text-xs text-green-100/70 font-semibold mt-1">
+          <p className="text-xs text-[#FFF6A9]/75 font-semibold mt-1">
             كارت العميل الرقمي وبيانات تسجيل الدخول الفوري السريع
           </p>
         </div>
 
         {/* Digital Pass Card */}
-        <div className="bg-gradient-to-br from-[#0c2414] via-[#08150c] to-[#040a06] border-2 border-[#8DC63F]/40 rounded-2xl p-5 shadow-2xl relative overflow-hidden mb-6">
-          <div className="absolute top-0 right-0 w-40 h-40 bg-[#8DC63F]/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div className="bg-gradient-to-br from-[#0c2414] via-[#1D1216] to-[#040a06] border-2 border-[#B4E4D6]/40 rounded-2xl p-5 shadow-2xl relative overflow-hidden mb-6">
+          <div className="absolute top-0 right-0 w-40 h-40 bg-[#B4E4D6]/10 rounded-full blur-2xl pointer-events-none"></div>
 
           {/* Card Header */}
           <div className="flex justify-between items-center pb-3 border-b border-white/10 mb-4">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#8DC63F] animate-pulse"></span>
-              <span className="text-xs font-black text-white">كارت دخول عميل سيرا الرقمي</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#B4E4D6] animate-pulse"></span>
+              <span className="text-xs font-black text-white">كارت دخول مشترك سيرة 2 الرقمي</span>
             </div>
-            <span className="text-[10px] font-mono text-[#8DC63F] bg-[#8DC63F]/10 px-2.5 py-0.5 rounded-full border border-[#8DC63F]/30">
-              فرع إهناسيا
+            <span className="text-[10px] font-mono text-[#B4E4D6] bg-[#B4E4D6]/10 px-2.5 py-0.5 rounded-full border border-[#B4E4D6]/30">
+              عيادة سيرة 2
             </span>
           </div>
 
@@ -99,16 +99,16 @@ export default function ClientWelcomePassModal({
             {/* Credentials details */}
             <div className="sm:col-span-7 space-y-2.5 text-xs">
               <div className="bg-black/40 p-2.5 rounded-xl border border-white/5">
-                <span className="text-[10px] text-green-100/50 block font-bold">اسم المستخدم (Username):</span>
+                <span className="text-[10px] text-[#FFF6A9]/50 block font-bold">اسم المستخدم (Username):</span>
                 <strong className="text-white text-sm font-black flex items-center gap-1.5 mt-0.5">
-                  <User size={14} className="text-[#8DC63F]" /> {clientName}
+                  <User size={14} className="text-[#B4E4D6]" /> {clientName}
                 </strong>
               </div>
 
               <div className="bg-black/40 p-2.5 rounded-xl border border-white/5">
-                <span className="text-[10px] text-green-100/50 block font-bold">كلمة المرور (Password):</span>
-                <strong className="text-[#8DC63F] text-sm font-mono font-black flex items-center gap-1.5 mt-0.5" dir="ltr">
-                  <Key size={14} className="text-[#8DC63F]" /> {clientPhone}
+                <span className="text-[10px] text-[#FFF6A9]/50 block font-bold">كلمة المرور (Password):</span>
+                <strong className="text-[#B4E4D6] text-sm font-mono font-black flex items-center gap-1.5 mt-0.5" dir="ltr">
+                  <Key size={14} className="text-[#B4E4D6]" /> {clientPhone}
                 </strong>
               </div>
 
@@ -127,7 +127,7 @@ export default function ClientWelcomePassModal({
               onClick={handlePrint}
               className="py-3 px-4 bg-white/10 hover:bg-white/20 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all border border-white/15 cursor-pointer"
             >
-              <Printer size={16} className="text-[#8DC63F]" /> طباعة الكارت (PDF)
+              <Printer size={16} className="text-[#B4E4D6]" /> طباعة الكارت (PDF)
             </button>
 
             <button
@@ -149,7 +149,7 @@ export default function ClientWelcomePassModal({
             {onDirectLogin && (
               <button
                 onClick={onDirectLogin}
-                className="py-2.5 px-4 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-lg shadow-[#8DC63F]/20"
+                className="py-2.5 px-4 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-lg shadow-[#B4E4D6]/20"
               >
                 <LogIn size={14} /> دخول كـ {clientName.split(' ')[0]}
               </button>

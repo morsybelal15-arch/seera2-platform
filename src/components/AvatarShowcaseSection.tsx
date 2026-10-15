@@ -56,16 +56,16 @@ export default function AvatarShowcaseSection({
   return (
     <section className="mb-32 relative z-10 w-full">
       {/* خلفية جمالية متدرجة */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FFB1B1]/10 via-transparent to-transparent rounded-[40px] pointer-events-none -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#DE7272]/10 via-transparent to-transparent rounded-[40px] pointer-events-none -z-10"></div>
 
       <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 bg-[#FFB1B1]/15 border border-[#FFB1B1]/30 px-4 py-1.5 rounded-full text-xs font-black text-[#FFDBB0] mb-4 shadow-[0_0_15px_rgba(255,177,177,0.2)]">
-          <Sparkles size={16} className="text-[#FFB1B1]" /> تكنولوجيا المتابعة الذكية عن بُعد
+        <div className="inline-flex items-center gap-2 bg-[#DE7272]/15 border border-[#DE7272]/30 px-4 py-1.5 rounded-full text-xs font-black text-[#FFCA88] mb-4 shadow-[0_0_15px_rgba(222, 114, 114,0.2)]">
+          <Sparkles size={16} className="text-[#DE7272]" /> تكنولوجيا المتابعة الذكية عن بُعد
         </div>
         <h2 className="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-lg">
-          التوأم الرقمي والمجسم ثلاثي الأبعاد <span className="text-[#FFB1B1]">3D</span>
+          الأفاتار والمجسم ثلاثي الأبعاد <span className="text-[#DE7272]">3D</span>
         </h2>
-        <p className="text-[#FFFAD3]/80 font-bold text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[#FFF6A9]/80 font-bold text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
           شاهد نتائج نحت وتنسيق القوام وتحسن محيط الخصر والأبعاد أسبوعياً على مجسمك التفاعلي في عيادة سيرة 2.
         </p>
       </div>
@@ -75,59 +75,59 @@ export default function AvatarShowcaseSection({
         <div className="lg:col-span-7 flex flex-col gap-6 order-2 lg:order-1">
           <div className="space-y-4">
             <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
-              كيف يضمن لك <span className="text-[#FFB1B1]">الأفاتار الطبي</span> الالتزام ومضاعفة النتائج؟
+              كيف يضمن لك <span className="text-[#DE7272]">الأفاتار الطبي</span> الالتزام ومضاعفة النتائج؟
             </h3>
-            <p className="text-[#FFFAD3]/80 text-sm leading-relaxed font-semibold">
+            <p className="text-[#FFF6A9]/80 text-sm leading-relaxed font-semibold">
               في عيادة سيرة 2، لا نعتمد على الميزان التقليدي فقط. نقوم بربط قياسات محيط الخصر، الأجناب، والكتلة العضلية بمجسم ثلاثي الأبعاد تفاعلي يُمكّنك من رؤية التغير الحقيقي في شكل جسمك وتناسق قوامك.
             </p>
           </div>
 
           {/* المميزات التسويقية الأربعة */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#FFB1B1]/40 transition-colors">
-              <div className="flex items-center gap-2 text-[#FFDBB0] font-black text-sm mb-1">
-                <div className="w-7 h-7 rounded-lg bg-[#FFB1B1]/20 flex items-center justify-center text-[#FFB1B1]">
+            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#DE7272]/40 transition-colors">
+              <div className="flex items-center gap-2 text-[#FFCA88] font-black text-sm mb-1">
+                <div className="w-7 h-7 rounded-lg bg-[#DE7272]/20 flex items-center justify-center text-[#DE7272]">
                   <Activity size={16} />
                 </div>
                 رسم خريطة توزيع الدهون
               </div>
-              <p className="text-[11px] text-[#FFFAD3]/70 leading-relaxed font-medium">
+              <p className="text-[11px] text-[#FFF6A9]/70 leading-relaxed font-medium">
                 تحديد مناطق تجمع الدهون العنيدة في البطن والأجناب والذراعين بدقة وحساب نسبة التناسق المطلوبة.
               </p>
             </div>
 
-            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#FFB1B1]/40 transition-colors">
-              <div className="flex items-center gap-2 text-[#FFDBB0] font-black text-sm mb-1">
-                <div className="w-7 h-7 rounded-lg bg-[#FFB1B1]/20 flex items-center justify-center text-[#FFB1B1]">
+            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#DE7272]/40 transition-colors">
+              <div className="flex items-center gap-2 text-[#FFCA88] font-black text-sm mb-1">
+                <div className="w-7 h-7 rounded-lg bg-[#DE7272]/20 flex items-center justify-center text-[#DE7272]">
                   <Zap size={16} />
                 </div>
                 محاكاة الهدف ونحت القوام
               </div>
-              <p className="text-[11px] text-[#FFFAD3]/70 leading-relaxed font-medium">
+              <p className="text-[11px] text-[#FFF6A9]/70 leading-relaxed font-medium">
                 مشاهدة التأثير المتوقع للبرنامج الغذائي المخصص على محيط الجسم وتقسيم العضلات أسبوعاً بعد أسبوع.
               </p>
             </div>
 
-            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#FFB1B1]/40 transition-colors">
-              <div className="flex items-center gap-2 text-[#FFDBB0] font-black text-sm mb-1">
-                <div className="w-7 h-7 rounded-lg bg-[#FFB1B1]/20 flex items-center justify-center text-[#FFB1B1]">
+            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#DE7272]/40 transition-colors">
+              <div className="flex items-center gap-2 text-[#FFCA88] font-black text-sm mb-1">
+                <div className="w-7 h-7 rounded-lg bg-[#DE7272]/20 flex items-center justify-center text-[#DE7272]">
                   <Flame size={16} />
                 </div>
                 مقارنة أسبوعية دقيقة
               </div>
-              <p className="text-[11px] text-[#FFFAD3]/70 leading-relaxed font-medium">
+              <p className="text-[11px] text-[#FFF6A9]/70 leading-relaxed font-medium">
                 مقارنة بصرية واضحة بين وضعك الحالي والهدف المنشود، مما يرفع دافعية الالتزام بنظام التغذية والمتابعة.
               </p>
             </div>
 
-            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#FFB1B1]/40 transition-colors">
-              <div className="flex items-center gap-2 text-[#FFDBB0] font-black text-sm mb-1">
-                <div className="w-7 h-7 rounded-lg bg-[#FFB1B1]/20 flex items-center justify-center text-[#FFB1B1]">
+            <div className="glass-card p-4 rounded-2xl border border-white/5 hover:border-[#DE7272]/40 transition-colors">
+              <div className="flex items-center gap-2 text-[#FFCA88] font-black text-sm mb-1">
+                <div className="w-7 h-7 rounded-lg bg-[#DE7272]/20 flex items-center justify-center text-[#DE7272]">
                   <ShieldCheck size={16} />
                 </div>
                 إشراف طبي إكلينيكي مباشر
               </div>
-              <p className="text-[11px] text-[#FFFAD3]/70 leading-relaxed font-medium">
+              <p className="text-[11px] text-[#FFF6A9]/70 leading-relaxed font-medium">
                 يقوم الطبيب بتحديث قياساتك في ملفك الإلكتروني بعد كل مراجعة أسبوعية لتستعرضها من هاتفك في أي وقت.
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function AvatarShowcaseSection({
             {isLoggedInVisitor && (
               <button
                 onClick={() => setIsVisitorBookingOpen(true)}
-                className="bg-gradient-to-r from-[#FFDBB0] to-[#FFB1B1] hover:opacity-95 text-[#120B0D] px-7 py-3.5 rounded-full font-black text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-[#FFB1B1]/25 animate-pulse"
+                className="bg-gradient-to-r from-[#FFCA88] to-[#DE7272] hover:opacity-95 text-[#120B0D] px-7 py-3.5 rounded-full font-black text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-[#DE7272]/25 animate-pulse"
               >
                 <Sparkles size={16} className="fill-[#120B0D]" />
                 <span>اشترك لتفعيل مجسمك الطبي</span>
@@ -159,10 +159,10 @@ export default function AvatarShowcaseSection({
 
         {/* الجانب الأيسر: صورة المجسم مع بادج خاص بمشتركي عيادة سيرة 2 */}
         <div className="lg:col-span-5 order-1 lg:order-2">
-          <div className="glass-card rounded-[36px] p-4 sm:p-5 relative overflow-hidden border border-[#FFB1B1]/30 shadow-[0_0_40px_rgba(255,177,177,0.15)] group">
+          <div className="glass-card rounded-[36px] p-4 sm:p-5 relative overflow-hidden border border-[#DE7272]/30 shadow-[0_0_40px_rgba(222, 114, 114,0.15)] group">
 
             {/* البادج الحصري: خاص بمشتركي عيادة سيرة 2 */}
-            <div className="absolute top-4 left-4 z-30 flex items-center gap-2 bg-gradient-to-r from-[#FFDBB0] to-[#FFB1B1] text-[#120B0D] font-black text-xs px-4 py-2 rounded-full shadow-[0_0_20px_rgba(255,177,177,0.35)] border border-white/30 animate-pulse">
+            <div className="absolute top-4 left-4 z-30 flex items-center gap-2 bg-gradient-to-r from-[#FFCA88] to-[#DE7272] text-[#120B0D] font-black text-xs px-4 py-2 rounded-full shadow-[0_0_20px_rgba(222, 114, 114,0.35)] border border-white/30 animate-pulse">
               <Sparkles size={15} className="fill-[#120B0D]" />
               <span>خاص بمشتركي عيادة سيرة 2</span>
             </div>
@@ -179,8 +179,8 @@ export default function AvatarShowcaseSection({
               {/* شريط معلومات المحاكاة السفلية داخل البطاقة */}
               <div className="absolute bottom-3 left-3 right-3 z-20 bg-[#1D1216]/85 backdrop-blur-md border border-white/15 p-3 rounded-xl flex items-center justify-between text-xs">
                 <div>
-                  <span className="text-[#FFFAD3]/70 text-[10px] block font-bold">المحاكاة ثلاثية الأبعاد:</span>
-                  <span className="font-black text-[#FFDBB0]">
+                  <span className="text-[#FFF6A9]/70 text-[10px] block font-bold">المحاكاة ثلاثية الأبعاد:</span>
+                  <span className="font-black text-[#FFCA88]">
                     نحت وتنسيق القوام وتتبع المقاسات 3D
                   </span>
                 </div>
@@ -188,15 +188,15 @@ export default function AvatarShowcaseSection({
             </div>
 
             {/* علامات الجودة والموثوقية */}
-            <div className="mt-4 flex items-center justify-between text-[11px] text-[#FFFAD3]/80 font-semibold px-2">
+            <div className="mt-4 flex items-center justify-between text-[11px] text-[#FFF6A9]/80 font-semibold px-2">
               <span className="flex items-center gap-1">
-                <CheckCircle2 size={13} className="text-[#FFB1B1]" /> محاكاة أبعاد القوام
+                <CheckCircle2 size={13} className="text-[#DE7272]" /> محاكاة أبعاد القوام
               </span>
               <span className="flex items-center gap-1">
-                <CheckCircle2 size={13} className="text-[#FFDBB0]" /> حفظ تلقائي في ملف المشترك
+                <CheckCircle2 size={13} className="text-[#FFCA88]" /> حفظ تلقائي في ملف المشترك
               </span>
               <span className="flex items-center gap-1">
-                <CheckCircle2 size={13} className="text-[#FFCCB8]" /> دعم الهواتف والأجهزة
+                <CheckCircle2 size={13} className="text-[#FFCA88]" /> دعم الهواتف والأجهزة
               </span>
             </div>
 

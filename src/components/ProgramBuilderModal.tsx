@@ -111,17 +111,17 @@ export default function ProgramBuilderModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="w-full max-w-2xl bg-[#080d09] border border-[#8DC63F]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+      <div className="w-full max-w-2xl bg-[#080d09] border border-[#B4E4D6]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
         
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Wallet size={20} />
             </div>
             <div>
               <h3 className="text-white font-black text-lg">صمم برنامجك العلاجي والغذائي</h3>
-              <p className="text-[#8DC63F] text-[11px] font-bold">CERRAH CUSTOM PROGRAM BUILDER</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold">CERRAH CUSTOM PROGRAM BUILDER</p>
             </div>
           </div>
           <button
@@ -136,13 +136,13 @@ export default function ProgramBuilderModal({
         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-1">
           {confirmedProgram ? (
             <div className="text-center py-6 space-y-5 animate-[fadeIn_0.3s_ease-out]">
-              <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center mx-auto text-[#8DC63F]">
+              <div className="w-16 h-16 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6] flex items-center justify-center mx-auto text-[#B4E4D6]">
                 <CheckCircle2 size={36} />
               </div>
 
               <div>
                 <h4 className="text-2xl font-black text-white mb-2">تم اعتماد برنامجك المخصص بنجاح!</h4>
-                <p className="text-xs text-green-100/70 font-semibold leading-relaxed">
+                <p className="text-xs text-[#FFF6A9]/75 font-semibold leading-relaxed">
                   تم حفظ تفاصيل خطتك العلاجية في قاعدة بيانات العيادة، وسيتواصل معك استشاري العيادة لتأكيد الجلسة الأولى ومراجعة تفاصيل البرنامج.
                 </p>
               </div>
@@ -155,7 +155,7 @@ export default function ProgramBuilderModal({
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">مدة البرنامج:</span>
-                  <span className="text-[#8DC63F] font-black">{confirmedProgram.duration.label} ({confirmedProgram.duration.sessions})</span>
+                  <span className="text-[#B4E4D6] font-black">{confirmedProgram.duration.label} ({confirmedProgram.duration.sessions})</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">الأجهزة والتقنيات:</span>
@@ -179,7 +179,7 @@ export default function ProgramBuilderModal({
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15"
                 >
-                  <CalendarPlus size={16} className="text-[#8DC63F]" /> إضافة لتقويم Google
+                  <CalendarPlus size={16} className="text-[#B4E4D6]" /> إضافة لتقويم Google
                 </a>
                 <button
                   type="button"
@@ -191,7 +191,7 @@ export default function ProgramBuilderModal({
                   })}
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15 cursor-pointer"
                 >
-                  <Download size={16} className="text-[#8DC63F]" /> تحميل ملف التقويم (.ics)
+                  <Download size={16} className="text-[#B4E4D6]" /> تحميل ملف التقويم (.ics)
                 </button>
               </div>
 
@@ -229,12 +229,12 @@ export default function ProgramBuilderModal({
                         onClick={() => setSelectedGoal(g)}
                         className={`p-3.5 rounded-2xl border text-right transition-all flex flex-col justify-between cursor-pointer ${
                           isSelected
-                            ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-white shadow-md'
+                            ? 'bg-[#B4E4D6]/15 border-[#B4E4D6] text-white shadow-md'
                             : 'bg-black/40 border-white/10 text-white/70 hover:border-white/20'
                         }`}
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${isSelected ? 'bg-[#8DC63F] text-black' : 'bg-white/5 text-[#8DC63F]'}`}>
+                          <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${isSelected ? 'bg-[#B4E4D6] text-black' : 'bg-white/5 text-[#B4E4D6]'}`}>
                             <Icon size={16} />
                           </div>
                           <span className="font-black text-xs">{g.title}</span>
@@ -261,13 +261,13 @@ export default function ProgramBuilderModal({
                         onClick={() => setSelectedDuration(d)}
                         className={`p-3 rounded-2xl border text-right transition-all flex flex-col justify-between cursor-pointer ${
                           isSelected
-                            ? 'bg-[#8DC63F]/15 border-[#8DC63F] text-white shadow-md'
+                            ? 'bg-[#B4E4D6]/15 border-[#B4E4D6] text-white shadow-md'
                             : 'bg-black/40 border-white/10 text-white/70 hover:border-white/20'
                         }`}
                       >
                         <div className="flex justify-between items-center mb-1">
                           <span className="font-black text-xs text-white">{d.label}</span>
-                          <span className={`text-[9px] font-black px-2 py-0.5 rounded-full ${isSelected ? 'bg-[#8DC63F] text-black' : 'bg-white/10 text-[#8DC63F]'}`}>
+                          <span className={`text-[9px] font-black px-2 py-0.5 rounded-full ${isSelected ? 'bg-[#B4E4D6] text-black' : 'bg-white/10 text-[#B4E4D6]'}`}>
                             {d.badge}
                           </span>
                         </div>
@@ -282,7 +282,7 @@ export default function ProgramBuilderModal({
               <div className="bg-black/40 p-4 rounded-2xl border border-white/5">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-bold text-white">عدد الجلسات أسبوعياً:</span>
-                  <span className="text-[#8DC63F] font-black text-sm">{weeklySessions} جلسات في الأسبوع</span>
+                  <span className="text-[#B4E4D6] font-black text-sm">{weeklySessions} جلسات في الأسبوع</span>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
                   {[1, 2, 3].map((num) => (
@@ -292,7 +292,7 @@ export default function ProgramBuilderModal({
                       onClick={() => setWeeklySessions(num)}
                       className={`py-2 rounded-xl text-xs font-bold transition-all border ${
                         weeklySessions === num
-                          ? 'bg-[#8DC63F] text-black border-[#8DC63F] font-black'
+                          ? 'bg-[#B4E4D6] text-black border-[#B4E4D6] font-black'
                           : 'bg-black/50 text-white/60 border-white/5 hover:border-white/20'
                       }`}
                     >
@@ -303,11 +303,11 @@ export default function ProgramBuilderModal({
               </div>
 
               {/* Included technologies badge */}
-              <div className="bg-[#8DC63F]/10 border border-[#8DC63F]/30 p-3.5 rounded-2xl flex items-center gap-3">
-                <Sparkles size={22} className="text-[#8DC63F] shrink-0" />
+              <div className="bg-[#B4E4D6]/10 border border-[#B4E4D6]/30 p-3.5 rounded-2xl flex items-center gap-3">
+                <Sparkles size={22} className="text-[#B4E4D6] shrink-0" />
                 <div className="text-xs">
                   <span className="font-bold text-white block">مكونات الخطة الموصى بها طبياً:</span>
-                  <span className="text-[#8DC63F] font-black">{selectedGoal.defaultDevices.join(' + ')}</span>
+                  <span className="text-[#B4E4D6] font-black">{selectedGoal.defaultDevices.join(' + ')}</span>
                 </div>
               </div>
 
@@ -315,7 +315,7 @@ export default function ProgramBuilderModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div>
                   <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                    <User size={14} className="text-[#8DC63F]" /> اسم المشترك *
+                    <User size={14} className="text-[#B4E4D6]" /> اسم المشترك *
                   </label>
                   <input
                     type="text"
@@ -323,12 +323,12 @@ export default function ProgramBuilderModal({
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="الاسم بالكامل"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#8DC63F] outline-none"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#B4E4D6] outline-none"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-white/70 mb-1.5 flex items-center gap-1.5">
-                    <Phone size={14} className="text-[#8DC63F]" /> رقم الهاتف (واتساب) *
+                    <Phone size={14} className="text-[#B4E4D6]" /> رقم الهاتف (واتساب) *
                   </label>
                   <input
                     type="tel"
@@ -337,7 +337,7 @@ export default function ProgramBuilderModal({
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="01X XXXX XXXX"
                     dir="ltr"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#8DC63F] outline-none text-right"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#B4E4D6] outline-none text-right"
                   />
                 </div>
               </div>
@@ -346,7 +346,7 @@ export default function ProgramBuilderModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#8DC63F] hover:bg-[#7ab036] text-black py-4 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
+                  className="w-full bg-[#B4E4D6] hover:bg-[#7ab036] text-black py-4 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
                 >
                   {loading ? (
                     <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />

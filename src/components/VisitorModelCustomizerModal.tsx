@@ -13,8 +13,8 @@ const CerrahAvatar = dynamic(() => import('@/components/CerrahAvatar'), {
   loading: () => (
     <div className="w-full h-full flex items-center justify-center min-h-[280px]">
       <div className="text-center space-y-2">
-        <div className="w-8 h-8 border-2 border-[#8DC63F] border-t-transparent rounded-full animate-spin mx-auto"></div>
-        <p className="text-xs text-white/70 font-bold">جاري تحميل مجسم المعاينة...</p>
+        <div className="w-8 h-8 border-2 border-[#DE7272] border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <p className="text-xs text-[#FFCA88] font-bold">جاري تحميل مجسم المعاينة...</p>
       </div>
     </div>
   ),
@@ -109,9 +109,9 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
   const handleWhatsAppRedirect = (type: 'online' | 'branch') => {
     const clientName = name.trim() || 'زائر';
     const clientPhone = phone.trim() || 'غير مسجل';
-    const serviceTitle = type === 'online' ? 'اشتراك أونلاين ومتابعة الدايت' : 'حجز كشف وجلسة بالفرع (إهناسيا)';
+    const serviceTitle = type === 'online' ? 'اشتراك أونلاين ومتابعة الدايت' : 'حجز كشف واستشارة نحت القوام بالعيادة';
 
-    const msg = `✨ *طلب تفعيل المجسم والخدمة (مركز سيرا)*\n\n` +
+    const msg = `✨ *طلب تفعيل المجسم والخدمة (عيادة سيرة 2)*\n\n` +
       `مرحباً دكتور، قمت بتجربة تخصيص المجسم ثلاثي الأبعاد 3D على الموقع وأرغب في تفعيل الخدمة الكاملة:\n\n` +
       `👤 *الاسم:* ${clientName}\n` +
       `📱 *الهاتف:* ${clientPhone}\n` +
@@ -150,7 +150,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
       <div 
-        className="glass-card w-full max-w-2xl rounded-[32px] p-6 sm:p-8 border border-[#8DC63F]/40 shadow-[0_0_60px_rgba(141,198,63,0.2)] bg-[#07130b] max-h-[92vh] overflow-y-auto relative"
+        className="glass-card w-full max-w-2xl rounded-[32px] p-6 sm:p-8 border border-[#DE7272]/30 shadow-[0_0_60px_rgba(222,114,114,0.2)] bg-[#120B0D] max-h-[92vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* زر الإغلاق */}
@@ -163,14 +163,14 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
 
         {/* رأس المودال */}
         <div className="text-center mb-6">
-          <div className="w-13 h-13 bg-gradient-to-tr from-[#8DC63F] to-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-2 text-black shadow-lg shadow-[#8DC63F]/30">
+          <div className="w-13 h-13 bg-gradient-to-tr from-[#DE7272] to-[#FFCA88] rounded-2xl flex items-center justify-center mx-auto mb-2 text-[#120B0D] shadow-lg shadow-[#DE7272]/30">
             <Sliders size={26} />
           </div>
-          <span className="text-[10px] text-[#8DC63F] font-black uppercase tracking-wider bg-[#8DC63F]/10 px-3 py-1 rounded-full border border-[#8DC63F]/20">
+          <span className="text-[10px] text-[#FFCA88] font-black uppercase tracking-wider bg-[#DE7272]/15 px-3 py-1 rounded-full border border-[#DE7272]/30">
             محاكي الأبعاد ثلاثي الأبعاد 3D للزوار
           </span>
           <h2 className="text-2xl font-black text-white mt-1.5">تجربة تخصيص المجسم ثلاثي الأبعاد</h2>
-          <p className="text-xs text-green-100/70 font-semibold mt-1">
+          <p className="text-xs text-[#FFF6A9]/80 font-semibold mt-1">
             {step === 1 && 'الخطوة 1 من 3: مؤشرات صحتك، عادات النوم، والنمط الغذائي'}
             {step === 2 && 'الخطوة 2 من 3: حجم الجسم وخريطة توزيع الدهون'}
             {step === 3 && 'جاري توليد ومطابقة المجسم ثلاثي الأبعاد...'}
@@ -183,13 +183,13 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
           <div className="space-y-4 animate-[fadeIn_0.2s]">
             <div>
               <label className="block text-xs font-bold text-white/80 mb-1 flex items-center gap-1.5">
-                <Activity size={14} className="text-[#8DC63F]" />
+                <Activity size={14} className="text-[#DE7272]" />
                 الحالة الصحية العامة والمشاكل المزمنة:
               </label>
               <select
                 value={healthStatus}
                 onChange={(e) => setHealthStatus(e.target.value)}
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-[#1A0D11] border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#DE7272]"
               >
                 <option value="سليم / لا توجد مشاكل مزمنة">سليم / لا توجد مشاكل مزمنة</option>
                 <option value="خمول بالغدة الدرقية أو مقاومة إنسولين">خمول بالغدة الدرقية أو مقاومة إنسولين</option>
@@ -208,7 +208,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                 <select
                   value={sleepHours}
                   onChange={(e) => setSleepHours(e.target.value)}
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-[#1A0D11] border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#DE7272]"
                 >
                   <option value="أقل من 6 ساعات">أقل من 6 ساعات (سهر مستمر)</option>
                   <option value="6 - 8 ساعات">6 - 8 ساعات (طبيعي)</option>
@@ -218,13 +218,13 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
 
               <div>
                 <label className="block text-xs font-bold text-white/80 mb-1 flex items-center gap-1.5">
-                  <Moon size={14} className="text-cyan-400" />
+                  <Moon size={14} className="text-[#FFCA88]" />
                   جودة النوم:
                 </label>
                 <select
                   value={sleepQuality}
                   onChange={(e) => setSleepQuality(e.target.value)}
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-[#1A0D11] border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#DE7272]"
                 >
                   <option value="نوم عميق ومريح">نوم عميق ومريح</option>
                   <option value="نوم متقطع وقلق">نوم متقطع وقلق</option>
@@ -235,13 +235,13 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
 
             <div>
               <label className="block text-xs font-bold text-white/80 mb-1 flex items-center gap-1.5">
-                <Utensils size={14} className="text-amber-400" />
+                <Utensils size={14} className="text-[#FFCA88]" />
                 العادات والنمط الغذائي:
               </label>
               <select
                 value={dietHabit}
                 onChange={(e) => setDietHabit(e.target.value)}
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-[#1A0D11] border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#DE7272]"
               >
                 <option value="وجبات غير منتظمة مع رغبة في السكريات">وجبات غير منتظمة مع رغبة في السكريات</option>
                 <option value="تناول النشويات والوجبات السريعة ليلاً">تناول النشويات والوجبات السريعة ليلاً</option>
@@ -253,7 +253,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="w-full py-3.5 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer mt-4"
+              className="w-full py-3.5 btn-glow btn-glow-gold font-black text-xs rounded-xl flex items-center justify-center gap-2 border-none cursor-pointer mt-4"
             >
               <span>متابعة لضبط أبعاد الجسم والمجسم</span>
               <ArrowLeft size={16} />
@@ -265,12 +265,12 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
         {step === 2 && (
           <div className="space-y-4 animate-[fadeIn_0.2s]">
             {/* النوع: ذكر أو أنثى */}
-            <div className="flex bg-black/50 p-1.5 rounded-2xl border border-white/10">
+            <div className="flex bg-[#1A0D11] p-1.5 rounded-2xl border border-white/10">
               <button
                 type="button"
                 onClick={() => setGender('female')}
                 className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                  gender === 'female' ? 'bg-[#8DC63F] text-black shadow-md' : 'text-white/60 hover:text-white'
+                  gender === 'female' ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] shadow-md' : 'text-white/60 hover:text-white'
                 }`}
               >
                 مجسم أنثوي ♀
@@ -279,7 +279,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                 type="button"
                 onClick={() => setGender('male')}
                 className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                  gender === 'male' ? 'bg-[#8DC63F] text-black shadow-md' : 'text-white/60 hover:text-white'
+                  gender === 'male' ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] shadow-md' : 'text-white/60 hover:text-white'
                 }`}
               >
                 مجسم رجالي ♂
@@ -287,10 +287,10 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
             </div>
 
             {/* سلايدر حجم الجسم والوزن */}
-            <div className="p-4 bg-black/40 border border-white/10 rounded-2xl space-y-2">
+            <div className="p-4 bg-[#1A0D11]/80 border border-white/10 rounded-2xl space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-bold text-white">حجم الجسم والوزن التقريبي:</span>
-                <span className="font-mono font-black text-[#8DC63F] bg-[#8DC63F]/10 px-2.5 py-0.5 rounded-md">
+                <span className="font-mono font-black text-[#FFCA88] bg-[#DE7272]/15 border border-[#DE7272]/30 px-2.5 py-0.5 rounded-md">
                   {bodySize} كجم
                 </span>
               </div>
@@ -300,7 +300,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                 max="135"
                 value={bodySize}
                 onChange={(e) => setBodySize(Number(e.target.value))}
-                className="w-full accent-[#8DC63F] cursor-pointer"
+                className="w-full accent-[#DE7272] cursor-pointer"
               />
             </div>
 
@@ -322,8 +322,8 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                     onClick={() => setFatDistribution(item.key as any)}
                     className={`p-3 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center ${
                       fatDistribution === item.key
-                        ? 'bg-[#8DC63F]/20 text-[#8DC63F] border-[#8DC63F]'
-                        : 'bg-black/40 text-white/70 border-white/10 hover:border-white/20'
+                        ? 'bg-[#DE7272]/20 text-[#FFCA88] border-[#DE7272]'
+                        : 'bg-[#1A0D11] text-white/70 border-white/10 hover:border-white/20'
                     }`}
                   >
                     {item.label}
@@ -343,9 +343,9 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="اسمك الثنائي"
-                    className="w-full bg-black/50 border border-white/10 rounded-xl py-2.5 px-3 pr-9 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-[#1A0D11] border border-white/10 rounded-xl py-2.5 px-3 pr-9 text-white text-xs font-bold outline-none focus:border-[#DE7272]"
                   />
-                  <User size={15} className="absolute top-3 right-3 text-[#8DC63F]" />
+                  <User size={15} className="absolute top-3 right-3 text-[#FFCA88]" />
                 </div>
               </div>
 
@@ -359,9 +359,9 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="01XXXXXXXXX"
                     dir="ltr"
-                    className="w-full bg-black/50 border border-white/10 rounded-xl py-2.5 px-3 pr-9 text-white text-xs font-mono font-bold outline-none focus:border-[#8DC63F] text-right"
+                    className="w-full bg-[#1A0D11] border border-white/10 rounded-xl py-2.5 px-3 pr-9 text-white text-xs font-mono font-bold outline-none focus:border-[#DE7272] text-right"
                   />
-                  <Phone size={15} className="absolute top-3 right-3 text-[#8DC63F]" />
+                  <Phone size={15} className="absolute top-3 right-3 text-[#FFCA88]" />
                 </div>
               </div>
             </div>
@@ -377,7 +377,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               <button
                 type="button"
                 onClick={() => setStep(3)}
-                className="flex-1 py-3 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#8DC63F]/20 cursor-pointer"
+                className="flex-1 py-3 btn-glow btn-glow-gold font-black text-xs rounded-xl flex items-center justify-center gap-2 border-none cursor-pointer"
               >
                 <span>توليد المجسم ثلاثي الأبعاد</span>
                 <Sparkles size={16} />
@@ -402,7 +402,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                   cx="50"
                   cy="50"
                   r="42"
-                  className="stroke-[#8DC63F] fill-none transition-all duration-100 ease-linear"
+                  className="stroke-[#DE7272] fill-none transition-all duration-100 ease-linear"
                   strokeWidth="8"
                   strokeDasharray="264"
                   strokeDashoffset={264 - (264 * progress) / 100}
@@ -411,13 +411,13 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-2xl font-black text-white font-mono">{progress}%</span>
-                <span className="text-[9px] text-[#8DC63F] font-bold">معالجة 3D</span>
+                <span className="text-[9px] text-[#FFCA88] font-bold">معالجة 3D</span>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-black text-white">جاري بناء خريطة الأبعاد والتوأم الرقمي...</h3>
-              <p className="text-xs text-green-100/60 font-semibold mt-1">
+              <h3 className="text-lg font-black text-white">جاري بناء خريطة الأبعاد والأفاتار 3D...</h3>
+              <p className="text-xs text-[#FFF6A9]/75 font-semibold mt-1">
                 تطبيق محاكاة دهون {fatDistribution === 'belly' ? 'البطن' : 'القوام'} على نموذج الجسم
               </p>
             </div>
@@ -429,22 +429,22 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
           <div className="space-y-5 animate-[fadeIn_0.3s]">
             
             {/* نافذة عرض المجسم 3D */}
-            <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-radial from-black/80 to-[#030a05] border border-[#8DC63F]/30 shadow-inner">
+            <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-[#120B0D] via-[#1E0F14] to-[#120B0D] border border-[#DE7272]/30 shadow-inner">
               <CerrahAvatar
                 avatarProps={previewAvatarProps}
                 interactive={true}
                 onSelectRegion={() => {}}
               />
-              <span className="absolute top-3 right-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-[#8DC63F] font-bold border border-white/10">
+              <span className="absolute top-3 right-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-[#FFCA88] font-bold border border-[#DE7272]/30">
                 معاينة حية 360° (اسحب للتدوير)
               </span>
             </div>
 
             {/* سلايدرات الضبط الدقيق الخمسة المطلوبة */}
-            <div className="space-y-3 p-4 bg-black/40 border border-white/10 rounded-2xl">
+            <div className="space-y-3 p-4 bg-[#1A0D11] border border-white/10 rounded-2xl">
               <div className="flex justify-between items-center mb-1">
                 <h4 className="text-xs font-black text-white flex items-center gap-1.5">
-                  <Sliders size={14} className="text-[#8DC63F]" />
+                  <Sliders size={14} className="text-[#FFCA88]" />
                   سلايدرات الضبط الدقيق للأبعاد الخمسة:
                 </h4>
                 <span className="text-[10px] text-white/50">عدّل أي مؤشر لمشاهدة التغير</span>
@@ -454,7 +454,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               <div className="space-y-1">
                 <div className="flex justify-between text-[11px] text-white/80 font-bold">
                   <span>1. محيط الصدر والترهل الموضعي:</span>
-                  <span className="text-[#8DC63F] font-mono">{Math.round(chestDimension * 100)}%</span>
+                  <span className="text-[#FFCA88] font-mono">{Math.round(chestDimension * 100)}%</span>
                 </div>
                 <input
                   type="range"
@@ -463,7 +463,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                   step="0.05"
                   value={chestDimension}
                   onChange={(e) => handleSliderAdjustment(setChestDimension, Number(e.target.value))}
-                  className="w-full accent-[#8DC63F] cursor-pointer"
+                  className="w-full accent-[#DE7272] cursor-pointer"
                 />
               </div>
 
@@ -471,7 +471,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               <div className="space-y-1">
                 <div className="flex justify-between text-[11px] text-white/80 font-bold">
                   <span>2. محيط الخصر ودهون البطن:</span>
-                  <span className="text-[#8DC63F] font-mono">{Math.round(waistDimension * 100)}%</span>
+                  <span className="text-[#FFCA88] font-mono">{Math.round(waistDimension * 100)}%</span>
                 </div>
                 <input
                   type="range"
@@ -480,7 +480,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                   step="0.05"
                   value={waistDimension}
                   onChange={(e) => handleSliderAdjustment(setWaistDimension, Number(e.target.value))}
-                  className="w-full accent-[#8DC63F] cursor-pointer"
+                  className="w-full accent-[#DE7272] cursor-pointer"
                 />
               </div>
 
@@ -488,7 +488,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               <div className="space-y-1">
                 <div className="flex justify-between text-[11px] text-white/80 font-bold">
                   <span>3. محيط الأرداف والأجناب:</span>
-                  <span className="text-[#8DC63F] font-mono">{Math.round(hipsDimension * 100)}%</span>
+                  <span className="text-[#FFCA88] font-mono">{Math.round(hipsDimension * 100)}%</span>
                 </div>
                 <input
                   type="range"
@@ -497,7 +497,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                   step="0.05"
                   value={hipsDimension}
                   onChange={(e) => handleSliderAdjustment(setHipsDimension, Number(e.target.value))}
-                  className="w-full accent-[#8DC63F] cursor-pointer"
+                  className="w-full accent-[#DE7272] cursor-pointer"
                 />
               </div>
 
@@ -505,7 +505,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               <div className="space-y-1">
                 <div className="flex justify-between text-[11px] text-white/80 font-bold">
                   <span>4. دهون وترهل الذراعين:</span>
-                  <span className="text-[#8DC63F] font-mono">{Math.round(armsDimension * 100)}%</span>
+                  <span className="text-[#FFCA88] font-mono">{Math.round(armsDimension * 100)}%</span>
                 </div>
                 <input
                   type="range"
@@ -514,7 +514,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                   step="0.05"
                   value={armsDimension}
                   onChange={(e) => handleSliderAdjustment(setArmsDimension, Number(e.target.value))}
-                  className="w-full accent-[#8DC63F] cursor-pointer"
+                  className="w-full accent-[#DE7272] cursor-pointer"
                 />
               </div>
 
@@ -522,7 +522,7 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
               <div className="space-y-1">
                 <div className="flex justify-between text-[11px] text-white/80 font-bold">
                   <span>5. دهون الفخذين والسيلوليت:</span>
-                  <span className="text-[#8DC63F] font-mono">{Math.round(thighsDimension * 100)}%</span>
+                  <span className="text-[#FFCA88] font-mono">{Math.round(thighsDimension * 100)}%</span>
                 </div>
                 <input
                   type="range"
@@ -531,30 +531,30 @@ export default function VisitorModelCustomizerModal({ isOpen, onClose }: Props) 
                   step="0.05"
                   value={thighsDimension}
                   onChange={(e) => handleSliderAdjustment(setThighsDimension, Number(e.target.value))}
-                  className="w-full accent-[#8DC63F] cursor-pointer"
+                  className="w-full accent-[#DE7272] cursor-pointer"
                 />
               </div>
             </div>
 
             {/* رسالة العرض التشويقية بعد التوقف لمدة 3 ثواني */}
             {showOfferPrompt && (
-              <div className="p-4 bg-gradient-to-r from-[#0d2616] via-[#11331c] to-[#0d2616] border-2 border-[#8DC63F] rounded-2xl space-y-3 animate-[fadeIn_0.3s] shadow-2xl">
-                <div className="flex items-center gap-2 text-[#8DC63F] font-black text-sm">
+              <div className="p-4 bg-gradient-to-r from-[#2A1319] via-[#1E0F14] to-[#2A1319] border-2 border-[#DE7272] rounded-2xl space-y-3 animate-[fadeIn_0.3s] shadow-2xl">
+                <div className="flex items-center gap-2 text-[#FFCA88] font-black text-sm">
                   <Sparkles size={18} className="animate-spin" />
                   <span>لتجربة الخدمة بالكامل وحفظ هذا المجسم في ملفك الطبي:</span>
                 </div>
-                <p className="text-xs text-green-100/90 font-semibold leading-relaxed">
-                  احجز كشفك الآن في فرع المركز (إهناسيا) للحصول على مسح InBody دقيق، أو اشترك في برنامج المتابعة الأونلاين لمطابقة أبعادك خطوة بخطوة مع الطبيب.
+                <p className="text-xs text-[#FFF6A9]/90 font-semibold leading-relaxed">
+                  احجز كشفك الآن بالعيادة للحصول على فحص InBody دقيق، أو اشترك في برنامج المتابعة الأونلاين لمطابقة أبعادك خطوة بخطوة مع الطبيب.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <button
                     type="button"
                     onClick={() => handleWhatsAppRedirect('branch')}
-                    className="py-3 px-4 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-md cursor-pointer"
+                    className="py-3 px-4 btn-glow btn-glow-gold font-black text-xs rounded-xl flex items-center justify-center gap-1.5 border-none cursor-pointer"
                   >
                     <MapPin size={15} />
-                    <span>حجز زيارة بالفرع (واتساب)</span>
+                    <span>حجز كشف بالعيادة (واتساب)</span>
                   </button>
 
                   <button

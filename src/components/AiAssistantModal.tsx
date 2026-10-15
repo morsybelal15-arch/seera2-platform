@@ -115,18 +115,18 @@ export default function AiAssistantModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-      <div className="w-full max-w-2xl h-[85vh] bg-[#070b08] border border-[#8DC63F]/30 rounded-[30px] flex flex-col overflow-hidden shadow-2xl relative">
+      <div className="w-full max-w-2xl h-[85vh] bg-[#070b08] border border-[#B4E4D6]/30 rounded-[30px] flex flex-col overflow-hidden shadow-2xl relative">
         
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-black/50">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Brain size={22} />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-white font-black text-base sm:text-lg">مساعد سيرا الذكي</h3>
-                <span className="bg-[#8DC63F] text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="bg-[#B4E4D6] text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
                   AI Active
                 </span>
               </div>
@@ -154,7 +154,7 @@ export default function AiAssistantModal({
                   onClose();
                   onOpenBooking();
                 }}
-                className="bg-[#8DC63F]/15 hover:bg-[#8DC63F] text-[#8DC63F] hover:text-black border border-[#8DC63F]/30 px-3 py-1 rounded-full transition-all shrink-0 flex items-center gap-1.5"
+                className="bg-[#B4E4D6]/15 hover:bg-[#B4E4D6] text-[#B4E4D6] hover:text-black border border-[#B4E4D6]/30 px-3 py-1 rounded-full transition-all shrink-0 flex items-center gap-1.5"
               >
                 <CalendarDays size={13} /> حجز كشف
               </button>
@@ -167,7 +167,7 @@ export default function AiAssistantModal({
                 }}
                 className="bg-white/5 hover:bg-white/15 text-white border border-white/10 px-3 py-1 rounded-full transition-all shrink-0 flex items-center gap-1.5"
               >
-                <Activity size={13} className="text-[#8DC63F]" /> المحاكي الفيزيائي 3D
+                <Activity size={13} className="text-[#B4E4D6]" /> المحاكي الفيزيائي 3D
               </button>
             )}
           </div>
@@ -183,7 +183,7 @@ export default function AiAssistantModal({
               }`}
             >
               {msg.sender === 'assistant' && (
-                <div className="w-8 h-8 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F] shrink-0 mt-1">
+                <div className="w-8 h-8 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6] shrink-0 mt-1">
                   <Bot size={16} />
                 </div>
               )}
@@ -191,7 +191,7 @@ export default function AiAssistantModal({
               <div
                 className={`max-w-[82%] sm:max-w-[75%] rounded-2xl p-4 text-xs sm:text-sm font-semibold leading-relaxed ${
                   msg.sender === 'user'
-                    ? 'bg-[#8DC63F] text-black rounded-tr-none shadow-md font-bold'
+                    ? 'bg-[#B4E4D6] text-black rounded-tr-none shadow-md font-bold'
                     : 'bg-black/50 text-white/90 border border-white/10 rounded-tl-none'
                 }`}
               >
@@ -215,13 +215,13 @@ export default function AiAssistantModal({
 
           {isTyping && (
             <div className="flex gap-3 items-center text-white/50 text-xs">
-              <div className="w-8 h-8 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+              <div className="w-8 h-8 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
                 <Bot size={16} />
               </div>
               <div className="bg-black/40 border border-white/5 px-4 py-2.5 rounded-2xl flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8DC63F] animate-bounce" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8DC63F] animate-bounce [animation-delay:0.2s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8DC63F] animate-bounce [animation-delay:0.4s]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B4E4D6] animate-bounce" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B4E4D6] animate-bounce [animation-delay:0.2s]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B4E4D6] animate-bounce [animation-delay:0.4s]" />
               </div>
             </div>
           )}
@@ -256,12 +256,12 @@ export default function AiAssistantModal({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="اكتب استفسارك الطبي هنا..."
-              className="w-full bg-black/50 border border-white/10 rounded-2xl py-3.5 pr-4 pl-14 text-white text-xs sm:text-sm font-bold placeholder-white/30 focus:border-[#8DC63F] outline-none"
+              className="w-full bg-black/50 border border-white/10 rounded-2xl py-3.5 pr-4 pl-14 text-white text-xs sm:text-sm font-bold placeholder-white/30 focus:border-[#B4E4D6] outline-none"
             />
             <button
               type="submit"
               disabled={!input.trim() || isTyping}
-              className="absolute left-2 w-10 h-10 bg-[#8DC63F] hover:bg-[#7ab036] disabled:opacity-30 text-black rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md"
+              className="absolute left-2 w-10 h-10 bg-[#B4E4D6] hover:bg-[#7ab036] disabled:opacity-30 text-black rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md"
             >
               <Send size={16} />
             </button>

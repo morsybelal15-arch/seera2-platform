@@ -149,23 +149,23 @@ export default function OnlineFollowupPage() {
       <section className="relative py-10 sm:py-16 text-center space-y-6">
         
         {/* Glowing backdrop with warm palette */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] bg-gradient-to-r from-[#FFB1B1]/20 via-[#FFDBB0]/15 to-[#FFCCB8]/20 blur-[130px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] bg-gradient-to-r from-[#DE7272]/20 via-[#FFCA88]/15 to-[#FFCA88]/20 blur-[130px] rounded-full pointer-events-none -z-10" />
 
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#FFB1B1]/30 backdrop-blur-md shadow-lg mx-auto">
-          <Globe size={16} className="text-[#FFB1B1]" />
-          <span className="text-xs sm:text-sm font-black text-[#FFFAD3]">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#DE7272]/30 backdrop-blur-md shadow-lg mx-auto">
+          <Globe size={16} className="text-[#DE7272]" />
+          <span className="text-xs sm:text-sm font-black text-[#FFF6A9]">
             عيادة سيرة 2 • برنامج المتابعة الطبية الأونلاين ونحت وتنسيق القوام
           </span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight drop-shadow-md max-w-4xl mx-auto">
           رحلتك لنحت القوام والوزن المثالي<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB1B1] via-[#FFDBB0] to-[#FFFAD3]">
-            أونلاين بإشراف طبي وتوأم رقمي 3D
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DE7272] via-[#FFCA88] to-[#FFF6A9]">
+            أونلاين بإشراف طبي وأفاتار 3D
           </span>
         </h1>
 
-        <p className="text-sm sm:text-base text-[#FFFAD3]/80 max-w-2xl mx-auto leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[#FFF6A9]/80 max-w-2xl mx-auto leading-relaxed font-medium">
           برامج تغذية علاجية مصممة خصيصاً لجيناتك ونمط حياتك اليومي، مع متابعة أسبوعية دقيقة، محاكي الأفاتار 3D، واستشارات دورية عبر الشات المباشر مع استشاري عيادة سيرة 2.
         </p>
 
@@ -176,9 +176,9 @@ export default function OnlineFollowupPage() {
           <button
             type="button"
             onClick={() => setIsAssessmentOpen(true)}
-            className="w-full sm:w-auto btn-glow btn-glow-gold px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 border-none shadow-[0_0_25px_rgba(255,177,177,0.35)] cursor-pointer hover:scale-105 transition-all"
+            className="w-full sm:w-auto btn-glow btn-glow-gold px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 border-none shadow-[0_0_25px_rgba(222, 114, 114,0.35)] cursor-pointer hover:scale-105 transition-all"
           >
-            <Sparkles size={20} className="text-[#FFDBB0]" />
+            <Sparkles size={20} className="text-[#FFCA88]" />
             <span>التقييم الطبي الأونلاين المجاني</span>
           </button>
 
@@ -190,7 +190,7 @@ export default function OnlineFollowupPage() {
               if (el) el.scrollIntoView({ behavior: 'smooth' });
               else setIsBookingOpen(true);
             }}
-            className="w-full sm:w-auto bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 transition-all cursor-pointer hover:scale-105 shadow-lg shadow-[#FFB1B1]/20"
+            className="w-full sm:w-auto bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] px-8 py-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-3 transition-all cursor-pointer hover:scale-105 shadow-lg shadow-[#DE7272]/20"
           >
             <Zap size={20} className="text-[#120B0D]" />
             <span>الاشتراك واختيار الباقة الأنسب</span>
@@ -201,24 +201,24 @@ export default function OnlineFollowupPage() {
         {/* Highlights Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 max-w-4xl mx-auto">
           <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <Globe size={20} className="text-[#FFB1B1] mx-auto mb-1" />
+            <Globe size={20} className="text-[#DE7272] mx-auto mb-1" />
             <span className="text-xs font-bold text-white block">متابعة دولية من أي مكان</span>
-            <span className="text-[10px] text-[#FFFAD3]/60">مصر والخليج وباقي دول العالم</span>
+            <span className="text-[10px] text-[#FFF6A9]/60">مصر والخليج وباقي دول العالم</span>
           </div>
-          <Link href="/subscriber?tab=messenger" className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#FFB1B1]/50 transition-all cursor-pointer group">
-            <Smartphone size={20} className="text-[#FFDBB0] mx-auto mb-1 group-hover:scale-110 transition-transform" />
-            <span className="text-xs font-bold text-white block group-hover:text-[#FFDBB0]">الماسنجر الطبي الخاص</span>
-            <span className="text-[10px] text-[#FFFAD3]/60">تواصل مباشر مع الطبيب</span>
+          <Link href="/subscriber?tab=messenger" className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#DE7272]/50 transition-all cursor-pointer group">
+            <Smartphone size={20} className="text-[#FFCA88] mx-auto mb-1 group-hover:scale-110 transition-transform" />
+            <span className="text-xs font-bold text-white block group-hover:text-[#FFCA88]">الماسنجر الطبي الخاص</span>
+            <span className="text-[10px] text-[#FFF6A9]/60">تواصل مباشر مع الطبيب</span>
           </Link>
           <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <Scale size={20} className="text-[#FFCCB8] mx-auto mb-1" />
+            <Scale size={20} className="text-[#FFCA88] mx-auto mb-1" />
             <span className="text-xs font-bold text-white block">محاكي الأفاتار 3D</span>
-            <span className="text-[10px] text-[#FFFAD3]/60">رؤية نزول المقاسات حياً</span>
+            <span className="text-[10px] text-[#FFF6A9]/60">رؤية نزول المقاسات حياً</span>
           </div>
           <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <ShieldCheck size={20} className="text-[#FFB1B1] mx-auto mb-1" />
+            <ShieldCheck size={20} className="text-[#DE7272] mx-auto mb-1" />
             <span className="text-xs font-bold text-white block">تثبيت دائم للوزن</span>
-            <span className="text-[10px] text-[#FFFAD3]/60">حماية من ارتداد الدهون</span>
+            <span className="text-[10px] text-[#FFF6A9]/60">حماية من ارتداد الدهون</span>
           </div>
         </div>
 
@@ -231,13 +231,13 @@ export default function OnlineFollowupPage() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-black text-[#FFDBB0] uppercase tracking-wider block">
+          <span className="text-xs font-black text-[#FFCA88] uppercase tracking-wider block">
             مميزات المنظومة الرقمية
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
             ما الذي يميز برنامج المتابعة الأونلاين في عيادة سيرة 2؟
           </h2>
-          <p className="text-xs sm:text-sm text-[#FFFAD3]/70">
+          <p className="text-xs sm:text-sm text-[#FFF6A9]/70">
             منظومة طبية متكاملة تجمع بين الدقة الإكلينيكية ومرونة الحياة اليومية
           </p>
         </div>
@@ -245,62 +245,62 @@ export default function OnlineFollowupPage() {
         {/* 6 Key Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           
-          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFB1B1]/15 text-[#FFB1B1] border border-[#FFB1B1]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#DE7272]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#DE7272]/15 text-[#DE7272] border border-[#DE7272]/30 flex items-center justify-center font-black">
               <Utensils size={22} />
             </div>
             <h3 className="text-base font-black text-white">1. دايت علاجي مرن بدون حرمان</h3>
-            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+            <p className="text-xs text-[#FFF6A9]/80 leading-relaxed">
               أنظمة غذائية مصممة خصيصاً لتناسب وجباتك المفضلة، أكل البيت، وساعات عملك بدون تجويع أو حرمان من العناصر الأساسية.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFDBB0]/15 text-[#FFDBB0] border border-[#FFDBB0]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#DE7272]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFCA88]/15 text-[#FFCA88] border border-[#FFCA88]/30 flex items-center justify-center font-black">
               <Scale size={22} />
             </div>
             <h3 className="text-base font-black text-white">2. مجسم الأفاتار ثلاثي الأبعاد 3D</h3>
-            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+            <p className="text-xs text-[#FFF6A9]/80 leading-relaxed">
               محاكاة بصرية تفاعلية تتجدد أسبوعياً لترى شكل قوامك ونزول قياسات الخصر والأرداف والذراعين على شاشتك.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFCCB8]/15 text-[#FFCCB8] border border-[#FFCCB8]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#DE7272]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFCA88]/15 text-[#FFCA88] border border-[#FFCA88]/30 flex items-center justify-center font-black">
               <MessageCircle size={22} />
             </div>
             <h3 className="text-base font-black text-white">3. شات واستشارات دورية مستمرة</h3>
-            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+            <p className="text-xs text-[#FFF6A9]/80 leading-relaxed">
               تواصل مباشر مع الطبيب لتعديل الوجبات، الرد على أي تساؤل، وتقديم الدعم الطبي والنفسي المستمر.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFDBB0]/15 text-[#FFDBB0] border border-[#FFDBB0]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#DE7272]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFCA88]/15 text-[#FFCA88] border border-[#FFCA88]/30 flex items-center justify-center font-black">
               <Activity size={22} />
             </div>
             <h3 className="text-base font-black text-white">4. حلول مقاومة الإنسولين وثبات الوزن</h3>
-            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+            <p className="text-xs text-[#FFF6A9]/80 leading-relaxed">
               قراءة تحاليل الغدة الدرقية ومؤشرات السكر ومخزون الحديد ووضع بروتوكول علاجي يكسر ثبات الوزن نهائياً.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFB1B1]/15 text-[#FFB1B1] border border-[#FFB1B1]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#DE7272]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#DE7272]/15 text-[#DE7272] border border-[#DE7272]/30 flex items-center justify-center font-black">
               <FileText size={22} />
             </div>
             <h3 className="text-base font-black text-white">5. ملفات PDF ووصفات معتمدة</h3>
-            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+            <p className="text-xs text-[#FFF6A9]/80 leading-relaxed">
               جداول دايت منسقة وجاهزة للطباعة أو الحفظ على الموبايل، مع قوائم بدائل سهلة للوجبات أينما كنت.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#FFB1B1]/40 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFCCB8]/15 text-[#FFCCB8] border border-[#FFCCB8]/30 flex items-center justify-center font-black">
+          <div className="glass-card p-6 rounded-3xl border border-white/10 space-y-3 hover:border-[#DE7272]/40 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#FFCA88]/15 text-[#FFCA88] border border-[#FFCA88]/30 flex items-center justify-center font-black">
               <ShieldCheck size={22} />
             </div>
             <h3 className="text-base font-black text-white">6. كورس التثبيت ومنع ارتداد الوزن</h3>
-            <p className="text-xs text-[#FFFAD3]/80 leading-relaxed">
+            <p className="text-xs text-[#FFF6A9]/80 leading-relaxed">
               مرحلة تثبيت الأيض وتدريب الجسم على حرق السعرات الطبيعية بعد النزول لضمان عدم زيادة أي كيلوغرام مستقبلاً.
             </p>
           </div>
@@ -310,7 +310,7 @@ export default function OnlineFollowupPage() {
         {/* Subscription Plans Cards */}
         <div className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-black text-[#FFDBB0] uppercase tracking-wider block">
+            <span className="text-xs font-black text-[#FFCA88] uppercase tracking-wider block">
               باقات المتابعة الأونلاين
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-white">
@@ -324,12 +324,12 @@ export default function OnlineFollowupPage() {
                 key={plan.id}
                 className={`glass-card rounded-[32px] p-6 sm:p-8 flex flex-col justify-between transition-all relative overflow-hidden ${
                   plan.popular
-                    ? 'border-2 border-[#FFB1B1] shadow-[0_0_40px_rgba(255,177,177,0.25)] scale-[1.02]'
+                    ? 'border-2 border-[#DE7272] shadow-[0_0_40px_rgba(222, 114, 114,0.25)] scale-[1.02]'
                     : 'border border-white/10 hover:border-white/20'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 right-0 left-0 py-1.5 bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] text-center text-[11px] font-black uppercase tracking-wider">
+                  <div className="absolute top-0 right-0 left-0 py-1.5 bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] text-center text-[11px] font-black uppercase tracking-wider">
                     {plan.badge}
                   </div>
                 )}
@@ -340,19 +340,19 @@ export default function OnlineFollowupPage() {
                       {plan.duration}
                     </span>
                     {!plan.popular && (
-                      <span className="text-xs text-[#FFDBB0] font-bold">{plan.badge}</span>
+                      <span className="text-xs text-[#FFCA88] font-bold">{plan.badge}</span>
                     )}
                   </div>
 
                   <h4 className="text-xl font-black text-white">{plan.name}</h4>
-                  <p className="text-xs text-[#FFB1B1] font-bold">{plan.priceDesc}</p>
-                  <p className="text-xs text-[#FFFAD3]/70 font-medium pb-2 border-b border-white/10">{plan.target}</p>
+                  <p className="text-xs text-[#DE7272] font-bold">{plan.priceDesc}</p>
+                  <p className="text-xs text-[#FFF6A9]/70 font-medium pb-2 border-b border-white/10">{plan.target}</p>
 
                   {/* Features list */}
-                  <ul className="space-y-2.5 text-xs text-[#FFFAD3]/90 font-medium">
+                  <ul className="space-y-2.5 text-xs text-[#FFF6A9]/90 font-medium">
                     {plan.features.map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 size={16} className="text-[#FFB1B1] shrink-0 mt-0.5" />
+                        <CheckCircle2 size={16} className="text-[#DE7272] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -365,7 +365,7 @@ export default function OnlineFollowupPage() {
                     onClick={() => handleOpenSubscription(plan.name)}
                     className={`w-full py-3.5 rounded-2xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 border-none transition-all cursor-pointer ${
                       plan.popular 
-                        ? 'bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] shadow-lg hover:scale-105' 
+                        ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] shadow-lg hover:scale-105' 
                         : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                   >
@@ -393,13 +393,13 @@ export default function OnlineFollowupPage() {
       ========================================================================= */}
       <section className="py-16 border-t border-white/10">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-black text-[#FFDBB0] uppercase tracking-wider block">
+          <span className="text-xs font-black text-[#FFCA88] uppercase tracking-wider block">
             نتائج حقيقية موثقة
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white">
             قصص تحول المشتركين في عيادة سيرة 2
           </h2>
-          <p className="text-xs sm:text-sm text-[#FFFAD3]/70">
+          <p className="text-xs sm:text-sm text-[#FFF6A9]/70">
             نتائج مشتركينا عبر المتابعة الأونلاين من مختلف المحافظات والدول
           </p>
         </div>
@@ -411,12 +411,12 @@ export default function OnlineFollowupPage() {
                 <div>
                   <h4 className="text-lg font-black text-white flex items-center gap-2">
                     <span>{item.name}</span>
-                    <span className="text-xs text-[#FFDBB0] font-normal">({item.age} سنة)</span>
+                    <span className="text-xs text-[#FFCA88] font-normal">({item.age} سنة)</span>
                   </h4>
-                  <span className="text-[11px] text-[#FFFAD3]/60">{item.location}</span>
+                  <span className="text-[11px] text-[#FFF6A9]/60">{item.location}</span>
                 </div>
                 <div className="text-left">
-                  <span className="text-xs font-black text-[#FFB1B1] block">{item.lostWeight}</span>
+                  <span className="text-xs font-black text-[#DE7272] block">{item.lostWeight}</span>
                   <span className="text-[10px] text-white/50">{item.duration}</span>
                 </div>
               </div>
@@ -429,18 +429,18 @@ export default function OnlineFollowupPage() {
                 </div>
                 <div className="relative h-48 rounded-xl overflow-hidden bg-black/40">
                   <img src={item.afterImg} alt="بعد المتابعة" className="w-full h-full object-cover" />
-                  <div className="absolute bottom-2 right-2 bg-gradient-to-r from-[#FFB1B1] to-[#FFDBB0] text-[#120B0D] px-2 py-0.5 rounded text-[10px] font-black">بعد</div>
+                  <div className="absolute bottom-2 right-2 bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] px-2 py-0.5 rounded text-[10px] font-black">بعد</div>
                 </div>
               </div>
 
               {/* Review */}
-              <p className="text-xs text-[#FFFAD3]/80 leading-relaxed italic">
+              <p className="text-xs text-[#FFF6A9]/80 leading-relaxed italic">
                 "{item.review}"
               </p>
 
               <div className="flex items-center justify-between pt-3 border-t border-white/10 text-[11px]">
-                <span className="text-[#FFDBB0] font-bold">نقص المحيط: {item.lostCircumference}</span>
-                <span className="flex items-center gap-1 text-[#FFDBB0]">
+                <span className="text-[#FFCA88] font-bold">نقص المحيط: {item.lostCircumference}</span>
+                <span className="flex items-center gap-1 text-[#FFCA88]">
                   <Star size={12} fill="currentColor" /> 5.0 تقييم المشترك
                 </span>
               </div>

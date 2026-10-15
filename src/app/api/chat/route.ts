@@ -51,7 +51,7 @@ export async function POST(req: Request) {
       id: `msg_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
       patientId,
       senderRole: senderRole || 'doctor',
-      senderName: senderName || 'فريق مركز سيرا',
+      senderName: senderName || 'فريق عيادة سيرة 2',
       text: text.trim(),
       timestamp: new Date().toISOString(),
       isRead: false,

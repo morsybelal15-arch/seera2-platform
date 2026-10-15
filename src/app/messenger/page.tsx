@@ -34,7 +34,7 @@ function MessengerPageInner() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030904] text-white flex flex-col font-sans" dir="rtl">
+    <div className="min-h-screen bg-[#120B0D] text-white flex flex-col font-sans" dir="rtl">
       
       {/* Top Messenger Navigation Bar */}
       <header className="border-b border-white/10 bg-black/60 backdrop-blur-md sticky top-0 z-30 px-4 sm:px-8 py-4">
@@ -49,14 +49,14 @@ function MessengerPageInner() {
             </Link>
 
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#8DC63F]/20 text-[#8DC63F] flex items-center justify-center font-black border border-[#8DC63F]/30 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#B4E4D6]/20 text-[#B4E4D6] flex items-center justify-center font-black border border-[#B4E4D6]/30 shadow-sm">
                 <MessageCircle size={20} />
               </div>
               <div>
                 <h1 className="font-black text-base sm:text-lg text-white leading-tight">
-                  الماسنجر الطبي الداخلي <span className="text-[#8DC63F] text-xs font-mono">CERRAH</span>
+                  الماسنجر الطبي الداخلي <span className="text-[#FFCA88] text-xs font-mono">SEERA 2</span>
                 </h1>
-                <p className="text-[10px] text-green-100/60 font-semibold">
+                <p className="text-[10px] text-[#FFF6A9]/65 font-semibold">
                   قناة تواصل سريرية مشفرة بين العميل والفريق الطبي
                 </p>
               </div>
@@ -69,7 +69,7 @@ function MessengerPageInner() {
                 href={getDashboardPath()}
                 className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl text-xs font-bold border border-white/15 flex items-center gap-1.5 transition-all shadow"
               >
-                <LayoutDashboard size={14} className="text-[#8DC63F]" />
+                <LayoutDashboard size={14} className="text-[#B4E4D6]" />
                 <span className="hidden sm:inline">لوحة التحكم</span>
               </Link>
             ) : (
@@ -96,19 +96,19 @@ function MessengerPageInner() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col">
         {!isLoggedIn ? (
-          <div className="flex-1 flex flex-col items-center justify-center text-center p-6 sm:p-12 glass-card rounded-[36px] border border-white/10 bg-[#061408] shadow-2xl my-auto space-y-6 max-w-2xl mx-auto">
-            <div className="w-20 h-20 rounded-3xl bg-[#8DC63F]/15 text-[#8DC63F] border border-[#8DC63F]/30 flex items-center justify-center shadow-lg animate-bounce">
+          <div className="flex-1 flex flex-col items-center justify-center text-center p-6 sm:p-12 glass-card rounded-[36px] border border-white/10 bg-[#1D1216] shadow-2xl my-auto space-y-6 max-w-2xl mx-auto">
+            <div className="w-20 h-20 rounded-3xl bg-[#B4E4D6]/15 text-[#B4E4D6] border border-[#B4E4D6]/30 flex items-center justify-center shadow-lg animate-bounce">
               <Lock size={36} />
             </div>
 
             <div className="space-y-2">
-              <span className="px-3.5 py-1 rounded-full bg-[#8DC63F]/15 text-[#8DC63F] text-xs font-black border border-[#8DC63F]/30 inline-block">
+              <span className="px-3.5 py-1 rounded-full bg-[#B4E4D6]/15 text-[#B4E4D6] text-xs font-black border border-[#B4E4D6]/30 inline-block">
                 🔒 خصوصية وأمان طبي عالي المستوى
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-white">
                 يرجى تسجيل الدخول للوصول إلى محادثتك الخاصة
               </h2>
-              <p className="text-xs sm:text-sm text-green-100/70 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#FFF6A9]/75 max-w-md mx-auto leading-relaxed">
                 لكل مشترك أو عميل بالمركز سجل محادثات سري ومنفصل تماماً لتبادل الفحوصات والرسائل الصوتية وتوجيهات الطبيب.
               </p>
             </div>
@@ -144,8 +144,8 @@ function MessengerPageInner() {
 export default function MessengerPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-[#030904] flex items-center justify-center text-[#8DC63F]">
-        <div className="w-10 h-10 border-3 border-[#8DC63F] border-t-transparent rounded-full animate-spin"></div>
+      <div className="min-h-screen bg-[#120B0D] flex items-center justify-center text-[#B4E4D6]">
+        <div className="w-10 h-10 border-3 border-[#B4E4D6] border-t-transparent rounded-full animate-spin"></div>
       </div>
     }>
       <MessengerPageInner />

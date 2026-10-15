@@ -22,19 +22,19 @@ export default function PatientPrescriptionsPage() {
     <div className="animate-[fadeIn_0.3s_ease-out]">
       <div className="mb-8">
         <h1 className="text-3xl font-black text-white mb-2 flex items-center gap-3">
-          <FileText className="text-[#8DC63F]" size={32} /> الروشتة والنظام الغذائي
+          <FileText className="text-[#B4E4D6]" size={32} /> الروشتة والنظام الغذائي
         </h1>
-        <p className="text-green-100/70 font-bold text-sm">تابع نظامك الغذائي المخصص والتعليمات الطبية المحددة لك.</p>
+        <p className="text-[#FFF6A9]/75 font-bold text-sm">تابع نظامك الغذائي المخصص والتعليمات الطبية المحددة لك.</p>
       </div>
 
       {myData.diet ? (
-        <div className="glass-card p-8 md:p-10 rounded-[32px] border border-[#8DC63F]/20 relative overflow-hidden max-w-4xl mx-auto">
+        <div className="glass-card p-8 md:p-10 rounded-[32px] border border-[#B4E4D6]/20 relative overflow-hidden max-w-4xl mx-auto">
           {/* لمسة تصميمية (Glow) */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#8DC63F]/10 blur-[50px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#B4E4D6]/10 blur-[50px] rounded-full pointer-events-none"></div>
           
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b border-white/10 pb-6 relative z-10">
             <div>
-              <span className="bg-[#8DC63F]/20 text-[#8DC63F] px-3 py-1 rounded-full text-xs font-bold border border-[#8DC63F]/30 mb-3 inline-block">نشط حالياً</span>
+              <span className="bg-[#B4E4D6]/20 text-[#B4E4D6] px-3 py-1 rounded-full text-xs font-bold border border-[#B4E4D6]/30 mb-3 inline-block">نشط حالياً</span>
               <h2 className="text-2xl font-black text-white">{myData.diet.name}</h2>
             </div>
             <button 
@@ -46,11 +46,11 @@ export default function PatientPrescriptionsPage() {
           </div>
 
           <div className="relative z-10">
-            <h3 className="text-sm font-bold text-[#8DC63F] mb-4 flex items-center gap-2">
+            <h3 className="text-sm font-bold text-[#B4E4D6] mb-4 flex items-center gap-2">
               <CheckCircle size={16} /> التعليمات والوجبات المحددة:
             </h3>
             <div className="bg-black/40 p-6 rounded-2xl border border-white/5">
-              <p className="text-green-100/80 font-semibold whitespace-pre-line leading-loose">
+              <p className="text-[#FFF6A9]/85 font-semibold whitespace-pre-line leading-loose">
                 {myData.diet.instructions}
               </p>
             </div>

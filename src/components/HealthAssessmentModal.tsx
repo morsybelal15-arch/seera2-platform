@@ -54,7 +54,7 @@ export default function HealthAssessmentModal({
   const excessWeight = Math.max(0, weight - idealWeightMax);
 
   let bmiCategory = 'وزن طبيعي ومثالي';
-  let badgeColor = 'text-[#8DC63F] border-[#8DC63F]/30 bg-[#8DC63F]/10';
+  let badgeColor = 'text-[#B4E4D6] border-[#B4E4D6]/30 bg-[#B4E4D6]/10';
   if (bmi >= 30) {
     bmiCategory = 'سمنة موضعية وعامة تحتاج تدخل سريري';
     badgeColor = 'text-red-400 border-red-500/30 bg-red-500/10';
@@ -142,17 +142,17 @@ export default function HealthAssessmentModal({
       className="modal-backdrop"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="modal-dialog w-full max-w-2xl bg-[#070d08] border border-[#8DC63F]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
+      <div className="modal-dialog w-full max-w-2xl bg-[#070d08] border border-[#B4E4D6]/30 rounded-[30px] overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
         
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#8DC63F]/15 border border-[#8DC63F]/30 flex items-center justify-center text-[#8DC63F]">
+            <div className="w-10 h-10 rounded-2xl bg-[#B4E4D6]/15 border border-[#B4E4D6]/30 flex items-center justify-center text-[#B4E4D6]">
               <Activity size={20} />
             </div>
             <div>
               <h3 className="text-white font-black text-lg">التقييم الصحي والسريري الشامل</h3>
-              <p className="text-[#8DC63F] text-[11px] font-bold">CERRAH CLINICAL HEALTH ASSESSMENT</p>
+              <p className="text-[#B4E4D6] text-[11px] font-bold">CERRAH CLINICAL HEALTH ASSESSMENT</p>
             </div>
           </div>
           <button
@@ -167,8 +167,8 @@ export default function HealthAssessmentModal({
         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-1">
           {step === 1 && (
             <div className="space-y-5 text-right" dir="rtl">
-              <div className="bg-[#8DC63F]/10 border border-[#8DC63F]/20 p-4 rounded-2xl flex items-center gap-3">
-                <Sparkles className="text-[#8DC63F] shrink-0" size={24} />
+              <div className="bg-[#B4E4D6]/10 border border-[#B4E4D6]/20 p-4 rounded-2xl flex items-center gap-3">
+                <Sparkles className="text-[#B4E4D6] shrink-0" size={24} />
                 <p className="text-xs text-white/80 font-bold leading-relaxed">
                   أدخل قياساتك الجسدية وسيقوم النظام بحساب مؤشرات كتلة جسمك والدهون واقتراح الخطة العلاجية الملائمة في ثوانٍ.
                 </p>
@@ -183,7 +183,7 @@ export default function HealthAssessmentModal({
                     onClick={() => setGender('male')}
                     className={`py-3 rounded-xl border font-bold text-xs transition-all cursor-pointer ${
                       gender === 'male'
-                        ? 'bg-[#8DC63F] text-black border-[#8DC63F]'
+                        ? 'bg-[#B4E4D6] text-black border-[#B4E4D6]'
                         : 'bg-black/40 border-white/10 text-white/70 hover:border-white/20'
                     }`}
                   >
@@ -194,7 +194,7 @@ export default function HealthAssessmentModal({
                     onClick={() => setGender('female')}
                     className={`py-3 rounded-xl border font-bold text-xs transition-all cursor-pointer ${
                       gender === 'female'
-                        ? 'bg-[#8DC63F] text-black border-[#8DC63F]'
+                        ? 'bg-[#B4E4D6] text-black border-[#B4E4D6]'
                         : 'bg-black/40 border-white/10 text-white/70 hover:border-white/20'
                     }`}
                   >
@@ -251,7 +251,7 @@ export default function HealthAssessmentModal({
                       onClick={() => setFocusArea(area)}
                       className={`p-2.5 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                         focusArea === area
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white shadow-sm'
+                          ? 'bg-[#B4E4D6]/20 border-[#B4E4D6] text-white shadow-sm'
                           : 'bg-black/30 border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
@@ -272,7 +272,7 @@ export default function HealthAssessmentModal({
                       onClick={() => setMainGoal(goal)}
                       className={`p-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                         mainGoal === goal
-                          ? 'bg-[#8DC63F]/20 border-[#8DC63F] text-white'
+                          ? 'bg-[#B4E4D6]/20 border-[#B4E4D6] text-white'
                           : 'bg-black/30 border-white/10 text-white/60 hover:border-white/20'
                       }`}
                     >
@@ -285,7 +285,7 @@ export default function HealthAssessmentModal({
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="w-full bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black py-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
+                className="w-full bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black py-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer"
               >
                 متابعة التقييم السريري <ChevronLeft size={18} />
               </button>
@@ -298,7 +298,7 @@ export default function HealthAssessmentModal({
               <div className="bg-black/50 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-white/50 block font-bold">مؤشر كتلة جسمك الحالي (BMI)</span>
-                  <span className="text-2xl font-black text-[#8DC63F]">{bmi}</span>
+                  <span className="text-2xl font-black text-[#B4E4D6]">{bmi}</span>
                   <span className={`text-[11px] font-bold block mt-0.5 px-2 py-0.5 rounded-lg border w-max ${badgeColor}`}>{bmiCategory}</span>
                 </div>
                 <div className="text-left" dir="ltr">
@@ -314,7 +314,7 @@ export default function HealthAssessmentModal({
               <div>
                 <div className="flex justify-between items-center mb-1.5">
                   <label className="text-xs font-black text-white/80">مستوى الإحساس بالألم أو الانزعاج (0 - 10):</label>
-                  <span className="text-sm font-black text-[#8DC63F]">{painLevel} / 10</span>
+                  <span className="text-sm font-black text-[#B4E4D6]">{painLevel} / 10</span>
                 </div>
                 <input
                   type="range"
@@ -322,7 +322,7 @@ export default function HealthAssessmentModal({
                   max={10}
                   value={painLevel}
                   onChange={(e) => setPainLevel(Number(e.target.value))}
-                  className="w-full accent-[#8DC63F] cursor-pointer"
+                  className="w-full accent-[#B4E4D6] cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] text-white/40 mt-1">
                   <span>لا يوجد ألم (0)</span>
@@ -336,7 +336,7 @@ export default function HealthAssessmentModal({
                 <p className="text-xs font-bold text-white/70">سجل بياناتك لحفظ التقرير في ملفك الطبي بالعيادة:</p>
                 <div>
                   <label className="block text-[11px] font-bold text-white/60 mb-1 flex items-center gap-1.5">
-                    <User size={14} className="text-[#8DC63F]" /> الاسم بالكامل *
+                    <User size={14} className="text-[#B4E4D6]" /> الاسم بالكامل *
                   </label>
                   <input
                     type="text"
@@ -344,12 +344,12 @@ export default function HealthAssessmentModal({
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="أدخل اسمك الثلاثي"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#8DC63F] outline-none"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#B4E4D6] outline-none"
                   />
                 </div>
                 <div>
                   <label className="block text-[11px] font-bold text-white/60 mb-1 flex items-center gap-1.5">
-                    <Phone size={14} className="text-[#8DC63F]" /> رقم الهاتف (واتساب) *
+                    <Phone size={14} className="text-[#B4E4D6]" /> رقم الهاتف (واتساب) *
                   </label>
                   <input
                     type="tel"
@@ -358,7 +358,7 @@ export default function HealthAssessmentModal({
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="01X XXXX XXXX"
                     dir="ltr"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#8DC63F] outline-none text-right"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-xs font-bold focus:border-[#B4E4D6] outline-none text-right"
                   />
                 </div>
               </div>
@@ -374,7 +374,7 @@ export default function HealthAssessmentModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-2/3 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
+                  className="w-2/3 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-60 cursor-pointer"
                 >
                   {loading ? (
                     <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
@@ -388,13 +388,13 @@ export default function HealthAssessmentModal({
 
           {step === 3 && assessmentResult && (
             <div className="text-center py-4 space-y-5 animate-[fadeIn_0.3s_ease-out]">
-              <div className="w-16 h-16 rounded-full bg-[#8DC63F]/20 border border-[#8DC63F] flex items-center justify-center mx-auto text-[#8DC63F]">
+              <div className="w-16 h-16 rounded-full bg-[#B4E4D6]/20 border border-[#B4E4D6] flex items-center justify-center mx-auto text-[#B4E4D6]">
                 <CheckCircle2 size={36} />
               </div>
 
               <div>
                 <h4 className="text-2xl font-black text-white mb-2">تم إصدار تقييمك الصحي بنجاح!</h4>
-                <p className="text-xs text-green-100/70 font-semibold leading-relaxed">
+                <p className="text-xs text-[#FFF6A9]/75 font-semibold leading-relaxed">
                   تم تسجيل ملف التقييم الطبي في قاعدة بيانات العيادة برقم حسابك وحفظ موعد الكشف المبدئي في جدول المواعيد.
                 </p>
               </div>
@@ -403,7 +403,7 @@ export default function HealthAssessmentModal({
               <div className="bg-black/50 border border-white/10 rounded-2xl p-4 text-right space-y-2.5 text-xs font-bold">
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">مؤشر كتلة الجسم (BMI):</span>
-                  <span className="text-[#8DC63F] font-black">{assessmentResult.bmi} ({assessmentResult.bmiCategory})</span>
+                  <span className="text-[#B4E4D6] font-black">{assessmentResult.bmi} ({assessmentResult.bmiCategory})</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-white/60">نطاق الوزن المثالي:</span>
@@ -432,7 +432,7 @@ export default function HealthAssessmentModal({
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15"
                 >
-                  <CalendarPlus size={16} className="text-[#8DC63F]" /> إضافة لتقويم Google
+                  <CalendarPlus size={16} className="text-[#B4E4D6]" /> إضافة لتقويم Google
                 </a>
                 <button
                   type="button"
@@ -444,7 +444,7 @@ export default function HealthAssessmentModal({
                   })}
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors border border-white/15 cursor-pointer"
                 >
-                  <Download size={16} className="text-[#8DC63F]" /> تحميل ملف التقويم (.ics)
+                  <Download size={16} className="text-[#B4E4D6]" /> تحميل ملف التقويم (.ics)
                 </button>
               </div>
 

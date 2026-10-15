@@ -77,14 +77,14 @@ export default function NewPatientPage() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="bg-[#8DC63F]/20 text-[#8DC63F] text-[11px] font-black px-3 py-1 rounded-full border border-[#8DC63F]/30">
+            <span className="bg-[#B4E4D6]/20 text-[#B4E4D6] text-[11px] font-black px-3 py-1 rounded-full border border-[#B4E4D6]/30">
               تسجيل حساب وعميل جديد (Onboarding) 🌟
             </span>
           </div>
           <h1 className="text-3xl font-black text-white flex items-center gap-3">
-            <UserPlus className="text-[#8DC63F]" size={32} /> فتح ملف عميل جديد بالمركز
+            <UserPlus className="text-[#B4E4D6]" size={32} /> فتح ملف عميل جديد بالمركز
           </h1>
-          <p className="text-green-100/70 font-bold text-xs sm:text-sm mt-1">
+          <p className="text-[#FFF6A9]/75 font-bold text-xs sm:text-sm mt-1">
             اسم المستخدم: الاسم الثنائي | كلمة المرور: رقم الهاتف | إنشاء كود الـ QR للدخول السريع تلقائياً.
           </p>
         </div>
@@ -101,40 +101,40 @@ export default function NewPatientPage() {
         
         {/* Column 1: Account Credentials & Personal Details */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="glass-card p-6 md:p-8 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl space-y-6">
+          <div className="glass-card p-6 md:p-8 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl space-y-6">
             <h3 className="text-lg font-black text-white border-b border-white/5 pb-4 flex items-center gap-2">
-              <User size={20} className="text-[#8DC63F]" /> بيانات الحساب والاعتماد (Login Credentials)
+              <User size={20} className="text-[#B4E4D6]" /> بيانات الحساب والاعتماد (Login Credentials)
             </h3>
 
             {/* Name Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-green-100/70 mb-2">الاسم الأول *</label>
+                <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">الاسم الأول *</label>
                 <input
                   type="text"
                   required
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="مثال: سارة"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-green-100/70 mb-2">اسم العائلة / الأخير *</label>
+                <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">اسم العائلة / الأخير *</label>
                 <input
                   type="text"
                   required
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="مثال: جمال"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                 />
               </div>
             </div>
 
             {/* Phone (Password) */}
             <div>
-              <label className="block text-xs font-bold text-green-100/70 mb-2">
+              <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">
                 رقم الهاتف / الواتساب (كلمة مرور العميل) *
               </label>
               <div className="relative">
@@ -145,12 +145,12 @@ export default function NewPatientPage() {
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="010XXXXXXXX"
                   dir="ltr"
-                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 pr-10 text-white text-xs font-mono font-bold outline-none focus:border-[#8DC63F] text-right"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 pr-10 text-white text-xs font-mono font-bold outline-none focus:border-[#B4E4D6] text-right"
                 />
-                <Phone size={16} className="absolute top-4 right-3.5 text-[#8DC63F]" />
+                <Phone size={16} className="absolute top-4 right-3.5 text-[#B4E4D6]" />
               </div>
-              <p className="text-[10px] text-green-100/50 mt-1 font-semibold flex items-center gap-1">
-                <Key size={12} className="text-[#8DC63F]" />
+              <p className="text-[10px] text-[#FFF6A9]/50 mt-1 font-semibold flex items-center gap-1">
+                <Key size={12} className="text-[#B4E4D6]" />
                 سيتم تفعيل رقم الهاتف ككلمة مرور لتسجيل دخول العميل إلى بوابته.
               </p>
             </div>
@@ -169,7 +169,7 @@ export default function NewPatientPage() {
 
             {/* Gender & Body Initial Metrics */}
             <div className="pt-4 border-t border-white/5 space-y-4">
-              <label className="block text-xs font-bold text-green-100/70">القياسات الأولية للأفاتار 3D</label>
+              <label className="block text-xs font-bold text-[#FFF6A9]/75">القياسات الأولية للأفاتار 3D</label>
               
               <div className="grid grid-cols-3 gap-3">
                 <div>
@@ -177,7 +177,7 @@ export default function NewPatientPage() {
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value as any)}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
                   >
                     <option value="female">أنثى</option>
                     <option value="male">ذكر</option>
@@ -190,7 +190,7 @@ export default function NewPatientPage() {
                     type="number"
                     value={weight}
                     onChange={(e) => setWeight(Number(e.target.value))}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold text-center outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold text-center outline-none focus:border-[#B4E4D6]"
                   />
                 </div>
 
@@ -200,7 +200,7 @@ export default function NewPatientPage() {
                     type="number"
                     value={height}
                     onChange={(e) => setHeight(Number(e.target.value))}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold text-center outline-none focus:border-[#8DC63F]"
+                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white text-xs font-bold text-center outline-none focus:border-[#B4E4D6]"
                   />
                 </div>
               </div>
@@ -211,17 +211,17 @@ export default function NewPatientPage() {
 
         {/* Column 2: Diet Template Assignment & Submission */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="glass-card p-6 md:p-8 rounded-[28px] border border-white/10 bg-[#08150c] shadow-2xl space-y-5">
+          <div className="glass-card p-6 md:p-8 rounded-[28px] border border-white/10 bg-[#1D1216] shadow-2xl space-y-5">
             <h3 className="text-lg font-black text-white border-b border-white/5 pb-4 flex items-center gap-2">
-              <FileText size={20} className="text-[#8DC63F]" /> ربط القالب الغذائي الأولي (Diet Plan)
+              <FileText size={20} className="text-[#B4E4D6]" /> ربط القالب الغذائي الأولي (Diet Plan)
             </h3>
 
             <div>
-              <label className="block text-xs font-bold text-green-100/70 mb-2">اختر من القوالب الجاهزة</label>
+              <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">اختر من القوالب الجاهزة</label>
               <select
                 value={dietTemplateId}
                 onChange={(e) => setDietTemplateId(e.target.value)}
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
               >
                 <option value="">بدون قالب غذائي حالياً (تحديده لاحقاً)</option>
                 {dietTemplates.map((tmpl) => (
@@ -233,7 +233,7 @@ export default function NewPatientPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-green-100/70 mb-2">
+              <label className="block text-xs font-bold text-[#FFF6A9]/75 mb-2">
                 ملاحظات الطبيب وتوجيهات الجلسات الخاصة
               </label>
               <textarea
@@ -241,7 +241,7 @@ export default function NewPatientPage() {
                 value={doctorNotes}
                 onChange={(e) => setDoctorNotes(e.target.value)}
                 placeholder="مثال: شرب 3 لتر ماء يومياً، وتجنب السكريات قبل وبعد جلسة جهاز Onda بـ 24 ساعة..."
-                className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-semibold leading-relaxed outline-none focus:border-[#8DC63F]"
+                className="w-full bg-black/50 border border-white/10 rounded-xl p-3.5 text-white text-xs font-semibold leading-relaxed outline-none focus:border-[#B4E4D6]"
               />
             </div>
 
@@ -249,7 +249,7 @@ export default function NewPatientPage() {
               <div className="flex items-center gap-2 text-emerald-400 font-bold">
                 <ShieldCheck size={16} /> مميزات التسجيل الفوري:
               </div>
-              <ul className="text-[11px] text-green-100/80 space-y-1 list-disc list-inside">
+              <ul className="text-[11px] text-[#FFF6A9]/85 space-y-1 list-disc list-inside">
                 <li>إنشاء كود الـ QR الذكي فوراً للدخول السريع</li>
                 <li>إمكانية طباعة كارت العميل ومشاركته عبر واتساب بنقرة واحدة</li>
                 <li>فتح قناة شات مباشرة ومجدولة مع العميل</li>
@@ -259,7 +259,7 @@ export default function NewPatientPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black text-sm rounded-2xl flex items-center justify-center gap-2 transition-all shadow-xl shadow-[#8DC63F]/20 cursor-pointer disabled:opacity-50"
+              className="w-full py-4 bg-[#B4E4D6] hover:bg-[#7ab036] text-black font-black text-sm rounded-2xl flex items-center justify-center gap-2 transition-all shadow-xl shadow-[#B4E4D6]/20 cursor-pointer disabled:opacity-50"
             >
               <Save size={18} />
               {isSubmitting ? 'جاري تسجيل الملف وتوليد كود الـ QR...' : 'إنشاء حساب العميل وتوليد كود الـ QR'}

@@ -82,7 +82,7 @@ function StaffDashboardInner() {
     powerJoules: 125,
     pulseCount: 850,
     targetArea: 'البطن والخصر',
-    operatorName: 'طاقم تشغيل إهناسيا',
+    operatorName: 'أخصائي تشغيل الأجهزة',
     clinicalNotes: 'تمت الجلسة بنجاح، استجابة الأنسجة ممتازة.',
   });
 
@@ -156,7 +156,7 @@ function StaffDashboardInner() {
       powerJoules: 125,
       pulseCount: 850,
       targetArea: 'البطن والخصر',
-      operatorName: 'طاقم تشغيل إهناسيا',
+      operatorName: 'أخصائي تشغيل الأجهزة',
       clinicalNotes: 'تمت الجلسة بنجاح ومطابقة القياسات.',
     });
     setIsSessionModalOpen(true);
@@ -233,7 +233,7 @@ function StaffDashboardInner() {
 
           <div className="bg-black/40 p-4 rounded-2xl border border-white/5">
             <span className="text-[10px] text-white/50 block">إجمالي الجلسات الموثقة:</span>
-            <span className="text-2xl font-black text-[#8DC63F] mt-1 block">
+            <span className="text-2xl font-black text-[#B4E4D6] mt-1 block">
               {patients.reduce((acc, p) => acc + (p.sessions?.length || 0), 0)} جلسة
             </span>
           </div>
@@ -258,7 +258,7 @@ function StaffDashboardInner() {
         <button
           onClick={() => setActiveTab('users')}
           className={`px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-2 ${
-            activeTab === 'users' ? 'bg-[#8DC63F] text-black shadow-lg' : 'text-white/70 hover:text-white'
+            activeTab === 'users' ? 'bg-[#B4E4D6] text-black shadow-lg' : 'text-white/70 hover:text-white'
           }`}
         >
           <Users size={15} /> قائمة المستخدمين وتفعيل الأدوار ({systemUsers.length})
@@ -267,7 +267,7 @@ function StaffDashboardInner() {
         <button
           onClick={() => setActiveTab('clients')}
           className={`px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-2 ${
-            activeTab === 'clients' ? 'bg-[#8DC63F] text-black shadow-lg' : 'text-white/70 hover:text-white'
+            activeTab === 'clients' ? 'bg-[#B4E4D6] text-black shadow-lg' : 'text-white/70 hover:text-white'
           }`}
         >
           <Activity size={15} /> ملفات العملاء وتسجيل حضور الجلسات ({patients.length})
@@ -276,7 +276,7 @@ function StaffDashboardInner() {
         <button
           onClick={() => setActiveTab('messenger')}
           className={`px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-2 ${
-            activeTab === 'messenger' || activeTab === 'chats' ? 'bg-[#8DC63F] text-black shadow-lg' : 'text-white/70 hover:text-white'
+            activeTab === 'messenger' || activeTab === 'chats' ? 'bg-[#B4E4D6] text-black shadow-lg' : 'text-white/70 hover:text-white'
           }`}
         >
           <MessageCircle size={15} /> الماسنجر الطبي ومحادثات العملاء
@@ -301,7 +301,7 @@ function StaffDashboardInner() {
                 placeholder="بحث عن عميل بالاسم أو رقم الهاتف..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-black/40 border border-white/10 rounded-2xl py-3 px-4 pr-10 text-white text-xs font-bold outline-none focus:border-[#8DC63F]"
+                className="w-full bg-black/40 border border-white/10 rounded-2xl py-3 px-4 pr-10 text-white text-xs font-bold outline-none focus:border-[#B4E4D6]"
               />
               <Search size={16} className="absolute top-3.5 right-3.5 text-white/40" />
             </div>
@@ -313,7 +313,7 @@ function StaffDashboardInner() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPatients.length === 0 ? (
-              <div className="col-span-full glass-card p-12 rounded-[28px] border border-white/10 bg-[#08150c] text-center space-y-3 shadow-2xl">
+              <div className="col-span-full glass-card p-12 rounded-[28px] border border-white/10 bg-[#1D1216] text-center space-y-3 shadow-2xl">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
                   <Users size={32} />
                 </div>
@@ -329,13 +329,13 @@ function StaffDashboardInner() {
               return (
                 <div
                   key={patient.id}
-                  className="glass-card p-6 rounded-[28px] border border-white/10 hover:border-emerald-500/40 transition-all bg-[#08150c] shadow-2xl flex flex-col justify-between space-y-4"
+                  className="glass-card p-6 rounded-[28px] border border-white/10 hover:border-emerald-500/40 transition-all bg-[#1D1216] shadow-2xl flex flex-col justify-between space-y-4"
                 >
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h3 className="text-lg font-black text-white">{patient.name}</h3>
-                        <span className="text-xs text-[#8DC63F] font-mono block" dir="ltr">{patient.phone}</span>
+                        <span className="text-xs text-[#B4E4D6] font-mono block" dir="ltr">{patient.phone}</span>
                       </div>
 
                       <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
@@ -379,7 +379,7 @@ function StaffDashboardInner() {
                         }}
                         className="py-2 bg-white/5 hover:bg-white/10 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1 border border-white/10 transition-colors cursor-pointer"
                       >
-                        <MessageCircle size={13} className="text-[#8DC63F]" /> شات العميل
+                        <MessageCircle size={13} className="text-[#B4E4D6]" /> شات العميل
                       </button>
 
                       <button
@@ -415,7 +415,7 @@ function StaffDashboardInner() {
       {/* ===================== Modal: Quick Client Creation (Two-part Name + Phone ONLY) ===================== */}
       {isNewAccountOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-          <div className="relative w-full max-w-md bg-[#08150c] border border-emerald-500/40 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8">
+          <div className="relative w-full max-w-md bg-[#1D1216] border border-emerald-500/40 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8">
             <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-5">
               <h3 className="text-lg font-black text-white flex items-center gap-2">
                 <UserPlus size={20} className="text-emerald-400" /> إضافة مريض / عميل جديد
@@ -428,7 +428,7 @@ function StaffDashboardInner() {
               </button>
             </div>
 
-            <p className="text-xs text-green-100/70 font-semibold mb-4">
+            <p className="text-xs text-[#FFF6A9]/75 font-semibold mb-4">
               يمكنك إضافة العميل بسرعة باستخدام الاسم الثنائي ورقم الهاتف فقط؛ وسيتم توليد كود الـ QR وإرساله مباشرة للواتساب.
             </p>
 
@@ -481,7 +481,7 @@ function StaffDashboardInner() {
       {/* ===================== Modal: Session Attendance Logger ===================== */}
       {isSessionModalOpen && selectedPatientForSession && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-[fadeIn_0.2s_ease-out]">
-          <div className="relative w-full max-w-lg bg-[#08150c] border border-emerald-500/40 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto">
+          <div className="relative w-full max-w-lg bg-[#1D1216] border border-emerald-500/40 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto">
             <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-4">
               <div>
                 <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">

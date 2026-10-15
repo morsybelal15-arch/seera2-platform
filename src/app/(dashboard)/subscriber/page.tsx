@@ -14,10 +14,10 @@ import { useClinic } from '@/context/ClinicContext';
 const BodySimulator = dynamic(() => import('@/components/BodySimulator'), {
   ssr: false,
   loading: () => (
-    <div className="glass-card rounded-[28px] flex items-center justify-center p-12 border border-cyan-500/20 min-h-[480px]">
+    <div className="glass-card rounded-[28px] flex items-center justify-center p-12 border border-[#DE7272]/20 min-h-[480px]">
       <div className="text-center space-y-3">
-        <div className="w-12 h-12 border-3 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
-        <p className="text-sm text-cyan-200 font-bold">جاري تحميل المحاكي الطبي 3D للمشترك...</p>
+        <div className="w-12 h-12 border-3 border-[#DE7272] border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <p className="text-sm text-[#FFCA88] font-bold">جاري تحميل المحاكي الطبي 3D للمشترك...</p>
       </div>
     </div>
   ),
@@ -329,7 +329,7 @@ function SubscriberDashboardInner() {
 
           {/* بطاقات المتابعة والتقدم السريع */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] flex flex-col justify-between">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] flex flex-col justify-between">
               <div>
                 <span className="text-cyan-400 text-xs font-bold block mb-1">المتابعة الأسبوعية</span>
                 <h3 className="text-lg font-black text-white mb-2">تسجيل الميزان الدوري</h3>
@@ -344,22 +344,22 @@ function SubscriberDashboardInner() {
               </button>
             </div>
 
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] flex flex-col justify-between">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] flex flex-col justify-between">
               <div>
-                <span className="text-[#8DC63F] text-xs font-bold block mb-1">المحاكي الطبي 3D</span>
+                <span className="text-[#B4E4D6] text-xs font-bold block mb-1">المحاكي الطبي 3D</span>
                 <h3 className="text-lg font-black text-white mb-2">مطابقة الأبعاد ومجسم الجسم</h3>
                 <p className="text-xs text-white/70 leading-relaxed mb-4">عدّل مناطق تجمع الدهون وشاهد شكل قوامك المستهدف ثلاثي الأبعاد.</p>
               </div>
               <button
                 type="button"
                 onClick={() => router.push('/subscriber?tab=simulator')}
-                className="w-full bg-[#8DC63F]/15 hover:bg-[#8DC63F] text-[#8DC63F] hover:text-black py-3 rounded-xl text-xs font-black border border-[#8DC63F]/30 transition-all text-center cursor-pointer"
+                className="w-full bg-[#B4E4D6]/15 hover:bg-[#B4E4D6] text-[#B4E4D6] hover:text-black py-3 rounded-xl text-xs font-black border border-[#B4E4D6]/30 transition-all text-center cursor-pointer"
               >
                 فتح المحاكي 3D ←
               </button>
             </div>
 
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] flex flex-col justify-between">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] flex flex-col justify-between">
               <div>
                 <span className="text-amber-400 text-xs font-bold block mb-1">خطة التغذية</span>
                 <h3 className="text-lg font-black text-white mb-2">جدول وجباتك المعتمد</h3>
@@ -487,7 +487,7 @@ function SubscriberDashboardInner() {
 
       {/* 4. جدول الدايت والتغذية (Tab: diet) */}
       {currentTab === 'diet' && (
-        <div className="glass-card rounded-[32px] p-6 sm:p-10 border border-white/10 bg-[#08150c] shadow-2xl space-y-6">
+        <div className="glass-card rounded-[32px] p-6 sm:p-10 border border-white/10 bg-[#1D1216] shadow-2xl space-y-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-white/10">
             <div>
               <span className="text-cyan-400 text-xs font-black block">خطة التغذية السريرية</span>
@@ -495,7 +495,7 @@ function SubscriberDashboardInner() {
             </div>
           </div>
 
-          <div className="bg-black/50 p-5 rounded-2xl border border-white/5 space-y-2 text-sm text-green-100/90 leading-relaxed">
+          <div className="bg-black/50 p-5 rounded-2xl border border-white/5 space-y-2 text-sm text-[#FFF6A9]/90 leading-relaxed">
             <h4 className="font-bold text-white text-xs mb-1">إرشادات الطبيب:</h4>
             <p>{myData?.diet?.instructions || 'الالتزام بمواعيد الوجبات المحددة، شرب 3 لتر ماء على مدار اليوم، والمشي 30 دقيقة يومياً بدون انقطاع.'}</p>
           </div>
@@ -519,7 +519,7 @@ function SubscriberDashboardInner() {
 
       {/* 5. تسجيل ومتابعة الالتزام اليومي (Tab: adherence) */}
       {currentTab === 'adherence' && (
-        <div className="glass-card rounded-[32px] p-6 sm:p-10 border border-white/10 bg-[#08150c] shadow-2xl space-y-6">
+        <div className="glass-card rounded-[32px] p-6 sm:p-10 border border-white/10 bg-[#1D1216] shadow-2xl space-y-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-white/10">
             <div>
               <span className="text-amber-400 text-xs font-black block">الامتثال الطبي اليومي</span>
@@ -635,7 +635,7 @@ function SubscriberDashboardInner() {
                 <span className="text-xs font-bold text-white/60 block">الأهداف والتوصيات:</span>
                 <div className="flex justify-between items-center text-sm py-1 border-b border-white/5">
                   <span className="text-white/70">الوزن المستهدف:</span>
-                  <span className="font-black text-[#8DC63F]">{bmiData.targetWeight} كجم</span>
+                  <span className="font-black text-[#B4E4D6]">{bmiData.targetWeight} كجم</span>
                 </div>
                 <div className="flex justify-between items-center text-sm py-1 border-b border-white/5">
                   <span className="text-white/70">الفرق المطلوب:</span>
@@ -655,7 +655,7 @@ function SubscriberDashboardInner() {
           </div>
 
           {/* كارت حاسبة معدل الأيض BMR و TDEE */}
-          <div className="glass-card rounded-[32px] p-6 sm:p-8 border border-white/10 bg-[#08150c] shadow-2xl space-y-6">
+          <div className="glass-card rounded-[32px] p-6 sm:p-8 border border-white/10 bg-[#1D1216] shadow-2xl space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-white/10">
               <div>
                 <span className="text-cyan-400 text-xs font-black block">محرك الأيض والسعرات اليومية</span>
@@ -689,7 +689,7 @@ function SubscriberDashboardInner() {
 
               <div className="bg-black/50 p-5 rounded-2xl border border-white/5">
                 <span className="text-xs text-white/50 font-bold block mb-1">هدف السعرات للتخسيس:</span>
-                <span className="text-3xl font-black text-[#8DC63F]">
+                <span className="text-3xl font-black text-[#B4E4D6]">
                   {Math.round((10 * bmiData.weight + 6.25 * bmiData.height - 5 * bmiData.age + (bmiData.gender === 'male' ? 5 : -161)) * 1.35) - 500} <span className="text-xs text-white/40">سعرة</span>
                 </span>
                 <p className="text-[11px] text-white/60 mt-1">عجز صحي (-500 سعرة) لإنقاص 0.5 إلى 0.7 كجم دهون أسبوعياً.</p>
@@ -703,7 +703,7 @@ function SubscriberDashboardInner() {
       {/* 7. المساعد الطبي واستشارة الفيديو (Tab: ai) */}
       {currentTab === 'ai' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-8 glass-card rounded-[32px] p-6 sm:p-8 border border-white/10 bg-[#08150c] shadow-2xl space-y-5">
+          <div className="lg:col-span-8 glass-card rounded-[32px] p-6 sm:p-8 border border-white/10 bg-[#1D1216] shadow-2xl space-y-5">
             <div className="flex items-center gap-3 pb-3 border-b border-white/10">
               <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-400">
                 <Brain size={20} />
@@ -756,7 +756,7 @@ function SubscriberDashboardInner() {
           </div>
 
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#08150c] space-y-3">
+            <div className="glass-card p-6 rounded-[28px] border border-white/10 bg-[#1D1216] space-y-3">
               <h3 className="font-bold text-sm text-white">التشخيص السريع للأعراض</h3>
               <p className="text-xs text-white/70 leading-relaxed">فحص مبدئي لآلام العظام والمفاصل أو صعوبة نزول الوزن.</p>
               <button
@@ -768,7 +768,7 @@ function SubscriberDashboardInner() {
               </button>
             </div>
 
-            <div className="glass-card p-6 rounded-[28px] border border-cyan-500/20 bg-[#08150c] space-y-3">
+            <div className="glass-card p-6 rounded-[28px] border border-cyan-500/20 bg-[#1D1216] space-y-3">
               <h3 className="font-bold text-sm text-white">استشارة فيديو مع الطبيب</h3>
               <p className="text-xs text-white/70 leading-relaxed">جلسة خاصة مدتها 20 دقيقة لمراجعة التقدم بالصوت والصورة.</p>
               <button

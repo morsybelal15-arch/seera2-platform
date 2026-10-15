@@ -45,7 +45,7 @@ export default function ReconciliationModal({
     {
       id: 'm1',
       sender: 'bot',
-      text: 'مرحباً بك في خدمة "تصالح معنا" 🤝. راحتك ورضاك في مركز سيرا واجبنا الأول. إذا واجهتك أي مشكلة، أو رغبت في تعديل خطتك أو إعادة تقييمك، نعتذر عن أي تقصير وفريقنا الطبي والإداري هنا لحل المشكلة فوراً.',
+      text: 'مرحباً بك في خدمة "تصالح معنا" 🤝. راحتك ورضاك في عيادة سيرة 2 في المقام الأول. لو واجهتك أي مشكلة، أو حابب تعدل خطتك أو تقييمك، نعتذر عن أي تقصير وفريقنا الطبي والإداري هنا لحل المشكلة فوراً.',
       time: 'الآن',
     },
     {
@@ -159,7 +159,7 @@ export default function ReconciliationModal({
                   حل فوري ومباشر 🤝
                 </span>
               </div>
-              <p className="text-green-100/60 text-xs font-semibold">شكواك تظهر فوراً في داشبورد الطبيب وإدارة المركز</p>
+              <p className="text-[#FFF6A9]/65 text-xs font-semibold">شكواك تظهر فوراً في داشبورد الطبيب وإدارة المركز</p>
             </div>
           </div>
 
@@ -212,14 +212,14 @@ export default function ReconciliationModal({
                 <p className="text-white font-black text-sm">
                   تم تسجيل التذكرة رقم (#{ticketNumber}) بنجاح!
                 </p>
-                <p className="text-green-100/70 text-xs mt-1">
+                <p className="text-[#FFF6A9]/75 text-xs mt-1">
                   حقك علينا، سيتم التواصل معك شخصياً لحل أي ملاحظة فوراً وإرضائك.
                 </p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-2 pt-2">
                 <a
-                  href={`https://wa.me/201108080564?text=${encodeURIComponent(`مرحباً إدارة مركز سيرا، قمت بفتح تذكرة تصالح معنا رقم (#${ticketNumber}) بخصوص (${category}) وأود المتابعة المباشرة.`)}`}
+                  href={`https://wa.me/201108080564?text=${encodeURIComponent(`مرحباً إدارة عيادة سيرة 2، قمت بفتح تذكرة تصالح معنا رقم (#${ticketNumber}) بخصوص (${category}) وأود المتابعة المباشرة.`)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#25D366] hover:bg-[#1eb855] text-black px-4 py-2 rounded-xl text-xs font-black flex items-center gap-1.5"
@@ -340,7 +340,7 @@ export default function ReconciliationModal({
                 </button>
               </div>
               
-              <p className="text-[10px] text-green-100/60 text-center font-medium">
+              <p className="text-[10px] text-[#FFF6A9]/65 text-center font-medium">
                 🔒 شكواك تصل مباشرة للطبيب المشرف وإدارة المركز مع الحفاظ الكامل على سرية بياناتك.
               </p>
             </form>
@@ -348,7 +348,7 @@ export default function ReconciliationModal({
             <div className="p-6 bg-[#141d16] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
               <div>
                 <h4 className="text-white font-black text-xs sm:text-sm mb-1">تسجيل الدخول مطلوب</h4>
-                <p className="text-green-100/70 text-[11px]">يرجى تسجيل الدخول أو إنشاء حساب لفتح تذكرة تصالح معنا والتواصل المباشر مع الإدارة.</p>
+                <p className="text-[#FFF6A9]/75 text-[11px]">يرجى تسجيل الدخول أو إنشاء حساب لفتح تذكرة تصالح معنا والتواصل المباشر مع الإدارة.</p>
               </div>
               <button
                 type="button"

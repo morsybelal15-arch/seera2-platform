@@ -70,8 +70,8 @@ export default function OnlineSubscriberPortalModal({
 
             <div className="bg-black/40 border border-white/5 p-4 rounded-2xl">
               <span className="text-[10px] text-white/50 block font-bold mb-1">إجمالي النزول:</span>
-              <h4 className="text-[#8DC63F] font-black text-base">-4.2 كجم</h4>
-              <span className="text-green-100/60 text-xs">-6 سم من الخصر</span>
+              <h4 className="text-[#B4E4D6] font-black text-base">-4.2 كجم</h4>
+              <span className="text-[#FFF6A9]/65 text-xs">-6 سم من الخصر</span>
             </div>
 
             <div className="bg-black/40 border border-white/5 p-4 rounded-2xl">
@@ -91,7 +91,7 @@ export default function OnlineSubscriberPortalModal({
                 محدثة بواسطة الطبيب
               </span>
             </div>
-            <div className="text-xs text-green-100/80 leading-relaxed space-y-2 bg-black/40 p-4 rounded-xl border border-white/5">
+            <div className="text-xs text-[#FFF6A9]/85 leading-relaxed space-y-2 bg-black/40 p-4 rounded-xl border border-white/5">
               <p>• <strong>كسر الصيام (1:00 ظهراً):</strong> 3 بيضات مسلوقة + نصف رغيف بلدي + سلطة خضراء غنية بزيت الزيتون.</p>
               <p>• <strong>سناك (4:30 عصراً):</strong> كوب شاي أخضر بالنعناع + 30 جم لوز نيء أو عين جمل.</p>
               <p>• <strong>الغداء المتأخر (7:30 مساءً):</strong> 200 جم صدور دجاج مشوية أو علبة تونة مصفاة + خضار سوتيه.</p>
@@ -142,9 +142,9 @@ export default function OnlineSubscriberPortalModal({
             <div className="glass-card p-5 rounded-2xl border border-white/10 bg-black/30 flex flex-col justify-between">
               <div>
                 <h4 className="text-white font-black text-sm mb-1 flex items-center gap-2">
-                  <Sliders size={16} className="text-[#8DC63F]" /> مجسمك ثلاثي الأبعاد 3D
+                  <Sliders size={16} className="text-[#B4E4D6]" /> مجسمك ثلاثي الأبعاد 3D
                 </h4>
-                <p className="text-[11px] text-green-100/70 leading-relaxed mb-3">
+                <p className="text-[11px] text-[#FFF6A9]/75 leading-relaxed mb-3">
                   تحديث أبعاد قوامك عن بعد ومقارنة تغير محيط البطن والذراعين مع كل أسبوع التزام.
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default function OnlineSubscriberPortalModal({
                   }}
                   className="w-full btn-glow btn-glow-gold py-2.5 rounded-xl font-black text-xs flex items-center justify-center gap-1.5 border-none cursor-pointer"
                 >
-                  <Sparkles size={14} /> استعراض التوأم الرقمي 3D
+                  <Sparkles size={14} /> استعراض الأفاتار 3D
                 </button>
                 <a
                   href="https://wa.me/201108080564?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%85%D8%B4%D8%AA%D8%B1%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%20%D8%A7%D9%84%D8%A3%D9%88%D9%86%D9%84%D8%A7%D9%8A%D9%86%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%AA%D9%83%D9%85"

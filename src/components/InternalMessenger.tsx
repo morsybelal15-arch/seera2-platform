@@ -105,8 +105,8 @@ function VoiceNotePlayer({
         onClick={togglePlay}
         className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 shadow-md transition-transform hover:scale-105 cursor-pointer ${
           isFromMe 
-            ? 'bg-black text-[#8DC63F]' 
-            : 'bg-[#8DC63F] text-black'
+            ? 'bg-[#120B0D] text-[#FFCA88]' 
+            : 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D]'
         }`}
       >
         {isPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} className="translate-x-0.5" fill="currentColor" />}
@@ -115,7 +115,7 @@ function VoiceNotePlayer({
       <div className="flex-1 space-y-1">
         <div className="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
           <div 
-            className={`h-full transition-all duration-100 ${isFromMe ? 'bg-black' : 'bg-[#8DC63F]'}`}
+            className={`h-full transition-all duration-100 ${isFromMe ? 'bg-[#120B0D]' : 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88]'}`}
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -142,8 +142,8 @@ export default function InternalMessenger({
   // Determine current active client ID
   const myPatientData = (currentUser ? patients.find(p => p.id === currentUser.uid || p.userId === currentUser.uid || p.phone === currentUser.phoneNumber) : null) || patients[0];
   const defaultClientId = isStaffOrDoctor 
-    ? (initialClientId || '1') 
-    : (currentUser?.uid || myPatientData?.id || '1');
+    ? (initialClientId || 'sub_sara_1') 
+    : (currentUser?.uid || myPatientData?.id || 'sub_sara_1');
 
   const [activeClientId, setActiveClientId] = useState<string>(defaultClientId);
   const [threads, setThreads] = useState<ConversationThread[]>([]);
@@ -151,7 +151,7 @@ export default function InternalMessenger({
   const [isLoadingMessages, setIsLoadingMessages] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [searchFilter, setSearchFilter] = useState('');
-  const [threadCategory, setThreadCategory] = useState<'all' | 'clinic_client' | 'online_subscriber' | 'unread'>('all');
+  const [threadCategory, setThreadCategory] = useState<'all' | 'online_subscriber' | 'unread'>('all');
 
   // Input states
   const [inputText, setInputText] = useState('');
@@ -191,6 +191,14 @@ export default function InternalMessenger({
         const data = await res.json();
         if (data.success && Array.isArray(data.threads)) {
           setThreads(data.threads);
+          if (data.threads.length > 0) {
+            setActiveClientId(prev => {
+              if (!prev || prev === '1' || !data.threads.some((t: ConversationThread) => t.clientId === prev)) {
+                return data.threads[0].clientId;
+              }
+              return prev;
+            });
+          }
         }
       }
     } catch (err) {
@@ -383,14 +391,14 @@ export default function InternalMessenger({
     const senderName = role === 'doctor' 
       ? 'د. بلال مرسي (استشاري المركز)' 
       : role === 'staff' 
-      ? 'طاقم استقبال إهناسيا' 
+      ? 'فريق متابعة سيرة أونلاين 🩺' 
       : (currentUser?.displayName || myPatientData?.name || 'العميل');
 
     const receiverRole = isStaffOrDoctor ? 'client' : 'clinic';
 
     const payload: any = {
       clientId: activeClientId,
-      senderId: currentUser?.uid || (isStaffOrDoctor ? 'staff_1' : activeClientId),
+      senderId: currentUser?.uid || (isStaffOrDoctor ? 'usr_doc_1' : activeClientId),
       senderName,
       senderRole,
       receiverRole,
@@ -418,6 +426,63 @@ export default function InternalMessenger({
           setSelectedAttachment(null);
           if (fileInputRef.current) fileInputRef.current.value = '';
           if (isStaffOrDoctor) fetchThreads();
+
+          // Simulated live interactive incoming message so user can test sending AND receiving
+          const targetClientId = activeClientId;
+          setTimeout(async () => {
+            try {
+              let autoReplyText = '';
+              let autoSenderId = '';
+              let autoSenderName = '';
+              let autoSenderRole: any = 'subscriber';
+              let autoReceiverRole: any = 'clinic';
+
+              if (isStaffOrDoctor) {
+                const activeThread = threads.find(t => t.clientId === targetClientId);
+                autoSenderName = activeThread?.clientName || 'سارة أحمد';
+                autoSenderId = targetClientId;
+                autoSenderRole = 'subscriber';
+                autoReceiverRole = 'clinic';
+                const subscriberReplies = [
+                  `شكراً جزيلاً دكتور، سألتزم بكل ما تم توضيحه بالخطة فوراً! 🙏`,
+                  `تمام جداً دكتور، هسجل وزني ومقاساتي نهاية الأسبوع وأشاركها معك بإذن الله. 📊`,
+                  `تسلم يا دكتور، بدأت في شرب 3.5 لتر ماء وزيادة الخطوات اليومية كما وجّهت. 💧`,
+                  `تم استلام الخطة والملاحظات، جزاك الله خيراً دكتور بلال. ✨`
+                ];
+                autoReplyText = subscriberReplies[Math.floor(Math.random() * subscriberReplies.length)];
+              } else {
+                autoSenderName = 'د. بلال مرسي (إشراف طبي)';
+                autoSenderId = 'usr_doc_1';
+                autoSenderRole = 'doctor';
+                autoReceiverRole = 'client';
+                autoReplyText = 'أهلاً بك! تم استلام رسالتك وتحديث ملفك الصحي، وسأقوم بمراجعة نتائجك بالكامل. 🩺✨';
+              }
+
+              const replyRes = await fetch('/api/messenger', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  clientId: targetClientId,
+                  senderId: autoSenderId,
+                  senderName: autoSenderName,
+                  senderRole: autoSenderRole,
+                  receiverRole: autoReceiverRole,
+                  text: autoReplyText,
+                  messageType: 'text',
+                }),
+              });
+
+              if (replyRes.ok) {
+                const rData = await replyRes.json();
+                if (rData.success && rData.message) {
+                  setMessages(curr => [...curr, rData.message]);
+                  if (isStaffOrDoctor) fetchThreads();
+                }
+              }
+            } catch (err) {
+              console.warn('Auto reply notice:', err);
+            }
+          }, 2200);
         }
       }
     } catch (err) {
@@ -461,14 +526,13 @@ export default function InternalMessenger({
     const matchesSearch = t.clientName.toLowerCase().includes(searchFilter.toLowerCase()) || 
                           (t.clientPhone && t.clientPhone.includes(searchFilter));
     if (!matchesSearch) return false;
-    if (threadCategory === 'clinic_client') return t.clientRole === 'clinic_client';
     if (threadCategory === 'online_subscriber') return t.clientRole === 'online_subscriber';
     if (threadCategory === 'unread') return t.unreadCount > 0;
     return true;
   });
 
   return (
-    <div className={`flex flex-col bg-[#050f07] text-white rounded-[32px] overflow-hidden border border-white/10 shadow-2xl relative ${
+    <div className={`flex flex-col bg-[#120B0D] text-white rounded-[32px] overflow-hidden border border-white/10 shadow-2xl relative ${
       isStandalone ? 'min-h-[85vh]' : 'h-[720px]'
     }`}>
       
@@ -498,24 +562,24 @@ export default function InternalMessenger({
         {/* LEFT / INBOX SIDEBAR (Only visible to Doctor / Staff) */}
         {/* ============================================================== */}
         {isStaffOrDoctor && (
-          <aside className="w-full md:w-80 lg:w-96 border-l border-white/10 flex flex-col bg-[#061509] shrink-0">
+          <aside className="w-full md:w-80 lg:w-96 border-l border-white/10 flex flex-col bg-[#180E12] shrink-0">
             {/* Inbox Header */}
             <div className="p-4 border-b border-white/10 space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[#8DC63F]/20 text-[#8DC63F] flex items-center justify-center font-black">
+                  <div className="w-8 h-8 rounded-lg bg-[#DE7272]/20 text-[#FFCA88] flex items-center justify-center font-black">
                     <MessageSquare size={16} />
                   </div>
                   <div>
                     <h3 className="font-black text-sm text-white">الماسنجر الداخلي</h3>
-                    <span className="text-[10px] text-green-100/60 font-medium">محادثات المرضى والمشتركين</span>
+                    <span className="text-[10px] text-[#FFF6A9]/65 font-medium">محادثات المرضى والمشتركين</span>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={handleRefresh}
                   className={`p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-all cursor-pointer ${
-                    isRefreshing ? 'animate-spin text-[#8DC63F]' : ''
+                    isRefreshing ? 'animate-spin text-[#FFCA88]' : ''
                   }`}
                   title="تحديث المحادثات"
                 >
@@ -530,26 +594,25 @@ export default function InternalMessenger({
                   type="text"
                   value={searchFilter}
                   onChange={(e) => setSearchFilter(e.target.value)}
-                  placeholder="بحث باسم العميل أو الهاتف..."
-                  className="w-full bg-black/50 border border-white/10 rounded-xl py-2 pr-9 pl-3 text-xs text-white placeholder-white/40 outline-none focus:border-[#8DC63F]"
+                  placeholder="بحث باسم المشترك أو الهاتف..."
+                  className="w-full bg-[#120B0D] border border-white/10 rounded-xl py-2 pr-9 pl-3 text-xs text-white placeholder-white/40 outline-none focus:border-[#DE7272]"
                 />
               </div>
 
-              {/* Category Filter Pills */}
+              {/* Category Filter Pills (without clinic_client) */}
               <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none text-[10px] font-bold">
                 {[
                   { key: 'all', label: 'الكل' },
                   { key: 'unread', label: 'غير مقروء' },
-                  { key: 'online_subscriber', label: 'أونلاين 🌐' },
-                  { key: 'clinic_client', label: 'فرع إهناسيا 🏨' },
+                  { key: 'online_subscriber', label: 'المشتركون أونلاين 🌐' },
                 ].map(cat => (
                   <button
                     key={cat.key}
                     type="button"
                     onClick={() => setThreadCategory(cat.key as any)}
-                    className={`px-2.5 py-1 rounded-full whitespace-nowrap transition-all cursor-pointer ${
+                    className={`px-3 py-1 rounded-full whitespace-nowrap transition-all cursor-pointer ${
                       threadCategory === cat.key
-                        ? 'bg-[#8DC63F] text-black font-black'
+                        ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] font-black shadow-sm'
                         : 'bg-white/5 text-white/70 hover:bg-white/10'
                     }`}
                   >
@@ -574,24 +637,20 @@ export default function InternalMessenger({
                       onClick={() => setActiveClientId(t.clientId)}
                       className={`p-3 rounded-2xl transition-all cursor-pointer flex items-center justify-between gap-3 ${
                         isSelected
-                          ? 'bg-[#8DC63F]/15 border border-[#8DC63F]/40 shadow-sm'
+                          ? 'bg-[#DE7272]/15 border border-[#DE7272]/40 shadow-sm'
                           : 'hover:bg-white/5 border border-transparent'
                       }`}
                     >
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black text-xs shrink-0 ${
-                          t.clientRole === 'online_subscriber' 
-                            ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' 
-                            : 'bg-[#8DC63F]/20 text-[#8DC63F] border border-[#8DC63F]/30'
-                        }`}>
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-xs shrink-0 bg-gradient-to-tr from-[#DE7272] to-[#FFCA88] text-[#120B0D] shadow-sm">
                           {t.clientName.charAt(0) || 'ع'}
                         </div>
 
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-1.5">
                             <h4 className="font-black text-xs text-white truncate">{t.clientName}</h4>
-                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-white/10 text-white/60">
-                              {t.clientRole === 'online_subscriber' ? 'أونلاين' : 'فرع'}
+                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-white/10 text-[#FFCA88]">
+                              أونلاين 🌐
                             </span>
                           </div>
                           <p className="text-[11px] text-white/60 truncate mt-0.5">
@@ -609,7 +668,7 @@ export default function InternalMessenger({
                           {new Date(t.lastMessage.createdAt).toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' })}
                         </span>
                         {t.unreadCount > 0 && (
-                          <span className="bg-[#8DC63F] text-black text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                          <span className="bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
                             {t.unreadCount}
                           </span>
                         )}
@@ -625,13 +684,13 @@ export default function InternalMessenger({
         {/* ============================================================== */}
         {/* RIGHT / MAIN CHAT VIEW (Active conversation) */}
         {/* ============================================================== */}
-        <main className="flex-1 flex flex-col bg-[#040e06] min-w-0">
+        <main className="flex-1 flex flex-col bg-[#140D10] min-w-0">
           
           {/* Active Chat Header */}
-          <div className="p-4 sm:p-5 border-b border-white/10 bg-[#07190c] flex items-center justify-between gap-4">
+          <div className="p-4 sm:p-5 border-b border-white/10 bg-[#1A0F13] flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
               <div className="relative">
-                <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#8DC63F] to-[#4CAF50] text-black flex items-center justify-center font-black text-base shadow-md">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#DE7272] to-[#FFCA88] text-[#120B0D] flex items-center justify-center font-black text-base shadow-md">
                   {clientDisplayName.charAt(0)}
                 </div>
                 <span className="absolute bottom-0 left-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-black"></span>
@@ -642,12 +701,12 @@ export default function InternalMessenger({
                   <h3 className="font-black text-sm sm:text-base text-white truncate">
                     {clientDisplayName}
                   </h3>
-                  <span className="px-2 py-0.5 rounded-full bg-[#8DC63F]/15 border border-[#8DC63F]/30 text-[#8DC63F] text-[10px] font-bold">
+                  <span className="px-2 py-0.5 rounded-full bg-[#DE7272]/15 border border-[#DE7272]/30 text-[#FFCA88] text-[10px] font-bold">
                     {isStaffOrDoctor ? 'محادثة مشفرة' : 'فريق سيرا الطبي 🩺'}
                   </span>
                 </div>
-                <p className="text-[11px] text-green-100/60 font-semibold flex items-center gap-1.5 mt-0.5">
-                  <ShieldCheck size={12} className="text-[#8DC63F]" />
+                <p className="text-[11px] text-[#FFF6A9]/75 font-semibold flex items-center gap-1.5 mt-0.5">
+                  <ShieldCheck size={12} className="text-[#FFCA88]" />
                   <span>تخزين سحابي معزول ومخصص لخصوصية هذا العميل</span>
                 </p>
               </div>
@@ -658,7 +717,7 @@ export default function InternalMessenger({
                 type="button"
                 onClick={handleRefresh}
                 className={`p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-all cursor-pointer ${
-                  isRefreshing ? 'animate-spin text-[#8DC63F]' : ''
+                  isRefreshing ? 'animate-spin text-[#FFCA88]' : ''
                 }`}
                 title="تحديث المحادثة"
               >
@@ -680,7 +739,7 @@ export default function InternalMessenger({
 
           {/* Quick Medical Action Chips */}
           <div className="px-4 py-2 bg-black/40 border-b border-white/5 flex items-center gap-2 overflow-x-auto scrollbar-none">
-            <span className="text-[10px] font-black text-[#8DC63F] uppercase tracking-wider shrink-0 flex items-center gap-1">
+            <span className="text-[10px] font-black text-[#FFCA88] uppercase tracking-wider shrink-0 flex items-center gap-1">
               <Sparkles size={11} /> اقتراحات سريعة:
             </span>
             {quickChips.map((chip, i) => (
@@ -688,7 +747,7 @@ export default function InternalMessenger({
                 key={i}
                 type="button"
                 onClick={() => sendMessage({ text: chip })}
-                className="text-[11px] font-semibold bg-white/5 hover:bg-[#8DC63F]/20 hover:text-[#8DC63F] border border-white/10 hover:border-[#8DC63F]/40 text-white/80 px-3 py-1 rounded-full whitespace-nowrap transition-all cursor-pointer shrink-0"
+                className="text-[11px] font-semibold bg-white/5 hover:bg-[#DE7272]/20 hover:text-[#FFCA88] border border-white/10 hover:border-[#DE7272]/40 text-white/80 px-3 py-1 rounded-full whitespace-nowrap transition-all cursor-pointer shrink-0"
               >
                 {chip}
               </button>
@@ -699,8 +758,8 @@ export default function InternalMessenger({
           <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
             {isLoadingMessages ? (
               <div className="flex flex-col items-center justify-center h-full space-y-3">
-                <div className="w-8 h-8 border-2 border-[#8DC63F] border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-xs text-[#8DC63F] font-bold">جاري تحميل المحادثة الخاصة...</p>
+                <div className="w-8 h-8 border-2 border-[#DE7272] border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-xs text-[#FFCA88] font-bold">جاري تحميل المحادثة الخاصة...</p>
               </div>
             ) : messages.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-center space-y-3 text-white/40">
@@ -741,8 +800,8 @@ export default function InternalMessenger({
                     {/* Chat Bubble Container */}
                     <div className={`rounded-2xl p-3.5 sm:p-4 max-w-[85%] sm:max-w-[75%] shadow-md transition-all ${
                       isFromMe
-                        ? 'bg-[#8DC63F] text-black font-semibold rounded-tr-none'
-                        : 'bg-[#0f2814] text-white border border-[#8DC63F]/30 rounded-tl-none'
+                        ? 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D] font-bold rounded-tr-none'
+                        : 'bg-[#1D1216] text-white border border-[#FFCA88]/20 rounded-tl-none'
                     }`}>
 
                       {/* 1. Voice Note Bubble */}
@@ -779,11 +838,11 @@ export default function InternalMessenger({
                         <div className="space-y-2">
                           <div className={`p-3 rounded-xl flex items-center justify-between gap-3 border ${
                             isFromMe 
-                              ? 'bg-black/10 border-black/15 text-black' 
+                              ? 'bg-black/10 border-black/15 text-[#120B0D]' 
                               : 'bg-white/5 border-white/10 text-white'
                           }`}>
                             <div className="flex items-center gap-2.5 min-w-0">
-                              <FileText size={20} className={isFromMe ? 'text-black' : 'text-[#8DC63F]'} />
+                              <FileText size={20} className={isFromMe ? 'text-[#120B0D]' : 'text-[#FFCA88]'} />
                               <div className="min-w-0">
                                 <span className="block text-xs font-black truncate max-w-[180px] sm:max-w-[240px]">
                                   {msg.fileName || 'تقرير طبي'}
@@ -800,7 +859,7 @@ export default function InternalMessenger({
                                 target="_blank"
                                 rel="noreferrer"
                                 className={`p-2 rounded-lg transition-transform hover:scale-110 cursor-pointer ${
-                                  isFromMe ? 'bg-black text-[#8DC63F]' : 'bg-[#8DC63F] text-black'
+                                  isFromMe ? 'bg-[#120B0D] text-[#FFCA88]' : 'bg-gradient-to-r from-[#DE7272] to-[#FFCA88] text-[#120B0D]'
                                 }`}
                                 title="تحميل الملف"
                               >
@@ -824,7 +883,7 @@ export default function InternalMessenger({
                       {/* Read status checkmark */}
                       <div className="flex justify-end items-center gap-1 mt-1 opacity-70">
                         {isFromMe && (
-                          msg.isRead ? <CheckCheck size={13} /> : <Check size={13} />
+                          msg.isRead ? <CheckCheck size={13} className="text-[#120B0D]" /> : <Check size={13} className="text-[#120B0D]" />
                         )}
                       </div>
                     </div>
@@ -837,7 +896,7 @@ export default function InternalMessenger({
 
           {/* Attachment Preview Bar (Before Sending) */}
           {selectedAttachment && (
-            <div className="p-3 bg-[#0a1e0f] border-t border-white/10 flex items-center justify-between gap-3 animate-[fadeIn_0.2s_ease-out]">
+            <div className="p-3 bg-[#1E1115] border-t border-white/10 flex items-center justify-between gap-3 animate-[fadeIn_0.2s_ease-out]">
               <div className="flex items-center gap-3 min-w-0">
                 {selectedAttachment.type === 'image' ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
@@ -847,7 +906,7 @@ export default function InternalMessenger({
                     className="w-12 h-12 object-cover rounded-xl border border-white/20" 
                   />
                 ) : (
-                  <div className="w-12 h-12 rounded-xl bg-[#8DC63F]/20 text-[#8DC63F] flex items-center justify-center border border-[#8DC63F]/30">
+                  <div className="w-12 h-12 rounded-xl bg-[#DE7272]/20 text-[#FFCA88] flex items-center justify-center border border-[#DE7272]/30">
                     <FileText size={22} />
                   </div>
                 )}
@@ -855,7 +914,7 @@ export default function InternalMessenger({
                   <span className="block text-xs font-black text-white truncate max-w-xs">
                     {selectedAttachment.file.name}
                   </span>
-                  <span className="text-[10px] text-green-100/60 font-mono">
+                  <span className="text-[10px] text-[#FFF6A9]/65 font-mono">
                     {(selectedAttachment.file.size / 1024 / 1024).toFixed(2)} MB
                   </span>
                 </div>
@@ -895,7 +954,7 @@ export default function InternalMessenger({
                 <button
                   type="button"
                   onClick={stopAndSendRecording}
-                  className="px-4 py-1.5 rounded-xl bg-[#8DC63F] hover:bg-[#7ab036] text-black text-xs font-black flex items-center gap-1 cursor-pointer shadow-md"
+                  className="px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#DE7272] to-[#FFCA88] hover:opacity-95 text-[#120B0D] text-xs font-black flex items-center gap-1 cursor-pointer shadow-md"
                 >
                   <Send size={14} /> إرسال التسجيل
                 </button>
@@ -905,7 +964,7 @@ export default function InternalMessenger({
 
           {/* Input & Composer Form */}
           {!isRecording && (
-            <form onSubmit={handleFormSubmit} className="p-3 sm:p-4 bg-[#061408] border-t border-white/10 flex items-center gap-2">
+            <form onSubmit={handleFormSubmit} className="p-3 sm:p-4 bg-[#180E12] border-t border-white/10 flex items-center gap-2">
               {/* Hidden File Input */}
               <input
                 type="file"
@@ -929,7 +988,7 @@ export default function InternalMessenger({
               <button
                 type="button"
                 onClick={startRecording}
-                className="p-3 rounded-2xl bg-white/5 hover:bg-[#8DC63F]/20 text-white/70 hover:text-[#8DC63F] transition-colors cursor-pointer shrink-0"
+                className="p-3 rounded-2xl bg-white/5 hover:bg-[#DE7272]/20 text-white/70 hover:text-[#FFCA88] transition-colors cursor-pointer shrink-0"
                 title="تسجيل رسالة صوتية (Voice Note)"
               >
                 <Mic size={18} />
@@ -945,14 +1004,14 @@ export default function InternalMessenger({
                     ? `الرد على ${clientDisplayName}...` 
                     : 'اكتب استفسارك للطبيب أو شارك وجبتك ونتائجك...'
                 }
-                className="flex-1 bg-black/60 border border-white/15 rounded-2xl py-3.5 px-4 text-xs sm:text-sm text-white placeholder-white/40 outline-none focus:border-[#8DC63F] transition-colors font-medium"
+                className="flex-1 bg-[#120B0D] border border-white/15 rounded-2xl py-3.5 px-4 text-xs sm:text-sm text-white placeholder-white/40 outline-none focus:border-[#DE7272] transition-colors font-medium"
               />
 
               {/* Send Button */}
               <button
                 type="submit"
                 disabled={(!inputText.trim() && !selectedAttachment) || isSending}
-                className="p-3.5 rounded-2xl bg-[#8DC63F] hover:bg-[#7ab036] text-black font-black transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed shrink-0 shadow-lg hover:scale-105"
+                className="p-3.5 rounded-2xl bg-gradient-to-r from-[#DE7272] to-[#FFCA88] hover:opacity-95 text-[#120B0D] font-black transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed shrink-0 shadow-lg shadow-[#DE7272]/25 hover:scale-105"
                 title="إرسال"
               >
                 <Send size={18} />
